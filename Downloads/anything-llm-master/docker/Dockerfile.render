@@ -1,0 +1,77 @@
+# Render-optimized Dockerfile for AnythingLLM
+FROM node:18-alpine AS base
+
+# Install system dependencies
+RUN apk add --no-cache \
+    python3 \
+    make \
+    g++ \
+    cairo-dev \
+    jpeg-dev \
+    pango-dev \
+    musl-dev \
+    giflib-dev \
+    pixman-dev \
+    pangomm-dev \
+    libjpeg-turbo-dev \
+    freetype-dev \
+    curl
+
+# Set working directory
+WORKDIR /app
+
+# Copy package files
+COPY package.json yarn.lock ./
+COPY server/package.json server/yarn.lock ./server/
+COPY frontend/package.json frontend/yarn.lock ./frontend/
+COPY collector/package.json collector/yarn.lock ./collector/
+
+# Install dependencies
+RUN yarn install --frozen-lockfile --network-timeout 100000
+
+# Install server dependencies
+WORKDIR /app/server
+RUN yarn install --production --frozen-lockfile --network-timeout 100000
+
+# Install frontend dependencies
+WORKDIR /app/frontend
+RUN yarn install --frozen-lockfile --network-timeout 100000
+
+# Install collector dependencies
+WORKDIR /app/collector
+RUN yarn install --production --frozen-lockfile --network-timeout 100000
+
+# Copy application code
+WORKDIR /app
+COPY server/ ./server/
+COPY collector/ ./collector/
+COPY frontend/ ./frontend/
+
+# Build frontend
+WORKDIR /app/frontend
+RUN yarn build:ci
+
+# Copy built frontend to server
+WORKDIR /app
+RUN cp -r /app/frontend/dist /app/server/public
+
+# Create non-root user
+RUN addgroup -g 1001 -S anythingllm && \
+    adduser -S anythingllm -u 1001
+
+# Set ownership
+RUN chown -R anythingllm:anythingllm /app
+
+# Switch to non-root user
+USER anythingllm
+
+# Expose port (Render will set PORT env var)
+EXPOSE $PORT
+
+# Health check
+HEALTHCHECK --interval=30s --timeout=10s --start-period=5s --retries=3 \
+    CMD curl -f http://localhost:$PORT/api/system/health || exit 1
+
+# Start application
+WORKDIR /app/server
+CMD ["node", "index.js"]

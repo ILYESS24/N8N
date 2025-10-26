@@ -1,0 +1,50 @@
+# Ultra-simplified Dockerfile for Koyeb - Fixes buildpack error 51
+FROM node:18-alpine
+
+# Install minimal dependencies
+RUN apk add --no-cache python3 make g++ curl
+
+# Set working directory
+WORKDIR /app
+
+# Copy package files
+COPY package.json yarn.lock ./
+COPY server/package.json ./server/
+COPY frontend/package.json ./frontend/
+COPY collector/package.json ./collector/
+
+# Install dependencies
+RUN yarn install --frozen-lockfile
+
+# Install server dependencies
+WORKDIR /app/server
+RUN yarn install --production --frozen-lockfile
+
+# Install frontend dependencies
+WORKDIR /app/frontend
+RUN yarn install --frozen-lockfile
+
+# Install collector dependencies
+WORKDIR /app/collector
+RUN yarn install --production --frozen-lockfile
+
+# Copy application code
+WORKDIR /app
+COPY server/ ./server/
+COPY collector/ ./collector/
+COPY frontend/ ./frontend/
+
+# Build frontend
+WORKDIR /app/frontend
+RUN yarn build:ci
+
+# Copy built frontend to server
+WORKDIR /app
+RUN cp -r /app/frontend/dist /app/server/public
+
+# Expose port
+EXPOSE 3001
+
+# Start application
+WORKDIR /app/server
+CMD ["node", "index.js"]

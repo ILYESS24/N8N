@@ -1,0 +1,35 @@
+version: 1
+services:
+  - name: anythingllm
+    type: web
+    runtime: docker
+    dockerfile: docker/Dockerfile.koyeb.simple
+    ports:
+      - port: 3001
+        protocol: http
+    env:
+      - name: NODE_ENV
+        value: production
+      - name: PORT
+        value: "3001"
+      - name: DATABASE_URL
+        value: "postgresql://user:password@host:5432/dbname"
+      - name: JWT_SECRET
+        value: "your-jwt-secret-key"
+      - name: OPENAI_API_KEY
+        value: "your-openai-key"
+      - name: ANTHROPIC_API_KEY
+        value: "your-anthropic-key"
+    healthcheck:
+      path: /api/system/health
+      port: 3001
+      interval: 30s
+      timeout: 10s
+      retries: 3
+    scaling:
+      min_instances: 1
+      max_instances: 3
+    regions:
+      - fra
+      - iad
+      - sin
