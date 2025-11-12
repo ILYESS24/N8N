@@ -211,7 +211,6 @@ type FolderProps = {
 
 const Folder = (
   {
-    ref,
     className,
     element,
     value,
@@ -219,7 +218,7 @@ const Folder = (
     isSelect,
     children,
     ...props
-  }
+  }: FolderProps
 ) => {
   const {
     direction,
