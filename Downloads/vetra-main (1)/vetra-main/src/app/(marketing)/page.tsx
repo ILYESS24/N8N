@@ -5,7 +5,7 @@ export const dynamic = 'force-dynamic';
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
-import { ChevronDown, ArrowUpRight, Star } from "lucide-react";
+import { ChevronDown, ArrowUpRight, Star, Sparkles, Lightbulb, Network, Palette, Globe, Image, Wand2, BarChart3 } from "lucide-react";
 import Navbar from "@/components/marketing/navbar";
 import { useRouter } from "next/navigation";
 import { Footerdemo } from "@/components/ui/footer-section";
@@ -94,25 +94,37 @@ const HomePage = () => {
             {/* Stats Section */}
             <section className="py-20 px-6">
                 <div className="max-w-7xl mx-auto">
-                    <div className="text-4xl md:text-5xl font-normal text-gray-900 text-center mb-12">
-                        <TextGradientScroll text="Crafting exceptional, well experienced & technology driven strategies to drive impactful results with" className="justify-center" />
-                    </div>
                     <div className="flex flex-wrap justify-center gap-4 mb-16">
-                        <div className="px-6 py-3 bg-black rounded-full text-white font-normal">Creativity</div>
-                        <div className="px-6 py-3 bg-black rounded-full text-white font-normal">Innovation</div>
-                        <div className="px-6 py-3 bg-black rounded-full text-white font-normal">Strategy</div>
+                        <div className="px-6 py-3 bg-black rounded-full text-white font-normal flex items-center gap-2">
+                            <Sparkles className="w-5 h-5" />
+                            <span>Creativity</span>
+                        </div>
+                        <div className="px-6 py-3 bg-black rounded-full text-white font-normal flex items-center gap-2">
+                            <Lightbulb className="w-5 h-5" />
+                            <span>Innovation</span>
+                        </div>
+                        <div className="px-6 py-3 bg-black rounded-full text-white font-normal flex items-center gap-2">
+                            <Network className="w-5 h-5" />
+                            <span>Strategy</span>
+                        </div>
                     </div>
                     <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
                         <div className="text-center">
-                            <div className="text-6xl font-normal text-gray-900 mb-2">+40</div>
+                            <div className="text-6xl font-normal text-gray-900 mb-2">
+                                <span className="text-4xl">+</span>40
+                            </div>
                             <div className="text-gray-600">Total Projects Completed</div>
                         </div>
                         <div className="text-center">
-                            <div className="text-6xl font-normal text-gray-900 mb-2">+15</div>
+                            <div className="text-6xl font-normal text-gray-900 mb-2">
+                                <span className="text-4xl">+</span>15
+                            </div>
                             <div className="text-gray-600">Years of Experience</div>
                         </div>
                         <div className="text-center">
-                            <div className="text-6xl font-normal text-gray-900 mb-2">+12</div>
+                            <div className="text-6xl font-normal text-gray-900 mb-2">
+                                <span className="text-4xl">+</span>12
+                            </div>
                             <div className="text-gray-600">Design Awards</div>
                         </div>
                     </div>
@@ -122,37 +134,48 @@ const HomePage = () => {
             {/* Services Section */}
             <section id="services" className="py-20 px-6">
                 <div className="max-w-7xl mx-auto">
-                    <div className="text-4xl md:text-5xl font-normal text-gray-900 text-center mb-16">
-                        <TextGradientScroll text="Where innovation meets aesthetics" className="justify-center" />
-                    </div>
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-6 mb-12">
-                        <Card className="p-6 bg-white border border-gray-200 rounded-2xl">
-                            <h3 className="text-xl font-normal text-gray-900 mb-2">Brand Strategy</h3>
+                        <Card className="p-6 bg-purple-100 border-0 rounded-2xl">
+                            <Palette className="w-8 h-8 text-purple-600 mb-4" />
+                            <h3 className="text-xl font-normal text-gray-900">Brand Strategy</h3>
                         </Card>
-                        <Card className="p-6 bg-white border border-gray-200 rounded-2xl">
-                            <h3 className="text-xl font-normal text-gray-900 mb-2">Web Development</h3>
+                        <Card className="p-6 bg-pink-100 border-0 rounded-2xl">
+                            <Globe className="w-8 h-8 text-pink-600 mb-4" />
+                            <h3 className="text-xl font-normal text-gray-900">Web Development</h3>
                         </Card>
-                        <Card className="p-6 bg-white border border-gray-200 rounded-2xl">
-                            <h3 className="text-xl font-normal text-gray-900 mb-2">Digital Marketing</h3>
+                        <Card className="p-6 bg-blue-100 border-0 rounded-2xl">
+                            <Image className="w-8 h-8 text-blue-600 mb-4" />
+                            <h3 className="text-xl font-normal text-gray-900">Digital Marketing</h3>
                         </Card>
-                        <Card className="p-6 bg-white border border-gray-200 rounded-2xl">
-                            <h3 className="text-xl font-normal text-gray-900 mb-2">UI/UX Designing</h3>
+                        <Card className="p-6 bg-orange-100 border-0 rounded-2xl">
+                            <Wand2 className="w-8 h-8 text-orange-600 mb-4" />
+                            <h3 className="text-xl font-normal text-gray-900">UI/UX Designing</h3>
                         </Card>
-                        <Card className="p-6 bg-white border border-gray-200 rounded-2xl">
-                            <h3 className="text-xl font-normal text-gray-900 mb-2">Analytics & Reporting</h3>
+                        <Card className="p-6 bg-green-100 border-0 rounded-2xl">
+                            <BarChart3 className="w-8 h-8 text-green-600 mb-4" />
+                            <h3 className="text-xl font-normal text-gray-900">Analytics & Reporting</h3>
                         </Card>
                     </div>
-                    <div className="bg-black rounded-2xl p-8 flex flex-col md:flex-row items-center justify-between gap-4">
+                    <div className="bg-gray-900 rounded-2xl p-8 flex flex-col md:flex-row items-center justify-between gap-6">
                         <div className="text-white text-2xl font-normal">
-                            <TextGradientScroll text="Start Your Creative Journey with Us!" type="word" />
+                            <div>See Our Work in Action.</div>
+                            <div>Start Your Creative Journey with Us!</div>
                         </div>
-                        <div className="flex gap-4">
-                            <ModernButton onClick={() => router.push("/login")}>
-                                Let's Collaborate
-                            </ModernButton>
-                            <ModernButton onClick={() => {}}>
-                                View Portfolio
-                            </ModernButton>
+                        <div className="flex flex-col gap-3">
+                            <button
+                                onClick={() => router.push("/login")}
+                                className="flex items-center gap-2 bg-white text-gray-900 px-6 py-3 rounded-full font-normal hover:bg-gray-100 transition-colors"
+                            >
+                                <span>Let's Collaborate</span>
+                                <ArrowUpRight className="w-4 h-4" />
+                            </button>
+                            <button
+                                onClick={() => {}}
+                                className="flex items-center gap-2 bg-transparent border border-white text-white px-6 py-3 rounded-full font-normal hover:bg-white/10 transition-colors"
+                            >
+                                <span>View Portfolio</span>
+                                <ArrowUpRight className="w-4 h-4" />
+                            </button>
                         </div>
                     </div>
                 </div>
@@ -243,10 +266,7 @@ const HomePage = () => {
             {/* Testimonials Section */}
             <section className="py-20 px-6">
                 <div className="max-w-7xl mx-auto">
-                    <div className="text-4xl md:text-5xl font-normal text-gray-900 text-center mb-16">
-                        <TextGradientScroll text="What our satisfied customers are saying about us" className="justify-center" />
-                    </div>
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                         <Card className="bg-black text-white border-0 p-8 rounded-2xl">
                             <div className="flex gap-1 mb-4">
                                 {[1, 2, 3, 4, 5].map((i) => (
@@ -265,10 +285,8 @@ const HomePage = () => {
                             <div className="text-7xl font-normal text-gray-900 mb-4">91%</div>
                             <p className="text-gray-700 text-lg">clients recommend our design services.</p>
                         </Card>
-                    </div>
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                         <Card className="bg-black text-white border-0 p-8 rounded-2xl">
-                            <p className="text-lg mb-6">
+                            <p className="text-lg">
                                 Their creativity and attention to detail transformed our brand completely!
                             </p>
                         </Card>
