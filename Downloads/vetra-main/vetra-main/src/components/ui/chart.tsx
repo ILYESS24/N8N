@@ -116,6 +116,7 @@ const ChartTooltipContent = React.forwardRef<
   // @ts-ignore
   (
     {
+      // @ts-ignore
       active,
       // @ts-ignore
       payload,
@@ -123,10 +124,15 @@ const ChartTooltipContent = React.forwardRef<
       indicator = "dot",
       hideLabel = false,
       hideIndicator = false,
+      // @ts-ignore
       label,
+      // @ts-ignore
       labelFormatter,
+      // @ts-ignore
       labelClassName,
+      // @ts-ignore
       formatter,
+      // @ts-ignore
       color,
       nameKey,
       labelKey,
