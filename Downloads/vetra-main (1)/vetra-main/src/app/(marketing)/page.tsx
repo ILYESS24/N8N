@@ -48,9 +48,9 @@ const HomePage = () => {
 
             {/* ========== TRANSITION VISUAL ========== */}
             <AnomalousMatterHero 
-                title="The Future of AI Interaction"
-                subtitle="Experience the power of intelligent prompting."
-                description="AURION transforms how you interact with artificial intelligence. Our advanced prompting system adapts to your needs, learns from your patterns, and delivers results that exceed expectations. Discover a new dimension of digital intelligence."
+                title="La Plateforme IA Tout-en-Un Qui Change Tout"
+                subtitle="Créez Sites Web, Applications, Agents IA, Images & Vidéos en Quelques Minutes"
+                description="AURION est la seule plateforme qui combine création de sites web, développement d'applications, agents IA intelligents, éditeurs de texte par IA, chat IA avancé, génération d'images et vidéos, éditeur de code comme Cursor AI, et bibliothèques UI/UX complètes. Tout ce dont vous avez besoin pour construire, personnaliser et déployer vos projets digitaux avec les meilleures IA du marché. Plus de 50,000+ créateurs nous font déjà confiance."
             />
 
             {/* ========== FEATURES - BENTO GRID ========== */}
@@ -59,10 +59,13 @@ const HomePage = () => {
                 <div className="relative w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                     <div className="text-center mb-16 space-y-4">
                         <h2 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white">
-                            Powerful Features
+                            Tout Ce Dont Vous Avez Besoin Pour Créer Sans Limites
                         </h2>
-                        <p className="text-lg sm:text-xl text-white/70 max-w-3xl mx-auto">
-                            AURION combines cutting-edge AI technology with intuitive design. From seamless integrations to real-time analytics, every feature is crafted to enhance your productivity and streamline your workflow. Experience the difference that intelligent automation makes.
+                        <p className="text-lg sm:text-xl text-white/70 max-w-4xl mx-auto">
+                            <strong className="text-white">Arrêtez de jongler entre 10 outils différents.</strong> AURION centralise tout : création de sites web professionnels, développement d'applications complètes, agents IA sur-mesure, génération de contenu texte/image/vidéo, et édition de code avancée. <span className="text-white font-semibold">Gagnez 20+ heures par semaine</span> en utilisant une seule plateforme alimentée par les meilleures IA du marché (GPT-4, Claude, Midjourney, Stable Diffusion, et plus).
+                        </p>
+                        <p className="text-base text-white/60 max-w-3xl mx-auto mt-4">
+                            ⚡ <strong className="text-white">Résultat garanti</strong> : Créez votre premier site web ou application en moins de 5 minutes, même sans expérience technique.
                         </p>
                     </div>
                     <BentoGridShowcase
@@ -70,14 +73,14 @@ const HomePage = () => {
                             <Card className="h-full bg-black/50 border-white/10 text-white relative">
                                 <GlowingEffect disabled={false} variant="default" proximity={50} spread={30} />
                                 <CardHeader>
-                                    <CardTitle>Integration</CardTitle>
+                                    <CardTitle>Création de Sites Web & Apps</CardTitle>
                                     <CardDescription className="text-white/70">
-                                        Seamless connections
+                                        Sites web & applications en minutes
                                     </CardDescription>
                                 </CardHeader>
                                 <CardContent>
                                     <p className="text-white/80">
-                                        Connect with your favorite tools and services effortlessly.
+                                        Créez des sites web professionnels et des applications complètes avec notre IA. Plus besoin de code, de design, ou de développement complexe. <strong className="text-white">De l'idée au déploiement en 5 minutes.</strong>
                                     </p>
                                 </CardContent>
                             </Card>
@@ -86,14 +89,14 @@ const HomePage = () => {
                             <Card className="h-full bg-black/50 border-white/10 text-white relative">
                                 <GlowingEffect disabled={false} variant="default" proximity={50} spread={30} />
                                 <CardHeader>
-                                    <CardTitle>Trackers</CardTitle>
+                                    <CardTitle>Agents IA Personnalisés</CardTitle>
                                     <CardDescription className="text-white/70">
-                                        Monitor everything
+                                        Automatisez vos tâches
                                     </CardDescription>
                                 </CardHeader>
                                 <CardContent>
                                     <p className="text-white/80">
-                                        Real-time tracking and analytics.
+                                        Créez des agents IA sur-mesure qui travaillent 24/7 pour vous. Automatisation complète de vos processus métier avec les meilleures IA du marché.
                                     </p>
                                 </CardContent>
                             </Card>
@@ -102,14 +105,14 @@ const HomePage = () => {
                             <Card className="h-full bg-black/50 border-white/10 text-white relative">
                                 <GlowingEffect disabled={false} variant="default" proximity={50} spread={30} />
                                 <CardHeader>
-                                    <CardTitle>Statistics</CardTitle>
+                                    <CardTitle>Génération Images & Vidéos</CardTitle>
                                     <CardDescription className="text-white/70">
-                                        Data insights
+                                        Créez du contenu visuel instantanément
                                     </CardDescription>
                                 </CardHeader>
                                 <CardContent>
                                     <p className="text-white/80">
-                                        Powerful analytics at your fingertips.
+                                        Générez des images professionnelles et des vidéos époustouflantes avec l'IA. <strong className="text-white">Économisez des milliers d'euros</strong> en design et production vidéo.
                                     </p>
                                 </CardContent>
                             </Card>
@@ -118,14 +121,14 @@ const HomePage = () => {
                             <Card className="h-full bg-black/50 border-white/10 text-white relative">
                                 <GlowingEffect disabled={false} variant="default" proximity={50} spread={30} />
                                 <CardHeader>
-                                    <CardTitle>Focus</CardTitle>
+                                    <CardTitle>Éditeur de Code IA (Style Cursor)</CardTitle>
                                     <CardDescription className="text-white/70">
-                                        Stay productive
+                                        Codez 10x plus vite
                                     </CardDescription>
                                 </CardHeader>
                                 <CardContent>
                                     <p className="text-white/80">
-                                        Minimize distractions, maximize output.
+                                        Éditeur de code intelligent comme Cursor AI intégré. Modifiez et améliorez manuellement vos sites/apps avec une assistance IA qui comprend votre contexte.
                                     </p>
                                 </CardContent>
                             </Card>
@@ -134,14 +137,14 @@ const HomePage = () => {
                             <Card className="h-full bg-black/50 border-white/10 text-white relative">
                                 <GlowingEffect disabled={false} variant="default" proximity={50} spread={30} />
                                 <CardHeader>
-                                    <CardTitle>Productivity</CardTitle>
+                                    <CardTitle>Chat IA & Éditeur Texte</CardTitle>
                                     <CardDescription className="text-white/70">
-                                        Work smarter
+                                        Rédaction assistée par IA
                                     </CardDescription>
                                 </CardHeader>
                                 <CardContent>
                                     <p className="text-white/80">
-                                        Boost your efficiency with smart tools.
+                                        Chat IA avancé et éditeur de texte intelligent. Créez du contenu optimisé SEO, articles, scripts, et plus encore avec les meilleurs modèles de langage.
                                     </p>
                                 </CardContent>
                             </Card>
@@ -150,14 +153,14 @@ const HomePage = () => {
                             <Card className="h-full bg-black/50 border-white/10 text-white relative">
                                 <GlowingEffect disabled={false} variant="default" proximity={50} spread={30} />
                                 <CardHeader>
-                                    <CardTitle>Shortcuts</CardTitle>
+                                    <CardTitle>Bibliothèques UI/UX Complètes</CardTitle>
                                     <CardDescription className="text-white/70">
-                                        Quick actions
+                                        Personnalisez sans limites
                                     </CardDescription>
                                 </CardHeader>
                                 <CardContent>
                                     <p className="text-white/80">
-                                        Access everything you need with keyboard shortcuts and quick actions.
+                                        Accédez à des milliers de composants UI/UX professionnels. Personnalisez chaque détail de vos créations avec des designs modernes et responsive.
                                     </p>
                                 </CardContent>
                             </Card>
@@ -172,13 +175,16 @@ const HomePage = () => {
                 <div className="relative w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                     <div className="text-center mb-16 space-y-4">
                         <h2 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white">
-                            Advanced Capabilities
+                            Pourquoi 50,000+ Créateurs Choisissent AURION
                         </h2>
-                        <p className="text-lg sm:text-xl text-white/70 max-w-3xl mx-auto">
-                            Unlock the full potential of AI with our comprehensive suite of features. From customizable workflows to powerful analytics, AURION provides everything you need to stay ahead. Built for professionals who demand excellence.
+                        <p className="text-lg sm:text-xl text-white/70 max-w-4xl mx-auto">
+                            <strong className="text-white">La seule plateforme qui remplace 10+ outils coûteux</strong> : WordPress, Figma, Canva, ChatGPT, Midjourney, Cursor AI, et plus encore. <span className="text-white font-semibold">Économisez jusqu'à 500€/mois</span> en abonnements multiples tout en gagnant en productivité. 
+                        </p>
+                        <p className="text-base text-white/60 max-w-3xl mx-auto mt-4">
+                            🚀 <strong className="text-white">Résultat mesurable</strong> : Nos utilisateurs créent en moyenne 3x plus de projets qu'avant, avec une qualité professionnelle garantie.
                         </p>
                     </div>
-                    <Features />
+            <Features />
                 </div>
             </section>
 
@@ -188,13 +194,13 @@ const HomePage = () => {
                 <div className="relative w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                     <div className="text-center mb-16 space-y-4">
                         <h2 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white">
-                            Built for Scale
+                            Alimenté Par Les Meilleures IA Du Marché
                         </h2>
-                        <p className="text-lg sm:text-xl text-white/70 max-w-3xl mx-auto mb-4">
-                            AURION's architecture is engineered for enterprise-grade performance. Our distributed system ensures 99.9% uptime, handles millions of requests per second, and scales automatically to meet your growing needs. Built on modern cloud infrastructure with redundancy at every layer.
+                        <p className="text-lg sm:text-xl text-white/70 max-w-4xl mx-auto mb-4">
+                            <strong className="text-white">AURION utilise les modèles IA les plus puissants</strong> : GPT-4, Claude 3.5, Midjourney, Stable Diffusion, DALL-E, et bien plus. <span className="text-white font-semibold">Pas besoin de choisir</span> - nous optimisons automatiquement le meilleur modèle pour chaque tâche. Architecture distribuée garantissant 99.9% de disponibilité et des performances instantanées.
                         </p>
-                        <p className="text-base text-white/60 max-w-2xl mx-auto">
-                            From microservices architecture to real-time data processing, every component is optimized for speed, security, and scalability. Experience the power of infrastructure that grows with you.
+                        <p className="text-base text-white/60 max-w-3xl mx-auto">
+                            ⚡ <strong className="text-white">Avantage concurrentiel</strong> : Accédez aux dernières innovations IA avant qu'elles ne deviennent mainstream. Mises à jour automatiques incluses.
                         </p>
                     </div>
                     <div className="flex items-center justify-center">
@@ -218,13 +224,13 @@ const HomePage = () => {
                 <div className="relative w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                     <div className="text-center mb-16 space-y-4">
                         <h2 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white">
-                            Deployable Everywhere
+                            Déployez Partout Dans Le Monde En Un Clic
                         </h2>
-                        <p className="text-lg sm:text-xl text-white/70 max-w-3xl mx-auto mb-4">
-                            AURION is built for global scale. Our infrastructure spans across continents, ensuring low latency and high availability wherever you are. Whether you're in New York, Tokyo, London, or anywhere in between, experience the same lightning-fast performance.
+                        <p className="text-lg sm:text-xl text-white/70 max-w-4xl mx-auto mb-4">
+                            <strong className="text-white">Infrastructure mondiale optimisée</strong> : Déployez vos sites web et applications sur 200+ serveurs répartis sur tous les continents. <span className="text-white font-semibold">Latence ultra-faible</span> garantie partout dans le monde. Que vous soyez à Paris, New York, Tokyo ou Dubaï, vos utilisateurs bénéficient de la même vitesse fulgurante.
                         </p>
-                        <p className="text-base text-white/60 max-w-2xl mx-auto">
-                            Trusted by teams worldwide, from startups to Fortune 500 companies. Join thousands of users who rely on AURION for their daily operations.
+                        <p className="text-base text-white/60 max-w-3xl mx-auto">
+                            🌍 <strong className="text-white">Preuve sociale</strong> : Rejoignez 50,000+ créateurs, startups et entreprises Fortune 500 qui font confiance à AURION pour leurs projets critiques. <span className="text-white">99.9% d'uptime garanti</span> avec support 24/7.
                         </p>
                     </div>
                     <div className="flex items-center justify-center">
@@ -238,8 +244,11 @@ const HomePage = () => {
                 <GlowingEffect disabled={false} variant="white" proximity={100} spread={30} />
                 <div className="relative w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                     <div className="text-center mb-12 space-y-4">
-                        <p className="text-lg sm:text-xl text-white/80 max-w-2xl mx-auto">
-                            The future of AI-powered productivity. Built for those who refuse to settle for ordinary.
+                        <p className="text-lg sm:text-xl text-white/80 max-w-3xl mx-auto">
+                            <strong className="text-white text-2xl">La Plateforme IA La Plus Complète Du Marché</strong>
+                        </p>
+                        <p className="text-base text-white/70 max-w-2xl mx-auto">
+                            Pour ceux qui refusent de se contenter de solutions partielles. Pour ceux qui veulent tout créer, tout personnaliser, tout déployer - en un seul endroit.
                         </p>
                     </div>
                     <div className="relative w-full h-[600px] flex items-center justify-center">
@@ -271,13 +280,13 @@ const HomePage = () => {
                 <div className="relative w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                     <div className="text-center mb-12 space-y-4">
                         <h2 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white">
-                            Seamless Integrations
+                            Intégrations Parfaites Avec Votre Stack Actuel
                         </h2>
-                        <p className="text-lg sm:text-xl text-white/70 max-w-3xl mx-auto">
-                            AURION integrates effortlessly with the tools you already use. Connect with GitHub for version control, Slack for team communication, Notion for documentation, and dozens of other platforms. No workflow disruption, just enhanced productivity.
+                        <p className="text-lg sm:text-xl text-white/70 max-w-4xl mx-auto">
+                            <strong className="text-white">Connectez AURION à tous vos outils existants</strong> : GitHub, Slack, Notion, Zapier, Webhooks, API REST, et 100+ autres intégrations. <span className="text-white font-semibold">Aucune disruption</span> de votre workflow actuel - AURION s'intègre parfaitement et améliore votre productivité instantanément.
                         </p>
-                        <p className="text-base text-white/60 max-w-2xl mx-auto">
-                            Our API-first approach ensures that AURION fits perfectly into your existing tech stack, making adoption seamless and immediate.
+                        <p className="text-base text-white/60 max-w-3xl mx-auto">
+                            🔌 <strong className="text-white">Approche API-first</strong> : Intégration en moins de 5 minutes. Compatible avec tous les écosystèmes tech modernes.
                         </p>
                     </div>
                     <IntegrationsSection />
@@ -290,13 +299,13 @@ const HomePage = () => {
                 <div className="relative w-full max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col items-center gap-8">
                     <div className="text-center space-y-4">
                         <h2 className="text-4xl sm:text-5xl font-bold text-white">
-                            Got Questions?
+                            Des Questions ? Notre IA Répond Instantanément
                         </h2>
-                        <p className="text-lg sm:text-xl text-white/80 max-w-2xl">
-                            Our AI assistant is here to help. Ask anything about AURION's features, pricing, integrations, or how to get started. Get instant, accurate answers powered by our advanced language model.
+                        <p className="text-lg sm:text-xl text-white/80 max-w-3xl">
+                            <strong className="text-white">Assistant IA disponible 24/7</strong> : Posez n'importe quelle question sur AURION - fonctionnalités, tarifs, intégrations, création de sites web, agents IA, génération d'images/vidéos, édition de code, ou comment démarrer. <span className="text-white font-semibold">Réponses instantanées et précises</span> alimentées par nos meilleurs modèles IA.
                         </p>
-                        <p className="text-base text-white/60 max-w-xl">
-                            Whether you're curious about our architecture, deployment options, or best practices, we've got you covered.
+                        <p className="text-base text-white/60 max-w-2xl">
+                            💡 <strong className="text-white">Conseils personnalisés</strong> : Obtenez des recommandations adaptées à votre projet spécifique. Architecture, déploiement, meilleures pratiques - tout est couvert.
                         </p>
                     </div>
                     <AIChatInput />
@@ -308,16 +317,16 @@ const HomePage = () => {
                 <GlowingEffect disabled={false} variant="white" proximity={100} spread={30} />
                 <div className="relative w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                     <div className="text-center mb-12 space-y-4">
-                        <p className="text-lg sm:text-xl text-white/70 max-w-3xl mx-auto">
-                            Choose the perfect plan for your needs. All plans include access to AURION's core features, priority support, and regular updates. Start with our Starter plan and scale as you grow, or go straight to Professional for advanced features.
+                        <p className="text-lg sm:text-xl text-white/70 max-w-4xl mx-auto">
+                            <strong className="text-white">Choisissez le plan qui correspond à vos ambitions</strong> : Tous les plans incluent l'accès complet à AURION - création de sites web, apps, agents IA, génération images/vidéos, éditeur de code, et bibliothèques UI/UX. <span className="text-white font-semibold">Commencez avec Starter</span> et évoluez sans limite, ou optez directement pour Professional pour des fonctionnalités avancées et un volume illimité.
                         </p>
-                        <p className="text-base text-white/60 max-w-2xl mx-auto">
-                            Enterprise customers get custom solutions tailored to their specific requirements, including dedicated account management and SLA guarantees.
+                        <p className="text-base text-white/60 max-w-3xl mx-auto">
+                            🎯 <strong className="text-white">ROI garanti</strong> : Économisez des milliers d'euros en outils multiples. <span className="text-white">Support prioritaire 24/7</span> et mises à jour automatiques incluses. Clients Enterprise : solutions sur-mesure avec gestionnaire de compte dédié et SLA garantis.
                         </p>
                     </div>
                     <Pricing
-                        title="Simple, Transparent Pricing"
-                        description="Choose the plan that works for you\nAll plans include access to our platform, advanced AI capabilities, and dedicated support."
+                        title="Tarification Simple et Transparente"
+                        description="Choisissez le plan adapté à vos besoins\nTous les plans incluent l'accès complet à AURION : création de sites web, applications, agents IA, génération d'images/vidéos, éditeur de code IA, bibliothèques UI/UX, et support dédié."
                         plans={[
                             {
                                 name: "Starter",
@@ -325,13 +334,17 @@ const HomePage = () => {
                                 yearlyPrice: "24",
                                 period: "month",
                                 features: [
-                                    "Access to platform",
-                                    "Basic lead generation",
-                                    "Email support",
-                                    "Up to 100 leads/month",
+                                    "Création de sites web illimités",
+                                    "Création d'applications (jusqu'à 3)",
+                                    "Agents IA (jusqu'à 5)",
+                                    "Génération images/vidéos (100/mois)",
+                                    "Éditeur de code IA inclus",
+                                    "Bibliothèques UI/UX complètes",
+                                    "Chat IA & éditeur texte",
+                                    "Support email",
                                 ],
-                                description: "Perfect for getting started",
-                                buttonText: "Get Started",
+                                description: "Parfait pour démarrer vos projets",
+                                buttonText: "Commencer Maintenant",
                                 href: "#",
                                 isPopular: false,
                             },
@@ -341,14 +354,18 @@ const HomePage = () => {
                                 yearlyPrice: "79",
                                 period: "month",
                                 features: [
-                                    "Everything in Starter",
-                                    "Advanced lead generation",
-                                    "Priority support",
-                                    "Up to 1,000 leads/month",
-                                    "Analytics dashboard",
+                                    "Tout dans Starter",
+                                    "Applications illimitées",
+                                    "Agents IA illimités",
+                                    "Génération images/vidéos (1000/mois)",
+                                    "Éditeur de code IA avancé",
+                                    "Accès prioritaire aux nouvelles IA",
+                                    "Support prioritaire 24/7",
+                                    "Déploiement automatique",
+                                    "Analytics avancés",
                                 ],
-                                description: "Best for growing businesses",
-                                buttonText: "Get Started",
+                                description: "Idéal pour les créateurs professionnels",
+                                buttonText: "Commencer Maintenant",
                                 href: "#",
                                 isPopular: true,
                             },
@@ -358,14 +375,18 @@ const HomePage = () => {
                                 yearlyPrice: "239",
                                 period: "month",
                                 features: [
-                                    "Everything in Professional",
-                                    "Unlimited leads",
-                                    "Dedicated account manager",
-                                    "Custom integrations",
-                                    "Advanced analytics",
+                                    "Tout dans Professional",
+                                    "Génération images/vidéos illimitée",
+                                    "Gestionnaire de compte dédié",
+                                    "Intégrations personnalisées",
+                                    "SLA garantis (99.9% uptime)",
+                                    "Formation équipe incluse",
+                                    "Support téléphonique prioritaire",
+                                    "API personnalisée",
+                                    "White-label disponible",
                                 ],
-                                description: "For large organizations",
-                                buttonText: "Contact Sales",
+                                description: "Pour les grandes organisations",
+                                buttonText: "Contacter les Ventes",
                                 href: "#",
                                 isPopular: false,
                             },
@@ -379,16 +400,19 @@ const HomePage = () => {
                 <GlowingEffect disabled={false} variant="white" proximity={100} spread={30} />
                 <div className="relative w-full max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
                     <div className="text-center mb-12 space-y-4">
-                        <p className="text-lg sm:text-xl text-white/80 max-w-2xl mx-auto">
-                            Experience the power of intelligent automation. Transform your workflow with AURION.
+                        <p className="text-lg sm:text-xl text-white/80 max-w-3xl mx-auto">
+                            <strong className="text-white text-2xl">Expérimentez La Puissance De La Création IA Complète</strong>
+                        </p>
+                        <p className="text-base text-white/70 max-w-2xl mx-auto">
+                            Transformez votre façon de créer. Sites web, apps, agents IA, contenu visuel, code - tout en un seul endroit.
                         </p>
                     </div>
                     <div className="w-full h-[300px] sm:h-[400px] flex items-center justify-center">
                         <TextHoverEffect text="AURION" duration={0.3} />
                     </div>
                     <div className="text-center mt-12 space-y-2">
-                        <p className="text-base text-white/60 max-w-xl mx-auto">
-                            The future of AI-powered productivity is here. Join thousands of professionals who have already made the switch.
+                        <p className="text-base text-white/60 max-w-2xl mx-auto">
+                            <strong className="text-white">L'avenir de la création digitale est là.</strong> Rejoignez 50,000+ créateurs, entrepreneurs et entreprises qui ont déjà fait le switch vers AURION. <span className="text-white font-semibold">Ne manquez pas cette révolution.</span>
                         </p>
                     </div>
                 </div>
@@ -400,13 +424,13 @@ const HomePage = () => {
                 <div className="relative w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                     <div className="text-center mb-12 space-y-4">
                         <h2 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white">
-                            Stay Ahead of the Curve
+                            Restez En Avance Sur Vos Concurrents
                         </h2>
-                        <p className="text-lg sm:text-xl text-white/70 max-w-3xl mx-auto">
-                            Join our community and get exclusive access to product updates, AI insights, productivity tips, and early access to new features. Be the first to know when we launch something exciting.
+                        <p className="text-lg sm:text-xl text-white/70 max-w-4xl mx-auto">
+                            <strong className="text-white">Rejoignez notre communauté exclusive</strong> : Accès prioritaire aux nouvelles fonctionnalités IA, insights sur les dernières tendances, astuces productivité, et <span className="text-white font-semibold">early access aux innovations</span> avant qu'elles ne soient publiques. Soyez le premier informé des lancements majeurs.
                         </p>
-                        <p className="text-base text-white/60 max-w-2xl mx-auto">
-                            No spam, just valuable content delivered straight to your inbox. Unsubscribe anytime.
+                        <p className="text-base text-white/60 max-w-3xl mx-auto">
+                            ✉️ <strong className="text-white">Contenu premium uniquement</strong> : Pas de spam, juste de la valeur. Conseils SEO, stratégies marketing, cas d'usage réels, et plus. Désabonnement en un clic.
                         </p>
                     </div>
                     <PinkyNewsletter />
