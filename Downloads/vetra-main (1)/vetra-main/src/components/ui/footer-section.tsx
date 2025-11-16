@@ -25,12 +25,12 @@ function Footerdemo() {
   }, [isDarkMode])
 
   return (
-    <footer className="relative border-t bg-transparent text-foreground transition-colors duration-300">
+    <footer className="relative border-t bg-transparent text-gray-900 transition-colors duration-300">
       <div className="container mx-auto px-4 py-12 md:px-6 lg:px-8">
         <div className="grid gap-12 md:grid-cols-2 lg:grid-cols-4">
           <div className="relative">
-            <h2 className="mb-4 text-3xl font-bold tracking-tight">Stay Connected</h2>
-            <p className="mb-6 text-muted-foreground">
+            <h2 className="mb-4 text-3xl font-bold tracking-tight text-gray-900">Stay Connected</h2>
+            <p className="mb-6 text-gray-600">
               Join our newsletter for the latest updates and exclusive offers.
             </p>
             <form className="relative">
@@ -51,28 +51,28 @@ function Footerdemo() {
             <div className="absolute -right-4 top-0 h-24 w-24 rounded-full bg-primary/10 blur-2xl" />
           </div>
           <div>
-            <h3 className="mb-4 text-lg font-semibold">Quick Links</h3>
+            <h3 className="mb-4 text-lg font-semibold text-gray-900">Quick Links</h3>
             <nav className="space-y-2 text-sm">
-              <a href="#" className="block transition-colors hover:text-primary">
+              <a href="#" className="block text-gray-600 transition-colors hover:text-gray-900">
                 Home
               </a>
-              <a href="#" className="block transition-colors hover:text-primary">
+              <a href="#" className="block text-gray-600 transition-colors hover:text-gray-900">
                 About Us
               </a>
-              <a href="#" className="block transition-colors hover:text-primary">
+              <a href="#" className="block text-gray-600 transition-colors hover:text-gray-900">
                 Services
               </a>
-              <a href="#" className="block transition-colors hover:text-primary">
+              <a href="#" className="block text-gray-600 transition-colors hover:text-gray-900">
                 Products
               </a>
-              <a href="#" className="block transition-colors hover:text-primary">
+              <a href="#" className="block text-gray-600 transition-colors hover:text-gray-900">
                 Contact
               </a>
             </nav>
           </div>
           <div>
-            <h3 className="mb-4 text-lg font-semibold">Contact Us</h3>
-            <address className="space-y-2 text-sm not-italic">
+            <h3 className="mb-4 text-lg font-semibold text-gray-900">Contact Us</h3>
+            <address className="space-y-2 text-sm not-italic text-gray-600">
               <p>123 Innovation Street</p>
               <p>Tech City, TC 12345</p>
               <p>Phone: (123) 456-7890</p>
@@ -80,7 +80,7 @@ function Footerdemo() {
             </address>
           </div>
           <div className="relative">
-            <h3 className="mb-4 text-lg font-semibold">Follow Us</h3>
+            <h3 className="mb-4 text-lg font-semibold text-gray-900">Follow Us</h3>
             <div className="mb-6 flex space-x-4">
               <TooltipProvider>
                 <Tooltip>
@@ -149,25 +149,25 @@ function Footerdemo() {
             </div>
           </div>
         </div>
-        <div className="mt-12 flex flex-col items-center justify-between gap-4 border-t pt-8 text-center md:flex-row">
-          <p className="text-sm text-muted-foreground">
+        <div className="mt-12 flex flex-col items-center justify-between gap-4 border-t border-gray-200 pt-8 text-center md:flex-row">
+          <p className="text-sm text-gray-600">
             © 2024 Your Company. All rights reserved.
           </p>
           <nav className="flex gap-4 text-sm">
-            <a href="#" className="transition-colors hover:text-primary">
+            <a href="#" className="text-gray-600 transition-colors hover:text-gray-900">
               Privacy Policy
             </a>
-            <a href="#" className="transition-colors hover:text-primary">
+            <a href="#" className="text-gray-600 transition-colors hover:text-gray-900">
               Terms of Service
             </a>
-            <a href="#" className="transition-colors hover:text-primary">
+            <a href="#" className="text-gray-600 transition-colors hover:text-gray-900">
               Cookie Settings
             </a>
           </nav>
         </div>
       </div>
-      <div className="w-full text-center py-8 border-t">
-        <h1 className="text-6xl md:text-8xl font-bold tracking-tight">AURION</h1>
+      <div className="w-full text-center py-8 border-t border-gray-200">
+        <h1 className="text-6xl md:text-8xl font-bold tracking-tight text-gray-900">AURION</h1>
       </div>
     </footer>
   )
