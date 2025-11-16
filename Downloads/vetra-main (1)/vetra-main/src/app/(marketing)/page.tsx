@@ -3,6 +3,7 @@
 export const dynamic = 'force-dynamic';
 
 import { GooeyText } from "@/components/ui/gooey-text-morphing";
+import { AnomalousMatterHero } from "@/components/anomalous-matter-hero";
 import { useEffect } from "react";
 import { renderCanvas } from "@/components/canvas-effect";
 
@@ -27,6 +28,11 @@ const HomePage = () => {
                     textClassName="text-white"
                 />
             </div>
+            <AnomalousMatterHero 
+                title="Observation Log: Anomaly 7"
+                subtitle="Matter in a state of constant, beautiful flux."
+                description="A new form of digital existence has been observed. It responds to stimuli, changes form, and exudes an unknown energy. Further study is required."
+            />
         </div>
     )
 };
