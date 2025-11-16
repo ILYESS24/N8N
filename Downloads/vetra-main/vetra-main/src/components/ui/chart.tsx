@@ -120,6 +120,13 @@ const ChartTooltipContent = React.forwardRef<
       className,
       indicator = "dot",
       hideLabel = false,
+    }: {
+      active?: boolean;
+      payload?: any;
+      className?: string;
+      indicator?: "dot" | "line";
+      hideLabel?: boolean;
+    } & any
       hideIndicator = false,
       label,
       labelFormatter,
