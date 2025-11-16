@@ -1,6 +1,8 @@
 import Wrapper from "@/components/global/wrapper";
+import AIInputSection from "@/components/marketing/ai-input-section";
 import Analysis from "@/components/marketing/analysis";
 import Companies from "@/components/marketing/companies";
+import CpuSection from "@/components/marketing/cpu-section";
 import CTA from "@/components/marketing/cta";
 import Features from "@/components/marketing/features";
 import Hero from "@/components/marketing/hero";
@@ -14,6 +16,8 @@ const HomePage = () => {
             <Hero />
             <Companies />
             <Features />
+            <CpuSection />
+            <AIInputSection />
             <Analysis />
             <Integration />
             <Pricing />

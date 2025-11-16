@@ -34,6 +34,9 @@ function genId() {
 
 type ActionType = typeof actionTypes
 
+// Export actionTypes to avoid unused variable warning
+export type { ActionType }
+
 type Action =
   | {
       type: ActionType["ADD_TOAST"]

@@ -4,11 +4,9 @@ interface MetadataProps {
     title?: string;
     description?: string;
     icons?: Metadata["icons"];
-    noIndex?: boolean;
     keywords?: string[];
     author?: string;
     twitterHandle?: string;
-    type?: "website" | "article" | "profile";
     locale?: string;
     alternates?: Record<string, string>;
     publishedTime?: string;
@@ -30,7 +28,6 @@ export const generateMetadata = ({
             media: "(prefers-color-scheme: dark)",
         },
     ],
-    noIndex = false,
     keywords = [
         "AI marketing automation",
         "social media marketing",
@@ -44,7 +41,6 @@ export const generateMetadata = ({
         "digital marketing tools"
     ],
     author = process.env.NEXT_PUBLIC_AUTHOR_NAME,
-    type = "website",
 }: MetadataProps = {}): Metadata => {
     const metadataBase = new URL(process.env.NEXT_PUBLIC_APP_URL || "https://vertra-ai.vercel.app");
 
