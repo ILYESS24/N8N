@@ -21,7 +21,7 @@ const Pricing = () => {
     };
 
     return (
-        <div className="relative flex flex-col items-center justify-center max-w-5xl py-20 mx-auto">
+        <div className="relative flex flex-col items-center justify-center w-full py-20 mx-auto">
 
             <div className="flex flex-col items-center justify-center max-w-2xl mx-auto">
                 <Container>
@@ -52,7 +52,7 @@ const Pricing = () => {
                 </Container>
             </div>
 
-            <div className="grid w-full grid-cols-1 lg:grid-cols-2 pt-8 lg:pt-12 gap-4 lg:gap-6 max-w-4xl mx-auto">
+            <div className="grid w-full grid-cols-1 lg:grid-cols-2 pt-8 lg:pt-12 gap-4 lg:gap-6 mx-auto">
                 {PLANS.map((plan, idx) => (
                     <Container key={idx} delay={0.1 * idx + 0.2}>
                         <Plan key={plan.id} plan={plan} billPlan={billPlan} />

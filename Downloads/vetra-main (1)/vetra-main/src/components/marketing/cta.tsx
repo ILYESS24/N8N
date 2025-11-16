@@ -9,7 +9,7 @@ import Particles from "../ui/particles";
 const CTA = () => {
     return (
         <div className="relative flex flex-col items-center justify-center w-full py-20">
-            <Container className="py-20 max-w-6xl mx-auto">
+            <Container className="py-20 w-full mx-auto">
                 <div className="relative flex flex-col items-center justify-center py-12 lg:py-20 px-0 rounded-2xl lg:rounded-3xl bg-background/20 text-center border border-foreground/20 overflow-hidden">
                     <Particles
                         refresh

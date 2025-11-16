@@ -23,7 +23,7 @@ const Companies = () => {
                 </div>
             </Container>
 
-            <Container delay={0.1} className="w-full max-w-6xl mx-auto pt-16">
+            <Container delay={0.1} className="w-full mx-auto pt-16">
                 <LogoCloud logos={logos} />
             </Container>
         </div>
