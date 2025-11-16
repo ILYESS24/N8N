@@ -47,6 +47,7 @@ Line.prototype = {
     // @ts-ignore
     this.nodes = [];
     for (var t, n = 0; n < E.size; n++) {
+      // @ts-ignore
       t = new Node();
       // @ts-ignore
       t.x = pos.x;
