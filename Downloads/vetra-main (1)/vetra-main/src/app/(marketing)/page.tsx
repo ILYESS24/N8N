@@ -10,18 +10,9 @@ import { Hero } from "@/components/void-hero";
 
 const HomePage = () => {
     return (
-        <>
-            <Hero 
-                title="Transform your marketing with AI Precision"
-                description="AI-powered automation and insights to maximize your campaigns and grow your brand."
-                links={[
-                    { name: "Home", href: "#" },
-                    { name: "Features", href: "#features" },
-                    { name: "Pricing", href: "#pricing" },
-                    { name: "About", href: "#about" }
-                ]}
-            />
-            <Wrapper className="py-20 relative">
+        <div className="bg-black min-h-screen">
+            <Hero />
+            <Wrapper className="py-20 relative bg-black">
                 <Companies />
                 <Features />
                 <Analysis />
@@ -30,7 +21,7 @@ const HomePage = () => {
                 <LanguageSupport />
                 <CTA />
             </Wrapper>
-        </>
+        </div>
     )
 };
 

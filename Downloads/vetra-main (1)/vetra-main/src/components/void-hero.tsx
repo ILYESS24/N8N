@@ -131,59 +131,11 @@ function Scene() {
   );
 }
 
-function Navbar({ links }: { links: Array<{ name: string; href: string }> }) {
-
+export const Hero: React.FC = () => {
   return (
-    <nav className="absolute top-4 left-4 right-4 md:top-10 md:left-10 md:right-10 z-30">
-      <ul className="hidden md:flex gap-8 lg:gap-12">
-        {links.map((link) => (
-          <li key={link.name}>
-            <a
-              href={link.href}
-              className="text-sm font-light tracking-[0.2em] mix-blend-difference text-white hover:opacity-70 transition-opacity duration-300"
-            >
-              {link.name}
-            </a>
-          </li>
-        ))}
-      </ul>
-      
-      <ul className="md:hidden flex flex-col gap-3 items-end">
-        {links.map((link) => (
-          <li key={link.name}>
-            <a
-              href={link.href}
-              className="text-xs font-light tracking-[0.15em] mix-blend-difference text-white hover:opacity-70 transition-opacity duration-300"
-            >
-              {link.name}
-            </a>
-          </li>
-        ))}
-      </ul>
-    </nav>
-  );
-}
-
-interface HeroProps {
-  title: string;
-  description: string;
-  links: Array<{ name: string; href: string }>;
-}
-
-export const Hero: React.FC<HeroProps> = ({ title, description, links }) => {
-  return (
-    <div className="h-svh w-screen relative bg-[#0A0A0A]">
-      <Navbar links={links} />
+    <div className="h-svh w-screen relative bg-black">
       <div className="absolute inset-0">
         <Scene />
-      </div>
-      <div className="absolute bottom-4 left-4 md:bottom-10 md:left-10 z-20 max-w-md">
-        <h1 className="text-2xl md:text-3xl font-light tracking-tight mb-3 text-white">
-            {title}
-        </h1>
-        <p className="font-mono text-xs md:text-sm leading-relaxed font-light tracking-tight text-white/50">
-            {description}
-        </p>
       </div>
     </div>
   );
