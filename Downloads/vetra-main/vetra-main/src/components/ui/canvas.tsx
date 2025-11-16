@@ -1,4 +1,5 @@
-function n(e) {
+// @ts-ignore
+function n(e: any) {
   // @ts-ignore
   this.init(e || {});
 }
