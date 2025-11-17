@@ -6,7 +6,6 @@ import { useState, useEffect } from "react";
 import { useRouter } from "next/navigation";
 import { ArrowUpRight, Star, Check, Sparkles, Lightbulb, Target, Palette, Monitor, Megaphone, PenTool, BarChart3 } from "lucide-react";
 import { LogoCloud } from "@/components/logo-cloud-3";
-import Image from "next/image";
 
 const HomePage = () => {
     const router = useRouter();
@@ -53,12 +52,6 @@ const HomePage = () => {
         { alt: "Replicate" },
     ];
 
-    const heroAvatars = [
-        { alt: "Creative Director", src: "https://images.unsplash.com/photo-1544723795-3fb6469f5b39?auto=format&fit=crop&w=200&q=80" },
-        { alt: "Product Designer", src: "https://images.unsplash.com/photo-1524504388940-b1c1722653e1?auto=format&fit=crop&w=200&q=80" },
-        { alt: "AI Engineer", src: "https://images.unsplash.com/photo-1504593811423-6dd665756598?auto=format&fit=crop&w=200&q=80" },
-        { alt: "Brand Strategist", src: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=200&q=80" },
-    ];
 
     const navItems = [
         { label: "Home", href: "#home" },
@@ -142,16 +135,6 @@ const HomePage = () => {
                             </span>
                         </button>
                         <div className="flex items-center gap-4">
-                            <div className="flex -space-x-2">
-                                {heroAvatars.map((avatar, i) => (
-                                    <img
-                                        key={i}
-                                        src={avatar.src}
-                                        alt={avatar.alt}
-                                        className="w-11 h-11 rounded-full border-2 border-white object-cover shadow"
-                                    />
-                                ))}
-                            </div>
                             <div className="flex items-center gap-1">
                                 {[1, 2, 3, 4].map((i) => (
                                     <Star key={i} className="w-4 h-4 fill-yellow-400 text-yellow-400" />
@@ -283,18 +266,7 @@ const HomePage = () => {
                             { name: "Hotto", tags: ["Visual Story telling", "Web & Mobile Design"] },
                         ].map((project, i) => (
                             <div key={i} className="bg-gray-100 rounded-2xl p-6">
-                                <div className="w-full h-64 rounded-xl mb-4 overflow-hidden">
-                                    <img 
-                                        src={[
-                                            "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=800&q=80",
-                                            "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=800&q=80",
-                                            "https://images.unsplash.com/photo-1551650975-87deedd944c3?auto=format&fit=crop&w=800&q=80",
-                                            "https://images.unsplash.com/photo-1551434678-e076c223a692?auto=format&fit=crop&w=800&q=80"
-                                        ][i]}
-                                        alt={project.name}
-                                        className="w-full h-full object-cover"
-                                    />
-                                </div>
+                                <div className="w-full h-64 rounded-xl mb-4 bg-gray-200"></div>
                                 <h3 className="text-xl font-normal text-gray-900 mb-4">{project.name}</h3>
                                 <div className="flex gap-2">
                                     {project.tags.map((tag, j) => (
@@ -342,12 +314,7 @@ const HomePage = () => {
                                 <p className="text-xs uppercase tracking-[0.2em] text-gray-400 mb-3">Customer Stories</p>
                                 <p className="text-2xl font-normal">Their creativity and attention to detail transformed our brand completely!</p>
                             </div>
-                            <div className="rounded-2xl bg-white/10 border border-white/20 h-48 flex items-center justify-center overflow-hidden">
-                                <img 
-                                    src="https://images.unsplash.com/photo-1551434678-e076c223a692?auto=format&fit=crop&w=400&q=80"
-                                    alt="Client testimonial"
-                                    className="w-full h-full object-cover opacity-50"
-                                />
+                            <div className="rounded-2xl bg-white/10 border border-white/20 h-48 flex items-center justify-center">
                             </div>
                         </div>
 
