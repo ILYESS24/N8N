@@ -540,20 +540,32 @@ const HomePage = () => {
 
             {/* CTA Section */}
             <section className="py-20 px-6 bg-transparent z-10 relative">
-                <div className="max-w-3xl mx-auto text-center">
-                    <motion.h3 className="text-4xl md:text-6xl font-normal text-gray-900 mb-6" {...fadeInUp}>
-                        Innovative Solutions for <span className="italic">Your Brand</span>
-                    </motion.h3>
-                    <motion.p className="text-xl text-gray-600 mb-8" {...fadeInUp}>
-                        Looking to elevate your brand? We craft immersive experiences that captivate, engage, and make your business unforgettable in every interaction.
-                    </motion.p>
-                    <button
-                        onClick={() => router.push("/login")}
-                        className="flex items-center gap-2 bg-black text-white px-8 py-4 rounded-full hover:bg-gray-900 transition-colors mx-auto"
+                <div className="max-w-4xl mx-auto">
+                    <motion.div 
+                        className="rounded-3xl p-12 md:p-16 border border-gray-200 shadow-sm bg-white"
+                        style={{
+                            backgroundImage: `linear-gradient(to right, rgba(232, 244, 248, 0.3) 0%, rgba(245, 240, 232, 0.3) 50%, rgba(255, 248, 231, 0.3) 100%)`,
+                        }}
+                        {...fadeInUp}
                     >
-                        <span>Get a Free Proposal</span>
-                        <ArrowUpRight className="w-4 h-4" />
-                    </button>
+                        <div className="text-center">
+                            <motion.h3 className="text-4xl md:text-5xl font-normal text-gray-900 mb-6" {...fadeInUp}>
+                                Innovative Solutions for <span className="italic font-normal">bold</span> <span className="text-gray-500">brands</span>
+                            </motion.h3>
+                            <motion.p className="text-lg text-gray-600 mb-10 max-w-2xl mx-auto" {...fadeInUp}>
+                                Looking to elevate your brand? We craft immersive experiences that captivate, engage, and make your business unforgettable in every interaction.
+                            </motion.p>
+                            <button
+                                onClick={() => router.push("/login")}
+                                className="inline-flex items-center gap-2 bg-black text-white px-8 py-4 rounded-full hover:bg-gray-900 transition-colors"
+                            >
+                                <span>Let's craft together</span>
+                                <span className="inline-flex w-7 h-7 rounded-full bg-white text-gray-900 items-center justify-center">
+                                    <ArrowUpRight className="w-4 h-4" />
+                                </span>
+                            </button>
+                        </div>
+                    </motion.div>
                 </div>
             </section>
 
