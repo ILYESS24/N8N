@@ -5,11 +5,13 @@ export const dynamic = 'force-dynamic';
 import { useState, useEffect } from "react";
 import { useRouter } from "next/navigation";
 import { ArrowUpRight, Star, Check, Sparkles, Lightbulb, Target, Palette, Monitor, Megaphone, PenTool, BarChart3 } from "lucide-react";
+import { LogoCloud } from "@/components/logo-cloud-3";
 import Image from "next/image";
 
 const HomePage = () => {
     const router = useRouter();
     const [openFaq, setOpenFaq] = useState<number | null>(null);
+    const [activeNav, setActiveNav] = useState("#home");
 
     const faqs = [
         {
@@ -38,31 +40,53 @@ const HomePage = () => {
         }
     ];
 
+    const brandLogos = [
+        { alt: "Google", src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/google/google-original.svg" },
+        { alt: "Meta", src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/facebook/facebook-original.svg" },
+        { alt: "Amazon", src: "https://upload.wikimedia.org/wikipedia/commons/a/a9/Amazon_logo.svg" },
+        { alt: "Netflix", src: "https://upload.wikimedia.org/wikipedia/commons/0/08/Netflix_2015_logo.svg" },
+        { alt: "Spotify", src: "https://upload.wikimedia.org/wikipedia/commons/1/19/Spotify_logo_without_text.svg" },
+        { alt: "Airbnb", src: "https://upload.wikimedia.org/wikipedia/commons/6/69/Airbnb_Logo_B%C3%A9lo.svg" },
+        { alt: "Stripe", src: "https://upload.wikimedia.org/wikipedia/commons/2/2b/Stripe_Logo%2C_revised_2016.svg" },
+        { alt: "Notion", src: "https://upload.wikimedia.org/wikipedia/commons/e/e9/Notion-logo.svg" },
+        { alt: "Figma", src: "https://upload.wikimedia.org/wikipedia/commons/3/33/Figma-logo.svg" },
+        { alt: "Slack", src: "https://upload.wikimedia.org/wikipedia/commons/7/76/Slack_Icon.png" },
+    ];
+
+    const navItems = [
+        { label: "Home", href: "#home" },
+        { label: "About us", href: "#about-us" },
+        { label: "Services", href: "#services" },
+        { label: "Work", href: "#work" },
+        { label: "Team", href: "#team" },
+        { label: "Pricing", href: "#pricing" },
+        { label: "Awards", href: "#award" },
+    ];
+
     return (
         <div className="min-h-screen w-full relative bg-white">
             {/* Gradient Background */}
             <div className="fixed inset-0 z-0 bg-gradient-to-br from-yellow-50 via-white to-purple-50 opacity-50" />
 
             {/* Navigation */}
-            <nav className="fixed top-0 left-0 right-0 z-50 bg-white/80 backdrop-blur-lg border-b border-gray-200">
-                <div className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
-                    <div className="text-2xl font-bold">Awake</div>
-                    <div className="hidden md:flex items-center gap-8">
-                        <a href="#home" className="text-gray-700 hover:text-gray-900">Home</a>
-                        <a href="#about-us" className="text-gray-700 hover:text-gray-900">About us</a>
-                        <a href="#services" className="text-gray-700 hover:text-gray-900">Services</a>
-                        <a href="#work" className="text-gray-700 hover:text-gray-900">Work</a>
-                        <a href="#team" className="text-gray-700 hover:text-gray-900">Team</a>
-                        <a href="#pricing" className="text-gray-700 hover:text-gray-900">Pricing</a>
-                        <a href="#award" className="text-gray-700 hover:text-gray-900">Awards</a>
+            <nav className="fixed top-6 left-0 right-0 z-50 flex justify-center px-4">
+                <div className="inline-flex items-center bg-gradient-to-r from-[#DAEEF4] via-[#F2F7FC] to-[#FBF0DB] rounded-full p-1 shadow-lg border border-white/70">
+                    <div className="flex items-center gap-2 bg-white/70 backdrop-blur rounded-full px-2 py-1 text-sm text-gray-600">
+                        {navItems.map((item) => (
+                            <a
+                                key={item.href}
+                                href={item.href}
+                                onClick={() => setActiveNav(item.href)}
+                                className={`px-4 py-2 rounded-full transition-all ${
+                                    activeNav === item.href
+                                        ? "bg-white text-gray-900 shadow-sm"
+                                        : "text-gray-600 hover:text-gray-900"
+                                }`}
+                            >
+                                {item.label}
+                            </a>
+                        ))}
                     </div>
-                    <button
-                        onClick={() => router.push("/login")}
-                        className="flex items-center gap-2 bg-black text-white px-6 py-2 rounded-full hover:bg-gray-900 transition-colors"
-                    >
-                        <span>Let's Collaborate</span>
-                        <ArrowUpRight className="w-4 h-4" />
-                    </button>
                 </div>
             </nav>
 
@@ -103,15 +127,12 @@ const HomePage = () => {
 
             {/* Logo Cloud Section */}
             <section className="w-full py-12 bg-white z-10 relative">
-                <div className="max-w-7xl mx-auto px-6">
-                    <div className="text-center mb-8">
-                        <p className="text-gray-600">Loved by 100,000+ big and small brands around the world</p>
-                    </div>
-                    <div className="flex items-center justify-center gap-12 flex-wrap opacity-60">
-                        {[1, 2, 3, 4, 5].map((i) => (
-                            <div key={i} className="text-2xl font-bold text-gray-400">Brand {i}</div>
-                        ))}
-                    </div>
+                <div className="max-w-6xl mx-auto px-6 text-center">
+                    <p className="text-gray-600 text-lg">Loved by 100,000+ big and small brands around the world</p>
+                    <LogoCloud
+                        logos={brandLogos}
+                        className="mt-8"
+                    />
                 </div>
             </section>
 
@@ -144,18 +165,18 @@ const HomePage = () => {
                         </div>
                     </div>
                     <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-                        <div className="text-center">
-                            <div className="text-6xl font-normal text-gray-900 mb-2">+40</div>
-                            <p className="text-gray-600">Total Projects Completed</p>
-                        </div>
-                        <div className="text-center">
-                            <div className="text-6xl font-normal text-gray-900 mb-2">+15</div>
-                            <p className="text-gray-600">Years of Experience</p>
-                        </div>
-                        <div className="text-center">
-                            <div className="text-6xl font-normal text-gray-900 mb-2">+12</div>
-                            <p className="text-gray-600">Design Awards</p>
-                        </div>
+                        {[
+                            { value: "+40", label: "Total Projects Completed" },
+                            { value: "+15", label: "Years of Experience" },
+                            { value: "+12", label: "Design Awards" },
+                        ].map((item, i) => (
+                            <div key={i} className="text-center">
+                                <div className="text-[88px] leading-none font-light text-gray-900 mb-4 tracking-tight">
+                                    {item.value}
+                                </div>
+                                <p className="text-lg text-gray-600">{item.label}</p>
+                            </div>
+                        ))}
                     </div>
                 </div>
             </section>
@@ -269,7 +290,7 @@ const HomePage = () => {
             {/* Testimonials Section */}
             <section className="py-20 px-6 bg-white z-10 relative">
                 <div className="max-w-6xl mx-auto">
-                    <div className="grid gap-6 md:grid-cols-[minmax(0,2fr)_1fr] mb-14 relative">
+                    <div className="grid gap-6 md:grid-cols-[minmax(0,2fr)_1fr] mb-14">
                         <div className="rounded-[32px] overflow-hidden bg-black text-white p-10 flex flex-col justify-end min-h-[360px]">
                             <p className="text-xs uppercase tracking-[0.2em] text-gray-300 mb-4">Customer Stories</p>
                             <p className="text-2xl md:text-3xl font-normal leading-snug mb-8">
@@ -291,26 +312,6 @@ const HomePage = () => {
                             <div className="text-[72px] leading-none font-light">91%</div>
                         </div>
 
-                        {/* Floating navigation pill */}
-                        <div className="absolute left-1/2 top-full -translate-x-1/2 -translate-y-1/2 bg-white shadow-xl border border-gray-200 rounded-full px-6 py-3 flex items-center gap-6 w-full md:w-auto">
-                            <div className="font-semibold">Awake</div>
-                            <div className="hidden md:flex items-center gap-5 text-sm text-gray-700">
-                                {["Home", "About us", "Services", "Work", "Team", "Pricing", "Awards"].map((item) => (
-                                    <a key={item} href={`#${item.toLowerCase().replace(/ /g, '-')}`} className="hover:text-gray-900">
-                                        {item}
-                                    </a>
-                                ))}
-                            </div>
-                            <button
-                                onClick={() => router.push("/login")}
-                                className="ml-auto flex items-center gap-2 bg-black text-white px-4 py-2 rounded-full text-sm hover:bg-gray-900 transition-colors"
-                            >
-                                Let's Collaborate
-                                <span className="inline-flex w-6 h-6 rounded-full bg-white text-black items-center justify-center">
-                                    <ArrowUpRight className="w-3 h-3" />
-                                </span>
-                            </button>
-                        </div>
                     </div>
 
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-16">
