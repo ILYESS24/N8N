@@ -41,16 +41,23 @@ const HomePage = () => {
     ];
 
     const brandLogos = [
-        { alt: "Google", src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/google/google-original.svg" },
-        { alt: "Meta", src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/facebook/facebook-original.svg" },
-        { alt: "Amazon", src: "https://upload.wikimedia.org/wikipedia/commons/a/a9/Amazon_logo.svg" },
-        { alt: "Netflix", src: "https://upload.wikimedia.org/wikipedia/commons/0/08/Netflix_2015_logo.svg" },
-        { alt: "Spotify", src: "https://upload.wikimedia.org/wikipedia/commons/1/19/Spotify_logo_without_text.svg" },
-        { alt: "Airbnb", src: "https://upload.wikimedia.org/wikipedia/commons/6/69/Airbnb_Logo_B%C3%A9lo.svg" },
-        { alt: "Stripe", src: "https://upload.wikimedia.org/wikipedia/commons/2/2b/Stripe_Logo%2C_revised_2016.svg" },
-        { alt: "Notion", src: "https://upload.wikimedia.org/wikipedia/commons/e/e9/Notion-logo.svg" },
+        { alt: "OpenAI", src: "https://upload.wikimedia.org/wikipedia/commons/4/4d/OpenAI_Logo.svg" },
+        { alt: "Adobe", src: "https://upload.wikimedia.org/wikipedia/commons/4/4c/Adobe_Corporate_Logo.svg" },
         { alt: "Figma", src: "https://upload.wikimedia.org/wikipedia/commons/3/33/Figma-logo.svg" },
-        { alt: "Slack", src: "https://upload.wikimedia.org/wikipedia/commons/7/76/Slack_Icon.png" },
+        { alt: "Canva", src: "https://upload.wikimedia.org/wikipedia/commons/1/1b/Canva_Logo.svg" },
+        { alt: "DeepMind", src: "https://upload.wikimedia.org/wikipedia/commons/1/17/Google_DeepMind_logo_%282023%29.svg" },
+        { alt: "Hugging Face", src: "https://upload.wikimedia.org/wikipedia/commons/6/62/Hugging_Face_logo.svg" },
+        { alt: "Autodesk", src: "https://upload.wikimedia.org/wikipedia/commons/7/72/Autodesk_logo_2021.svg" },
+        { alt: "Dribbble", src: "https://upload.wikimedia.org/wikipedia/commons/0/08/Dribbble_logo.svg" },
+        { alt: "Midjourney", src: "https://logowik.com/content/uploads/images/midjourney9159.jpg" },
+        { alt: "Stability AI", src: "https://static.wixstatic.com/media/11062b_233c6f0ca6c64cd8ae0f1a7ccaa7e317~mv2.png/v1/fill/w_512,h_512/11062b_233c6f0ca6c64cd8ae0f1a7ccaa7e317~mv2.png" },
+    ];
+
+    const heroAvatars = [
+        { alt: "Creative Director", src: "https://images.unsplash.com/photo-1544723795-3fb6469f5b39?auto=format&fit=crop&w=200&q=80" },
+        { alt: "Product Designer", src: "https://images.unsplash.com/photo-1524504388940-b1c1722653e1?auto=format&fit=crop&w=200&q=80" },
+        { alt: "AI Engineer", src: "https://images.unsplash.com/photo-1504593811423-6dd665756598?auto=format&fit=crop&w=200&q=80" },
+        { alt: "Brand Strategist", src: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=200&q=80" },
     ];
 
     const navItems = [
@@ -69,48 +76,77 @@ const HomePage = () => {
             <div className="fixed inset-0 z-0 bg-gradient-to-br from-yellow-50 via-white to-purple-50 opacity-50" />
 
             {/* Navigation */}
-            <nav className="fixed top-6 left-0 right-0 z-50 flex justify-center px-4">
-                <div className="inline-flex items-center bg-gradient-to-r from-[#DAEEF4] via-[#F2F7FC] to-[#FBF0DB] rounded-full p-1 shadow-lg border border-white/70">
-                    <div className="flex items-center gap-2 bg-white/70 backdrop-blur rounded-full px-2 py-1 text-sm text-gray-600">
-                        {navItems.map((item) => (
-                            <a
-                                key={item.href}
-                                href={item.href}
-                                onClick={() => setActiveNav(item.href)}
-                                className={`px-4 py-2 rounded-full transition-all ${
-                                    activeNav === item.href
-                                        ? "bg-white text-gray-900 shadow-sm"
-                                        : "text-gray-600 hover:text-gray-900"
-                                }`}
-                            >
-                                {item.label}
-                            </a>
-                        ))}
+            <nav className="fixed top-6 left-0 right-0 z-50 flex items-center justify-center px-4">
+                <div className="flex w-full max-w-5xl items-center justify-between gap-4">
+                    <div className="inline-flex items-center bg-gradient-to-r from-[#DAEEF4] via-[#F2F7FC] to-[#FBF0DB] rounded-full p-1 shadow-lg border border-white/70">
+                        <div className="bg-white rounded-full px-4 py-2 text-sm font-semibold tracking-wide text-gray-900 mr-1">
+                            AURION
+                        </div>
+                        <div className="flex items-center gap-1 bg-white/70 backdrop-blur rounded-full px-2 py-1 text-sm text-gray-600">
+                            {navItems.map((item) => (
+                                <a
+                                    key={item.href}
+                                    href={item.href}
+                                    onClick={() => setActiveNav(item.href)}
+                                    className={`px-4 py-2 rounded-full transition-all ${
+                                        activeNav === item.href
+                                            ? "bg-white text-gray-900 shadow-sm"
+                                            : "text-gray-600 hover:text-gray-900"
+                                    }`}
+                                >
+                                    {item.label}
+                                </a>
+                            ))}
+                        </div>
                     </div>
+                    <button
+                        onClick={() => router.push("/register")}
+                        className="hidden sm:inline-flex items-center gap-2 bg-black text-white px-6 py-3 rounded-full font-medium shadow-lg hover:bg-gray-900 transition-colors"
+                    >
+                        Get Started
+                        <span className="inline-flex w-7 h-7 rounded-full bg-white text-gray-900 items-center justify-center">
+                            <ArrowUpRight className="w-4 h-4" />
+                        </span>
+                    </button>
                 </div>
             </nav>
 
             {/* Hero Section */}
-            <section id="home" className="relative min-h-screen flex items-center justify-center pt-20 px-6 z-10">
-                <div className="max-w-7xl mx-auto text-center">
-                    <h1 className="text-6xl md:text-8xl font-normal text-gray-900 mb-6 leading-tight">
-                        Building bold brands with <span className="italic">thoughtful design</span>
-                    </h1>
-                    <p className="text-xl text-gray-700 max-w-2xl mx-auto mb-8">
+            <section id="home" className="relative min-h-screen flex items-center justify-center pt-24 px-6 z-10">
+                <div className="max-w-5xl mx-auto text-center">
+                    <div className="mb-8">
+                        <p className="text-[clamp(3rem,8vw,5.5rem)] leading-[1.05] font-semibold text-gray-900">
+                            Building bold brands with
+                        </p>
+                        <p
+                            className="text-[clamp(3rem,8vw,5.5rem)] leading-[1.05] text-gray-900 italic font-normal"
+                            style={{ fontFamily: "'Instrument Serif', serif" }}
+                        >
+                            thoughtful design
+                        </p>
+                    </div>
+                    <p className="text-lg md:text-xl text-gray-600 max-w-2xl mx-auto mb-10">
                         At Awake, we help small startups tackle the world's biggest challenges with tailored solutions, guiding you from strategy to success in a competitive market.
                     </p>
                     <div className="flex items-center justify-center gap-8">
                         <button
                             onClick={() => router.push("/login")}
-                            className="flex items-center gap-2 bg-black text-white px-8 py-4 rounded-full hover:bg-gray-900 transition-colors"
+                            className="flex items-center gap-2 bg-gradient-to-r from-[#6C49F8] to-[#8A57FF] text-white px-8 py-4 rounded-full text-lg font-medium shadow-lg hover:opacity-90 transition"
                         >
                             <span>Get Started</span>
-                            <ArrowUpRight className="w-4 h-4" />
+                            <span className="inline-flex w-8 h-8 rounded-full bg-white text-gray-900 items-center justify-center">
+                                <ArrowUpRight className="w-4 h-4" />
+                            </span>
                         </button>
                         <div className="flex items-center gap-4">
                             <div className="flex -space-x-2">
-                                {[1, 2, 3, 4].map((i) => (
-                                    <div key={i} className="w-10 h-10 rounded-full bg-gray-300 border-2 border-white" />
+                                {heroAvatars.map((avatar, i) => (
+                                    <img
+                                        key={i}
+                                        src={avatar.src}
+                                        alt={avatar.alt}
+                                        className="w-11 h-11 rounded-full border-2 border-white object-cover shadow"
+                                    />
                                 ))}
                             </div>
                             <div className="flex items-center gap-1">
