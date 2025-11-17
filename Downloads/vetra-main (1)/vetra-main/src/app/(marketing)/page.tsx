@@ -7,6 +7,7 @@ import { useRouter } from "next/navigation";
 import { ArrowUpRight, Star, Check, Sparkles, Lightbulb, Target, Palette, Monitor, Megaphone, PenTool, BarChart3 } from "lucide-react";
 import { LogoCloud } from "@/components/logo-cloud-3";
 import { motion } from "framer-motion";
+import { Skiper19 } from "@/components/svg-follow-scroll";
 
 // Animation variants for scroll animations
 const fadeInUp = {
@@ -162,6 +163,9 @@ const HomePage = () => {
                     </div>
                 </div>
             </section>
+
+            {/* SVG Follow Scroll Section */}
+            <Skiper19 />
 
             {/* Logo Cloud Section */}
             <section className="w-full py-16 bg-white z-10 relative overflow-hidden">
