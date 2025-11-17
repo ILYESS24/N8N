@@ -41,16 +41,16 @@ const HomePage = () => {
     ];
 
     const brandLogos = [
-        { alt: "OpenAI", src: "https://upload.wikimedia.org/wikipedia/commons/4/4d/OpenAI_Logo.svg" },
-        { alt: "Adobe", src: "https://upload.wikimedia.org/wikipedia/commons/4/4c/Adobe_Corporate_Logo.svg" },
-        { alt: "Figma", src: "https://upload.wikimedia.org/wikipedia/commons/3/33/Figma-logo.svg" },
-        { alt: "Canva", src: "https://upload.wikimedia.org/wikipedia/commons/1/1b/Canva_Logo.svg" },
-        { alt: "DeepMind", src: "https://upload.wikimedia.org/wikipedia/commons/1/17/Google_DeepMind_logo_%282023%29.svg" },
-        { alt: "Hugging Face", src: "https://upload.wikimedia.org/wikipedia/commons/6/62/Hugging_Face_logo.svg" },
-        { alt: "Autodesk", src: "https://upload.wikimedia.org/wikipedia/commons/7/72/Autodesk_logo_2021.svg" },
-        { alt: "Dribbble", src: "https://upload.wikimedia.org/wikipedia/commons/0/08/Dribbble_logo.svg" },
-        { alt: "Midjourney", src: "https://logowik.com/content/uploads/images/midjourney9159.jpg" },
-        { alt: "Stability AI", src: "https://static.wixstatic.com/media/11062b_233c6f0ca6c64cd8ae0f1a7ccaa7e317~mv2.png/v1/fill/w_512,h_512/11062b_233c6f0ca6c64cd8ae0f1a7ccaa7e317~mv2.png" },
+        { alt: "OpenAI", src: "https://logo.clearbit.com/openai.com" },
+        { alt: "Adobe", src: "https://logo.clearbit.com/adobe.com" },
+        { alt: "Figma", src: "https://logo.clearbit.com/figma.com" },
+        { alt: "Canva", src: "https://logo.clearbit.com/canva.com" },
+        { alt: "Google", src: "https://logo.clearbit.com/google.com" },
+        { alt: "Hugging Face", src: "https://logo.clearbit.com/huggingface.co" },
+        { alt: "Autodesk", src: "https://logo.clearbit.com/autodesk.com" },
+        { alt: "Dribbble", src: "https://logo.clearbit.com/dribbble.com" },
+        { alt: "Midjourney", src: "https://logo.clearbit.com/midjourney.com" },
+        { alt: "Stability AI", src: "https://logo.clearbit.com/stability.ai" },
     ];
 
     const heroAvatars = [
