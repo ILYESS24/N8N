@@ -42,15 +42,15 @@ const HomePage = () => {
 
     const brandLogos = [
         { alt: "OpenAI", src: "https://logo.clearbit.com/openai.com" },
-        { alt: "Adobe", src: "https://logo.clearbit.com/adobe.com" },
-        { alt: "Figma", src: "https://logo.clearbit.com/figma.com" },
-        { alt: "Canva", src: "https://logo.clearbit.com/canva.com" },
-        { alt: "Google", src: "https://logo.clearbit.com/google.com" },
+        { alt: "Anthropic", src: "https://logo.clearbit.com/anthropic.com" },
+        { alt: "Google DeepMind", src: "https://logo.clearbit.com/deepmind.com" },
         { alt: "Hugging Face", src: "https://logo.clearbit.com/huggingface.co" },
-        { alt: "Autodesk", src: "https://logo.clearbit.com/autodesk.com" },
-        { alt: "Dribbble", src: "https://logo.clearbit.com/dribbble.com" },
         { alt: "Midjourney", src: "https://logo.clearbit.com/midjourney.com" },
         { alt: "Stability AI", src: "https://logo.clearbit.com/stability.ai" },
+        { alt: "Cohere", src: "https://logo.clearbit.com/cohere.com" },
+        { alt: "Perplexity", src: "https://logo.clearbit.com/perplexity.ai" },
+        { alt: "Character.AI", src: "https://logo.clearbit.com/character.ai" },
+        { alt: "Replicate", src: "https://logo.clearbit.com/replicate.com" },
     ];
 
     const heroAvatars = [

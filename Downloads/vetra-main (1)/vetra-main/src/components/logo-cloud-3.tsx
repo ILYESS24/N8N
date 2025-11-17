@@ -33,7 +33,7 @@ export function LogoCloud({ className, logos, ...props }: LogoCloudProps) {
               {logo.src ? (
                 <img
                   alt={logo.alt}
-                  className="pointer-events-none h-8 select-none md:h-10 w-auto object-contain opacity-60 hover:opacity-100 transition-opacity grayscale"
+                  className="pointer-events-none h-8 select-none md:h-10 w-auto object-contain opacity-70 hover:opacity-100 transition-opacity"
                   height={logo.height || 40}
                   loading="lazy"
                   src={logo.src}
