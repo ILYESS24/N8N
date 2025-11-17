@@ -399,7 +399,7 @@ const HomePage = () => {
             <section id="pricing" className="py-20 px-6 bg-transparent z-10 relative">
                 <div className="max-w-7xl mx-auto">
                     <motion.h2 className="text-4xl md:text-6xl font-normal text-gray-900 mb-16 text-center" {...fadeInUp}>
-                        Pick the plan that fits your <span className="italic">needs</span>
+                        Pick the plan that fits your <span className="italic text-gray-500">start-up</span>
                     </motion.h2>
                     <motion.div className="grid grid-cols-1 md:grid-cols-2 gap-8" {...fadeInUp}>
                         <motion.div 
@@ -409,58 +409,64 @@ const HomePage = () => {
                             viewport={{ once: true, margin: "-50px" }}
                             transition={{ duration: 0.6 }}
                         >
-                            <div className="mb-6">
-                                <span className="px-4 py-2 bg-white/50 rounded-full text-sm text-gray-900">Basic Plan</span>
+                            <div className="mb-4">
+                                <span className="px-4 py-2 bg-black text-white rounded-full text-sm font-normal">Starter</span>
                             </div>
+                            <p className="text-sm text-gray-600 mb-6">For companies who need design support. One request at a time.</p>
                             <h3 className="text-5xl font-normal text-gray-900 mb-8">
-                                $2500<span className="text-2xl text-gray-600">/month</span>
+                                $2500<span className="text-2xl text-gray-600 font-normal">/month</span>
                             </h3>
                             <button
                                 onClick={() => router.push("/login")}
-                                className="w-full flex items-center justify-center gap-2 bg-black text-white px-6 py-3 rounded-full hover:bg-gray-900 transition-colors mb-8"
+                                className="w-full flex items-center justify-center gap-2 bg-white text-gray-900 px-6 py-3 rounded-full hover:bg-gray-100 transition-colors mb-8"
                             >
-                                <span>Get Started</span>
-                                <ArrowUpRight className="w-4 h-4" />
+                                <span>Let's Collaborate</span>
+                                <span className="inline-flex w-7 h-7 rounded-full bg-gray-900 text-white items-center justify-center">
+                                    <ArrowUpRight className="w-4 h-4" />
+                                </span>
                             </button>
                             <div>
-                                <p className="text-sm text-gray-600 mb-4">Features</p>
+                                <p className="text-sm text-gray-900 mb-4 font-normal">Features</p>
                                 <ul className="space-y-3">
-                                    {["20+ design concepts", "3-5 day delivery", "Monthly revisions", "Dedicated support", "Source files"].map((feature, i) => (
+                                    {["Design Updates Every 2 Days", "Mid-level Designer", "SEO optimization", "Monthly analytics", "2x Calls Per Month", "License free assets"].map((feature, i) => (
                                         <li key={i} className="flex items-center gap-3">
                                             <Check className="w-5 h-5 text-gray-900" />
-                                            <span className="text-gray-700">{feature}</span>
+                                            <span className="text-gray-700 font-normal">{feature}</span>
                                         </li>
                                     ))}
                                 </ul>
                             </div>
                         </motion.div>
                         <motion.div 
-                            className="bg-[#1E3A5F] text-white rounded-2xl p-8"
+                            className="bg-[#2563EB] text-white rounded-2xl p-8"
                             initial={{ opacity: 0, x: 30 }}
                             whileInView={{ opacity: 1, x: 0 }}
                             viewport={{ once: true, margin: "-50px" }}
                             transition={{ duration: 0.6 }}
                         >
-                            <div className="mb-6">
-                                <span className="px-4 py-2 bg-white/20 rounded-full text-sm">Pro Plan</span>
+                            <div className="mb-4">
+                                <span className="px-4 py-2 bg-black text-white rounded-full text-sm font-normal">Pro</span>
                             </div>
+                            <p className="text-sm text-white mb-6">2x the speed. Great for an MVP, Web App or complex problem.</p>
                             <h3 className="text-5xl font-normal mb-8">
-                                $3500<span className="text-2xl text-gray-300">/month</span>
+                                $3500<span className="text-2xl text-white/80 font-normal">/month</span>
                             </h3>
                             <button
                                 onClick={() => router.push("/login")}
                                 className="w-full flex items-center justify-center gap-2 bg-white text-gray-900 px-6 py-3 rounded-full hover:bg-gray-100 transition-colors mb-8"
                             >
-                                <span>Get Started</span>
-                                <ArrowUpRight className="w-4 h-4" />
+                                <span>Let's Collaborate</span>
+                                <span className="inline-flex w-7 h-7 rounded-full bg-gray-900 text-white items-center justify-center">
+                                    <ArrowUpRight className="w-4 h-4" />
+                                </span>
                             </button>
                             <div>
-                                <p className="text-sm text-gray-300 mb-4">Features</p>
+                                <p className="text-sm text-white mb-4 font-normal">Features</p>
                                 <ul className="space-y-3">
-                                    {["Unlimited design concepts", "Priority delivery", "Bi-weekly revisions", "24/7 premium support", "Advanced analytics", "Custom integrations"].map((feature, i) => (
+                                    {["Design Updates Daily", "Senior-level Designer", "AI Advisory Framework", "Full-service Creative Team", "4x Calls Per Month", "License free assets"].map((feature, i) => (
                                         <li key={i} className="flex items-center gap-3">
-                                            <Check className="w-5 h-5" />
-                                            <span>{feature}</span>
+                                            <Check className="w-5 h-5 text-white" />
+                                            <span className="text-white font-normal">{feature}</span>
                                         </li>
                                     ))}
                                 </ul>
