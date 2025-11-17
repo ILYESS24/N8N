@@ -318,13 +318,13 @@ const HomePage = () => {
                     </h2>
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
                         {[
-                            { name: "Logan Dang", role: "Wordpress Developer" },
-                            { name: "Ana Belić", role: "Social Media Specialist" },
-                            { name: "Brian Hanley", role: "Product Designer" },
-                            { name: "Darko Stanković", role: "UI Designer" },
+                            { name: "Logan Dang", role: "Wordpress Developer", bgColor: "bg-gray-200" },
+                            { name: "Ana Belić", role: "Social Media Specialist", bgColor: "bg-gray-200" },
+                            { name: "Brian Hanley", role: "Product Designer", bgColor: "bg-slate-300" },
+                            { name: "Darko Stanković", role: "UI Designer", bgColor: "bg-gray-900" },
                         ].map((member, i) => (
-                            <div key={i} className="bg-gray-100 rounded-2xl overflow-hidden">
-                                <div className="w-full h-64 overflow-hidden">
+                            <div key={i} className="bg-gray-50 rounded-2xl overflow-hidden">
+                                <div className={`w-full h-64 ${member.bgColor} flex items-center justify-center overflow-hidden rounded-t-2xl`}>
                                     <img 
                                         src={[
                                             "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=400&q=80",
@@ -333,18 +333,18 @@ const HomePage = () => {
                                             "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&w=400&q=80"
                                         ][i]}
                                         alt={member.name}
-                                        className="w-full h-full object-cover"
+                                        className="w-full h-full object-cover rounded-t-2xl"
                                     />
                                 </div>
-                                <div className="p-6">
+                                <div className="p-6 bg-gray-50">
                                     <h3 className="text-xl font-normal text-gray-900 mb-1">{member.name}</h3>
                                     <p className="text-gray-600 mb-4">{member.role}</p>
                                     <div className="flex gap-3">
                                         <a href="#" className="w-8 h-8 bg-gray-900 rounded-full flex items-center justify-center hover:bg-gray-800 transition-colors">
-                                            <span className="text-white text-xs">L</span>
+                                            <span className="text-white text-xs font-medium">L</span>
                                         </a>
                                         <a href="#" className="w-8 h-8 bg-gray-900 rounded-full flex items-center justify-center hover:bg-gray-800 transition-colors">
-                                            <span className="text-white text-xs">T</span>
+                                            <span className="text-white text-xs font-medium">T</span>
                                         </a>
                                     </div>
                                 </div>
