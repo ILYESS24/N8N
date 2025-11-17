@@ -82,7 +82,25 @@ const HomePage = () => {
     return (
         <div className="min-h-screen w-full relative bg-white">
             {/* Gradient Background */}
-            <div className="fixed inset-0 z-0 bg-gradient-to-br from-yellow-50 via-white to-purple-50 opacity-50" />
+            <div 
+                className="fixed inset-0 z-0"
+                style={{
+                    backgroundImage: `
+                        linear-gradient(to right, #E8F4F8 0%, #F5F0E8 50%, #FFF8E7 100%)
+                    `,
+                    opacity: 0.8,
+                }}
+            />
+            {/* Additional soft glow effects */}
+            <div
+                className="fixed inset-0 z-0"
+                style={{
+                    backgroundImage: `
+                        radial-gradient(circle at 20% 50%, rgba(232, 244, 248, 0.6) 0%, transparent 50%),
+                        radial-gradient(circle at 80% 50%, rgba(255, 248, 231, 0.6) 0%, transparent 50%)
+                    `,
+                }}
+            />
 
             {/* Logo AURION - Top Left */}
             <div className="fixed top-6 left-6 z-50">
