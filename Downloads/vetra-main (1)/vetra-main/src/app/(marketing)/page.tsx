@@ -4,7 +4,7 @@ export const dynamic = 'force-dynamic';
 
 import { useState, useEffect } from "react";
 import { useRouter } from "next/navigation";
-import { ArrowUpRight, Star, Check, Sparkles, Lightbulb, Target, Palette, Monitor, Megaphone, PenTool, BarChart3 } from "lucide-react";
+import { ArrowUpRight, Star, Check, Sparkles, Lightbulb, Target, Palette, Monitor, Megaphone, PenTool, BarChart3, Code, Users, Layout, Paintbrush } from "lucide-react";
 import { LogoCloud } from "@/components/logo-cloud-3";
 import Image from "next/image";
 
@@ -322,27 +322,33 @@ const HomePage = () => {
                                 name: "Logan Dang", 
                                 role: "Wordpress Developer",
                                 shape: "eight-shape",
-                                color: "bg-blue-500"
+                                color: "bg-blue-500",
+                                Icon: Code
                             },
                             { 
                                 name: "Ana Belić", 
                                 role: "Social Media Specialist",
                                 shape: "arch-shape",
-                                color: "bg-orange-400"
+                                color: "bg-orange-400",
+                                Icon: Users
                             },
                             { 
                                 name: "Brian Hanley", 
                                 role: "Product Designer",
                                 shape: "circle-shape",
-                                color: "bg-yellow-300"
+                                color: "bg-yellow-300",
+                                Icon: Layout
                             },
                             { 
                                 name: "Darko Stanković", 
                                 role: "UI Designer",
                                 shape: "stacked-shape",
-                                color: "bg-blue-600"
+                                color: "bg-blue-600",
+                                Icon: Paintbrush
                             },
-                        ].map((member, i) => (
+                        ].map((member, i) => {
+                            const Icon = member.Icon;
+                            return (
                             <div key={i} className="bg-white rounded-2xl overflow-hidden">
                                 <div className="w-full h-64 relative flex items-center justify-center overflow-hidden rounded-t-2xl bg-white">
                                     {/* Abstract shape background */}
@@ -371,99 +377,38 @@ const HomePage = () => {
                                             </div>
                                         )}
                                     </div>
-                                    {/* Single portrait image clipped to abstract shape */}
-                                    <div className="relative z-10">
+                                    {/* Icon in abstract shape */}
+                                    <div className="relative z-10 flex items-center justify-center">
                                         {member.shape === "eight-shape" && (
-                                            <div className="relative w-32 h-40 md:w-40 md:h-48">
-                                                <img 
-                                                    src={[
-                                                        "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=400&q=80",
-                                                        "https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=400&q=80",
-                                                        "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=400&q=80",
-                                                        "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&w=400&q=80"
-                                                    ][i]}
-                                                    alt={member.name}
-                                                    className="absolute top-0 left-1/2 -translate-x-1/2 w-28 h-28 object-cover rounded-3xl"
-                                                    style={{ clipPath: 'inset(0)' }}
-                                                />
-                                                <img 
-                                                    src={[
-                                                        "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=400&q=80",
-                                                        "https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=400&q=80",
-                                                        "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=400&q=80",
-                                                        "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&w=400&q=80"
-                                                    ][i]}
-                                                    alt={member.name}
-                                                    className="absolute bottom-0 left-1/2 -translate-x-1/2 w-28 h-28 object-cover rounded-3xl -mt-4"
-                                                    style={{ clipPath: 'inset(0)' }}
-                                                />
+                                            <div className="relative w-32 h-40 md:w-40 md:h-48 flex items-center justify-center">
+                                                <div className="absolute top-0 left-1/2 -translate-x-1/2 w-28 h-28 bg-white rounded-3xl flex items-center justify-center shadow-lg">
+                                                    <Icon className="w-12 h-12 text-gray-900" strokeWidth={1.5} />
+                                                </div>
+                                                <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-28 h-28 bg-white rounded-3xl flex items-center justify-center shadow-lg -mt-4">
+                                                    <Icon className="w-12 h-12 text-gray-900" strokeWidth={1.5} />
+                                                </div>
                                             </div>
                                         )}
                                         {member.shape === "arch-shape" && (
-                                            <div className="w-40 h-40">
-                                                <img 
-                                                    src={[
-                                                        "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=400&q=80",
-                                                        "https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=400&q=80",
-                                                        "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=400&q=80",
-                                                        "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&w=400&q=80"
-                                                    ][i]}
-                                                    alt={member.name}
-                                                    className="w-full h-full object-cover rounded-t-full"
-                                                />
+                                            <div className="w-40 h-40 bg-white rounded-t-full flex items-center justify-center shadow-lg">
+                                                <Icon className="w-16 h-16 text-gray-900" strokeWidth={1.5} />
                                             </div>
                                         )}
                                         {member.shape === "circle-shape" && (
-                                            <div className="w-48 h-48">
-                                                <img 
-                                                    src={[
-                                                        "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=400&q=80",
-                                                        "https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=400&q=80",
-                                                        "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=400&q=80",
-                                                        "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&w=400&q=80"
-                                                    ][i]}
-                                                    alt={member.name}
-                                                    className="w-full h-full object-cover rounded-full"
-                                                />
+                                            <div className="w-48 h-48 bg-white rounded-full flex items-center justify-center shadow-lg">
+                                                <Icon className="w-20 h-20 text-gray-900" strokeWidth={1.5} />
                                             </div>
                                         )}
                                         {member.shape === "stacked-shape" && (
                                             <div className="flex items-center justify-center gap-2">
-                                                <div className="w-24 h-32 overflow-hidden rounded-2xl">
-                                                    <img 
-                                                        src={[
-                                                            "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=400&q=80",
-                                                            "https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=400&q=80",
-                                                            "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=400&q=80",
-                                                            "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&w=400&q=80"
-                                                        ][i]}
-                                                        alt={member.name}
-                                                        className="w-full h-full object-cover"
-                                                    />
+                                                <div className="w-24 h-32 bg-white rounded-2xl flex items-center justify-center shadow-lg">
+                                                    <Icon className="w-10 h-10 text-gray-900" strokeWidth={1.5} />
                                                 </div>
-                                                <div className="w-24 h-32 overflow-hidden rounded-2xl">
-                                                    <img 
-                                                        src={[
-                                                            "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=400&q=80",
-                                                            "https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=400&q=80",
-                                                            "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=400&q=80",
-                                                            "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&w=400&q=80"
-                                                        ][i]}
-                                                        alt={member.name}
-                                                        className="w-full h-full object-cover"
-                                                    />
+                                                <div className="w-24 h-32 bg-white rounded-2xl flex items-center justify-center shadow-lg">
+                                                    <Icon className="w-10 h-10 text-gray-900" strokeWidth={1.5} />
                                                 </div>
-                                                <div className="w-24 h-32 overflow-hidden rounded-2xl">
-                                                    <img 
-                                                        src={[
-                                                            "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=400&q=80",
-                                                            "https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=400&q=80",
-                                                            "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=400&q=80",
-                                                            "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&w=400&q=80"
-                                                        ][i]}
-                                                        alt={member.name}
-                                                        className="w-full h-full object-cover"
-                                                    />
+                                                <div className="w-24 h-32 bg-white rounded-2xl flex items-center justify-center shadow-lg">
+                                                    <Icon className="w-10 h-10 text-gray-900" strokeWidth={1.5} />
                                                 </div>
                                             </div>
                                         )}
@@ -486,7 +431,8 @@ const HomePage = () => {
                                     </div>
                                 </div>
                             </div>
-                        ))}
+                            );
+                        })}
                     </div>
                 </div>
             </section>
