@@ -75,41 +75,45 @@ const HomePage = () => {
             {/* Gradient Background */}
             <div className="fixed inset-0 z-0 bg-gradient-to-br from-yellow-50 via-white to-purple-50 opacity-50" />
 
+            {/* Logo AURION - Top Left */}
+            <div className="fixed top-6 left-6 z-50">
+                <div className="text-2xl font-bold text-gray-900">AURION</div>
+            </div>
+
             {/* Navigation */}
-            <nav className="fixed top-6 left-0 right-0 z-50 flex items-center justify-center px-4">
-                <div className="flex w-full max-w-5xl items-center justify-between gap-4">
-                    <div className="inline-flex items-center bg-gradient-to-r from-[#DAEEF4] via-[#F2F7FC] to-[#FBF0DB] rounded-full p-1 shadow-lg border border-white/70">
-                        <div className="bg-white rounded-full px-4 py-2 text-sm font-semibold tracking-wide text-gray-900 mr-1">
-                            AURION
-                        </div>
-                        <div className="flex items-center gap-1 bg-white/70 backdrop-blur rounded-full px-2 py-1 text-sm text-gray-600">
-                            {navItems.map((item) => (
-                                <a
-                                    key={item.href}
-                                    href={item.href}
-                                    onClick={() => setActiveNav(item.href)}
-                                    className={`px-4 py-2 rounded-full transition-all ${
-                                        activeNav === item.href
-                                            ? "bg-white text-gray-900 shadow-sm"
-                                            : "text-gray-600 hover:text-gray-900"
-                                    }`}
-                                >
-                                    {item.label}
-                                </a>
-                            ))}
-                        </div>
+            <nav className="fixed top-6 left-1/2 -translate-x-1/2 z-50 flex items-center justify-center px-4">
+                <div className="inline-flex items-center bg-gradient-to-r from-[#DAEEF4] via-[#F2F7FC] to-[#FBF0DB] rounded-full p-1 shadow-lg border border-white/70">
+                    <div className="flex items-center gap-1 bg-white/70 backdrop-blur rounded-full px-2 py-1 text-sm text-gray-600">
+                        {navItems.map((item) => (
+                            <a
+                                key={item.href}
+                                href={item.href}
+                                onClick={() => setActiveNav(item.href)}
+                                className={`px-4 py-2 rounded-full transition-all ${
+                                    activeNav === item.href
+                                        ? "bg-white text-gray-900 shadow-sm"
+                                        : "text-gray-600 hover:text-gray-900"
+                                }`}
+                            >
+                                {item.label}
+                            </a>
+                        ))}
                     </div>
-                    <button
-                        onClick={() => router.push("/register")}
-                        className="hidden sm:inline-flex items-center gap-2 bg-black text-white px-6 py-3 rounded-full font-medium shadow-lg hover:bg-gray-900 transition-colors"
-                    >
-                        Get Started
-                        <span className="inline-flex w-7 h-7 rounded-full bg-white text-gray-900 items-center justify-center">
-                            <ArrowUpRight className="w-4 h-4" />
-                        </span>
-                    </button>
                 </div>
             </nav>
+
+            {/* Get Started Button - Top Right */}
+            <div className="fixed top-6 right-6 z-50">
+                <button
+                    onClick={() => router.push("/register")}
+                    className="inline-flex items-center gap-2 bg-black text-white px-6 py-3 rounded-full font-medium shadow-lg hover:bg-gray-900 transition-colors"
+                >
+                    Get Started
+                    <span className="inline-flex w-7 h-7 rounded-full bg-white text-gray-900 items-center justify-center">
+                        <ArrowUpRight className="w-4 h-4" />
+                    </span>
+                </button>
+            </div>
 
             {/* Hero Section */}
             <section id="home" className="relative min-h-screen flex items-center justify-center pt-24 px-6 z-10">
@@ -162,12 +166,14 @@ const HomePage = () => {
             </section>
 
             {/* Logo Cloud Section */}
-            <section className="w-full py-12 bg-white z-10 relative">
-                <div className="max-w-6xl mx-auto px-6 text-center">
-                    <p className="text-gray-600 text-lg">Loved by 100,000+ big and small brands around the world</p>
+            <section className="w-full py-16 bg-white z-10 relative overflow-hidden">
+                <div className="max-w-7xl mx-auto px-6 text-center mb-12">
+                    <p className="text-gray-600 text-xl font-normal">Loved by 100,000+ big and small brands around the world</p>
+                </div>
+                <div className="relative">
                     <LogoCloud
                         logos={brandLogos}
-                        className="mt-8"
+                        className="py-8"
                     />
                 </div>
             </section>
