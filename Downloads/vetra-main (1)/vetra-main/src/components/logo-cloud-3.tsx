@@ -29,27 +29,8 @@ export function LogoCloud({ className, logos, ...props }: LogoCloudProps) {
               {logo.component}
             </div>
           ) : (
-            <div key={`logo-${logo.alt}`} className="flex items-center justify-center px-4 min-w-[120px]">
-              {logo.src ? (
-                <img
-                  alt={logo.alt}
-                  className="pointer-events-none h-8 select-none md:h-10 w-auto object-contain opacity-70 hover:opacity-100 transition-opacity"
-                  height={logo.height || 40}
-                  loading="lazy"
-                  src={logo.src}
-                  width={logo.width || "auto"}
-                  onError={(e) => {
-                    const target = e.target as HTMLImageElement;
-                    target.style.display = 'none';
-                    const parent = target.parentElement;
-                    if (parent) {
-                      parent.innerHTML = `<span class="text-gray-400 text-sm font-medium">${logo.alt}</span>`;
-                    }
-                  }}
-                />
-              ) : (
-                <span className="text-gray-400 text-sm font-medium">{logo.alt}</span>
-              )}
+            <div key={`logo-${logo.alt}`} className="flex items-center justify-center px-6 min-w-[120px]">
+              <span className="text-gray-900 text-base md:text-lg font-medium">{logo.alt}</span>
             </div>
           )
         ))}
