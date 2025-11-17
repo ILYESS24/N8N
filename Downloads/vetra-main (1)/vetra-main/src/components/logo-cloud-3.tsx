@@ -2,10 +2,11 @@ import { InfiniteSlider } from "@/components/ui/infinite-slider";
 import { cn } from "@/lib/index";
 
 type Logo = {
-  src: string;
+  src?: string;
   alt: string;
   width?: number;
   height?: number;
+  component?: React.ReactNode;
 };
 
 type LogoCloudProps = React.ComponentProps<"div"> & {
@@ -23,15 +24,21 @@ export function LogoCloud({ className, logos, ...props }: LogoCloudProps) {
     >
       <InfiniteSlider gap={42} reverse duration={80} durationOnHover={25}>
         {logos.map((logo) => (
-          <img
-            alt={logo.alt}
-            className="pointer-events-none h-4 select-none md:h-5 dark:brightness-0 dark:invert"
-            height={logo.height || "auto"}
-            key={`logo-${logo.alt}`}
-            loading="lazy"
-            src={logo.src}
-            width={logo.width || "auto"}
-          />
+          logo.component ? (
+            <div key={`logo-${logo.alt}`} className="pointer-events-none select-none">
+              {logo.component}
+            </div>
+          ) : (
+            <img
+              alt={logo.alt}
+              className="pointer-events-none h-4 select-none md:h-5 dark:brightness-0 dark:invert"
+              height={logo.height || "auto"}
+              key={`logo-${logo.alt}`}
+              loading="lazy"
+              src={logo.src}
+              width={logo.width || "auto"}
+            />
+          )
         ))}
       </InfiniteSlider>
     </div>
