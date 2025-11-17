@@ -80,27 +80,7 @@ const HomePage = () => {
     ];
 
     return (
-        <div className="min-h-screen w-full relative bg-white">
-            {/* Gradient Background */}
-            <div 
-                className="fixed inset-0 z-0"
-                style={{
-                    backgroundImage: `
-                        linear-gradient(to right, #E8F4F8 0%, #F5F0E8 50%, #FFF8E7 100%)
-                    `,
-                    opacity: 0.8,
-                }}
-            />
-            {/* Additional soft glow effects */}
-            <div
-                className="fixed inset-0 z-0"
-                style={{
-                    backgroundImage: `
-                        radial-gradient(circle at 20% 50%, rgba(232, 244, 248, 0.6) 0%, transparent 50%),
-                        radial-gradient(circle at 80% 50%, rgba(255, 248, 231, 0.6) 0%, transparent 50%)
-                    `,
-                }}
-            />
+        <div className="min-h-screen w-full relative">
 
             {/* Logo AURION - Top Left */}
             <div className="fixed top-6 left-6 z-50">
@@ -146,7 +126,7 @@ const HomePage = () => {
             <Skiper19 />
 
             {/* Hero Section */}
-            <section id="home" className="relative min-h-screen flex items-center justify-center pt-24 px-6 z-10">
+            <section id="home" className="relative min-h-screen flex items-center justify-center pt-24 px-6 z-10 bg-transparent">
                 <div className="max-w-5xl mx-auto text-center">
                     <motion.div className="mb-8" {...fadeInUp}>
                         <p className="text-[clamp(3rem,8vw,5.5rem)] leading-[1.05] font-semibold text-gray-900">
@@ -186,7 +166,7 @@ const HomePage = () => {
             </section>
 
             {/* Logo Cloud Section */}
-            <section className="w-full py-16 bg-white z-10 relative overflow-hidden">
+            <section className="w-full py-16 bg-transparent z-10 relative overflow-hidden">
                 <motion.div className="max-w-7xl mx-auto px-6 text-center mb-12" {...fadeInUp}>
                     <p className="text-gray-600 text-xl font-normal">Loved by 100,000+ big and small brands around the world</p>
                 </motion.div>
@@ -199,7 +179,7 @@ const HomePage = () => {
             </section>
 
             {/* About Us Section */}
-            <section id="about-us" className="py-20 px-6 bg-white z-10 relative">
+            <section id="about-us" className="py-20 px-6 bg-transparent z-10 relative">
                 <div className="max-w-7xl mx-auto">
                     <motion.div className="text-center mb-16" {...fadeInUp}>
                         <h2 className="text-4xl md:text-6xl font-normal text-gray-900 mb-8">
@@ -251,7 +231,7 @@ const HomePage = () => {
             </section>
 
             {/* Services Section */}
-            <section id="services" className="py-20 px-6 bg-white z-10 relative">
+            <section id="services" className="py-20 px-6 bg-transparent z-10 relative">
                 <div className="max-w-7xl mx-auto">
                     <motion.h2 className="text-4xl md:text-6xl font-normal text-gray-900 mb-16 text-center" {...fadeInUp}>
                         Where Innovation meets <span className="italic">excellence</span>
@@ -305,7 +285,7 @@ const HomePage = () => {
             </section>
 
             {/* Work Section */}
-            <section id="work" className="py-20 px-6 bg-white z-10 relative">
+            <section id="work" className="py-20 px-6 bg-transparent z-10 relative">
                 <div className="max-w-7xl mx-auto">
                     <motion.h2 className="text-4xl md:text-6xl font-normal text-gray-900 mb-16 text-center" {...fadeInUp}>
                         How we transformed a small business's <span className="italic">online presence</span>
@@ -341,7 +321,7 @@ const HomePage = () => {
             </section>
 
             {/* Testimonials Section */}
-            <section className="py-20 px-6 bg-white z-10 relative">
+            <section className="py-20 px-6 bg-transparent z-10 relative">
                 <div className="max-w-6xl mx-auto">
                     <motion.div className="grid gap-6 md:grid-cols-[minmax(0,2fr)_1fr] mb-14" {...fadeInUp}>
                         <motion.div 
@@ -416,7 +396,7 @@ const HomePage = () => {
             </section>
 
             {/* Pricing Section */}
-            <section id="pricing" className="py-20 px-6 bg-white z-10 relative">
+            <section id="pricing" className="py-20 px-6 bg-transparent z-10 relative">
                 <div className="max-w-7xl mx-auto">
                     <motion.h2 className="text-4xl md:text-6xl font-normal text-gray-900 mb-16 text-center" {...fadeInUp}>
                         Pick the plan that fits your <span className="italic">needs</span>
@@ -491,7 +471,7 @@ const HomePage = () => {
             </section>
 
             {/* FAQ Section */}
-            <section className="py-20 px-6 bg-white z-10 relative">
+            <section className="py-20 px-6 bg-transparent z-10 relative">
                 <div className="max-w-4xl mx-auto">
                     <motion.h2 className="text-4xl md:text-6xl font-normal text-gray-900 mb-16 text-center" {...fadeInUp}>
                         Got questions?<br />We've got <span className="italic">answers</span>
@@ -527,7 +507,7 @@ const HomePage = () => {
             </section>
 
             {/* Awards Section */}
-            <section id="award" className="py-20 px-6 bg-white z-10 relative">
+            <section id="award" className="py-20 px-6 bg-transparent z-10 relative">
                 <div className="max-w-7xl mx-auto">
                     <motion.h2 className="text-4xl md:text-6xl font-normal text-gray-900 mb-16 text-center" {...fadeInUp}>
                         Accolades and achievements celebration our <span className="italic">design excellence</span>
@@ -559,7 +539,7 @@ const HomePage = () => {
             </section>
 
             {/* CTA Section */}
-            <section className="py-20 px-6 bg-white z-10 relative">
+            <section className="py-20 px-6 bg-transparent z-10 relative">
                 <div className="max-w-3xl mx-auto text-center">
                     <motion.h3 className="text-4xl md:text-6xl font-normal text-gray-900 mb-6" {...fadeInUp}>
                         Innovative Solutions for <span className="italic">Your Brand</span>
@@ -578,7 +558,7 @@ const HomePage = () => {
             </section>
 
             {/* Footer */}
-            <footer className="bg-white border-t border-gray-200 py-12 px-6 z-10 relative">
+            <footer className="bg-transparent border-t border-gray-200 py-12 px-6 z-10 relative">
                 <div className="max-w-7xl mx-auto">
                     <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
                         <div>

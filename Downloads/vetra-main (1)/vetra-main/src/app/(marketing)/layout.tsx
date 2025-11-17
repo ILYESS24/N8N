@@ -11,7 +11,27 @@ export const dynamic = 'force-dynamic';
 
 const MarketingLayout = ({ children }: Props) => {
     return (
-        <div className="min-h-screen w-full relative bg-white">
+        <div className="min-h-screen w-full relative">
+            {/* Gradient Background - Applied globally */}
+            <div 
+                className="fixed inset-0 z-0"
+                style={{
+                    backgroundImage: `
+                        linear-gradient(to right, #E8F4F8 0%, #F5F0E8 50%, #FFF8E7 100%)
+                    `,
+                    opacity: 0.8,
+                }}
+            />
+            {/* Additional soft glow effects */}
+            <div
+                className="fixed inset-0 z-0"
+                style={{
+                    backgroundImage: `
+                        radial-gradient(circle at 20% 50%, rgba(232, 244, 248, 0.6) 0%, transparent 50%),
+                        radial-gradient(circle at 80% 50%, rgba(255, 248, 231, 0.6) 0%, transparent 50%)
+                    `,
+                }}
+            />
             <main className="mx-auto w-full z-40 relative">
                 {children}
             </main>
