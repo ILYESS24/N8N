@@ -4,7 +4,7 @@ export const dynamic = 'force-dynamic';
 
 import { useState, useEffect } from "react";
 import { useRouter } from "next/navigation";
-import { ArrowUpRight, Star, Check, Sparkles, Lightbulb, Target, Palette, Monitor, Megaphone, PenTool, BarChart3, Code, Users, Layout, Paintbrush } from "lucide-react";
+import { ArrowUpRight, Star, Check, Sparkles, Lightbulb, Target, Palette, Monitor, Megaphone, PenTool, BarChart3 } from "lucide-react";
 import { LogoCloud } from "@/components/logo-cloud-3";
 import Image from "next/image";
 
@@ -65,7 +65,6 @@ const HomePage = () => {
         { label: "About us", href: "#about-us" },
         { label: "Services", href: "#services" },
         { label: "Work", href: "#work" },
-        { label: "Team", href: "#team" },
         { label: "Pricing", href: "#pricing" },
         { label: "Awards", href: "#award" },
     ];
@@ -306,133 +305,6 @@ const HomePage = () => {
                                 </div>
                             </div>
                         ))}
-                    </div>
-                </div>
-            </section>
-
-            {/* Team Section */}
-            <section id="team" className="py-20 px-6 bg-white z-10 relative">
-                <div className="max-w-7xl mx-auto">
-                    <h2 className="text-4xl md:text-6xl font-normal text-gray-900 mb-16 text-center">
-                        Meet the creative minds behind <span className="italic">our success</span>
-                    </h2>
-                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-                        {[
-                            { 
-                                name: "Logan Dang", 
-                                role: "Wordpress Developer",
-                                shape: "eight-shape",
-                                color: "bg-blue-500",
-                                Icon: Code
-                            },
-                            { 
-                                name: "Ana Belić", 
-                                role: "Social Media Specialist",
-                                shape: "arch-shape",
-                                color: "bg-orange-400",
-                                Icon: Users
-                            },
-                            { 
-                                name: "Brian Hanley", 
-                                role: "Product Designer",
-                                shape: "circle-shape",
-                                color: "bg-yellow-300",
-                                Icon: Layout
-                            },
-                            { 
-                                name: "Darko Stanković", 
-                                role: "UI Designer",
-                                shape: "stacked-shape",
-                                color: "bg-blue-600",
-                                Icon: Paintbrush
-                            },
-                        ].map((member, i) => {
-                            const Icon = member.Icon;
-                            return (
-                            <div key={i} className="bg-white rounded-2xl overflow-hidden">
-                                <div className="w-full h-64 relative flex items-center justify-center overflow-hidden rounded-t-2xl bg-white">
-                                    {/* Abstract shape background */}
-                                    <div className={`absolute inset-0 ${member.color} opacity-90`}>
-                                        {member.shape === "eight-shape" && (
-                                            <div className="relative w-full h-full">
-                                                <div className="absolute top-0 left-1/2 -translate-x-1/2 w-32 h-32 bg-blue-600 rounded-3xl"></div>
-                                                <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-32 h-32 bg-blue-600 rounded-3xl -mt-4"></div>
-                                            </div>
-                                        )}
-                                        {member.shape === "arch-shape" && (
-                                            <div className="relative w-full h-full">
-                                                <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-40 h-40 bg-orange-500 rounded-t-full"></div>
-                                            </div>
-                                        )}
-                                        {member.shape === "circle-shape" && (
-                                            <div className="relative w-full h-full flex items-center justify-center">
-                                                <div className="w-48 h-48 bg-yellow-400 rounded-full"></div>
-                                            </div>
-                                        )}
-                                        {member.shape === "stacked-shape" && (
-                                            <div className="relative w-full h-full flex items-center justify-center gap-2">
-                                                <div className="w-24 h-32 bg-blue-700 rounded-2xl"></div>
-                                                <div className="w-24 h-32 bg-blue-700 rounded-2xl"></div>
-                                                <div className="w-24 h-32 bg-blue-700 rounded-2xl"></div>
-                                            </div>
-                                        )}
-                                    </div>
-                                    {/* Icon in abstract shape */}
-                                    <div className="relative z-10 flex items-center justify-center">
-                                        {member.shape === "eight-shape" && (
-                                            <div className="relative w-32 h-40 md:w-40 md:h-48 flex items-center justify-center">
-                                                <div className="absolute top-0 left-1/2 -translate-x-1/2 w-28 h-28 bg-white rounded-3xl flex items-center justify-center shadow-lg">
-                                                    <Icon className="w-12 h-12 text-gray-900" strokeWidth={1.5} />
-                                                </div>
-                                                <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-28 h-28 bg-white rounded-3xl flex items-center justify-center shadow-lg -mt-4">
-                                                    <Icon className="w-12 h-12 text-gray-900" strokeWidth={1.5} />
-                                                </div>
-                                            </div>
-                                        )}
-                                        {member.shape === "arch-shape" && (
-                                            <div className="w-40 h-40 bg-white rounded-t-full flex items-center justify-center shadow-lg">
-                                                <Icon className="w-16 h-16 text-gray-900" strokeWidth={1.5} />
-                                            </div>
-                                        )}
-                                        {member.shape === "circle-shape" && (
-                                            <div className="w-48 h-48 bg-white rounded-full flex items-center justify-center shadow-lg">
-                                                <Icon className="w-20 h-20 text-gray-900" strokeWidth={1.5} />
-                                            </div>
-                                        )}
-                                        {member.shape === "stacked-shape" && (
-                                            <div className="flex items-center justify-center gap-2">
-                                                <div className="w-24 h-32 bg-white rounded-2xl flex items-center justify-center shadow-lg">
-                                                    <Icon className="w-10 h-10 text-gray-900" strokeWidth={1.5} />
-                                                </div>
-                                                <div className="w-24 h-32 bg-white rounded-2xl flex items-center justify-center shadow-lg">
-                                                    <Icon className="w-10 h-10 text-gray-900" strokeWidth={1.5} />
-                                                </div>
-                                                <div className="w-24 h-32 bg-white rounded-2xl flex items-center justify-center shadow-lg">
-                                                    <Icon className="w-10 h-10 text-gray-900" strokeWidth={1.5} />
-                                                </div>
-                                            </div>
-                                        )}
-                                    </div>
-                                </div>
-                                <div className="p-6 bg-white">
-                                    <h3 className="text-xl font-normal text-gray-900 mb-1">{member.name}</h3>
-                                    <p className="text-gray-600 mb-4">{member.role}</p>
-                                    <div className="flex gap-3">
-                                        <a href="#" title="X (Twitter)" className="w-8 h-8 bg-gray-300 rounded-full flex items-center justify-center hover:bg-gray-400 transition-colors">
-                                            <svg className="w-4 h-4 text-gray-600" fill="currentColor" viewBox="0 0 24 24">
-                                                <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
-                                            </svg>
-                                        </a>
-                                        <a href="#" title="LinkedIn" className="w-8 h-8 bg-gray-300 rounded-full flex items-center justify-center hover:bg-gray-400 transition-colors">
-                                            <svg className="w-4 h-4 text-gray-600" fill="currentColor" viewBox="0 0 24 24">
-                                                <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
-                                            </svg>
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-                            );
-                        })}
                     </div>
                 </div>
             </section>
