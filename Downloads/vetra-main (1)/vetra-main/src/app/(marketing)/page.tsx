@@ -285,7 +285,18 @@ const HomePage = () => {
                             { name: "Hotto", tags: ["Visual Story telling", "Web & Mobile Design"] },
                         ].map((project, i) => (
                             <div key={i} className="bg-gray-100 rounded-2xl p-6">
-                                <div className="w-full h-64 bg-gray-300 rounded-xl mb-4" />
+                                <div className="w-full h-64 rounded-xl mb-4 overflow-hidden">
+                                    <img 
+                                        src={[
+                                            "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=800&q=80",
+                                            "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=800&q=80",
+                                            "https://images.unsplash.com/photo-1551650975-87deedd944c3?auto=format&fit=crop&w=800&q=80",
+                                            "https://images.unsplash.com/photo-1551434678-e076c223a692?auto=format&fit=crop&w=800&q=80"
+                                        ][i]}
+                                        alt={project.name}
+                                        className="w-full h-full object-cover"
+                                    />
+                                </div>
                                 <h3 className="text-xl font-normal text-gray-900 mb-4">{project.name}</h3>
                                 <div className="flex gap-2">
                                     {project.tags.map((tag, j) => (
@@ -314,13 +325,28 @@ const HomePage = () => {
                             { name: "Darko Stanković", role: "UI Designer" },
                         ].map((member, i) => (
                             <div key={i} className="bg-gray-100 rounded-2xl overflow-hidden">
-                                <div className="w-full h-64 bg-gray-300" />
+                                <div className="w-full h-64 overflow-hidden">
+                                    <img 
+                                        src={[
+                                            "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=400&q=80",
+                                            "https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=400&q=80",
+                                            "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=400&q=80",
+                                            "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&w=400&q=80"
+                                        ][i]}
+                                        alt={member.name}
+                                        className="w-full h-full object-cover"
+                                    />
+                                </div>
                                 <div className="p-6">
                                     <h3 className="text-xl font-normal text-gray-900 mb-1">{member.name}</h3>
                                     <p className="text-gray-600 mb-4">{member.role}</p>
                                     <div className="flex gap-3">
-                                        <div className="w-8 h-8 bg-gray-300 rounded-full" />
-                                        <div className="w-8 h-8 bg-gray-300 rounded-full" />
+                                        <a href="#" className="w-8 h-8 bg-gray-900 rounded-full flex items-center justify-center hover:bg-gray-800 transition-colors">
+                                            <span className="text-white text-xs">L</span>
+                                        </a>
+                                        <a href="#" className="w-8 h-8 bg-gray-900 rounded-full flex items-center justify-center hover:bg-gray-800 transition-colors">
+                                            <span className="text-white text-xs">T</span>
+                                        </a>
                                     </div>
                                 </div>
                             </div>
@@ -362,8 +388,12 @@ const HomePage = () => {
                                 <p className="text-xs uppercase tracking-[0.2em] text-gray-400 mb-3">Customer Stories</p>
                                 <p className="text-2xl font-normal">Their creativity and attention to detail transformed our brand completely!</p>
                             </div>
-                            <div className="rounded-2xl bg-white/10 border border-white/20 h-48 flex items-center justify-center">
-                                <div className="w-32 h-24 bg-white/40 rounded-xl" />
+                            <div className="rounded-2xl bg-white/10 border border-white/20 h-48 flex items-center justify-center overflow-hidden">
+                                <img 
+                                    src="https://images.unsplash.com/photo-1551434678-e076c223a692?auto=format&fit=crop&w=400&q=80"
+                                    alt="Client testimonial"
+                                    className="w-full h-full object-cover opacity-50"
+                                />
                             </div>
                         </div>
 
@@ -488,7 +518,9 @@ const HomePage = () => {
                             { title: "awwwards Awards", description: "Honored with the Best Website Design for creativity, usability, and innovation.", year: "2023" },
                         ].map((award, i) => (
                             <div key={i} className="bg-gray-100 p-8 rounded-2xl">
-                                <div className="w-10 h-10 bg-gray-300 rounded-lg mb-4" />
+                                <div className="w-10 h-10 rounded-lg mb-4 flex items-center justify-center bg-gradient-to-br from-yellow-400 to-orange-500">
+                                    <span className="text-white text-xl">🏆</span>
+                                </div>
                                 <h3 className="text-xl font-normal text-gray-900 mb-2">{award.title}</h3>
                                 <p className="text-gray-600 mb-4">{award.description}</p>
                                 <p className="text-gray-900 font-normal">{award.year}</p>
@@ -527,9 +559,18 @@ const HomePage = () => {
                                 Empowering businesses with innovative solutions. Let's create something amazing together.
                             </p>
                             <div className="flex gap-4">
-                                {[1, 2, 3, 4].map((i) => (
-                                    <div key={i} className="w-8 h-8 bg-gray-200 rounded-full" />
-                                ))}
+                                <a href="#" className="w-8 h-8 bg-gray-900 rounded-full flex items-center justify-center hover:bg-gray-800 transition-colors">
+                                    <span className="text-white text-xs">f</span>
+                                </a>
+                                <a href="#" className="w-8 h-8 bg-gray-900 rounded-full flex items-center justify-center hover:bg-gray-800 transition-colors">
+                                    <span className="text-white text-xs">t</span>
+                                </a>
+                                <a href="#" className="w-8 h-8 bg-gray-900 rounded-full flex items-center justify-center hover:bg-gray-800 transition-colors">
+                                    <span className="text-white text-xs">in</span>
+                                </a>
+                                <a href="#" className="w-8 h-8 bg-gray-900 rounded-full flex items-center justify-center hover:bg-gray-800 transition-colors">
+                                    <span className="text-white text-xs">ig</span>
+                                </a>
                             </div>
                         </div>
                         <div>
