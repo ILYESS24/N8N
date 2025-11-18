@@ -1,18 +1,14 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import { useRouter } from "next/navigation";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
-import { ArrowLeft, Brain, Send } from "lucide-react";
+import { ArrowLeft, Brain } from "lucide-react";
 import { apiRequest } from "@/lib/api-client";
+import { ToolIframeWrapper } from "@/components/tool-iframe-wrapper";
 
 export default function LangchainPage() {
   const router = useRouter();
-  const [prompt, setPrompt] = useState("");
-  const [response, setResponse] = useState("");
-  const [loading, setLoading] = useState(false);
 
   useEffect(() => {
     // Enregistrer l'utilisation de langchain
@@ -22,7 +18,7 @@ export default function LangchainPage() {
         tool_name: "langchain",
         tool_type: "llm_framework",
       }),
-    });
+    }).catch(console.error);
 
     apiRequest("/api/activity", {
       method: "POST",
@@ -30,38 +26,8 @@ export default function LangchainPage() {
         activity_type: "tool-opened",
         tool_name: "langchain",
       }),
-    });
+    }).catch(console.error);
   }, []);
-
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-    if (!prompt.trim()) return;
-
-    setLoading(true);
-    try {
-      // Appel à l'API Langchain (à créer)
-      const result = await apiRequest("/api/langchain/chat", {
-        method: "POST",
-        body: JSON.stringify({ prompt }),
-      });
-
-      setResponse(result.response || "Réponse générée par Langchain");
-      
-      await apiRequest("/api/activity", {
-        method: "POST",
-        body: JSON.stringify({
-          activity_type: "langchain-query",
-          tool_name: "langchain",
-          activity_data: { prompt_length: prompt.length },
-        }),
-      });
-    } catch (error) {
-      console.error("Error calling Langchain:", error);
-      setResponse("Erreur: Langchain API non configurée. Veuillez configurer le backend Python.");
-    } finally {
-      setLoading(false);
-    }
-  };
 
   return (
     <div className="min-h-screen bg-[#05070F] text-white">
@@ -88,11 +54,11 @@ export default function LangchainPage() {
       </div>
 
       <div className="h-[calc(100vh-64px)] w-full">
-        <iframe
-          src="https://34c96d83.langchain-ai.pages.dev/"
-          className="w-full h-full border-0"
+        <ToolIframeWrapper
+          baseUrl="https://34c96d83.langchain-ai.pages.dev/"
+          toolName="langchain"
+          params={{ workspace: "default" }}
           title="Langchain AI"
-          allow="clipboard-read; clipboard-write"
         />
       </div>
     </div>

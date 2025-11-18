@@ -1,15 +1,14 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import { useRouter } from "next/navigation";
-import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { ArrowLeft, ExternalLink, Bot, Sparkles } from "lucide-react";
+import { ArrowLeft, Bot } from "lucide-react";
 import { apiRequest } from "@/lib/api-client";
+import { ToolIframeWrapper } from "@/components/tool-iframe-wrapper";
 
 export default function AgentBuilderPage() {
   const router = useRouter();
-  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     // Enregistrer l'utilisation de open-agent-builder
@@ -19,7 +18,7 @@ export default function AgentBuilderPage() {
         tool_name: "open-agent-builder",
         tool_type: "ai_agent_builder",
       }),
-    });
+    }).catch(console.error);
 
     apiRequest("/api/activity", {
       method: "POST",
@@ -27,9 +26,7 @@ export default function AgentBuilderPage() {
         activity_type: "tool-opened",
         tool_name: "open-agent-builder",
       }),
-    });
-
-    setLoading(false);
+    }).catch(console.error);
   }, []);
 
   return (
@@ -57,11 +54,11 @@ export default function AgentBuilderPage() {
       </div>
 
       <div className="h-[calc(100vh-64px)] w-full">
-        <iframe
-          src="https://open-agent-builder-lchp73l76-ibagencys-projects.vercel.app/?template=multi-company-stock-analysis"
-          className="w-full h-full border-0"
+        <ToolIframeWrapper
+          baseUrl="https://open-agent-builder-lchp73l76-ibagencys-projects.vercel.app/"
+          toolName="open-agent-builder"
+          params={{ template: "multi-company-stock-analysis", workspace: "default" }}
           title="Open Agent Builder"
-          allow="clipboard-read; clipboard-write"
         />
       </div>
     </div>

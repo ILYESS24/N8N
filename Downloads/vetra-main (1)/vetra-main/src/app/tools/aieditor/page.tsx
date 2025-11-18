@@ -1,19 +1,15 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useEffect } from "react";
 import { useRouter } from "next/navigation";
-import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { Textarea } from "@/components/ui/textarea";
-import { ArrowLeft, Save, Sparkles } from "lucide-react";
+import { ArrowLeft } from "lucide-react";
 import { apiRequest } from "@/lib/api-client";
+import { ToolIframeWrapper } from "@/components/tool-iframe-wrapper";
 
 export default function AiEditorPage() {
   const router = useRouter();
-  const [content, setContent] = useState("");
-  const [loading, setLoading] = useState(false);
 
-  // Enregistrer l'utilisation au chargement
   useEffect(() => {
     apiRequest("/api/tools", {
       method: "POST",
@@ -31,37 +27,6 @@ export default function AiEditorPage() {
       }),
     }).catch(console.error);
   }, []);
-
-  const handleSave = async () => {
-    setLoading(true);
-    try {
-      await apiRequest("/api/content", {
-        method: "POST",
-        body: JSON.stringify({
-          type: "text",
-          title: "Document AiEditor",
-          content: content,
-          metadata: { tool: "aieditor" },
-        }),
-      });
-
-      await apiRequest("/api/activity", {
-        method: "POST",
-        body: JSON.stringify({
-          activity_type: "content-saved",
-          tool_name: "aieditor",
-          activity_data: { content_length: content.length },
-        }),
-      });
-
-      alert("Contenu sauvegardé avec succès!");
-    } catch (error) {
-      console.error("Error saving content:", error);
-      alert("Erreur lors de la sauvegarde");
-    } finally {
-      setLoading(false);
-    }
-  };
 
   return (
     <div className="min-h-screen bg-[#05070F] text-white">
@@ -81,22 +46,15 @@ export default function AiEditorPage() {
               <p className="text-sm text-white/60">Éditeur WYSIWYG avec assistance IA</p>
             </div>
           </div>
-          <Button
-            onClick={handleSave}
-            className="bg-white text-black hover:bg-white/90"
-          >
-            <Save className="w-4 h-4 mr-2" />
-            Sauvegarder
-          </Button>
         </div>
       </div>
 
       <div className="h-[calc(100vh-64px)] w-full">
-        <iframe
-          src="https://5ae0c482.aieditor.pages.dev/"
-          className="w-full h-full border-0"
+        <ToolIframeWrapper
+          baseUrl="https://5ae0c482.aieditor.pages.dev/"
+          toolName="aieditor"
+          params={{ workspace: "default" }}
           title="AI Editor"
-          allow="clipboard-read; clipboard-write"
         />
       </div>
     </div>

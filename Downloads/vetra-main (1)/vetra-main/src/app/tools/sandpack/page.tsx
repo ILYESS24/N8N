@@ -1,70 +1,33 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import { useRouter } from "next/navigation";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { ArrowLeft, Save, Play } from "lucide-react";
+import { ArrowLeft } from "lucide-react";
 import { apiRequest } from "@/lib/api-client";
-import dynamic from "next/dynamic";
-
-// Dynamic import pour Sandpack (évite les erreurs SSR)
-const Sandpack = dynamic(
-  () => import("@codesandbox/sandpack-react").then((mod) => mod.Sandpack),
-  { ssr: false }
-);
+import { ToolIframeWrapper } from "@/components/tool-iframe-wrapper";
 
 export default function SandpackPage() {
   const router = useRouter();
-  const [code, setCode] = useState({
-    App: `export default function App() {
-  return (
-    <div className="p-8">
-      <h1 className="text-3xl font-bold mb-4">Hello Sandpack!</h1>
-      <p className="text-gray-600">Start editing to see magic happen.</p>
-    </div>
-  );
-}`,
-    index: `import React from "react";
-import ReactDOM from "react-dom/client";
-import App from "./App";
 
-const root = ReactDOM.createRoot(document.getElementById("root"));
-root.render(<App />);`,
-    "package.json": JSON.stringify({
-      dependencies: {
-        react: "^18.2.0",
-        "react-dom": "^18.2.0",
-      },
-    }, null, 2),
-  });
+  useEffect(() => {
+    // Enregistrer l'utilisation de sandpack
+    apiRequest("/api/tools", {
+      method: "POST",
+      body: JSON.stringify({
+        tool_name: "sandpack",
+        tool_type: "code_editor",
+      }),
+    }).catch(console.error);
 
-  const handleSave = async () => {
-    try {
-      await apiRequest("/api/tools", {
-        method: "POST",
-        body: JSON.stringify({
-          tool_name: "sandpack",
-          tool_type: "code_editor",
-          config: { code },
-        }),
-      });
-      
-      await apiRequest("/api/activity", {
-        method: "POST",
-        body: JSON.stringify({
-          activity_type: "code-saved",
-          tool_name: "sandpack",
-          activity_data: { files: Object.keys(code) },
-        }),
-      });
-      
-      alert("Code sauvegardé avec succès!");
-    } catch (error) {
-      console.error("Error saving code:", error);
-      alert("Erreur lors de la sauvegarde");
-    }
-  };
+    apiRequest("/api/activity", {
+      method: "POST",
+      body: JSON.stringify({
+        activity_type: "tool-opened",
+        tool_name: "sandpack",
+      }),
+    }).catch(console.error);
+  }, []);
 
   return (
     <div className="min-h-screen bg-[#05070F] text-white">
@@ -84,22 +47,15 @@ root.render(<App />);`,
               <p className="text-sm text-white/60">Code, preview et test en temps réel</p>
             </div>
           </div>
-          <Button
-            onClick={handleSave}
-            className="bg-white text-black hover:bg-white/90"
-          >
-            <Save className="w-4 h-4 mr-2" />
-            Sauvegarder
-          </Button>
         </div>
       </div>
 
       <div className="h-[calc(100vh-64px)] w-full">
-        <iframe
-          src="https://sandpack-33otn5ijo-ibagencys-projects.vercel.app/"
-          className="w-full h-full border-0"
+        <ToolIframeWrapper
+          baseUrl="https://sandpack-33otn5ijo-ibagencys-projects.vercel.app/"
+          toolName="sandpack"
+          params={{ workspace: "default" }}
           title="Sandpack Code Editor"
-          allow="clipboard-read; clipboard-write"
         />
       </div>
     </div>

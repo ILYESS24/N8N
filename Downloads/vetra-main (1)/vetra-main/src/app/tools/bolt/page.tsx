@@ -1,15 +1,14 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import { useRouter } from "next/navigation";
-import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { ArrowLeft, ExternalLink } from "lucide-react";
+import { ArrowLeft } from "lucide-react";
 import { apiRequest } from "@/lib/api-client";
+import { ToolIframeWrapper } from "@/components/tool-iframe-wrapper";
 
 export default function BoltPage() {
   const router = useRouter();
-  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     // Enregistrer l'utilisation de bolt.new
@@ -19,7 +18,7 @@ export default function BoltPage() {
         tool_name: "bolt.new",
         tool_type: "website_builder",
       }),
-    });
+    }).catch(console.error);
 
     apiRequest("/api/activity", {
       method: "POST",
@@ -27,9 +26,7 @@ export default function BoltPage() {
         activity_type: "tool-opened",
         tool_name: "bolt.new",
       }),
-    });
-
-    setLoading(false);
+    }).catch(console.error);
   }, []);
 
   return (
@@ -54,11 +51,11 @@ export default function BoltPage() {
       </div>
 
       <div className="h-[calc(100vh-64px)] w-full">
-        <iframe
-          src="https://a0984a33.ai-assistant-xlv.pages.dev/"
-          className="w-full h-full border-0"
+        <ToolIframeWrapper
+          baseUrl="https://a0984a33.ai-assistant-xlv.pages.dev/"
+          toolName="bolt.new"
+          params={{ workspace: "default" }}
           title="Bolt.new Builder"
-          allow="clipboard-read; clipboard-write"
         />
       </div>
     </div>

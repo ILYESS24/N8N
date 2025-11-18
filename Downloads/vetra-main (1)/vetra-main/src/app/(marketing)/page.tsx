@@ -9,6 +9,7 @@ import { LogoCloud } from "@/components/logo-cloud-3";
 import { motion } from "framer-motion";
 import { Skiper19 } from "@/components/svg-follow-scroll";
 import { MagicText } from "@/components/ui/magic-text";
+import { GlowingEffect } from "@/components/ui/glowing-effect";
 
 // Animation variants for scroll animations
 const fadeInUp = {
@@ -120,11 +121,11 @@ const HomePage = () => {
             <div className="fixed top-6 right-6 z-50">
                 <button
                     onClick={() => router.push("/login")}
-                    className="inline-flex items-center gap-2 bg-black text-white px-6 py-3 rounded-full font-medium shadow-lg transition-all duration-300 hover:scale-105 hover:shadow-xl active:scale-95"
+                    className="inline-flex items-center gap-3 bg-[#212121] text-white px-6 py-3 rounded-full font-medium transition-all duration-300 hover:bg-black"
                 >
-                    <span>Get Started</span>
-                    <span className="inline-flex w-7 h-7 rounded-full bg-white text-gray-900 items-center justify-center">
-                        <ArrowUpRight className="w-4 h-4" />
+                    <span>Let's Collaborate</span>
+                    <span className="inline-flex w-7 h-7 rounded-full bg-white items-center justify-center flex-shrink-0">
+                        <ArrowUpRight className="w-4 h-4 text-[#212121]" />
                     </span>
                 </button>
             </div>
@@ -134,27 +135,28 @@ const HomePage = () => {
 
             {/* Hero Section */}
             <section id="home" className="relative min-h-screen flex items-center justify-center pt-24 px-6 z-10 bg-transparent">
-                <div className="max-w-5xl mx-auto text-center">
+                <div className="max-w-5xl mx-auto relative">
+                    <GlowingEffect disabled={false} proximity={100} spread={40} blur={20} borderWidth={1} />
                     <motion.div className="mb-8" {...fadeInUp}>
-                        <h1 className="text-[clamp(3rem,8vw,5.5rem)] leading-[1.1] font-semibold text-gray-900 mb-2 text-center">
-                            <span className="block text-center">Create your entire</span>
-                            <span className="block text-center">business with</span>
-                            <span className="block font-serif italic font-normal text-center">powerful AI</span>
+                        <h1 className="text-[clamp(3rem,8vw,5.5rem)] leading-[1.1] font-bold text-gray-900 mb-2 text-left">
+                            <span className="block text-left">Create your entire</span>
+                            <span className="block text-left">business with</span>
+                            <span className="block font-serif italic font-normal lowercase text-left">powerful AI</span>
                         </h1>
                     </motion.div>
-                    <motion.div className="text-lg md:text-xl text-gray-600 max-w-2xl mx-auto mb-10 text-center" {...fadeInUp}>
-                        <p className="text-lg md:text-xl leading-relaxed text-center">
+                    <motion.div className="text-lg md:text-xl text-gray-600 max-w-2xl mb-10 text-left" {...fadeInUp}>
+                        <p className="text-lg md:text-xl leading-relaxed text-left">
                             AURION is the all-in-one AI platform that creates professional websites, applications, content, and AI agents. Stop switching between tools - build everything you need in one place with the latest and most powerful AI models.
                         </p>
                     </motion.div>
-                    <div className="flex flex-col sm:flex-row items-center justify-center gap-6 sm:gap-8">
+                    <div className="flex flex-col sm:flex-row items-start gap-6 sm:gap-8">
                         <button
                             onClick={() => router.push("/login")}
-                            className="group flex items-center gap-0 bg-[#6C49F8] text-white px-8 py-4 rounded-full text-lg font-medium shadow-lg overflow-hidden transition-all duration-300 hover:scale-105 hover:shadow-xl active:scale-95"
+                            className="inline-flex items-center gap-3 bg-[#212121] text-white px-8 py-4 rounded-full font-medium transition-all duration-300 hover:bg-black"
                         >
-                            <span className="px-2">Get Started</span>
-                            <span className="inline-flex w-10 h-10 rounded-full bg-white items-center justify-center ml-2 transition-transform duration-300 group-hover:rotate-45">
-                                <ArrowUpRight className="w-4 h-4 text-[#6C49F8]" />
+                            <span>Let's Collaborate</span>
+                            <span className="inline-flex w-7 h-7 rounded-full bg-white items-center justify-center flex-shrink-0">
+                                <ArrowUpRight className="w-4 h-4 text-[#212121]" />
                             </span>
                         </button>
                         <div className="flex items-center gap-4">
@@ -205,7 +207,8 @@ const HomePage = () => {
 
             {/* About Us Section */}
             <section id="about-us" className="py-20 px-6 bg-transparent z-10 relative">
-                <div className="max-w-7xl mx-auto">
+                <div className="max-w-7xl mx-auto relative">
+                    <GlowingEffect disabled={false} proximity={150} spread={30} blur={15} borderWidth={1} />
                     <motion.div className="text-center mb-16" {...fadeInUp}>
                         <div className="text-4xl md:text-6xl font-normal text-gray-900 mb-8">
                             <MagicText 
@@ -261,7 +264,8 @@ const HomePage = () => {
 
             {/* Services Section */}
             <section id="services" className="py-20 px-6 bg-transparent z-10 relative">
-                <div className="max-w-7xl mx-auto">
+                <div className="max-w-7xl mx-auto relative">
+                    <GlowingEffect disabled={false} proximity={150} spread={35} blur={20} borderWidth={1} />
                     <motion.div className="text-4xl md:text-6xl font-normal text-gray-900 mb-16 text-center" {...fadeInUp}>
                         <MagicText 
                             text="Everything you need in one powerful platform"
@@ -297,12 +301,13 @@ const HomePage = () => {
                         ))}
                     </motion.div>
                     <motion.div 
-                        className="bg-[#0C0F1A] rounded-[32px] p-10 flex flex-col md:flex-row md:items-center md:justify-between gap-6 text-white"
+                        className="bg-[#0C0F1A] rounded-[32px] p-10 flex flex-col md:flex-row md:items-center md:justify-between gap-6 text-white relative"
                         initial={{ opacity: 0, y: 40 }}
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true, margin: "-100px" }}
                         transition={{ duration: 0.8, ease: "easeOut" }}
                     >
+                        <GlowingEffect disabled={false} proximity={100} spread={50} blur={25} borderWidth={2} />
                         <div className="text-3xl font-normal leading-snug">
                             <MagicText 
                                 text="Stop switching between tools. Build everything in one place."
@@ -313,20 +318,11 @@ const HomePage = () => {
                         <div className="flex flex-col sm:flex-row gap-4">
                             <button
                                 onClick={() => router.push("/login")}
-                                className="flex items-center gap-2 bg-white text-gray-900 px-6 py-3 rounded-full font-medium transition-all duration-300 hover:scale-105 hover:shadow-lg active:scale-95"
+                                className="inline-flex items-center gap-3 bg-[#212121] text-white px-6 py-3 rounded-full font-medium transition-all duration-300 hover:bg-black"
                             >
-                                <span>Start Building</span>
-                                <span className="inline-flex w-7 h-7 rounded-full bg-gray-900 text-white items-center justify-center">
-                                    <ArrowUpRight className="w-4 h-4" />
-                                </span>
-                            </button>
-                            <button 
-                                onClick={() => router.push("/login")}
-                                className="flex items-center gap-2 bg-transparent border border-white text-white px-6 py-3 rounded-full font-medium transition-all duration-300 hover:scale-105 hover:bg-white/5 active:scale-95"
-                            >
-                                <span>See Features</span>
-                                <span className="inline-flex w-7 h-7 rounded-full bg-white text-gray-900 items-center justify-center">
-                                    <ArrowUpRight className="w-4 h-4" />
+                                <span>Let's Collaborate</span>
+                                <span className="inline-flex w-7 h-7 rounded-full bg-white items-center justify-center flex-shrink-0">
+                                    <ArrowUpRight className="w-4 h-4 text-[#212121]" />
                                 </span>
                             </button>
                         </div>
@@ -336,7 +332,8 @@ const HomePage = () => {
 
             {/* Testimonials Section */}
             <section className="py-20 px-6 bg-transparent z-10 relative">
-                <div className="max-w-6xl mx-auto">
+                <div className="max-w-6xl mx-auto relative">
+                    <GlowingEffect disabled={false} proximity={120} spread={30} blur={18} borderWidth={1} />
                     {/* Mid-Section */}
                     <motion.div className="grid gap-6 md:grid-cols-[minmax(0,2fr)_1fr] mb-6" {...fadeInUp}>
                         <motion.div 
@@ -424,7 +421,8 @@ const HomePage = () => {
 
             {/* Pricing Section */}
             <section id="pricing" className="py-20 px-6 bg-transparent z-10 relative">
-                <div className="max-w-7xl mx-auto">
+                <div className="max-w-7xl mx-auto relative">
+                    <GlowingEffect disabled={false} proximity={150} spread={40} blur={20} borderWidth={1} />
                     <motion.div className="text-4xl md:text-6xl font-normal text-gray-900 mb-16 text-center" {...fadeInUp}>
                         <MagicText 
                             text="Choose the plan that fits your needs"
@@ -449,11 +447,11 @@ const HomePage = () => {
                             </h3>
                             <button
                                 onClick={() => router.push("/login")}
-                                className="w-full flex items-center justify-center gap-2 bg-white text-gray-900 px-6 py-3 rounded-full hover:bg-gray-100 transition-colors mb-8"
+                                className="w-full inline-flex items-center justify-center gap-3 bg-[#212121] text-white px-6 py-3 rounded-full font-medium transition-all duration-300 hover:bg-black mb-8"
                             >
-                                <span>Get Started</span>
-                                <span className="inline-flex w-7 h-7 rounded-full bg-gray-900 text-white items-center justify-center">
-                                    <ArrowUpRight className="w-4 h-4" />
+                                <span>Let's Collaborate</span>
+                                <span className="inline-flex w-7 h-7 rounded-full bg-white items-center justify-center flex-shrink-0">
+                                    <ArrowUpRight className="w-4 h-4 text-[#212121]" />
                                 </span>
                             </button>
                             <div>
@@ -484,11 +482,11 @@ const HomePage = () => {
                             </h3>
                             <button
                                 onClick={() => router.push("/login")}
-                                className="w-full flex items-center justify-center gap-2 bg-white text-gray-900 px-6 py-3 rounded-full hover:bg-gray-100 transition-colors mb-8"
+                                className="w-full inline-flex items-center justify-center gap-3 bg-[#212121] text-white px-6 py-3 rounded-full font-medium transition-all duration-300 hover:bg-black mb-8"
                             >
-                                <span>Get Started</span>
-                                <span className="inline-flex w-7 h-7 rounded-full bg-gray-900 text-white items-center justify-center">
-                                    <ArrowUpRight className="w-4 h-4" />
+                                <span>Let's Collaborate</span>
+                                <span className="inline-flex w-7 h-7 rounded-full bg-white items-center justify-center flex-shrink-0">
+                                    <ArrowUpRight className="w-4 h-4 text-[#212121]" />
                                 </span>
                             </button>
                             <div>
@@ -551,12 +549,13 @@ const HomePage = () => {
             <section className="py-20 px-6 bg-transparent z-10 relative">
                 <div className="max-w-4xl mx-auto">
                     <motion.div 
-                        className="rounded-3xl p-12 md:p-16 border border-gray-200 shadow-sm bg-white"
+                        className="rounded-3xl p-12 md:p-16 border border-gray-200 shadow-sm bg-white relative"
                         style={{
                             backgroundImage: `linear-gradient(to right, rgba(232, 244, 248, 0.3) 0%, rgba(245, 240, 232, 0.3) 50%, rgba(255, 248, 231, 0.3) 100%)`,
                         }}
                         {...fadeInUp}
                     >
+                        <GlowingEffect disabled={false} proximity={100} spread={45} blur={25} borderWidth={2} />
                         <div className="text-center">
                             <motion.div className="text-4xl md:text-5xl font-normal text-gray-900 mb-6" {...fadeInUp}>
                                 <MagicText 
@@ -574,11 +573,11 @@ const HomePage = () => {
                             </motion.div>
                             <button
                                 onClick={() => router.push("/login")}
-                                className="inline-flex items-center gap-2 bg-black text-white px-8 py-4 rounded-full transition-all duration-300 hover:scale-105 hover:shadow-xl active:scale-95"
+                                className="inline-flex items-center gap-3 bg-[#212121] text-white px-8 py-4 rounded-full font-medium transition-all duration-300 hover:bg-black"
                             >
-                                <span>Start Building Now</span>
-                                <span className="inline-flex w-7 h-7 rounded-full bg-white text-gray-900 items-center justify-center">
-                                    <ArrowUpRight className="w-4 h-4" />
+                                <span>Let's Collaborate</span>
+                                <span className="inline-flex w-7 h-7 rounded-full bg-white items-center justify-center flex-shrink-0">
+                                    <ArrowUpRight className="w-4 h-4 text-[#212121]" />
                                 </span>
                             </button>
                         </div>
