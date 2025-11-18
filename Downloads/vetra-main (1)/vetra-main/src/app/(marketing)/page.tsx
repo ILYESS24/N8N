@@ -318,20 +318,20 @@ const HomePage = () => {
                     </motion.div>
                     <motion.div className="grid grid-cols-1 md:grid-cols-2 gap-6" {...fadeInUp}>
                         {[
-                            { name: "FlowBank", tags: ["UX Research", "Interface Design"] },
-                            { name: "Academy.co", tags: ["Product Design", "Interaction Design"] },
-                            { name: "Genome", tags: ["Brand identity design", "UX Research"] },
-                            { name: "Hotto", tags: ["Visual Story telling", "Web & Mobile Design"] },
+                            { name: "FlowBank", tags: ["UX Research", "Interface Design"], color: "bg-[#E6F0FF]" },
+                            { name: "Academy.co", tags: ["Product Design", "Interaction Design"], color: "bg-[#F1E8FF]" },
+                            { name: "Genome", tags: ["Brand identity design", "UX Research"], color: "bg-[#E7F6EA]" },
+                            { name: "Hotto", tags: ["Visual Story telling", "Web & Mobile Design"], color: "bg-[#FFEFD9]" },
                         ].map((project, i) => (
                             <motion.div 
                                 key={i} 
-                                className="bg-gray-100 rounded-2xl p-6"
+                                className="bg-gray-50 rounded-2xl p-6 shadow-sm"
                                 initial={{ opacity: 0, y: 20 }}
                                 whileInView={{ opacity: 1, y: 0 }}
                                 viewport={{ once: true, margin: "-50px" }}
                                 transition={{ duration: 0.5, delay: i * 0.1 }}
                             >
-                                <div className="w-full h-64 rounded-xl mb-4 bg-gray-200"></div>
+                                <div className={`w-full h-64 rounded-xl mb-4 ${project.color}`}></div>
                                 <h3 className="text-xl font-normal text-gray-900 mb-4">{project.name}</h3>
                                 <div className="flex gap-2">
                                     {project.tags.map((tag, j) => (
@@ -635,7 +635,7 @@ const HomePage = () => {
             </section>
 
             {/* Footer */}
-            <footer className="bg-transparent border-t border-gray-200 py-12 px-6 z-10 relative">
+            <footer className="bg-transparent border-t border-gray-200 py-12 px-6 z-10 relative w-full">
                 <div className="max-w-7xl mx-auto">
                     <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
                         <div>
@@ -691,10 +691,10 @@ const HomePage = () => {
                             <a href="/changelog" className="text-gray-600 hover:text-gray-900">Changelog</a>
                         </div>
                     </div>
-                    <div className="mt-12 pt-8 border-t border-gray-200">
-                        <div className="text-[clamp(6rem,15vw,12rem)] font-black text-center tracking-tight text-black">
-                            AURION
-                        </div>
+                </div>
+                <div className="w-full mt-12 pt-8 border-t border-gray-200">
+                    <div className="text-[clamp(6rem,15vw,12rem)] font-black text-center tracking-tight text-black w-full">
+                        AURION
                     </div>
                 </div>
             </footer>
