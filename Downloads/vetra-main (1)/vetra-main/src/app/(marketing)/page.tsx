@@ -112,9 +112,9 @@ const HomePage = () => {
             <div className="fixed top-6 right-6 z-50">
                 <button
                     onClick={() => router.push("/register")}
-                    className="inline-flex items-center gap-2 bg-black text-white px-6 py-3 rounded-full font-medium shadow-lg hover:bg-gray-900 transition-colors"
+                    className="group inline-flex items-center gap-2 bg-black text-white px-6 py-3 rounded-full font-medium shadow-lg hover:bg-gray-900 transition-all duration-300 group-hover:flex-row-reverse"
                 >
-                    Get Started
+                    <span>Get Started</span>
                     <span className="inline-flex w-7 h-7 rounded-full bg-white text-gray-900 items-center justify-center">
                         <ArrowUpRight className="w-4 h-4" />
                     </span>
@@ -149,7 +149,7 @@ const HomePage = () => {
                     <div className="flex items-center justify-center gap-8">
                         <button
                             onClick={() => router.push("/login")}
-                            className="flex items-center gap-2 bg-gradient-to-r from-[#6C49F8] to-[#8A57FF] text-white px-8 py-4 rounded-full text-lg font-medium shadow-lg hover:opacity-90 transition"
+                            className="group flex items-center gap-2 bg-gradient-to-r from-[#6C49F8] to-[#8A57FF] text-white px-8 py-4 rounded-full text-lg font-medium shadow-lg hover:opacity-90 transition-all duration-300 group-hover:flex-row-reverse"
                         >
                             <span>Get Started</span>
                             <span className="inline-flex w-8 h-8 rounded-full bg-white text-gray-900 items-center justify-center">
@@ -292,14 +292,14 @@ const HomePage = () => {
                         <div className="flex flex-col sm:flex-row gap-4">
                             <button
                                 onClick={() => router.push("/login")}
-                                className="flex items-center gap-2 bg-white text-gray-900 px-6 py-3 rounded-full font-medium hover:bg-gray-100 transition-colors"
+                                className="group flex items-center gap-2 bg-white text-gray-900 px-6 py-3 rounded-full font-medium hover:bg-gray-100 transition-all duration-300 group-hover:flex-row-reverse"
                             >
                                 <span>Get a Quote</span>
                                 <span className="inline-flex w-7 h-7 rounded-full bg-gray-900 text-white items-center justify-center">
                                     <ArrowUpRight className="w-4 h-4" />
                                 </span>
                             </button>
-                            <button className="flex items-center gap-2 bg-transparent border border-white text-white px-6 py-3 rounded-full font-medium hover:bg-white/10 transition-colors">
+                            <button className="group flex items-center gap-2 bg-transparent border border-white text-white px-6 py-3 rounded-full font-medium hover:bg-white/10 transition-all duration-300 group-hover:flex-row-reverse">
                                 <span>View Our Portfolio</span>
                                 <span className="inline-flex w-7 h-7 rounded-full bg-white text-gray-900 items-center justify-center">
                                     <ArrowUpRight className="w-4 h-4" />
@@ -425,7 +425,7 @@ const HomePage = () => {
                             </h3>
                             <button
                                 onClick={() => router.push("/login")}
-                                className="w-full flex items-center justify-center gap-2 bg-white text-gray-900 px-6 py-3 rounded-full hover:bg-gray-100 transition-colors mb-8"
+                                className="group w-full flex items-center justify-center gap-2 bg-white text-gray-900 px-6 py-3 rounded-full hover:bg-gray-100 transition-all duration-300 mb-8 group-hover:flex-row-reverse"
                             >
                                 <span>Let's Collaborate</span>
                                 <span className="inline-flex w-7 h-7 rounded-full bg-gray-900 text-white items-center justify-center">
@@ -460,7 +460,7 @@ const HomePage = () => {
                             </h3>
                             <button
                                 onClick={() => router.push("/login")}
-                                className="w-full flex items-center justify-center gap-2 bg-white text-gray-900 px-6 py-3 rounded-full hover:bg-gray-100 transition-colors mb-8"
+                                className="group w-full flex items-center justify-center gap-2 bg-white text-gray-900 px-6 py-3 rounded-full hover:bg-gray-100 transition-all duration-300 mb-8 group-hover:flex-row-reverse"
                             >
                                 <span>Let's Collaborate</span>
                                 <span className="inline-flex w-7 h-7 rounded-full bg-gray-900 text-white items-center justify-center">
@@ -550,7 +550,7 @@ const HomePage = () => {
                             </motion.div>
                             <button
                                 onClick={() => router.push("/login")}
-                                className="inline-flex items-center gap-2 bg-black text-white px-8 py-4 rounded-full hover:bg-gray-900 transition-colors"
+                                className="group inline-flex items-center gap-2 bg-black text-white px-8 py-4 rounded-full hover:bg-gray-900 transition-all duration-300 group-hover:flex-row-reverse"
                             >
                                 <span>Let's craft together</span>
                                 <span className="inline-flex w-7 h-7 rounded-full bg-white text-gray-900 items-center justify-center">
