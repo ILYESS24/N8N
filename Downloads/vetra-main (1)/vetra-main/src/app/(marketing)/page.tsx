@@ -112,10 +112,10 @@ const HomePage = () => {
             <div className="fixed top-6 right-6 z-50">
                 <button
                     onClick={() => router.push("/register")}
-                    className="button-swap bg-black text-white px-6 py-3 rounded-full font-medium shadow-lg hover:bg-gray-900"
+                    className="inline-flex items-center gap-2 bg-black text-white px-6 py-3 rounded-full font-medium shadow-lg hover:bg-gray-900 transition-colors"
                 >
-                    <span className="button-text">Get Started</span>
-                    <span className="button-icon inline-flex w-7 h-7 rounded-full bg-white text-gray-900 items-center justify-center">
+                    <span>Get Started</span>
+                    <span className="inline-flex w-7 h-7 rounded-full bg-white text-gray-900 items-center justify-center">
                         <ArrowUpRight className="w-4 h-4" />
                     </span>
                 </button>
@@ -149,10 +149,10 @@ const HomePage = () => {
                     <div className="flex items-center justify-center gap-8">
                         <button
                             onClick={() => router.push("/login")}
-                            className="button-swap bg-gradient-to-r from-[#6C49F8] to-[#8A57FF] text-white px-8 py-4 rounded-full text-lg font-medium shadow-lg hover:opacity-90"
+                            className="flex items-center gap-2 bg-gradient-to-r from-[#6C49F8] to-[#8A57FF] text-white px-8 py-4 rounded-full text-lg font-medium shadow-lg hover:opacity-90 transition-opacity"
                         >
-                            <span className="button-text">Get Started</span>
-                            <span className="button-icon inline-flex w-8 h-8 rounded-full bg-white text-gray-900 items-center justify-center">
+                            <span>Get Started</span>
+                            <span className="inline-flex w-8 h-8 rounded-full bg-white text-gray-900 items-center justify-center">
                                 <ArrowUpRight className="w-4 h-4" />
                             </span>
                         </button>
@@ -292,16 +292,16 @@ const HomePage = () => {
                         <div className="flex flex-col sm:flex-row gap-4">
                             <button
                                 onClick={() => router.push("/login")}
-                                className="button-swap bg-white text-gray-900 px-6 py-3 rounded-full font-medium hover:bg-gray-100"
+                                className="flex items-center gap-2 bg-white text-gray-900 px-6 py-3 rounded-full font-medium hover:bg-gray-100 transition-colors"
                             >
-                                <span className="button-text">Get a Quote</span>
-                                <span className="button-icon inline-flex w-7 h-7 rounded-full bg-gray-900 text-white items-center justify-center">
+                                <span>Get a Quote</span>
+                                <span className="inline-flex w-7 h-7 rounded-full bg-gray-900 text-white items-center justify-center">
                                     <ArrowUpRight className="w-4 h-4" />
                                 </span>
                             </button>
-                            <button className="button-swap bg-transparent border border-white text-white px-6 py-3 rounded-full font-medium hover:bg-white/10">
-                                <span className="button-text">View Our Portfolio</span>
-                                <span className="button-icon inline-flex w-7 h-7 rounded-full bg-white text-gray-900 items-center justify-center">
+                            <button className="flex items-center gap-2 bg-transparent border border-white text-white px-6 py-3 rounded-full font-medium hover:bg-white/10 transition-colors">
+                                <span>View Our Portfolio</span>
+                                <span className="inline-flex w-7 h-7 rounded-full bg-white text-gray-900 items-center justify-center">
                                     <ArrowUpRight className="w-4 h-4" />
                                 </span>
                             </button>
@@ -425,10 +425,10 @@ const HomePage = () => {
                             </h3>
                             <button
                                 onClick={() => router.push("/login")}
-                                className="button-swap w-full justify-center bg-white text-gray-900 px-6 py-3 rounded-full hover:bg-gray-100 mb-8"
+                                className="w-full flex items-center justify-center gap-2 bg-white text-gray-900 px-6 py-3 rounded-full hover:bg-gray-100 transition-colors mb-8"
                             >
-                                <span className="button-text">Let's Collaborate</span>
-                                <span className="button-icon inline-flex w-7 h-7 rounded-full bg-gray-900 text-white items-center justify-center">
+                                <span>Let's Collaborate</span>
+                                <span className="inline-flex w-7 h-7 rounded-full bg-gray-900 text-white items-center justify-center">
                                     <ArrowUpRight className="w-4 h-4" />
                                 </span>
                             </button>
@@ -460,10 +460,10 @@ const HomePage = () => {
                             </h3>
                             <button
                                 onClick={() => router.push("/login")}
-                                className="button-swap w-full justify-center bg-white text-gray-900 px-6 py-3 rounded-full hover:bg-gray-100 mb-8"
+                                className="w-full flex items-center justify-center gap-2 bg-white text-gray-900 px-6 py-3 rounded-full hover:bg-gray-100 transition-colors mb-8"
                             >
-                                <span className="button-text">Let's Collaborate</span>
-                                <span className="button-icon inline-flex w-7 h-7 rounded-full bg-gray-900 text-white items-center justify-center">
+                                <span>Let's Collaborate</span>
+                                <span className="inline-flex w-7 h-7 rounded-full bg-gray-900 text-white items-center justify-center">
                                     <ArrowUpRight className="w-4 h-4" />
                                 </span>
                             </button>
@@ -550,10 +550,10 @@ const HomePage = () => {
                             </motion.div>
                             <button
                                 onClick={() => router.push("/login")}
-                                className="button-swap bg-black text-white px-8 py-4 rounded-full hover:bg-gray-900"
+                                className="inline-flex items-center gap-2 bg-black text-white px-8 py-4 rounded-full hover:bg-gray-900 transition-colors"
                             >
-                                <span className="button-text">Let's craft together</span>
-                                <span className="button-icon inline-flex w-7 h-7 rounded-full bg-white text-gray-900 items-center justify-center">
+                                <span>Let's craft together</span>
+                                <span className="inline-flex w-7 h-7 rounded-full bg-white text-gray-900 items-center justify-center">
                                     <ArrowUpRight className="w-4 h-4" />
                                 </span>
                             </button>
