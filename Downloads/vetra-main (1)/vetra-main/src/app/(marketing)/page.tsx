@@ -692,15 +692,7 @@ const HomePage = () => {
                         </div>
                     </div>
                     <div className="mt-12 pt-8 border-t border-gray-200">
-                        <div 
-                            className="text-[clamp(4rem,12vw,8rem)] font-bold text-center tracking-tight"
-                            style={{
-                                background: "linear-gradient(to right, #000000 0%, #4a4a4a 25%, #ffffff 50%, #4a4a4a 75%, #000000 100%)",
-                                WebkitBackgroundClip: "text",
-                                WebkitTextFillColor: "transparent",
-                                backgroundClip: "text",
-                            }}
-                        >
+                        <div className="text-[clamp(6rem,15vw,12rem)] font-black text-center tracking-tight text-black">
                             AURION
                         </div>
                     </div>
