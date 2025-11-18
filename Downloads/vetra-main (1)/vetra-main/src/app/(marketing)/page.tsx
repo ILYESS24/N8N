@@ -8,6 +8,7 @@ import { ArrowUpRight, Star, Check, Sparkles, Lightbulb, Target, Palette, Monito
 import { LogoCloud } from "@/components/logo-cloud-3";
 import { motion } from "framer-motion";
 import { Skiper19 } from "@/components/svg-follow-scroll";
+import { MagicText } from "@/components/ui/magic-text";
 
 // Animation variants for scroll animations
 const fadeInUp = {
@@ -129,19 +130,24 @@ const HomePage = () => {
             <section id="home" className="relative min-h-screen flex items-center justify-center pt-24 px-6 z-10 bg-transparent">
                 <div className="max-w-5xl mx-auto text-center">
                     <motion.div className="mb-8" {...fadeInUp}>
-                        <p className="text-[clamp(3rem,8vw,5.5rem)] leading-[1.05] font-semibold text-gray-900">
-                            Building bold brands with
-                        </p>
-                        <p
+                        <MagicText 
+                            text="Building bold brands with"
+                            className="text-[clamp(3rem,8vw,5.5rem)] leading-[1.05] font-semibold text-gray-900"
+                            wordClassName="text-[clamp(3rem,8vw,5.5rem)] font-semibold"
+                        />
+                        <MagicText 
+                            text="thoughtful design"
                             className="text-[clamp(3rem,8vw,5.5rem)] leading-[1.05] text-gray-900 italic font-normal"
-                            style={{ fontFamily: "'Instrument Serif', serif" }}
-                        >
-                            thoughtful design
-                        </p>
+                            wordClassName="text-[clamp(3rem,8vw,5.5rem)] italic font-normal"
+                        />
                     </motion.div>
-                    <motion.p className="text-lg md:text-xl text-gray-600 max-w-2xl mx-auto mb-10" {...fadeInUp}>
-                        At Awake, we help small startups tackle the world's biggest challenges with tailored solutions, guiding you from strategy to success in a competitive market.
-                    </motion.p>
+                    <motion.div className="text-lg md:text-xl text-gray-600 max-w-2xl mx-auto mb-10" {...fadeInUp}>
+                        <MagicText 
+                            text="At Awake, we help small startups tackle the world's biggest challenges with tailored solutions, guiding you from strategy to success in a competitive market."
+                            className="text-lg md:text-xl"
+                            wordClassName="text-lg md:text-xl"
+                        />
+                    </motion.div>
                     <div className="flex items-center justify-center gap-8">
                         <button
                             onClick={() => router.push("/login")}
@@ -168,7 +174,11 @@ const HomePage = () => {
             {/* Logo Cloud Section */}
             <section className="w-full py-16 bg-transparent z-10 relative overflow-hidden">
                 <motion.div className="max-w-7xl mx-auto px-6 text-center mb-12" {...fadeInUp}>
-                    <p className="text-gray-600 text-xl font-normal">Loved by 100,000+ big and small brands around the world</p>
+                    <MagicText 
+                        text="Loved by 100,000+ big and small brands around the world"
+                        className="text-gray-600 text-xl font-normal"
+                        wordClassName="text-xl"
+                    />
                 </motion.div>
                 <div className="relative">
                     <LogoCloud
@@ -182,9 +192,13 @@ const HomePage = () => {
             <section id="about-us" className="py-20 px-6 bg-transparent z-10 relative">
                 <div className="max-w-7xl mx-auto">
                     <motion.div className="text-center mb-16" {...fadeInUp}>
-                        <h2 className="text-4xl md:text-6xl font-normal text-gray-900 mb-8">
-                            Crafting exceptional, well experienced & technology driven strategies to drive impactful results with
-                        </h2>
+                        <div className="text-4xl md:text-6xl font-normal text-gray-900 mb-8">
+                            <MagicText 
+                                text="Crafting exceptional, well experienced & technology driven strategies to drive impactful results with"
+                                className="text-4xl md:text-6xl"
+                                wordClassName="text-4xl md:text-6xl"
+                            />
+                        </div>
                         <motion.div className="flex items-center justify-center gap-6 text-gray-900 font-normal" {...fadeInUp}>
                             <div className="inline-flex items-center gap-3 rounded-full px-8 py-4 bg-[#F3E7FF] text-[#6F3AFF]">
                                 <span className="w-10 h-10 rounded-full bg-white/70 flex items-center justify-center text-[#6F3AFF]">
@@ -233,9 +247,13 @@ const HomePage = () => {
             {/* Services Section */}
             <section id="services" className="py-20 px-6 bg-transparent z-10 relative">
                 <div className="max-w-7xl mx-auto">
-                    <motion.h2 className="text-4xl md:text-6xl font-normal text-gray-900 mb-16 text-center" {...fadeInUp}>
-                        Where Innovation meets <span className="italic">excellence</span>
-                    </motion.h2>
+                    <motion.div className="text-4xl md:text-6xl font-normal text-gray-900 mb-16 text-center" {...fadeInUp}>
+                        <MagicText 
+                            text="Where Innovation meets excellence"
+                            className="text-4xl md:text-6xl"
+                            wordClassName="text-4xl md:text-6xl"
+                        />
+                    </motion.div>
                     <motion.div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-6 mb-16" {...fadeInUp}>
                         {[
                             { name: "Brand Strategy", color: "bg-[#F1E8FF]", Icon: Palette, iconColor: "#8452CF" },
@@ -261,7 +279,11 @@ const HomePage = () => {
                     </motion.div>
                     <motion.div className="bg-[#0C0F1A] rounded-[32px] p-10 flex flex-col md:flex-row md:items-center md:justify-between gap-6 text-white" {...fadeInUp}>
                         <div className="text-3xl font-normal leading-snug">
-                            <div>Start Your Creative Journey with Us</div>
+                            <MagicText 
+                                text="Start Your Creative Journey with Us"
+                                className="text-3xl"
+                                wordClassName="text-3xl"
+                            />
                         </div>
                         <div className="flex flex-col sm:flex-row gap-4">
                             <button
@@ -287,9 +309,13 @@ const HomePage = () => {
             {/* Work Section */}
             <section id="work" className="py-20 px-6 bg-transparent z-10 relative">
                 <div className="max-w-7xl mx-auto">
-                    <motion.h2 className="text-4xl md:text-6xl font-normal text-gray-900 mb-16 text-center" {...fadeInUp}>
-                        How we transformed a small business's <span className="italic">online presence</span>
-                    </motion.h2>
+                    <motion.div className="text-4xl md:text-6xl font-normal text-gray-900 mb-16 text-center" {...fadeInUp}>
+                        <MagicText 
+                            text="How we transformed a small business's online presence"
+                            className="text-4xl md:text-6xl"
+                            wordClassName="text-4xl md:text-6xl"
+                        />
+                    </motion.div>
                     <motion.div className="grid grid-cols-1 md:grid-cols-2 gap-6" {...fadeInUp}>
                         {[
                             { name: "FlowBank", tags: ["UX Research", "Interface Design"] },
@@ -398,9 +424,13 @@ const HomePage = () => {
             {/* Pricing Section */}
             <section id="pricing" className="py-20 px-6 bg-transparent z-10 relative">
                 <div className="max-w-7xl mx-auto">
-                    <motion.h2 className="text-4xl md:text-6xl font-normal text-gray-900 mb-16 text-center" {...fadeInUp}>
-                        Pick the plan that fits your <span className="italic text-gray-500">start-up</span>
-                    </motion.h2>
+                    <motion.div className="text-4xl md:text-6xl font-normal text-gray-900 mb-16 text-center" {...fadeInUp}>
+                        <MagicText 
+                            text="Pick the plan that fits your start-up"
+                            className="text-4xl md:text-6xl"
+                            wordClassName="text-4xl md:text-6xl"
+                        />
+                    </motion.div>
                     <motion.div className="grid grid-cols-1 md:grid-cols-2 gap-8" {...fadeInUp}>
                         <motion.div 
                             className="bg-[#F4E181] rounded-2xl p-8"
@@ -479,9 +509,13 @@ const HomePage = () => {
             {/* FAQ Section */}
             <section className="py-20 px-6 bg-transparent z-10 relative">
                 <div className="max-w-4xl mx-auto">
-                    <motion.h2 className="text-4xl md:text-6xl font-normal text-gray-900 mb-16 text-center" {...fadeInUp}>
-                        Got questions?<br />We've got <span className="italic">answers</span>
-                    </motion.h2>
+                    <motion.div className="text-4xl md:text-6xl font-normal text-gray-900 mb-16 text-center" {...fadeInUp}>
+                        <MagicText 
+                            text="Got questions? We've got answers"
+                            className="text-4xl md:text-6xl"
+                            wordClassName="text-4xl md:text-6xl"
+                        />
+                    </motion.div>
                     <motion.div className="space-y-4" {...fadeInUp}>
                         {faqs.map((faq, i) => (
                             <motion.div 
@@ -515,9 +549,13 @@ const HomePage = () => {
             {/* Awards Section */}
             <section id="award" className="py-20 px-6 bg-transparent z-10 relative">
                 <div className="max-w-7xl mx-auto">
-                    <motion.h2 className="text-4xl md:text-6xl font-normal text-gray-900 mb-16 text-center" {...fadeInUp}>
-                        Accolades and achievements celebration our <span className="italic">design excellence</span>
-                    </motion.h2>
+                    <motion.div className="text-4xl md:text-6xl font-normal text-gray-900 mb-16 text-center" {...fadeInUp}>
+                        <MagicText 
+                            text="Accolades and achievements celebration our design excellence"
+                            className="text-4xl md:text-6xl"
+                            wordClassName="text-4xl md:text-6xl"
+                        />
+                    </motion.div>
                     <motion.div className="grid grid-cols-1 md:grid-cols-3 gap-6" {...fadeInUp}>
                         {[
                             { title: "Webflow Awards", description: "Celebrated for cutting-edge interaction design and seamless user experiences.", year: "2025" },
@@ -555,12 +593,20 @@ const HomePage = () => {
                         {...fadeInUp}
                     >
                         <div className="text-center">
-                            <motion.h3 className="text-4xl md:text-5xl font-normal text-gray-900 mb-6" {...fadeInUp}>
-                                Innovative Solutions for <span className="italic font-normal">bold</span> <span className="text-gray-500">brands</span>
-                            </motion.h3>
-                            <motion.p className="text-lg text-gray-600 mb-10 max-w-2xl mx-auto" {...fadeInUp}>
-                                Looking to elevate your brand? We craft immersive experiences that captivate, engage, and make your business unforgettable in every interaction.
-                            </motion.p>
+                            <motion.div className="text-4xl md:text-5xl font-normal text-gray-900 mb-6" {...fadeInUp}>
+                                <MagicText 
+                                    text="Innovative Solutions for bold brands"
+                                    className="text-4xl md:text-5xl"
+                                    wordClassName="text-4xl md:text-5xl"
+                                />
+                            </motion.div>
+                            <motion.div className="text-lg text-gray-600 mb-10 max-w-2xl mx-auto" {...fadeInUp}>
+                                <MagicText 
+                                    text="Looking to elevate your brand? We craft immersive experiences that captivate, engage, and make your business unforgettable in every interaction."
+                                    className="text-lg"
+                                    wordClassName="text-lg"
+                                />
+                            </motion.div>
                             <button
                                 onClick={() => router.push("/login")}
                                 className="inline-flex items-center gap-2 bg-black text-white px-8 py-4 rounded-full hover:bg-gray-900 transition-colors"
