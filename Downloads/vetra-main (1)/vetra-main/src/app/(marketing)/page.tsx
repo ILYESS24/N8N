@@ -4,7 +4,7 @@ export const dynamic = 'force-dynamic';
 
 import { useState, useEffect } from "react";
 import { useRouter } from "next/navigation";
-import { ArrowUpRight, Star, Check, Sparkles, Lightbulb, Target, Palette, Monitor, Megaphone, PenTool, BarChart3 } from "lucide-react";
+import { ArrowUpRight, Star, Check, Sparkles, Lightbulb, Target, Palette, Monitor, Megaphone, PenTool, BarChart3, Code, Image, Video, FileText, Bot, Layers, Zap } from "lucide-react";
 import { LogoCloud } from "@/components/logo-cloud-3";
 import { motion } from "framer-motion";
 import { Skiper19 } from "@/components/svg-follow-scroll";
@@ -32,28 +32,36 @@ const HomePage = () => {
 
     const faqs = [
         {
-            question: "What services does Awake Agency offer?",
-            answer: "Yes, we provide post-launch support to ensure smooth implementation and offer ongoing maintenance packages for clients needing regular updates or technical assistance."
+            question: "What is AURION and how does it work?",
+            answer: "AURION is an all-in-one AI platform that creates professional websites and applications using the latest AI models. Instead of switching between multiple tools, you can build your entire business in one place - from website creation and content generation to code editing and AI agent deployment."
         },
         {
-            question: "How long does a typical project take?",
-            answer: "Yes, we provide post-launch support to ensure smooth implementation and offer ongoing maintenance packages for clients needing regular updates or technical assistance."
+            question: "What AI models does AURION use?",
+            answer: "AURION leverages the most powerful and latest AI models available, including advanced language models for content generation, image generation models for visual content, video generation capabilities, and specialized code models for development assistance. We continuously update our models to ensure you have access to cutting-edge AI technology."
         },
         {
-            question: "How is pricing structured at Awake Agency?",
-            answer: "Yes, we provide post-launch support to ensure smooth implementation and offer ongoing maintenance packages for clients needing regular updates or technical assistance."
+            question: "Can I edit my website or app code manually?",
+            answer: "Yes! AURION includes a powerful AI-assisted code editor that allows you to manually modify your applications. The editor features AI code suggestions, auto-completion, and an intelligent assistant to help you make changes efficiently, even if you're not a coding expert."
         },
         {
-            question: "Do you offer ongoing support after project completion?",
-            answer: "Yes, we provide post-launch support to ensure smooth implementation and offer ongoing maintenance packages for clients needing regular updates or technical assistance."
+            question: "What types of content can I create with AURION?",
+            answer: "AURION enables you to create text content with AI-powered writing assistance, generate images using advanced AI models, create videos with AI video generation, and develop complete websites and applications. All content creation tools are integrated into one seamless platform."
         },
         {
-            question: "How often will I receive updates on my project?",
-            answer: "Yes, we provide post-launch support to ensure smooth implementation and offer ongoing maintenance packages for clients needing regular updates or technical assistance."
+            question: "What are AI agents and how can I use them?",
+            answer: "AI agents in AURION are intelligent assistants that can automate tasks, handle customer interactions, manage workflows, and perform various business functions. You can deploy custom AI agents tailored to your specific needs, all without leaving the AURION platform."
         },
         {
-            question: "How do I get started with Awake Agency?",
-            answer: "Yes, we provide post-launch support to ensure smooth implementation and offer ongoing maintenance packages for clients needing regular updates or technical assistance."
+            question: "Do I need coding experience to use AURION?",
+            answer: "No coding experience is required! AURION's AI-powered interface allows you to create professional websites and applications through intuitive design tools. However, if you want to customize further, our AI-assisted code editor makes manual modifications accessible even for beginners."
+        },
+        {
+            question: "What component libraries are available?",
+            answer: "AURION includes extensive integrated component libraries covering UI/UX elements, design patterns, templates, and pre-built modules. These libraries allow for extensive customization and modification of your projects without starting from scratch, saving you time and ensuring professional results."
+        },
+        {
+            question: "How is pricing structured?",
+            answer: "AURION offers flexible pricing plans to suit different needs - from individual creators to growing businesses. Plans include access to all core features with varying limits on usage, AI model access, and support levels. Check our pricing section for detailed information."
         }
     ];
 
@@ -129,14 +137,14 @@ const HomePage = () => {
                 <div className="max-w-5xl mx-auto text-center">
                     <motion.div className="mb-8" {...fadeInUp}>
                         <h1 className="text-[clamp(3rem,8vw,5.5rem)] leading-[1.1] font-semibold text-gray-900 mb-2 text-center">
-                            <span className="block text-center">Building bold</span>
-                            <span className="block text-center">brands with</span>
-                            <span className="block font-serif italic font-normal text-center">thoughtful design</span>
+                            <span className="block text-center">Create your entire</span>
+                            <span className="block text-center">business with</span>
+                            <span className="block font-serif italic font-normal text-center">powerful AI</span>
                         </h1>
                     </motion.div>
                     <motion.div className="text-lg md:text-xl text-gray-600 max-w-2xl mx-auto mb-10 text-center" {...fadeInUp}>
                         <p className="text-lg md:text-xl leading-relaxed text-center">
-                            At Awake, we help small startups tackle the world's biggest challenges with tailored solutions, guiding you from strategy to success in a competitive market.
+                            AURION is the all-in-one AI platform that creates professional websites, applications, content, and AI agents. Stop switching between tools - build everything you need in one place with the latest and most powerful AI models.
                         </p>
                     </motion.div>
                     <div className="flex flex-col sm:flex-row items-center justify-center gap-6 sm:gap-8">
@@ -171,7 +179,7 @@ const HomePage = () => {
                                         <Star key={i} className="w-4 h-4 fill-yellow-400 text-yellow-400" />
                                     ))}
                                 </div>
-                                <p className="text-sm text-gray-600">Trusted by 200+ clients</p>
+                                <p className="text-sm text-gray-600">Trusted by 10,000+ creators</p>
                             </div>
                         </div>
                     </div>
@@ -182,7 +190,7 @@ const HomePage = () => {
             <section className="w-full py-16 bg-transparent z-10 relative overflow-hidden">
                 <motion.div className="max-w-7xl mx-auto px-6 text-center mb-12" {...fadeInUp}>
                     <MagicText 
-                        text="Loved by 100,000+ big and small brands around the world"
+                        text="Powered by the world's most advanced AI models"
                         className="text-gray-600 text-xl font-normal"
                         wordClassName="text-xl"
                     />
@@ -201,37 +209,37 @@ const HomePage = () => {
                     <motion.div className="text-center mb-16" {...fadeInUp}>
                         <div className="text-4xl md:text-6xl font-normal text-gray-900 mb-8">
                             <MagicText 
-                                text="Crafting exceptional, well experienced & technology driven strategies to drive impactful results with"
+                                text="Everything you need to build your business powered by the latest AI models"
                                 className="text-4xl md:text-6xl"
                                 wordClassName="text-4xl md:text-6xl"
                             />
                         </div>
-                        <motion.div className="flex items-center justify-center gap-6 text-gray-900 font-normal" {...fadeInUp}>
+                        <motion.div className="flex items-center justify-center gap-6 text-gray-900 font-normal flex-wrap" {...fadeInUp}>
                             <div className="inline-flex items-center gap-3 rounded-full px-8 py-4 bg-[#F3E7FF] text-[#6F3AFF]">
                                 <span className="w-10 h-10 rounded-full bg-white/70 flex items-center justify-center text-[#6F3AFF]">
-                                    <Sparkles className="w-6 h-6" strokeWidth={1.5} />
+                                    <Zap className="w-6 h-6" strokeWidth={1.5} />
                                 </span>
-                                <span className="text-xl italic">Creativity</span>
+                                <span className="text-xl italic">All-in-One</span>
                             </div>
                             <div className="inline-flex items-center gap-3 rounded-full px-8 py-4 bg-[#E0ECFF] text-[#2E61B5]">
                                 <span className="w-10 h-10 rounded-full bg-white/70 flex items-center justify-center text-[#2E61B5]">
-                                    <Lightbulb className="w-6 h-6" strokeWidth={1.5} />
+                                    <Bot className="w-6 h-6" strokeWidth={1.5} />
                                 </span>
-                                <span className="text-xl italic">Innovation</span>
+                                <span className="text-xl italic">AI-Powered</span>
                             </div>
                             <div className="inline-flex items-center gap-3 rounded-full px-8 py-4 bg-[#DCF6E6] text-[#1B7A4F]">
                                 <span className="w-10 h-10 rounded-full bg-white/70 flex items-center justify-center text-[#1B7A4F]">
-                                    <Target className="w-6 h-6" strokeWidth={1.5} />
+                                    <Layers className="w-6 h-6" strokeWidth={1.5} />
                                 </span>
-                                <span className="text-xl italic">Strategy</span>
+                                <span className="text-xl italic">Integrated</span>
                             </div>
                         </motion.div>
                     </motion.div>
                     <motion.div className="grid grid-cols-1 md:grid-cols-3 gap-8" {...fadeInUp}>
                         {[
-                            { value: "+40", label: "Happy Clients" },
-                            { value: "+15", label: "Years of experience" },
-                            { value: "+12", label: "Awards won" },
+                            { value: "10K+", label: "Active Users" },
+                            { value: "50K+", label: "Projects Created" },
+                            { value: "99%", label: "Satisfaction Rate" },
                         ].map((item, i) => (
                             <motion.div 
                                 key={i} 
@@ -256,18 +264,21 @@ const HomePage = () => {
                 <div className="max-w-7xl mx-auto">
                     <motion.div className="text-4xl md:text-6xl font-normal text-gray-900 mb-16 text-center" {...fadeInUp}>
                         <MagicText 
-                            text="Where Innovation meets excellence"
+                            text="Everything you need in one powerful platform"
                             className="text-4xl md:text-6xl"
                             wordClassName="text-4xl md:text-6xl"
                         />
                     </motion.div>
-                    <motion.div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-6 mb-16">
+                    <motion.div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-6 mb-16">
                         {[
-                            { name: "Brand Strategy", color: "bg-[#F1E8FF]", Icon: Palette, iconColor: "#8452CF" },
-                            { name: "Web Development", color: "bg-[#FCE7EC]", Icon: Monitor, iconColor: "#D16B7B" },
-                            { name: "Digital Marketing", color: "bg-[#E6F0FF]", Icon: Megaphone, iconColor: "#3A6BC8" },
-                            { name: "UI/UX Designing", color: "bg-[#FFEFD9]", Icon: PenTool, iconColor: "#E09549" },
-                            { name: "Animation & Rendering", color: "bg-[#E7F6EA]", Icon: Sparkles, iconColor: "#1D855C" },
+                            { name: "Website Builder", description: "Create professional websites with AI", color: "bg-[#F1E8FF]", Icon: Monitor, iconColor: "#8452CF" },
+                            { name: "App Creator", description: "Build applications with latest AI models", color: "bg-[#FCE7EC]", Icon: Code, iconColor: "#D16B7B" },
+                            { name: "Content Generation", description: "Text, images, and videos with AI", color: "bg-[#E6F0FF]", Icon: FileText, iconColor: "#3A6BC8" },
+                            { name: "AI Agents", description: "Deploy intelligent automation agents", color: "bg-[#FFEFD9]", Icon: Bot, iconColor: "#E09549" },
+                            { name: "Code Editor", description: "AI-assisted manual code editing", color: "bg-[#E7F6EA]", Icon: Code, iconColor: "#1D855C" },
+                            { name: "Image Generator", description: "Create stunning visuals with AI", color: "bg-[#F3E7FF]", Icon: Image, iconColor: "#6F3AFF" },
+                            { name: "Video Creator", description: "Generate professional videos", color: "bg-[#E0ECFF]", Icon: Video, iconColor: "#2E61B5" },
+                            { name: "Component Library", description: "Extensive UI/UX components", color: "bg-[#DCF6E6]", Icon: Layers, iconColor: "#1B7A4F" },
                         ].map(({ Icon, ...service }, i) => (
                             <motion.div 
                                 key={i} 
@@ -280,7 +291,8 @@ const HomePage = () => {
                                 <div className="w-12 h-12 bg-white rounded-2xl mb-4 flex items-center justify-center">
                                     <Icon className="w-6 h-6" strokeWidth={1.5} style={{ color: service.iconColor }} />
                                 </div>
-                                <p className="font-normal text-gray-900">{service.name}</p>
+                                <p className="font-normal text-gray-900 mb-1">{service.name}</p>
+                                <p className="text-sm text-gray-600">{service.description}</p>
                             </motion.div>
                         ))}
                     </motion.div>
@@ -293,7 +305,7 @@ const HomePage = () => {
                     >
                         <div className="text-3xl font-normal leading-snug">
                             <MagicText 
-                                text="Start Your Creative Journey with Us"
+                                text="Stop switching between tools. Build everything in one place."
                                 className="text-3xl"
                                 wordClassName="text-3xl"
                             />
@@ -303,13 +315,16 @@ const HomePage = () => {
                                 onClick={() => router.push("/login")}
                                 className="flex items-center gap-2 bg-white text-gray-900 px-6 py-3 rounded-full font-medium transition-all duration-300 hover:scale-105 hover:shadow-lg active:scale-95"
                             >
-                                <span>Get a Quote</span>
+                                <span>Start Building</span>
                                 <span className="inline-flex w-7 h-7 rounded-full bg-gray-900 text-white items-center justify-center">
                                     <ArrowUpRight className="w-4 h-4" />
                                 </span>
                             </button>
-                            <button className="flex items-center gap-2 bg-transparent border border-white text-white px-6 py-3 rounded-full font-medium transition-all duration-300 hover:scale-105 hover:bg-white/5 active:scale-95">
-                                <span>View Our Portfolio</span>
+                            <button 
+                                onClick={() => router.push("/login")}
+                                className="flex items-center gap-2 bg-transparent border border-white text-white px-6 py-3 rounded-full font-medium transition-all duration-300 hover:scale-105 hover:bg-white/5 active:scale-95"
+                            >
+                                <span>See Features</span>
                                 <span className="inline-flex w-7 h-7 rounded-full bg-white text-gray-900 items-center justify-center">
                                     <ArrowUpRight className="w-4 h-4" />
                                 </span>
@@ -337,11 +352,11 @@ const HomePage = () => {
                             </div>
                             <div className="relative z-20">
                                 <p className="text-2xl md:text-3xl font-normal leading-snug mb-8">
-                                    Awake's expertise transformed my vision into success with creativity, precision, and a deep understanding of my goals.
+                                    AURION transformed how I build my business. I created my entire website, generated all content, and deployed AI agents - all in one platform. No more switching between tools!
                                 </p>
                                 <div className="text-sm">
-                                    <p className="font-normal">Sarah Mitchell</p>
-                                    <p className="text-gray-400">Founder of Chipsland</p>
+                                    <p className="font-normal">Alex Chen</p>
+                                    <p className="text-gray-400">Founder of TechFlow</p>
                                 </div>
                             </div>
                         </motion.div>
@@ -359,7 +374,7 @@ const HomePage = () => {
                             <div>
                                 <div className="text-[72px] leading-none font-light text-gray-900 mb-4">91%</div>
                                 <p className="text-sm text-gray-800">
-                                    clients recommend our design services.
+                                    of users build their entire business on AURION.
                                 </p>
                             </div>
                         </motion.div>
@@ -376,7 +391,7 @@ const HomePage = () => {
                         >
                             <div>
                                 <p className="text-xs uppercase tracking-[0.2em] text-gray-400 mb-3">CUSTOMER STORIES</p>
-                                <p className="text-2xl font-normal mb-6">Their creativity and attention to detail transformed our brand completely!</p>
+                                <p className="text-2xl font-normal mb-6">AURION's all-in-one platform saved me weeks of work. I built my app, generated content, and launched - all without leaving the platform!</p>
                             </div>
                             <div className="rounded-2xl bg-white/10 border border-white/20 h-48 flex items-center justify-center overflow-hidden">
                                 <div className="w-full h-full bg-gradient-to-br from-blue-200 via-yellow-200 to-orange-200 relative">
@@ -396,11 +411,11 @@ const HomePage = () => {
                         >
                             <p className="text-xs uppercase tracking-[0.2em] text-gray-500 mb-4">CUSTOMER STORIES</p>
                             <p className="text-2xl text-gray-900 mb-6">
-                                "Awake Design Agency brought our ideas to life with exceptional creativity and precision, exceeding expectations."
+                                "The AI-powered code editor is incredible. Even as a beginner, I could customize my app exactly how I wanted. AURION makes professional development accessible to everyone."
                             </p>
                             <div className="text-sm text-gray-600">
-                                <p className="text-gray-900 font-normal">Sarah Mitchell</p>
-                                <p>Marketing Head at TalentConnect</p>
+                                <p className="text-gray-900 font-normal">Maria Rodriguez</p>
+                                <p>Entrepreneur & Creator</p>
                             </div>
                         </motion.div>
                     </motion.div>
@@ -412,7 +427,7 @@ const HomePage = () => {
                 <div className="max-w-7xl mx-auto">
                     <motion.div className="text-4xl md:text-6xl font-normal text-gray-900 mb-16 text-center" {...fadeInUp}>
                         <MagicText 
-                            text="Pick the plan that fits your start-up"
+                            text="Choose the plan that fits your needs"
                             className="text-4xl md:text-6xl"
                             wordClassName="text-4xl md:text-6xl"
                         />
@@ -428,15 +443,15 @@ const HomePage = () => {
                             <div className="mb-4">
                                 <span className="px-4 py-2 bg-black text-white rounded-full text-sm font-normal">Starter</span>
                             </div>
-                            <p className="text-sm text-gray-600 mb-6">For companies who need design support. One request at a time.</p>
+                            <p className="text-sm text-gray-600 mb-6">Perfect for individuals and small projects. Get started with all core features.</p>
                             <h3 className="text-5xl font-normal text-gray-900 mb-8">
-                                $2500<span className="text-2xl text-gray-600 font-normal">/month</span>
+                                $29<span className="text-2xl text-gray-600 font-normal">/month</span>
                             </h3>
                             <button
                                 onClick={() => router.push("/login")}
                                 className="w-full flex items-center justify-center gap-2 bg-white text-gray-900 px-6 py-3 rounded-full hover:bg-gray-100 transition-colors mb-8"
                             >
-                                <span>Let's Collaborate</span>
+                                <span>Get Started</span>
                                 <span className="inline-flex w-7 h-7 rounded-full bg-gray-900 text-white items-center justify-center">
                                     <ArrowUpRight className="w-4 h-4" />
                                 </span>
@@ -444,7 +459,7 @@ const HomePage = () => {
                             <div>
                                 <p className="text-sm text-gray-900 mb-4 font-normal">Features</p>
                                 <ul className="space-y-3">
-                                    {["Design Updates Every 2 Days", "Mid-level Designer", "SEO optimization", "Monthly analytics", "2x Calls Per Month", "License free assets"].map((feature, i) => (
+                                    {["Website & App Builder", "AI Content Generation (Text, Image, Video)", "AI-Assisted Code Editor", "Basic AI Agents", "Component Library Access", "5 Projects", "Community Support"].map((feature, i) => (
                                         <li key={i} className="flex items-center gap-3">
                                             <Check className="w-5 h-5 text-gray-900" />
                                             <span className="text-gray-700 font-normal">{feature}</span>
@@ -463,15 +478,15 @@ const HomePage = () => {
                             <div className="mb-4">
                                 <span className="px-4 py-2 bg-black text-white rounded-full text-sm font-normal">Pro</span>
                             </div>
-                            <p className="text-sm text-white mb-6">2x the speed. Great for an MVP, Web App or complex problem.</p>
+                            <p className="text-sm text-white mb-6">For growing businesses. Unlimited projects and advanced AI models.</p>
                             <h3 className="text-5xl font-normal mb-8">
-                                $3500<span className="text-2xl text-white/80 font-normal">/month</span>
+                                $99<span className="text-2xl text-white/80 font-normal">/month</span>
                             </h3>
                             <button
                                 onClick={() => router.push("/login")}
                                 className="w-full flex items-center justify-center gap-2 bg-white text-gray-900 px-6 py-3 rounded-full hover:bg-gray-100 transition-colors mb-8"
                             >
-                                <span>Let's Collaborate</span>
+                                <span>Get Started</span>
                                 <span className="inline-flex w-7 h-7 rounded-full bg-gray-900 text-white items-center justify-center">
                                     <ArrowUpRight className="w-4 h-4" />
                                 </span>
@@ -479,7 +494,7 @@ const HomePage = () => {
                             <div>
                                 <p className="text-sm text-white mb-4 font-normal">Features</p>
                                 <ul className="space-y-3">
-                                    {["Design Updates Daily", "Senior-level Designer", "AI Advisory Framework", "Full-service Creative Team", "4x Calls Per Month", "License free assets"].map((feature, i) => (
+                                    {["Everything in Starter", "Unlimited Projects", "Advanced AI Models Access", "Custom AI Agents", "Priority Support", "API Access", "Advanced Analytics", "Team Collaboration"].map((feature, i) => (
                                         <li key={i} className="flex items-center gap-3">
                                             <Check className="w-5 h-5 text-white" />
                                             <span className="text-white font-normal">{feature}</span>
@@ -545,14 +560,14 @@ const HomePage = () => {
                         <div className="text-center">
                             <motion.div className="text-4xl md:text-5xl font-normal text-gray-900 mb-6" {...fadeInUp}>
                                 <MagicText 
-                                    text="Innovative Solutions for bold brands"
+                                    text="Ready to build your entire business in one place?"
                                     className="text-4xl md:text-5xl"
                                     wordClassName="text-4xl md:text-5xl"
                                 />
                             </motion.div>
                             <motion.div className="text-lg text-gray-600 mb-10 max-w-2xl mx-auto" {...fadeInUp}>
                                 <MagicText 
-                                    text="Looking to elevate your brand? We craft immersive experiences that captivate, engage, and make your business unforgettable in every interaction."
+                                    text="Join thousands of creators who've stopped switching between tools. Create websites, apps, content, and AI agents - all powered by the latest AI models, all in one platform."
                                     className="text-lg"
                                     wordClassName="text-lg"
                                 />
@@ -561,7 +576,7 @@ const HomePage = () => {
                                 onClick={() => router.push("/login")}
                                 className="inline-flex items-center gap-2 bg-black text-white px-8 py-4 rounded-full transition-all duration-300 hover:scale-105 hover:shadow-xl active:scale-95"
                             >
-                                <span>Let's craft together</span>
+                                <span>Start Building Now</span>
                                 <span className="inline-flex w-7 h-7 rounded-full bg-white text-gray-900 items-center justify-center">
                                     <ArrowUpRight className="w-4 h-4" />
                                 </span>
@@ -576,9 +591,9 @@ const HomePage = () => {
                 <div className="max-w-7xl mx-auto">
                     <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
                         <div>
-                            <div className="text-2xl font-bold mb-4">Awake</div>
+                            <div className="text-2xl font-bold mb-4">AURION</div>
                             <p className="text-gray-600 mb-4">
-                                Empowering businesses with innovative solutions. Let's create something amazing together.
+                                The all-in-one AI platform that creates professional websites, applications, content, and AI agents. Build your entire business in one place.
                             </p>
                             <div className="flex gap-4">
                                 <a href="#" className="w-8 h-8 bg-gray-900 rounded-full flex items-center justify-center hover:bg-gray-800 transition-colors">
@@ -596,32 +611,33 @@ const HomePage = () => {
                             </div>
                         </div>
                         <div>
-                            <h4 className="font-normal text-gray-900 mb-4">Sitemap</h4>
+                            <h4 className="font-normal text-gray-900 mb-4">Platform</h4>
                             <ul className="space-y-2">
-                                <li><a href="#about-us" className="text-gray-600 hover:text-gray-900">About us</a></li>
-                                <li><a href="#work" className="text-gray-600 hover:text-gray-900">Work</a></li>
-                                <li><a href="#services" className="text-gray-600 hover:text-gray-900">Services</a></li>
+                                <li><a href="#about-us" className="text-gray-600 hover:text-gray-900">About AURION</a></li>
+                                <li><a href="#services" className="text-gray-600 hover:text-gray-900">Features</a></li>
                                 <li><a href="#pricing" className="text-gray-600 hover:text-gray-900">Pricing</a></li>
+                                <li><a href="/login" className="text-gray-600 hover:text-gray-900">Get Started</a></li>
                             </ul>
                         </div>
                         <div>
-                            <h4 className="font-normal text-gray-900 mb-4">Other Pages</h4>
+                            <h4 className="font-normal text-gray-900 mb-4">Resources</h4>
                             <ul className="space-y-2">
+                                <li><a href="/docs" className="text-gray-600 hover:text-gray-900">Documentation</a></li>
+                                <li><a href="/blog" className="text-gray-600 hover:text-gray-900">Blog</a></li>
                                 <li><a href="/contact" className="text-gray-600 hover:text-gray-900">Contact Us</a></li>
-                                <li><a href="/404" className="text-gray-600 hover:text-gray-900">Error 404</a></li>
+                                <li><a href="/support" className="text-gray-600 hover:text-gray-900">Support</a></li>
                             </ul>
                         </div>
                         <div>
-                            <h4 className="font-normal text-gray-900 mb-4">Contact Details</h4>
+                            <h4 className="font-normal text-gray-900 mb-4">Contact</h4>
                             <ul className="space-y-2 text-gray-600">
-                                <li>81 Rivington Street London EC2A 3AY</li>
-                                <li><a href="mailto:hello@awake.agency" className="hover:text-gray-900">hello@awake.agency</a></li>
-                                <li><a href="tel:01051923556" className="hover:text-gray-900">0105 192 3556</a></li>
+                                <li><a href="mailto:hello@aurion.ai" className="hover:text-gray-900">hello@aurion.ai</a></li>
+                                <li><a href="/contact" className="hover:text-gray-900">Get in Touch</a></li>
                             </ul>
                         </div>
                     </div>
                     <div className="border-t border-gray-200 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
-                        <p className="text-gray-600 text-sm">©2025 Awake. All Rights Reserved.</p>
+                        <p className="text-gray-600 text-sm">©2025 AURION. All Rights Reserved.</p>
                         <div className="flex gap-6 text-sm">
                             <a href="/style-guide" className="text-gray-600 hover:text-gray-900">Style Guide</a>
                             <a href="/licenses" className="text-gray-600 hover:text-gray-900">Licenses</a>

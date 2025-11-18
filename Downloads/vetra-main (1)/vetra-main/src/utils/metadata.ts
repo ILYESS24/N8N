@@ -16,8 +16,8 @@ interface MetadataProps {
 }
 
 export const generateMetadata = ({
-    title = `Vetra - AI-Powered Project Management & Team Collaboration`,
-    description = `Vetra is an intelligent project management platform that transforms how teams work together. Leverage AI to automate workflows, enhance collaboration, and boost productivity. Experience smarter project management today.`,
+    title = `AURION - All-in-One AI Platform for Web & App Creation`,
+    description = `AURION is the ultimate all-in-one AI platform that creates professional websites and applications using the latest AI models. Build stunning UI/UX, generate content (text, images, videos), deploy AI agents, edit code with AI assistance, and access integrated component libraries. Stop switching between tools - create your entire business in one place.`,
     icons = [
         {
             rel: "icon",
@@ -32,16 +32,21 @@ export const generateMetadata = ({
     ],
     noIndex = false,
     keywords = [
-        "AI marketing automation",
-        "social media marketing",
-        "content generation",
-        "marketing analytics",
-        "campaign management",
-        "multilingual marketing",
-        "AI copywriting",
-        "marketing workflow",
-        "performance tracking",
-        "digital marketing tools"
+        "AI website builder",
+        "AI app creator",
+        "AI content generation",
+        "AI code editor",
+        "AI agents",
+        "all-in-one platform",
+        "UI/UX design AI",
+        "AI text editor",
+        "AI video generation",
+        "AI image generation",
+        "component library",
+        "no-code AI",
+        "AI development platform",
+        "business creation platform",
+        "AI-powered tools"
     ],
     author = process.env.NEXT_PUBLIC_AUTHOR_NAME,
     type = "website",
