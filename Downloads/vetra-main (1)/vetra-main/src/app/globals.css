@@ -182,3 +182,23 @@ img {
     }
   }
 }
+
+/* Button swap animation */
+.button-swap {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  position: relative;
+  overflow: visible;
+}
+
+.button-swap:hover {
+  flex-direction: row-reverse;
+}
+
+.button-text,
+.button-icon {
+  transition: transform 0.3s ease-in-out;
+  display: inline-block;
+  position: relative;
+}
