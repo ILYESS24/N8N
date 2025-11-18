@@ -112,7 +112,7 @@ const HomePage = () => {
             <div className="fixed top-6 right-6 z-50">
                 <button
                     onClick={() => router.push("/register")}
-                    className="inline-flex items-center gap-2 bg-black text-white px-6 py-3 rounded-full font-medium shadow-lg hover:bg-gray-900 transition-colors"
+                    className="inline-flex items-center gap-2 bg-black text-white px-6 py-3 rounded-full font-medium shadow-lg transition-all duration-300 hover:scale-105 hover:shadow-xl active:scale-95"
                 >
                     <span>Get Started</span>
                     <span className="inline-flex w-7 h-7 rounded-full bg-white text-gray-900 items-center justify-center">
@@ -128,24 +128,24 @@ const HomePage = () => {
             <section id="home" className="relative min-h-screen flex items-center justify-center pt-24 px-6 z-10 bg-transparent">
                 <div className="max-w-5xl mx-auto text-center">
                     <motion.div className="mb-8" {...fadeInUp}>
-                        <h1 className="text-[clamp(3rem,8vw,5.5rem)] leading-[1.1] font-semibold text-gray-900 mb-2">
-                            <span className="block">Building bold</span>
-                            <span className="block">brands with</span>
-                            <span className="block font-serif italic font-normal">thoughtful design</span>
+                        <h1 className="text-[clamp(3rem,8vw,5.5rem)] leading-[1.1] font-semibold text-gray-900 mb-2 text-center">
+                            <span className="block text-center">Building bold</span>
+                            <span className="block text-center">brands with</span>
+                            <span className="block font-serif italic font-normal text-center">thoughtful design</span>
                         </h1>
                     </motion.div>
-                    <motion.div className="text-lg md:text-xl text-gray-600 max-w-2xl mx-auto mb-10" {...fadeInUp}>
-                        <p className="text-lg md:text-xl leading-relaxed">
+                    <motion.div className="text-lg md:text-xl text-gray-600 max-w-2xl mx-auto mb-10 text-center" {...fadeInUp}>
+                        <p className="text-lg md:text-xl leading-relaxed text-center">
                             At Awake, we help small startups tackle the world's biggest challenges with tailored solutions, guiding you from strategy to success in a competitive market.
                         </p>
                     </motion.div>
                     <div className="flex flex-col sm:flex-row items-center justify-center gap-6 sm:gap-8">
                         <button
                             onClick={() => router.push("/login")}
-                            className="group flex items-center gap-0 bg-[#6C49F8] hover:bg-[#5B3FE6] text-white px-8 py-4 rounded-full text-lg font-medium shadow-lg transition-all duration-300 overflow-hidden"
+                            className="group flex items-center gap-0 bg-[#6C49F8] text-white px-8 py-4 rounded-full text-lg font-medium shadow-lg overflow-hidden transition-all duration-300 hover:scale-105 hover:shadow-xl active:scale-95"
                         >
                             <span className="px-2">Get Started</span>
-                            <span className="inline-flex w-10 h-10 rounded-full bg-white items-center justify-center ml-2">
+                            <span className="inline-flex w-10 h-10 rounded-full bg-white items-center justify-center ml-2 transition-transform duration-300 group-hover:rotate-45">
                                 <ArrowUpRight className="w-4 h-4 text-[#6C49F8]" />
                             </span>
                         </button>
@@ -301,14 +301,14 @@ const HomePage = () => {
                         <div className="flex flex-col sm:flex-row gap-4">
                             <button
                                 onClick={() => router.push("/login")}
-                                className="flex items-center gap-2 bg-white text-gray-900 px-6 py-3 rounded-full font-medium hover:bg-gray-100 transition-colors"
+                                className="flex items-center gap-2 bg-white text-gray-900 px-6 py-3 rounded-full font-medium transition-all duration-300 hover:scale-105 hover:shadow-lg active:scale-95"
                             >
                                 <span>Get a Quote</span>
                                 <span className="inline-flex w-7 h-7 rounded-full bg-gray-900 text-white items-center justify-center">
                                     <ArrowUpRight className="w-4 h-4" />
                                 </span>
                             </button>
-                            <button className="flex items-center gap-2 bg-transparent border border-white text-white px-6 py-3 rounded-full font-medium hover:bg-white/10 transition-colors">
+                            <button className="flex items-center gap-2 bg-transparent border border-white text-white px-6 py-3 rounded-full font-medium transition-all duration-300 hover:scale-105 hover:bg-white/5 active:scale-95">
                                 <span>View Our Portfolio</span>
                                 <span className="inline-flex w-7 h-7 rounded-full bg-white text-gray-900 items-center justify-center">
                                     <ArrowUpRight className="w-4 h-4" />
@@ -559,7 +559,7 @@ const HomePage = () => {
                             </motion.div>
                             <button
                                 onClick={() => router.push("/login")}
-                                className="inline-flex items-center gap-2 bg-black text-white px-8 py-4 rounded-full hover:bg-gray-900 transition-colors"
+                                className="inline-flex items-center gap-2 bg-black text-white px-8 py-4 rounded-full transition-all duration-300 hover:scale-105 hover:shadow-xl active:scale-95"
                             >
                                 <span>Let's craft together</span>
                                 <span className="inline-flex w-7 h-7 rounded-full bg-white text-gray-900 items-center justify-center">
