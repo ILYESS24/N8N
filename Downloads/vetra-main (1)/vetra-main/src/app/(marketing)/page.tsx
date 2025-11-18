@@ -75,7 +75,6 @@ const HomePage = () => {
         { label: "Home", href: "#home" },
         { label: "About us", href: "#about-us" },
         { label: "Services", href: "#services" },
-        { label: "Work", href: "#work" },
         { label: "Pricing", href: "#pricing" },
     ];
 
@@ -307,49 +306,6 @@ const HomePage = () => {
                                 </span>
                             </button>
                         </div>
-                    </motion.div>
-                </div>
-            </section>
-
-            {/* Work Section */}
-            <section id="work" className="py-20 px-6 bg-transparent z-10 relative">
-                <div className="max-w-7xl mx-auto">
-                    <motion.div className="text-4xl md:text-6xl font-normal text-gray-900 mb-16 text-center" {...fadeInUp}>
-                        <MagicText 
-                            text="How we transformed a small business's online presence"
-                            className="text-4xl md:text-6xl"
-                            wordClassName="text-4xl md:text-6xl"
-                        />
-                    </motion.div>
-                    <motion.div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                        {[
-                            { name: "FlowBank", tags: ["UX Research", "Interface Design"], color: "bg-[#E6F0FF]" },
-                            { name: "Academy.co", tags: ["Product Design", "Interaction Design"], color: "bg-[#F1E8FF]" },
-                            { name: "Genome", tags: ["Brand identity design", "UX Research"], color: "bg-[#E7F6EA]" },
-                            { name: "Hotto", tags: ["Visual Story telling", "Web & Mobile Design"], color: "bg-[#FFEFD9]" },
-                        ].map((project, i) => {
-                            const pairIndex = Math.floor(i / 2);
-                            return (
-                                <motion.div 
-                                    key={i} 
-                                    className="bg-gray-50 rounded-2xl p-6 shadow-sm"
-                                    initial={{ opacity: 0, y: 30 }}
-                                    whileInView={{ opacity: 1, y: 0 }}
-                                    viewport={{ once: true, margin: "-100px" }}
-                                    transition={{ duration: 0.6, delay: pairIndex * 0.3 }}
-                                >
-                                    <div className={`w-full h-64 rounded-xl mb-4 ${project.color}`}></div>
-                                    <h3 className="text-xl font-normal text-gray-900 mb-4">{project.name}</h3>
-                                    <div className="flex gap-2">
-                                        {project.tags.map((tag, j) => (
-                                            <span key={j} className="px-3 py-1 bg-white rounded-full text-sm text-gray-700">
-                                                {tag}
-                                            </span>
-                                        ))}
-                                    </div>
-                                </motion.div>
-                            );
-                        })}
                     </motion.div>
                 </div>
             </section>
