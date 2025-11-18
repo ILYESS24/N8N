@@ -43,7 +43,8 @@ export async function POST(req: NextRequest) {
           const subscriptionId = typeof session.subscription === 'string' 
             ? session.subscription 
             : session.subscription.id;
-          const subscription = await stripe.subscriptions.retrieve(subscriptionId);
+          const subscriptionResponse = await stripe.subscriptions.retrieve(subscriptionId);
+          const subscription = subscriptionResponse as Stripe.Subscription;
 
           const userId = session.metadata?.userId || subscription.metadata?.userId;
           if (!userId) {
