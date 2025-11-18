@@ -40,9 +40,10 @@ export async function POST(req: NextRequest) {
         const session = event.data.object as Stripe.Checkout.Session;
         
         if (session.mode === 'subscription' && session.subscription) {
-          const subscription = await stripe.subscriptions.retrieve(
-            session.subscription as string
-          );
+          const subscriptionId = typeof session.subscription === 'string' 
+            ? session.subscription 
+            : session.subscription.id;
+          const subscription = await stripe.subscriptions.retrieve(subscriptionId);
 
           const userId = session.metadata?.userId || subscription.metadata?.userId;
           if (!userId) {
