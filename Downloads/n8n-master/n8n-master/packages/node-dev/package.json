@@ -27,7 +27,7 @@
     "development",
     "node",
     "helper",
-    "n8n"
+    "workflow-automation"
   ],
   "files": [
     "bin",
@@ -40,13 +40,13 @@
     "@types/inquirer": "^6.5.0"
   },
   "dependencies": {
-    "@n8n/di": "workspace:*",
+    "@workflow-automation/di": "workspace:*",
     "@oclif/core": "4.0.7",
     "change-case": "^4.1.1",
     "fast-glob": "catalog:",
     "inquirer": "^7.0.1",
     "workflow-automation-core": "workspace:*",
-    "n8n-workflow": "workspace:*",
+    "workflow-automation-workflow": "workspace:*",
     "replace-in-file": "^6.0.0",
     "tmp-promise": "^3.0.3"
   }
