@@ -26,7 +26,7 @@
   },
   "devDependencies": {
     "@n8n/eslint-config": "workspace:*",
-    "@n8n/typescript-config": "workspace:*",
+    "@workflow-automation/typescript-config": "workspace:*",
     "@n8n/vitest-config": "workspace:*",
     "@testing-library/jest-dom": "catalog:frontend",
     "@testing-library/user-event": "catalog:frontend",
