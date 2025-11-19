@@ -45,7 +45,7 @@
     "vue-router": "catalog:frontend"
   },
   "dependencies": {
-    "@n8n/extension-sdk": "workspace:*"
+    "@workflow-automation/extension-sdk": "workspace:*"
   },
   "devDependencies": {
     "@workflow-automation/stylelint-config": "workspace:*",
