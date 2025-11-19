@@ -38,7 +38,7 @@
     "generate-schema": "2.6.0",
     "mockserver-client": "^5.15.0",
     "workflow-automation": "workspace:*",
-    "n8n-containers": "workspace:*",
+    "workflow-automation-containers": "workspace:*",
     "workflow-automation-core": "workspace:*",
     "workflow-automation-workflow": "workspace:*",
     "nanoid": "catalog:",
