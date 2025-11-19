@@ -7,7 +7,7 @@
     "vitest": "catalog:"
   },
   "devDependencies": {
-    "@n8n/typescript-config": "workspace:*",
+    "@workflow-automation/typescript-config": "workspace:*",
     "vite": "catalog:",
     "vitest": "catalog:"
   },

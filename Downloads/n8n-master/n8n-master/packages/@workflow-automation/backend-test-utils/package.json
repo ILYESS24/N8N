@@ -21,19 +21,19 @@
     "dist/**/*"
   ],
   "dependencies": {
-    "@n8n/backend-common": "workspace:^",
-    "@n8n/config": "workspace:^",
-    "@n8n/constants": "workspace:^",
-    "@n8n/db": "workspace:^",
-    "@n8n/di": "workspace:^",
-    "@n8n/permissions": "workspace:^",
+    "@workflow-automation/backend-common": "workspace:^",
+    "@workflow-automation/config": "workspace:^",
+    "@workflow-automation/constants": "workspace:^",
+    "@workflow-automation/db": "workspace:^",
+    "@workflow-automation/di": "workspace:^",
+    "@workflow-automation/permissions": "workspace:^",
     "@workflow-automation/typeorm": "catalog:",
     "jest-mock-extended": "^3.0.4",
-    "n8n-workflow": "workspace:^",
+    "workflow-automation-workflow": "workspace:^",
     "reflect-metadata": "catalog:",
     "uuid": "catalog:"
   },
   "devDependencies": {
-    "@n8n/typescript-config": "workspace:*"
+    "@workflow-automation/typescript-config": "workspace:*"
   }
 }

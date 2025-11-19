@@ -28,8 +28,8 @@
     "uuencode": "0.0.4"
   },
   "devDependencies": {
-    "@n8n/typescript-config": "workspace:*",
-    "@n8n/vitest-config": "workspace:*",
+    "@workflow-automation/typescript-config": "workspace:*",
+    "@workflow-automation/vitest-config": "workspace:*",
     "@types/imap": "^0.8.40",
     "@types/quoted-printable": "^1.0.2",
     "@types/utf8": "^3.0.3",

@@ -34,21 +34,21 @@
     }
   },
   "dependencies": {
-    "@n8n/config": "workspace:*",
-    "@n8n/di": "workspace:*",
-    "@n8n/errors": "workspace:^",
+    "@workflow-automation/config": "workspace:*",
+    "@workflow-automation/di": "workspace:*",
+    "@workflow-automation/errors": "workspace:^",
     "@sentry/node": "catalog:",
     "acorn": "8.14.0",
     "acorn-walk": "8.3.4",
     "lodash": "catalog:",
     "luxon": "catalog:",
     "n8n-core": "workspace:*",
-    "n8n-workflow": "workspace:*",
+    "workflow-automation-workflow": "workspace:*",
     "nanoid": "catalog:",
     "ws": "^8.18.0"
   },
   "devDependencies": {
-    "@n8n/typescript-config": "workspace:*",
+    "@workflow-automation/typescript-config": "workspace:*",
     "@types/lodash": "catalog:"
   }
 }

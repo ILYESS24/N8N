@@ -30,8 +30,8 @@
     "fastest-levenshtein": "catalog:"
   },
   "devDependencies": {
-    "@n8n/typescript-config": "workspace:*",
-    "@n8n/vitest-config": "workspace:*",
+    "@workflow-automation/typescript-config": "workspace:*",
+    "@workflow-automation/vitest-config": "workspace:*",
     "@typescript-eslint/rule-tester": "^8.35.0",
     "eslint-doc-generator": "^2.2.2",
     "eslint-plugin-eslint-plugin": "^7.0.0",

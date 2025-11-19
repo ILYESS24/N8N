@@ -30,8 +30,8 @@
   },
   "devDependencies": {
     "@eslint/js": "^9.29.0",
-    "@n8n/typescript-config": "workspace:*",
-    "@n8n/vitest-config": "workspace:*",
+    "@workflow-automation/typescript-config": "workspace:*",
+    "@workflow-automation/vitest-config": "workspace:*",
     "@stylistic/eslint-plugin": "^5.0.0",
     "@types/eslint": "^9.6.1",
     "@typescript-eslint/eslint-plugin": "^8.35.0",
