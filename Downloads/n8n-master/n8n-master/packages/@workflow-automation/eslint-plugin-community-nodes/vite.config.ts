@@ -1,4 +1,4 @@
 import { defineConfig, mergeConfig } from 'vite';
-import { vitestConfig } from '@n8n/vitest-config/node';
+import { vitestConfig } from '@workflow-automation/vitest-config/node';
 
 export default mergeConfig(defineConfig({}), vitestConfig);

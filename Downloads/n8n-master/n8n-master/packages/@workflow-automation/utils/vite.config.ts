@@ -1,3 +1,3 @@
-import { vitestConfig } from '@n8n/vitest-config/frontend';
+import { vitestConfig } from '@workflow-automation/vitest-config/frontend';
 
 export default vitestConfig;
