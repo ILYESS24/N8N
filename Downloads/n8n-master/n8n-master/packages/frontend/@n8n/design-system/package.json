@@ -1,6 +1,6 @@
 {
   "type": "module",
-  "name": "@n8n/design-system",
+  "name": "@workflow-automation/design-system",
   "version": "1.108.0",
   "main": "src/index.ts",
   "import": "src/index.ts",
@@ -51,7 +51,7 @@
   },
   "dependencies": {
     "@internationalized/date": "^3.9.0",
-    "@n8n/composables": "workspace:*",
+    "@workflow-automation/composables": "workspace:*",
     "@workflow-automation/utils": "workspace:*",
     "@tanstack/vue-table": "^8.21.2",
     "element-plus": "catalog:frontend",

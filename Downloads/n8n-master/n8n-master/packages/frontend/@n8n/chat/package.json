@@ -1,5 +1,5 @@
 {
-  "name": "@n8n/chat",
+  "name": "@workflow-automation/chat",
   "version": "0.66.0",
   "scripts": {
     "dev": "pnpm run storybook",
@@ -38,7 +38,7 @@
     }
   },
   "dependencies": {
-    "@n8n/design-system": "workspace:*",
+    "@workflow-automation/design-system": "workspace:*",
     "@vueuse/core": "catalog:frontend",
     "highlight.js": "catalog:frontend",
     "markdown-it-link-attributes": "^4.0.1",
