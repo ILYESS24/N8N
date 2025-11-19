@@ -106,7 +106,7 @@
     "@workflow-automation/di": "workspace:*",
     "@workflow-automation/errors": "workspace:*",
     "@workflow-automation/localtunnel": "3.0.0",
-    "@workflow-automation/workflow-automation-nodes-langchain": "workspace:*",
+    "@workflow-automation/nodes-langchain": "workspace:*",
     "@workflow-automation/permissions": "workspace:*",
     "@workflow-automation/task-runner": "workspace:*",
     "@n8n/typeorm": "catalog:",
