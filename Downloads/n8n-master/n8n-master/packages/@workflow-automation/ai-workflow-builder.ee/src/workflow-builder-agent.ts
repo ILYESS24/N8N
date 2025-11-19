@@ -5,7 +5,7 @@ import type { RunnableConfig } from '@langchain/core/runnables';
 import type { LangChainTracer } from '@langchain/core/tracers/tracer_langchain';
 import type { MemorySaver, StateSnapshot } from '@langchain/langgraph';
 import { StateGraph, END, GraphRecursionError } from '@langchain/langgraph';
-import type { Logger } from '@n8n/backend-common';
+import type { Logger } from '@workflow-automation/backend-common';
 import {
 	ApplicationError,
 	type INodeTypeDescription,
