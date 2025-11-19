@@ -1,5 +1,5 @@
 {
-	"extends": ["@n8n/typescript-config/tsconfig.common.json"],
+	"extends": ["@workflow-automation/typescript-config/tsconfig.common.json"],
 	"compilerOptions": {
 		"baseUrl": ".",
 		"rootDir": "src",

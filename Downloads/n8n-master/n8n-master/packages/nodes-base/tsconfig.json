@@ -1,5 +1,5 @@
 {
-	"extends": ["@n8n/typescript-config/modern/tsconfig.json"],
+	"extends": ["@workflow-automation/typescript-config/modern/tsconfig.json"],
 	"compilerOptions": {
 		"paths": {
 			"@credentials/*": ["./credentials/*"],
