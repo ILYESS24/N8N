@@ -6,11 +6,11 @@ import {
 	Logger,
 	ModuleRegistry,
 	ModulesConfig,
-} from '@n8n/backend-common';
-import { GlobalConfig } from '@n8n/config';
-import { LICENSE_FEATURES } from '@n8n/constants';
-import { AuthRolesService, DbConnection } from '@n8n/db';
-import { Container } from '@n8n/di';
+} from '@workflow-automation/backend-common';
+import { GlobalConfig } from '@workflow-automation/config';
+import { LICENSE_FEATURES } from '@workflow-automation/constants';
+import { AuthRolesService, DbConnection } from '@workflow-automation/db';
+import { Container } from '@workflow-automation/di';
 import {
 	BinaryDataConfig,
 	BinaryDataService,
@@ -18,8 +18,8 @@ import {
 	ObjectStoreService,
 	DataDeduplicationService,
 	ErrorReporter,
-} from 'n8n-core';
-import { ensureError, sleep, UnexpectedError, UserError } from 'n8n-workflow';
+} from 'workflow-automation-core';
+import { ensureError, sleep, UnexpectedError, UserError } from 'workflow-automation-workflow';
 
 import type { AbstractServer } from '@/abstract-server';
 import { N8N_VERSION, N8N_RELEASE_DATE } from '@/constants';

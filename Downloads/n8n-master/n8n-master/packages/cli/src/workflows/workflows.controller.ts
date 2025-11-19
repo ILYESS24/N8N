@@ -1,7 +1,7 @@
-import { ImportWorkflowFromUrlDto, ROLE, TransferWorkflowBodyDto } from '@n8n/api-types';
-import { Logger } from '@n8n/backend-common';
-import { GlobalConfig } from '@n8n/config';
-import type { Project } from '@n8n/db';
+import { ImportWorkflowFromUrlDto, ROLE, TransferWorkflowBodyDto } from '@workflow-automation/api-types';
+import { Logger } from '@workflow-automation/backend-common';
+import { GlobalConfig } from '@workflow-automation/config';
+import type { Project } from '@workflow-automation/db';
 import {
 	SharedWorkflow,
 	WorkflowEntity,
@@ -11,7 +11,7 @@ import {
 	SharedWorkflowRepository,
 	WorkflowRepository,
 	AuthenticatedRequest,
-} from '@n8n/db';
+} from '@workflow-automation/db';
 import {
 	Body,
 	Delete,
@@ -24,13 +24,13 @@ import {
 	Put,
 	Query,
 	RestController,
-} from '@n8n/decorators';
-import { PROJECT_OWNER_ROLE_SLUG } from '@n8n/permissions';
+} from '@workflow-automation/decorators';
+import { PROJECT_OWNER_ROLE_SLUG } from '@workflow-automation/permissions';
 // eslint-disable-next-line n8n-local-rules/misplaced-n8n-typeorm-import
 import { In, type FindOptionsRelations } from '@n8n/typeorm';
 import axios from 'axios';
 import express from 'express';
-import { UnexpectedError } from 'n8n-workflow';
+import { UnexpectedError } from 'workflow-automation-workflow';
 import { v4 as uuid } from 'uuid';
 
 import { BadRequestError } from '@/errors/response-errors/bad-request.error';

@@ -4,12 +4,12 @@ import {
 	WORKFLOW_REACTIVATE_INITIAL_TIMEOUT,
 	WORKFLOW_REACTIVATE_MAX_TIMEOUT,
 } from '@/constants';
-import { Logger } from '@n8n/backend-common';
-import { WorkflowsConfig } from '@n8n/config';
-import type { WorkflowEntity, IWorkflowDb } from '@n8n/db';
-import { WorkflowRepository } from '@n8n/db';
-import { OnLeaderStepdown, OnLeaderTakeover, OnPubSubEvent, OnShutdown } from '@n8n/decorators';
-import { Service } from '@n8n/di';
+import { Logger } from '@workflow-automation/backend-common';
+import { WorkflowsConfig } from '@workflow-automation/config';
+import type { WorkflowEntity, IWorkflowDb } from '@workflow-automation/db';
+import { WorkflowRepository } from '@workflow-automation/db';
+import { OnLeaderStepdown, OnLeaderTakeover, OnPubSubEvent, OnShutdown } from '@workflow-automation/decorators';
+import { Service } from '@workflow-automation/di';
 import chunk from 'lodash/chunk';
 import {
 	ActiveWorkflows,
@@ -19,7 +19,7 @@ import {
 	TriggerContext,
 	type IGetExecutePollFunctions,
 	type IGetExecuteTriggerFunctions,
-} from 'n8n-core';
+} from 'workflow-automation-core';
 import type {
 	ExecutionError,
 	IDeferredPromise,
@@ -33,14 +33,14 @@ import type {
 	WorkflowExecuteMode,
 	INodeType,
 	WorkflowId,
-} from 'n8n-workflow';
+} from 'workflow-automation-workflow';
 import {
 	Workflow,
 	WorkflowActivationError,
 	WebhookPathTakenError,
 	UnexpectedError,
 	ensureError,
-} from 'n8n-workflow';
+} from 'workflow-automation-workflow';
 import { strict } from 'node:assert';
 
 import { ActivationErrorsService } from '@/activation-errors.service';

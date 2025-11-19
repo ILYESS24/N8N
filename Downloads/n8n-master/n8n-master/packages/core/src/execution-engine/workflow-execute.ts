@@ -2,9 +2,9 @@
 /* eslint-disable @typescript-eslint/no-unsafe-member-access */
 /* eslint-disable @typescript-eslint/no-unsafe-assignment */
 /* eslint-disable @typescript-eslint/prefer-nullish-coalescing */
-import { GlobalConfig } from '@n8n/config';
-import { TOOL_EXECUTOR_NODE_NAME } from '@n8n/constants';
-import { Container } from '@n8n/di';
+import { GlobalConfig } from '@workflow-automation/config';
+import { TOOL_EXECUTOR_NODE_NAME } from '@workflow-automation/constants';
+import { Container } from '@workflow-automation/di';
 import * as assert from 'assert/strict';
 import { setMaxListeners } from 'events';
 import get from 'lodash/get';
@@ -40,7 +40,7 @@ import type {
 	IWorkflowExecutionDataProcess,
 	EngineRequest,
 	EngineResponse,
-} from 'n8n-workflow';
+} from 'workflow-automation-workflow';
 import {
 	LoggerProxy as Logger,
 	NodeHelpers,
@@ -54,7 +54,7 @@ import {
 	TimeoutExecutionCancelledError,
 	ManualExecutionCancelledError,
 	createRunExecutionData,
-} from 'n8n-workflow';
+} from 'workflow-automation-workflow';
 import PCancelable from 'p-cancelable';
 
 import { ErrorReporter } from '@/errors/error-reporter';
