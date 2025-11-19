@@ -140,19 +140,64 @@ export async function POST(request: NextRequest) {
       );
     }
 
-    // Mock completion to simulate pipeline until GPU engines are wired
-    const mockResult = mockResultByTool[tool];
-    const { data: updatedJob, error: updateError } = await supabase
-      .from("video_jobs")
-      .update({
-        status: "completed",
-        result_url: mockResult.result_url,
-        thumbnail_url: mockResult.thumbnail_url,
+    // Try to use real engine, fallback to mock if not configured
+    let result: { result_url: string; thumbnail_url: string; metadata?: any };
+    
+    try {
+      const { generateVideo, isEngineConfigured } = await import("@/lib/video-engines");
+      
+      if (isEngineConfigured(tool)) {
+        // Use real engine
+        const realResult = await generateVideo(tool, {
+          prompt,
+          duration: config?.duration,
+          aspect: config?.aspect,
+          style: config?.style,
+        });
+        
+        result = {
+          result_url: realResult.result_url,
+          thumbnail_url: realResult.thumbnail_url || "",
+          metadata: {
+            ...insertedJob.metadata,
+            ...realResult.metadata,
+            generation_mode: "real",
+          },
+        };
+      } else {
+        // Fallback to mock
+        result = {
+          ...mockResultByTool[tool],
+          metadata: {
+            ...insertedJob.metadata,
+            duration: config?.duration || 10,
+            aspect: config?.aspect || "16:9",
+            generation_mode: "mock",
+          },
+        };
+      }
+    } catch (engineError: any) {
+      console.warn(`Engine ${tool} error, using mock:`, engineError.message);
+      // Fallback to mock on error
+      result = {
+        ...mockResultByTool[tool],
         metadata: {
           ...insertedJob.metadata,
           duration: config?.duration || 10,
           aspect: config?.aspect || "16:9",
+          generation_mode: "mock",
+          engine_error: engineError.message,
         },
+      };
+    }
+
+    const { data: updatedJob, error: updateError } = await supabase
+      .from("video_jobs")
+      .update({
+        status: "completed",
+        result_url: result.result_url,
+        thumbnail_url: result.thumbnail_url,
+        metadata: result.metadata,
       })
       .eq("id", insertedJob.id)
       .select("*")
