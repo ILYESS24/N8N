@@ -39,7 +39,7 @@
     "mockserver-client": "^5.15.0",
     "n8n": "workspace:*",
     "n8n-containers": "workspace:*",
-    "n8n-core": "workspace:*",
+    "workflow-automation-core": "workspace:*",
     "n8n-workflow": "workspace:*",
     "nanoid": "catalog:",
     "nyc": "^17.1.0",

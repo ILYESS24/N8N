@@ -42,7 +42,7 @@
     "acorn-walk": "8.3.4",
     "lodash": "catalog:",
     "luxon": "catalog:",
-    "n8n-core": "workspace:*",
+    "workflow-automation-core": "workspace:*",
     "workflow-automation-workflow": "workspace:*",
     "nanoid": "catalog:",
     "ws": "^8.18.0"

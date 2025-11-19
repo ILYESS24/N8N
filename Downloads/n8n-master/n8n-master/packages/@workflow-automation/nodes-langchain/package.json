@@ -171,7 +171,7 @@
     "@types/temp": "^0.9.1",
     "fast-glob": "catalog:",
     "jest-mock-extended": "^3.0.4",
-    "n8n-core": "workspace:*",
+    "workflow-automation-core": "workspace:*",
     "tsup": "^8.5.0"
   },
   "dependencies": {
