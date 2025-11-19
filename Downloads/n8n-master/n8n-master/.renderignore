@@ -1,0 +1,62 @@
+# Fichiers à ignorer lors du déploiement sur Render
+
+# Dépendances de développement
+node_modules/
+.pnpm-store/
+
+# Fichiers de build locaux
+dist/
+compiled/
+.turbo/
+
+# Tests
+**/test/
+**/__tests__/
+**/*.test.ts
+**/*.test.js
+**/*.spec.ts
+**/*.spec.js
+
+# Documentation
+docs/
+*.md
+!README.md
+!RENDER_DEPLOY.md
+
+# Configuration locale
+.env
+.env.local
+.env.*.local
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Logs
+*.log
+logs/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Git
+.git/
+.gitignore
+
+# Docker (non utilisé sur Render)
+docker/
+Dockerfile*
+.dockerignore
+
+# Scripts de développement
+scripts/backend-module/
+scripts/block-npm-install.js
+
+# Assets de développement
+assets/n8n-*.png
+assets/n8n-*.svg
+
