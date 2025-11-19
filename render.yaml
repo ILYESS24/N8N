@@ -6,7 +6,7 @@ services:
     region: oregon
     plan: starter
     rootDir: Downloads/n8n-master/n8n-master
-    buildCommand: pnpm install --frozen-lockfile && pnpm build
+    buildCommand: pnpm install --no-frozen-lockfile && pnpm build
     startCommand: cd packages/cli && node dist/index.js start
     envVars:
       - key: NODE_ENV
