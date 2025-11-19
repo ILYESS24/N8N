@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from "react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Code, Brain, Globe, Zap, FileCode, Bot, ArrowRight, Clock } from "lucide-react";
+import { Code, Brain, Globe, Zap, FileCode, Bot, ArrowRight, Clock, MessageSquare } from "lucide-react";
 import { apiRequest } from "@/lib/api-client";
 import { useRouter } from "next/navigation";
 import { useRealtime } from "@/hooks/use-realtime";
@@ -29,6 +29,7 @@ const toolIcons: Record<string, any> = {
   aieditor: Code,
   'bolt.new': Globe,
   'open-agent-builder': Bot,
+  'open-webui': MessageSquare,
   vetra: Zap,
 };
 
@@ -38,6 +39,7 @@ const toolNames: Record<string, string> = {
   aieditor: 'AI Editor',
   'bolt.new': 'Bolt.new',
   'open-agent-builder': 'Open Agent Builder',
+  'open-webui': 'Open WebUI',
   vetra: 'Vetra',
 };
 
@@ -97,6 +99,7 @@ export function IntegratedToolsPanel() {
       aieditor: '/tools/aieditor',
       'bolt.new': '/tools/bolt',
       'open-agent-builder': '/workflows',
+      'open-webui': '/tools/open-webui',
     };
 
     const route = toolRoutes[tool.tool_name];
