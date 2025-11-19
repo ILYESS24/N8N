@@ -11,7 +11,7 @@ import { Skiper19 } from "@/components/svg-follow-scroll";
 import { MagicText } from "@/components/ui/magic-text";
 import { GlowingEffect } from "@/components/ui/glowing-effect";
 import { NavigationMenu, NavigationMenuList, NavigationMenuItem, NavigationMenuLink, navigationMenuTriggerStyle } from "@/components/ui/navigation-menu";
-import { cn } from "@/lib/utils";
+import { cn } from "@/lib/cn";
 
 // Animation variants for scroll animations
 const fadeInUp = {
