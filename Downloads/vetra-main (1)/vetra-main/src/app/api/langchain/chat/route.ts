@@ -1,7 +1,9 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { getAuthenticatedUser } from '@/lib/supabase-server-api';
+import { aiOrchestrator } from '@/lib/ai/orchestrator';
+import { canMakeAPICall, trackAPICall } from '@/lib/subscription-checker';
 
-// POST - Interface pour Langchain (à connecter avec un backend Python)
+// POST - Interface Langchain connectée à DeepSeek
 export async function POST(request: NextRequest) {
   try {
     const { user, supabase } = await getAuthenticatedUser(request);
@@ -11,24 +13,34 @@ export async function POST(request: NextRequest) {
     }
 
     const body = await request.json();
-    const { prompt } = body;
+    const { prompt, messages, model } = body;
 
-    if (!prompt) {
+    if (!prompt && !messages) {
       return NextResponse.json(
-        { error: 'Prompt is required' },
+        { error: 'Prompt or messages are required' },
         { status: 400 }
       );
     }
 
-    // TODO: Connecter avec un backend Python qui utilise Langchain
-    // Pour l'instant, réponse mockée
-    // Exemple d'intégration future:
-    // const response = await fetch('http://localhost:8000/api/langchain/chat', {
-    //   method: 'POST',
-    //   headers: { 'Content-Type': 'application/json' },
-    //   body: JSON.stringify({ prompt, user_id: user.id }),
-    // });
-    // const data = await response.json();
+    // Vérifier les limites d'appels API
+    const apiLimit = await canMakeAPICall(user.id);
+    if (!apiLimit.allowed) {
+      return NextResponse.json(
+        { error: apiLimit.message || 'API call limit reached' },
+        { status: 403 }
+      );
+    }
+
+    // Utiliser l'orchestrateur AI avec DeepSeek
+    const aiResponse = await aiOrchestrator.generateText({
+      task: 'chat',
+      prompt: prompt || (messages && messages[messages.length - 1]?.content) || '',
+      model: model || 'deepseek',
+      options: {
+        temperature: 0.7,
+        maxTokens: 2000,
+      },
+    });
 
     // Enregistrer l'activité
     await (supabase as any)
@@ -37,15 +49,24 @@ export async function POST(request: NextRequest) {
         user_id: user.id,
         tool_name: 'langchain',
         activity_type: 'langchain-query',
-        activity_data: { prompt_length: prompt.length },
+        activity_data: { 
+          prompt_length: prompt?.length || 0,
+          model: aiResponse.model,
+        },
       });
 
+    // Tracker l'appel API
+    await trackAPICall(user.id, '/api/langchain/chat');
+
     return NextResponse.json({
-      response: `Réponse mockée pour: "${prompt}". Pour une intégration complète, configurez un backend Python avec Langchain qui expose une API REST.`,
-      note: 'Langchain API non configurée. Veuillez configurer le backend Python.',
+      response: aiResponse.content,
+      model: aiResponse.model,
+      tokens: aiResponse.tokens,
+      metadata: aiResponse.metadata,
     });
   } catch (error: any) {
-    return NextResponse.json({ error: error.message }, { status: 500 });
+    console.error('Langchain API error:', error);
+    return NextResponse.json({ error: error.message || 'Failed to process request' }, { status: 500 });
   }
 }
 

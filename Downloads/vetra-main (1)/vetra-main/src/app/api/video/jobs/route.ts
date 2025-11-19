@@ -140,6 +140,25 @@ export async function POST(request: NextRequest) {
       );
     }
 
+    // Améliorer le prompt avec AI avant génération
+    let enhancedPrompt = prompt;
+    try {
+      const { aiOrchestrator } = await import("@/lib/ai/orchestrator");
+      const enhanced = await aiOrchestrator.generateText({
+        task: "text",
+        prompt: `Improve this video generation prompt to be more detailed and effective for ${tool}:\n\n${prompt}\n\nReturn only the improved prompt, nothing else.`,
+        model: "deepseek",
+        options: {
+          temperature: 0.7,
+          maxTokens: 500,
+        },
+      });
+      enhancedPrompt = enhanced.content.trim();
+    } catch (aiError) {
+      console.warn("AI prompt enhancement failed, using original:", aiError);
+      // Continue with original prompt
+    }
+
     // Try to use real engine, fallback to mock if not configured
     let result: { result_url: string; thumbnail_url: string; metadata?: any };
     
@@ -147,9 +166,9 @@ export async function POST(request: NextRequest) {
       const { generateVideo, isEngineConfigured } = await import("@/lib/video-engines");
       
       if (isEngineConfigured(tool)) {
-        // Use real engine
+        // Use real engine with enhanced prompt
         const realResult = await generateVideo(tool, {
-          prompt,
+          prompt: enhancedPrompt,
           duration: config?.duration,
           aspect: config?.aspect,
           style: config?.style,
@@ -162,6 +181,8 @@ export async function POST(request: NextRequest) {
             ...insertedJob.metadata,
             ...realResult.metadata,
             generation_mode: "real",
+            original_prompt: prompt,
+            enhanced_prompt: enhancedPrompt,
           },
         };
       } else {
@@ -173,6 +194,8 @@ export async function POST(request: NextRequest) {
             duration: config?.duration || 10,
             aspect: config?.aspect || "16:9",
             generation_mode: "mock",
+            original_prompt: prompt,
+            enhanced_prompt: enhancedPrompt,
           },
         };
       }
@@ -187,6 +210,8 @@ export async function POST(request: NextRequest) {
           aspect: config?.aspect || "16:9",
           generation_mode: "mock",
           engine_error: engineError.message,
+          original_prompt: prompt,
+          enhanced_prompt: enhancedPrompt,
         },
       };
     }
