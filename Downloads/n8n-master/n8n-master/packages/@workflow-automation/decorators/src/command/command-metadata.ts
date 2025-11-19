@@ -1,4 +1,4 @@
-import { Service } from '@n8n/di';
+import { Service } from '@workflow-automation/di';
 
 import type { CommandEntry } from './types';
 

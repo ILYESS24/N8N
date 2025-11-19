@@ -1,5 +1,5 @@
-import type { LICENSE_FEATURES, InstanceType } from '@n8n/constants';
-import { Container, Service, type Constructable } from '@n8n/di';
+import type { LICENSE_FEATURES, InstanceType } from '@workflow-automation/constants';
+import { Container, Service, type Constructable } from '@workflow-automation/di';
 
 import { ModuleMetadata } from './module-metadata';
 

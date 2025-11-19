@@ -1,5 +1,5 @@
-import type { InstanceType } from '@n8n/constants';
-import { Service } from '@n8n/di';
+import type { InstanceType } from '@workflow-automation/constants';
+import { Service } from '@workflow-automation/di';
 
 import type { LicenseFlag, ModuleClass } from './module';
 

@@ -1,4 +1,4 @@
-import { UnexpectedError } from 'n8n-workflow';
+import { UnexpectedError } from 'workflow-automation-workflow';
 
 type UserLike = {
 	id: string;
