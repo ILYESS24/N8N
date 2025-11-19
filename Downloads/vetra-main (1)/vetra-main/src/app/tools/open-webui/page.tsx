@@ -52,7 +52,7 @@ export default function OpenWebUIPage() {
 
       <div className="h-[calc(100vh-64px)] w-full">
         <ToolIframeWrapper
-          baseUrl="https://open-webui.example.com/"
+          baseUrl={process.env.NEXT_PUBLIC_OPEN_WEBUI_URL || "http://localhost:3000/"}
           toolName="open-webui"
           params={{ workspace: "default" }}
           title="Open WebUI Chat"
