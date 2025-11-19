@@ -2,7 +2,7 @@ import vue from '@vitejs/plugin-vue';
 import { resolve } from 'path';
 import { defineConfig, mergeConfig } from 'vite';
 import icons from 'unplugin-icons/vite';
-import { vitestConfig } from '@n8n/vitest-config/frontend';
+import { vitestConfig } from '@workflow-automation/vitest-config/frontend';
 import svgLoader from 'vite-svg-loader';
 
 const packagesDir = resolve(__dirname, '..', '..', '..');
