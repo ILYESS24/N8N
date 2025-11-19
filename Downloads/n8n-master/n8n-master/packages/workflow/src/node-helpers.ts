@@ -6,7 +6,7 @@ import get from 'lodash/get';
 import isEqual from 'lodash/isEqual';
 
 import { EXECUTE_WORKFLOW_NODE_TYPE, WORKFLOW_TOOL_LANGCHAIN_NODE_TYPE } from './constants';
-import { ApplicationError } from '@n8n/errors';
+import { ApplicationError } from '@workflow-automation/errors';
 import { NodeConnectionTypes } from './interfaces';
 import type {
 	FieldType,

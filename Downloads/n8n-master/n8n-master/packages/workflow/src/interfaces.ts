@@ -1,6 +1,6 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import type { CallbackManager as CallbackManagerLC } from '@langchain/core/callbacks/manager';
-import type { LogScope } from '@n8n/config';
+import type { LogScope } from '@workflow-automation/config';
 import type { AxiosProxyConfig, GenericAbortSignal } from 'axios';
 import type * as express from 'express';
 import type FormData from 'form-data';
