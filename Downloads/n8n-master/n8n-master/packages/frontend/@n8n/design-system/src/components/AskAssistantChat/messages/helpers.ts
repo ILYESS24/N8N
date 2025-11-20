@@ -1,4 +1,4 @@
-import type { ChatUI } from '../../../../types';
+import type { ChatUI } from '../../../types';
 
 import BlockMessage from './BlockMessage.vue';
 import CodeDiffMessage from './CodeDiffMessage.vue';

@@ -1,10 +1,10 @@
-import { get, post, postWithFiles } from '@workflow-automation/chat/api/generic';
+import { get, post, postWithFiles } from './generic';
 import type {
 	ChatOptions,
 	LoadPreviousSessionResponse,
 	SendMessageResponse,
 	StructuredChunk,
-} from '@workflow-automation/chat/types';
+} from '../types';
 
 export async function loadPreviousSession(sessionId: string, options: ChatOptions) {
 	const method = options.webhookConfig?.method === 'POST' ? post : get;
