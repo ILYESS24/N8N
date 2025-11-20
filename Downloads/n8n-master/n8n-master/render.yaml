@@ -5,7 +5,7 @@ services:
     nodeVersion: 22.16.0
     region: oregon
     plan: starter
-    buildCommand: pnpm install --frozen-lockfile && node scripts/fix-imports.mjs && pnpm build
+    buildCommand: pnpm install --frozen-lockfile && node scripts/fix-imports.mjs && node scripts/fix-subpath-imports.mjs && pnpm build
     startCommand: cd packages/cli && node dist/index.js start
     envVars:
       - key: NODE_ENV
