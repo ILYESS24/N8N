@@ -28,12 +28,18 @@ export function handleStreamingChunk(
 				messages.value.push(receivedMessage.value);
 			}
 
+			// TypeScript guard: receivedMessage.value is not null after the check above
+			const currentMessage = receivedMessage.value;
+			if (!currentMessage) {
+				return;
+			}
+
 			const updatedMessage: ChatMessageText = {
-				...receivedMessage.value,
-				text: receivedMessage.value.text + chunk,
+				...currentMessage,
+				text: currentMessage.text + chunk,
 			};
 
-			updateMessageInArray(messages.value, receivedMessage.value.id, updatedMessage);
+			updateMessageInArray(messages.value, currentMessage.id, updatedMessage);
 			receivedMessage.value = updatedMessage;
 		} else {
 			// Multi-run streaming with separate messages per runIndex
