@@ -1,4 +1,4 @@
-﻿<script setup lang="ts">
+<script setup lang="ts">
 import { computed, onMounted, onBeforeUnmount, ref } from 'vue';
 import type { WorkerStatus } from '@workflow-automation/api-types';
 
@@ -7,10 +7,10 @@ import { averageWorkerLoadFromLoadsAsString, memAsGb } from '../orchestration.ut
 import WorkerJobAccordion from './WorkerJobAccordion.vue';
 import WorkerNetAccordion from './WorkerNetAccordion.vue';
 import WorkerChartsAccordion from './WorkerChartsAccordion.vue';
-import { sortByProperty } from '@n8n/utils/sort/sortByProperty';
-import { useI18n } from '@n8n/i18n';
+import { sortByProperty } from '@workflow-automation/utils/sort/sortByProperty';
+import { useI18n } from '@workflow-automation/i18n';
 
-import { N8nCard, N8nHeading, N8nText } from '@n8n/design-system';
+import { N8nCard, N8nHeading, N8nText } from '@workflow-automation/design-system';
 let interval: NodeJS.Timeout;
 
 const orchestrationStore = useOrchestrationStore();

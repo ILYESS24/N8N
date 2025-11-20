@@ -1,6 +1,6 @@
 import { describe, it, expect, beforeEach, vi } from 'vitest';
 import { useDebugInfo } from './useDebugInfo';
-import type { RootStoreState } from '@n8n/stores/useRootStore';
+import type { RootStoreState } from '@workflow-automation/stores/useRootStore';
 import type { useSettingsStore as useSettingsStoreType } from '@/app/stores/settings.store';
 import type { RecursivePartial } from '@/app/types/utils';
 

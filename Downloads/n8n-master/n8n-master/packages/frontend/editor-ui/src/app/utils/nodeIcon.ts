@@ -1,12 +1,12 @@
-﻿import { useNodeTypesStore } from '@/app/stores/nodeTypes.store';
+import { useNodeTypesStore } from '@/app/stores/nodeTypes.store';
 import { useUIStore } from '@/app/stores/ui.store';
 import { useWorkflowsStore } from '@/app/stores/workflows.store';
 import {
 	isNodePreviewKey,
 	removePreviewToken,
 } from '@/features/shared/nodeCreator/nodeCreator.utils';
-import type { VersionNode } from '@n8n/rest-api-client/api/versions';
-import { useRootStore } from '@n8n/stores/useRootStore';
+import type { VersionNode } from '@workflow-automation/rest-api-client/api/versions';
+import { useRootStore } from '@workflow-automation/stores/useRootStore';
 import {
 	type INode,
 	type INodeTypeDescription,

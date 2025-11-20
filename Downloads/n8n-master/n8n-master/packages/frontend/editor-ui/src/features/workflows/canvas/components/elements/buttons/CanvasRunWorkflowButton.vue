@@ -1,15 +1,15 @@
-﻿<script setup lang="ts">
+<script setup lang="ts">
 import KeyboardShortcutTooltip from '@/app/components/KeyboardShortcutTooltip.vue';
 import NodeIcon from '@/app/components/NodeIcon.vue';
 import { type INodeUi } from '@/Interface';
-import { truncateBeforeLast } from '@n8n/utils/string/truncate';
-import { useI18n } from '@n8n/i18n';
+import { truncateBeforeLast } from '@workflow-automation/utils/string/truncate';
+import { useI18n } from '@workflow-automation/i18n';
 import { type INodeTypeDescription } from 'workflow-automation-workflow';
 import { computed } from 'vue';
 import { isChatNode } from '@/app/utils/aiUtils';
 import { I18nT } from 'vue-i18n';
 
-import { N8nActionDropdown, N8nButton, N8nText, type ActionDropdownItem } from '@n8n/design-system';
+import { N8nActionDropdown, N8nButton, N8nText, type ActionDropdownItem } from '@workflow-automation/design-system';
 const emit = defineEmits<{
 	mouseenter: [event: MouseEvent];
 	mouseleave: [event: MouseEvent];
@@ -83,7 +83,7 @@ function getNodeTypeByName(name: string): INodeTypeDescription | null {
 	<div :class="[$style.component, isSplitButton ? $style.split : '']">
 		<KeyboardShortcutTooltip
 			:label="label"
-			:shortcut="{ metaKey: true, keys: ['â†µ'] }"
+			:shortcut="{ metaKey: true, keys: ['↵'] }"
 			:disabled="executing || hideTooltip"
 		>
 			<N8nButton

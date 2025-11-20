@@ -1,4 +1,4 @@
-﻿import { describe, it, expect, vi, beforeEach } from 'vitest';
+import { describe, it, expect, vi, beforeEach } from 'vitest';
 import { useExecutionCommands } from './useExecutionCommands';
 import { useExecutionsStore } from '@/features/execution/executions/executions.store';
 import { useWorkflowsStore } from '@/app/stores/workflows.store';
@@ -23,7 +23,7 @@ vi.mock('vue-router', () => ({
 	RouterLink: vi.fn(),
 }));
 
-vi.mock('@n8n/i18n', async (importOriginal) => ({
+vi.mock('@workflow-automation/i18n', async (importOriginal) => ({
 	...(await importOriginal()),
 	useI18n: () => ({
 		baseText: (key: string, opts?: { interpolate?: Record<string, string> }) => {
@@ -62,7 +62,7 @@ vi.mock('@/app/composables/useTelemetry', () => ({
 	}),
 }));
 
-vi.mock('@n8n/permissions', () => ({
+vi.mock('@workflow-automation/permissions', () => ({
 	getResourcePermissions: vi.fn(() => ({
 		workflow: {
 			update: true,

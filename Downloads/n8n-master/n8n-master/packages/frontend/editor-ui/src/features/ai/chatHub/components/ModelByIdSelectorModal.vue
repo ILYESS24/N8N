@@ -1,15 +1,15 @@
-﻿<script setup lang="ts">
+<script setup lang="ts">
 import { ref, onMounted } from 'vue';
-import { N8nButton, N8nFormInput, N8nHeading, N8nText } from '@n8n/design-system';
+import { N8nButton, N8nFormInput, N8nHeading, N8nText } from '@workflow-automation/design-system';
 import Modal from '@/app/components/Modal.vue';
-import { createEventBus } from '@n8n/utils/event-bus';
+import { createEventBus } from '@workflow-automation/utils/event-bus';
 import { type ChatHubLLMProvider, PROVIDER_CREDENTIAL_TYPE_MAP } from '@workflow-automation/api-types';
 import {
 	CHAT_MODEL_BY_ID_SELECTOR_MODAL_KEY,
 	providerDisplayNames,
 } from '@/features/ai/chatHub/constants';
 import CredentialIcon from '@/features/credentials/components/CredentialIcon.vue';
-import { useI18n } from '@n8n/i18n';
+import { useI18n } from '@workflow-automation/i18n';
 
 const props = defineProps<{
 	modalName: string;

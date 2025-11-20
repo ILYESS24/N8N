@@ -1,15 +1,15 @@
-﻿<script setup lang="ts">
+<script setup lang="ts">
 import { useActions } from '@/features/shared/nodeCreator/composables/useActions';
 import { useActionsGenerator } from '@/features/shared/nodeCreator/composables/useActionsGeneration';
 import { CUSTOM_API_CALL_KEY } from '@/app/constants';
 import type { ActionCreateElement, INodeCreateElement, INodeUi } from '@/Interface';
 import { useNodeTypesStore } from '@/app/stores/nodeTypes.store';
-import { useI18n } from '@n8n/i18n';
+import { useI18n } from '@workflow-automation/i18n';
 import { type INodeParameters } from 'workflow-automation-workflow';
 import { computed, ref, watch } from 'vue';
 import NodeIcon from '@/app/components/NodeIcon.vue';
 
-import { N8nIcon, N8nText } from '@n8n/design-system';
+import { N8nIcon, N8nText } from '@workflow-automation/design-system';
 const { node } = defineProps<{
 	node: INodeUi;
 }>();

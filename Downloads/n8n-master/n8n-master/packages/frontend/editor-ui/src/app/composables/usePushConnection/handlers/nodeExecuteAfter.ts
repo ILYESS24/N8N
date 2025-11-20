@@ -1,4 +1,4 @@
-﻿import type { NodeExecuteAfter } from '@n8n/api-types/push/execution';
+import type { NodeExecuteAfter } from '@workflow-automation/api-types/push/execution';
 import { useAssistantStore } from '@/features/ai/assistant/assistant.store';
 import { useWorkflowsStore } from '@/app/stores/workflows.store';
 import type { INodeExecutionData, ITaskData } from 'workflow-automation-workflow';

@@ -1,4 +1,4 @@
-﻿import { safeJoinPath, type Logger } from '@workflow-automation/backend-common';
+import { safeJoinPath, type Logger } from '@workflow-automation/backend-common';
 // eslint-disable-next-line n8n-local-rules/misplaced-n8n-typeorm-import
 import { type DataSource, type EntityManager } from '@n8n/typeorm';
 import { mock } from 'jest-mock-extended';
@@ -16,12 +16,12 @@ jest.mock('fs/promises');
 
 jest.mock('@/utils/compression.util');
 
-jest.mock('@n8n/backend-common', () => ({
+jest.mock('@workflow-automation/backend-common', () => ({
 	safeJoinPath: jest.fn(),
 }));
 
 // Mock @n8n/db
-jest.mock('@n8n/db', () => ({
+jest.mock('@workflow-automation/db', () => ({
 	CredentialsRepository: mock<CredentialsRepository>(),
 	TagRepository: mock<TagRepository>(),
 	DataSource: mock<DataSource>(),
@@ -226,8 +226,8 @@ describe('ImportService', () => {
 			await importService.truncateEntityTable('users', mockEntityManager);
 
 			expect(mockEntityManager.createQueryBuilder).toHaveBeenCalled();
-			expect(mockLogger.info).toHaveBeenCalledWith('ðŸ—‘ï¸  Truncating table: users');
-			expect(mockLogger.info).toHaveBeenCalledWith('   âœ… Table users truncated successfully');
+			expect(mockLogger.info).toHaveBeenCalledWith('🗑️  Truncating table: users');
+			expect(mockLogger.info).toHaveBeenCalledWith('   ✅ Table users truncated successfully');
 		});
 
 		it('should handle database errors gracefully', async () => {
@@ -798,9 +798,9 @@ describe('ImportService', () => {
 			await importService.decompressEntitiesZip(inputDir);
 
 			expect(mockLogger.info).toHaveBeenCalledWith(
-				`\nðŸ—œï¸  Found entities.zip file, decompressing to ${inputDir}...`,
+				`\n🗜️  Found entities.zip file, decompressing to ${inputDir}...`,
 			);
-			expect(mockLogger.info).toHaveBeenCalledWith('âœ… Successfully decompressed entities.zip');
+			expect(mockLogger.info).toHaveBeenCalledWith('✅ Successfully decompressed entities.zip');
 		});
 	});
 });

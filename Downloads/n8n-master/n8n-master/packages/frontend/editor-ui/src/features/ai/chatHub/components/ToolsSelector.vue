@@ -1,8 +1,8 @@
-﻿<script setup lang="ts">
+<script setup lang="ts">
 import NodeIcon from '@/app/components/NodeIcon.vue';
 import { useNodeTypesStore } from '@/app/stores/nodeTypes.store';
 import { useUIStore } from '@/app/stores/ui.store';
-import { N8nButton } from '@n8n/design-system';
+import { N8nButton } from '@workflow-automation/design-system';
 import type { INode } from 'workflow-automation-workflow';
 import { computed, onMounted } from 'vue';
 import { TOOLS_SELECTOR_MODAL_KEY } from '../constants';

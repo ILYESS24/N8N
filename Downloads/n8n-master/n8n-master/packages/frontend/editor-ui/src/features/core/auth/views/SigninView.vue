@@ -1,4 +1,4 @@
-﻿<script setup lang="ts">
+<script setup lang="ts">
 import { computed, reactive, ref } from 'vue';
 import { useRoute, useRouter } from 'vue-router';
 
@@ -6,7 +6,7 @@ import AuthView from './AuthView.vue';
 import MfaView from './MfaView.vue';
 
 import { useToast } from '@/app/composables/useToast';
-import { useI18n } from '@n8n/i18n';
+import { useI18n } from '@workflow-automation/i18n';
 import { useTelemetry } from '@/app/composables/useTelemetry';
 
 import { useUsersStore } from '@/features/settings/users/users.store';

@@ -1,10 +1,10 @@
 <script lang="ts" setup>
 import Card from '@/app/components/CollectionWorkflowCard.vue';
 import NodeList from '@/app/components/NodeList.vue';
-import { useI18n } from '@n8n/i18n';
-import type { ITemplatesCollection } from '@n8n/rest-api-client/api/templates';
+import { useI18n } from '@workflow-automation/i18n';
+import type { ITemplatesCollection } from '@workflow-automation/rest-api-client/api/templates';
 
-import { N8nText } from '@n8n/design-system';
+import { N8nText } from '@workflow-automation/design-system';
 withDefaults(
 	defineProps<{
 		collection: ITemplatesCollection;

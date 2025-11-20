@@ -1,4 +1,4 @@
-﻿import type { IExecuteFunctions } from 'workflow-automation-workflow';
+import type { IExecuteFunctions } from 'workflow-automation-workflow';
 import { NodeOperationError } from 'workflow-automation-workflow';
 
 import {
@@ -8,8 +8,8 @@ import {
 	getMessageContent,
 } from '../../V2/GenericFunctions';
 
-jest.mock('n8n-workflow', () => ({
-	...jest.requireActual('n8n-workflow'),
+jest.mock('workflow-automation-workflow', () => ({
+	...jest.requireActual('workflow-automation-workflow'),
 	NodeApiError: jest.fn(),
 }));
 

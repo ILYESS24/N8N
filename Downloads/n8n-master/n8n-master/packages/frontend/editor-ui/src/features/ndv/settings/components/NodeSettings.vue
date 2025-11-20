@@ -1,4 +1,4 @@
-﻿<script setup lang="ts">
+<script setup lang="ts">
 import type {
 	CurlToJSONResponse,
 	INodeUi,
@@ -54,14 +54,14 @@ import {
 	getNodeSettingsInitialValues,
 	nameIsParameter,
 } from '../../shared/ndv.utils';
-import { useI18n } from '@n8n/i18n';
-import type { EventBus } from '@n8n/utils/event-bus';
+import { useI18n } from '@workflow-automation/i18n';
+import type { EventBus } from '@workflow-automation/utils/event-bus';
 import { useResizeObserver } from '@vueuse/core';
 import CommunityNodeFooter from '@/features/settings/communityNodes/components/nodeCreator/CommunityNodeFooter.vue';
 import CommunityNodeUpdateInfo from '@/features/settings/communityNodes/components/nodeCreator/CommunityNodeUpdateInfo.vue';
 import NodeExecuteButton from '@/app/components/NodeExecuteButton.vue';
 
-import { N8nBlockUi, N8nIcon, N8nNotice, N8nText } from '@n8n/design-system';
+import { N8nBlockUi, N8nIcon, N8nNotice, N8nText } from '@workflow-automation/design-system';
 import { useRoute } from 'vue-router';
 import { useSettingsStore } from '@/app/stores/settings.store';
 import { injectWorkflowState } from '@/app/composables/useWorkflowState';

@@ -1,11 +1,11 @@
-﻿import { createWorkflowWithHistory, testDb, mockInstance } from '@n8n/backend-test-utils';
+import { createWorkflowWithHistory, testDb, mockInstance } from '@n8n/backend-test-utils';
 import type { Project, WebhookEntity } from '@workflow-automation/db';
 import { WorkflowRepository } from '@workflow-automation/db';
 import { Container } from '@workflow-automation/di';
 import { mock } from 'jest-mock-extended';
 import { InstanceSettings, ExternalSecretsProxy } from 'workflow-automation-core';
-import { FormTrigger } from 'n8n-nodes-base/nodes/Form/FormTrigger.node';
-import { ScheduleTrigger } from 'n8n-nodes-base/nodes/Schedule/ScheduleTrigger.node';
+import { FormTrigger } from 'workflow-automation-nodes-base/nodes/Form/FormTrigger.node';
+import { ScheduleTrigger } from 'workflow-automation-nodes-base/nodes/Schedule/ScheduleTrigger.node';
 import { NodeApiError, Workflow } from 'workflow-automation-workflow';
 import type {
 	IWebhookData,

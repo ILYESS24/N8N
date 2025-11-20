@@ -1,4 +1,4 @@
-﻿import { RuleTester } from '@typescript-eslint/rule-tester';
+import { RuleTester } from '@typescript-eslint/rule-tester';
 
 import { NoRestrictedImportsRule } from './no-restricted-imports.js';
 
@@ -55,7 +55,7 @@ ruleTester.run('no-restricted-imports', NoRestrictedImportsRule, {
 			code: 'require.resolve("../utils");',
 		},
 		{
-			code: 'const workflow = await import("n8n-workflow");',
+			code: 'const workflow = await import("workflow-automation-workflow");',
 		},
 		{
 			code: 'import("lodash").then((_) => {});',
@@ -172,7 +172,7 @@ const lodash = require("lodash");`,
 			code: `
 const fs = await import("fs");
 import("axios").then((axios) => {});
-const workflow = await import("n8n-workflow");`,
+const workflow = await import("workflow-automation-workflow");`,
 			errors: [
 				{ messageId: 'restrictedDynamicImport', data: { modulePath: 'fs' } },
 				{ messageId: 'restrictedDynamicImport', data: { modulePath: 'axios' } },

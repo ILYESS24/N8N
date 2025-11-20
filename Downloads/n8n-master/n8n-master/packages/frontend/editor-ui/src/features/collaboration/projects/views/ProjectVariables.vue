@@ -1,6 +1,6 @@
-﻿<script lang="ts" setup>
+<script lang="ts" setup>
 import { useDocumentTitle } from '@/app/composables/useDocumentTitle';
-import { useI18n } from '@n8n/i18n';
+import { useI18n } from '@workflow-automation/i18n';
 import { useMessage } from '@/app/composables/useMessage';
 import { useTelemetry } from '@/app/composables/useTelemetry';
 import { useToast } from '@/app/composables/useToast';
@@ -29,7 +29,7 @@ import {
 	N8nSelect,
 	N8nText,
 	N8nTooltip,
-} from '@n8n/design-system';
+} from '@workflow-automation/design-system';
 import { useAsyncState } from '@vueuse/core';
 import pickBy from 'lodash/pickBy';
 import type { ComponentExposed } from 'vue-component-type-helpers';
@@ -43,7 +43,7 @@ import { useProjectPages } from '@/features/collaboration/projects/composables/u
 import { useProjectsStore } from '@/features/collaboration/projects/projects.store';
 import ProjectHeader from '@/features/collaboration/projects/components/ProjectHeader.vue';
 import { isVariableResource } from '@/app/utils/typeGuards';
-import type { IconOrEmoji } from '@n8n/design-system/components/N8nIconPicker/types';
+import type { IconOrEmoji } from '@workflow-automation/design-system/components/N8nIconPicker/types';
 
 const settingsStore = useSettingsStore();
 const environmentsStore = useEnvironmentsStore();

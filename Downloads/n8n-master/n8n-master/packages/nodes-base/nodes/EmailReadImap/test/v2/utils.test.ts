@@ -1,4 +1,4 @@
-﻿import { type ImapSimple } from '@n8n/imap';
+import { type ImapSimple } from '@workflow-automation/imap';
 import { mock, mockDeep } from 'jest-mock-extended';
 import { returnJsonArray } from 'workflow-automation-core';
 import type { INode, ITriggerFunctions } from 'workflow-automation-workflow';

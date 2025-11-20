@@ -1,9 +1,9 @@
 <script setup lang="ts">
 import { onMounted, ref } from 'vue';
-import { useI18n } from '@n8n/i18n';
-import { N8nLink, N8nSpinner, N8nText } from '@n8n/design-system';
+import { useI18n } from '@workflow-automation/i18n';
+import { N8nLink, N8nSpinner, N8nText } from '@workflow-automation/design-system';
 import { TEMPLATES_URLS } from '@/app/constants';
-import type { ITemplatesWorkflowFull } from '@n8n/rest-api-client';
+import type { ITemplatesWorkflowFull } from '@workflow-automation/rest-api-client';
 import { useTemplatesDataQualityStore } from '../stores/templatesDataQuality.store';
 import TemplateCard from './TemplateCard.vue';
 

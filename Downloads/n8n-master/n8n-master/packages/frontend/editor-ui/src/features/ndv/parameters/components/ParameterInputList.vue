@@ -1,4 +1,4 @@
-﻿<script setup lang="ts">
+<script setup lang="ts">
 import type {
 	CalloutAction,
 	INodeParameters,
@@ -22,7 +22,7 @@ import ImportCurlParameter from './ImportCurlParameter.vue';
 import MultipleParameter from './MultipleParameter.vue';
 import ParameterInputFull from './ParameterInputFull.vue';
 import ResourceMapper from './ResourceMapper/ResourceMapper.vue';
-import { useI18n } from '@n8n/i18n';
+import { useI18n } from '@workflow-automation/i18n';
 import { useNodeSettingsParameters } from '@/features/ndv/settings/composables/useNodeSettingsParameters';
 import { useWorkflowHelpers } from '@/app/composables/useWorkflowHelpers';
 import { useMessage } from '@/app/composables/useMessage';
@@ -43,7 +43,7 @@ import { storeToRefs } from 'pinia';
 import { useCalloutHelpers } from '@/app/composables/useCalloutHelpers';
 import { getParameterTypeOption } from '@/features/ndv/shared/ndv.utils';
 import { useWorkflowsStore } from '@/app/stores/workflows.store';
-import type { IconName } from '@n8n/design-system/components/N8nIcon/icons';
+import type { IconName } from '@workflow-automation/design-system/components/N8nIcon/icons';
 
 import {
 	N8nCallout,
@@ -54,7 +54,7 @@ import {
 	N8nNotice,
 	N8nText,
 	N8nTooltip,
-} from '@n8n/design-system';
+} from '@workflow-automation/design-system';
 const LazyFixedCollectionParameter = defineAsyncComponent(
 	async () => await import('./FixedCollectionParameter.vue'),
 );

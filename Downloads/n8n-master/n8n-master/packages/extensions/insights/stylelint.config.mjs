@@ -1,3 +1,3 @@
-import { baseConfig } from '@n8n/stylelint-config/base';
+import { baseConfig } from '@workflow-automation/stylelint-config/base';
 
 export default baseConfig;

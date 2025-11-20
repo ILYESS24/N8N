@@ -1,4 +1,4 @@
-﻿import type { MockInstance } from 'vitest';
+import type { MockInstance } from 'vitest';
 import { describe, it, expect, vi, beforeEach } from 'vitest';
 import {
 	displayForm,
@@ -45,7 +45,7 @@ vi.mock('@/app/stores/workflows.store', () => ({
 	}),
 }));
 
-vi.mock('@n8n/i18n', () => ({
+vi.mock('@workflow-automation/i18n', () => ({
 	i18n: {
 		baseText: (key: string, options?: { interpolate?: { error?: string; details?: string } }) => {
 			const texts: { [key: string]: string } = {
@@ -603,7 +603,7 @@ describe('getExecutionErrorToastConfiguration', () => {
 				node: { name: 'TestNode' },
 			}),
 		});
-		expect(result.title).toBe('Error in sub-node â€˜TestNodeâ€˜');
+		expect(result.title).toBe('Error in sub-node ‘TestNode‘');
 		expect((result.message as VNode).props).toEqual({
 			errorMessage: 'Bad configuration',
 			nodeName: 'TestNode',
@@ -638,7 +638,7 @@ describe('getExecutionErrorToastConfiguration', () => {
 		});
 
 		expect(result).toEqual({
-			title: 'Problem in node â€˜NodeXâ€˜',
+			title: 'Problem in node ‘NodeX‘',
 			message: 'Something broke',
 		});
 	});

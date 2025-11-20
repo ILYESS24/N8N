@@ -1,4 +1,4 @@
-import { frontendConfig } from '@n8n/eslint-config/frontend';
+import { frontendConfig } from '@workflow-automation/eslint-config/frontend';
 import { defineConfig } from 'eslint/config';
 
 export default defineConfig(frontendConfig, {

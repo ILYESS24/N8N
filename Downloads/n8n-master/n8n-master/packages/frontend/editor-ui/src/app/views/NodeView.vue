@@ -1,4 +1,4 @@
-﻿<script setup lang="ts">
+<script setup lang="ts">
 import {
 	computed,
 	defineAsyncComponent,
@@ -21,7 +21,7 @@ import FocusPanel from '@/app/components/FocusPanel.vue';
 import { useNodeTypesStore } from '@/app/stores/nodeTypes.store';
 import { useUIStore } from '@/app/stores/ui.store';
 import CanvasRunWorkflowButton from '@/features/workflows/canvas/components/elements/buttons/CanvasRunWorkflowButton.vue';
-import { useI18n } from '@n8n/i18n';
+import { useI18n } from '@workflow-automation/i18n';
 import { useWorkflowsStore } from '@/app/stores/workflows.store';
 import { useRunWorkflow } from '@/app/composables/useRunWorkflow';
 import { useGlobalLinkActions } from '@/app/composables/useGlobalLinkActions';
@@ -35,7 +35,7 @@ import type {
 	XYPosition,
 } from '@/Interface';
 import type { IExecutionResponse } from '@/features/execution/executions/executions.types';
-import type { WorkflowDataUpdate } from '@n8n/rest-api-client/api/workflows';
+import type { WorkflowDataUpdate } from '@workflow-automation/rest-api-client/api/workflows';
 import type {
 	Connection,
 	Dimensions,
@@ -91,7 +91,7 @@ import { useSettingsStore } from '@/app/stores/settings.store';
 import { useCredentialsStore } from '@/features/credentials/credentials.store';
 import { useEnvironmentsStore } from '@/features/settings/environments.ee/environments.store';
 import { useExternalSecretsStore } from '@/features/integrations/externalSecrets.ee/externalSecrets.ee.store';
-import { useRootStore } from '@n8n/stores/useRootStore';
+import { useRootStore } from '@workflow-automation/stores/useRootStore';
 import { historyBus } from '@/app/models/history';
 import { useCanvasOperations } from '@/app/composables/useCanvasOperations';
 import { useExecutionsStore } from '@/features/execution/executions/executions.store';
@@ -130,7 +130,7 @@ import { useBuilderStore } from '@/features/ai/assistant/builder.store';
 import { usePostHog } from '@/app/stores/posthog.store';
 import KeyboardShortcutTooltip from '@/app/components/KeyboardShortcutTooltip.vue';
 import { useWorkflowExtraction } from '@/app/composables/useWorkflowExtraction';
-import { useAgentRequestStore } from '@n8n/stores/useAgentRequestStore';
+import { useAgentRequestStore } from '@workflow-automation/stores/useAgentRequestStore';
 import { needsAgentInput } from '@/app/utils/nodes/nodeTransforms';
 import { useLogsStore } from '@/app/stores/logs.store';
 import { canvasEventBus } from '@/features/workflows/canvas/canvas.eventBus';
@@ -144,7 +144,7 @@ import { useExperimentalNdvStore } from '@/features/workflows/canvas/experimenta
 import { useWorkflowState } from '@/app/composables/useWorkflowState';
 import { useParentFolder } from '@/features/core/folders/composables/useParentFolder';
 
-import { N8nCallout, N8nCanvasThinkingPill } from '@n8n/design-system';
+import { N8nCallout, N8nCanvasThinkingPill } from '@workflow-automation/design-system';
 
 defineOptions({
 	name: 'NodeView',

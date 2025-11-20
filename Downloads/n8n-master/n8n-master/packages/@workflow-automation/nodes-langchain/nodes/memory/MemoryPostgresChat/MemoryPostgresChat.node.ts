@@ -1,8 +1,8 @@
-﻿import { PostgresChatMessageHistory } from '@langchain/community/stores/message/postgres';
+import { PostgresChatMessageHistory } from '@langchain/community/stores/message/postgres';
 import { BufferMemory, BufferWindowMemory } from 'langchain/memory';
-import { configurePostgres } from 'n8n-nodes-base/dist/nodes/Postgres/transport/index';
-import type { PostgresNodeCredentials } from 'n8n-nodes-base/dist/nodes/Postgres/v2/helpers/interfaces';
-import { postgresConnectionTest } from 'n8n-nodes-base/dist/nodes/Postgres/v2/methods/credentialTest';
+import { configurePostgres } from 'workflow-automation-nodes-base/dist/nodes/Postgres/transport/index';
+import type { PostgresNodeCredentials } from 'workflow-automation-nodes-base/dist/nodes/Postgres/v2/helpers/interfaces';
+import { postgresConnectionTest } from 'workflow-automation-nodes-base/dist/nodes/Postgres/v2/methods/credentialTest';
 import type {
 	ISupplyDataFunctions,
 	INodeType,

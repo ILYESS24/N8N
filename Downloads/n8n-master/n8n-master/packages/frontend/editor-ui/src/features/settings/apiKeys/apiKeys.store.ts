@@ -1,8 +1,8 @@
-﻿import { STORES } from '@n8n/stores';
+import { STORES } from '@workflow-automation/stores';
 import { defineStore } from 'pinia';
-import { useRootStore } from '@n8n/stores/useRootStore';
+import { useRootStore } from '@workflow-automation/stores/useRootStore';
 
-import * as publicApiApi from '@n8n/rest-api-client/api/api-keys';
+import * as publicApiApi from '@workflow-automation/rest-api-client/api/api-keys';
 import { computed, ref } from 'vue';
 import type { ApiKey, CreateApiKeyRequestDto, UpdateApiKeyRequestDto } from '@workflow-automation/api-types';
 import type { ApiKeyScope } from '@workflow-automation/permissions';

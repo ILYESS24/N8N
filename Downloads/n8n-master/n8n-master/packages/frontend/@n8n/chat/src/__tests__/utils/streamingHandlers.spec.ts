@@ -1,13 +1,13 @@
 import { describe, expect, it, vi, beforeEach } from 'vitest';
 import { ref, type Ref } from 'vue';
 
-import type { ChatMessage, ChatMessageText } from '@n8n/chat/types';
-import { StreamingMessageManager } from '@n8n/chat/utils/streaming';
+import type { ChatMessage, ChatMessageText } from '@workflow-automation/chat/types';
+import { StreamingMessageManager } from '@workflow-automation/chat/utils/streaming';
 import {
 	handleStreamingChunk,
 	handleNodeStart,
 	handleNodeComplete,
-} from '@n8n/chat/utils/streamingHandlers';
+} from '@workflow-automation/chat/utils/streamingHandlers';
 
 // Mock the chatEventBus
 vi.mock('@n8n/chat/event-buses', () => ({

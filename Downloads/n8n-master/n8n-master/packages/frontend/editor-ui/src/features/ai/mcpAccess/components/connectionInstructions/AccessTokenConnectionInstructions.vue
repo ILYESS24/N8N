@@ -1,8 +1,8 @@
-﻿<script setup lang="ts">
+<script setup lang="ts">
 import { computed } from 'vue';
 import type { ApiKey } from '@workflow-automation/api-types';
 import { useClipboard } from '@/app/composables/useClipboard';
-import { useI18n } from '@n8n/i18n';
+import { useI18n } from '@workflow-automation/i18n';
 import {
 	N8nButton,
 	N8nInfoAccordion,
@@ -11,7 +11,7 @@ import {
 	N8nMarkdown,
 	N8nNotice,
 	N8nTooltip,
-} from '@n8n/design-system';
+} from '@workflow-automation/design-system';
 import ConnectionParameter from '@/features/ai/mcpAccess/components/connectionInstructions/ConnectionParameter.vue';
 
 type Props = {

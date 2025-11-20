@@ -1,4 +1,4 @@
-﻿import { removePreviewToken } from '@/features/shared/nodeCreator/nodeCreator.utils';
+import { removePreviewToken } from '@/features/shared/nodeCreator/nodeCreator.utils';
 import type { IWorkflowDb } from '@/Interface';
 import { useCommunityNodesStore } from '../communityNodes.store';
 import { useCredentialsStore } from '@/features/credentials/credentials.store';
@@ -26,7 +26,7 @@ vi.mock('@/app/composables/useToast', () => ({
 	}),
 }));
 
-vi.mock('@n8n/i18n', () => ({
+vi.mock('@workflow-automation/i18n', () => ({
 	i18n: {
 		baseText: vi.fn((key: string) => key),
 	},

@@ -1,4 +1,4 @@
-﻿import type { OidcConfigDto, SamlPreferences } from '@workflow-automation/api-types';
+import type { OidcConfigDto, SamlPreferences } from '@workflow-automation/api-types';
 import { createTestingPinia } from '@pinia/testing';
 import { within, waitFor } from '@testing-library/vue';
 import { type MockedStore, mockedStore } from '@/__tests__/utils';
@@ -7,7 +7,7 @@ import userEvent from '@testing-library/user-event';
 import { useSSOStore, SupportedProtocols } from '../sso.store';
 import { createComponentRenderer } from '@/__tests__/render';
 import { usePageRedirectionHelper } from '@/app/composables/usePageRedirectionHelper';
-import type { SamlPreferencesExtractedData } from '@n8n/rest-api-client/api/sso';
+import type { SamlPreferencesExtractedData } from '@workflow-automation/rest-api-client/api/sso';
 
 const renderView = createComponentRenderer(SettingsSso);
 

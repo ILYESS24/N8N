@@ -1,7 +1,7 @@
-﻿<script setup lang="ts">
+<script setup lang="ts">
 import { computed, watch, onMounted, ref } from 'vue';
 import { useRouter, useRoute } from 'vue-router';
-import { createEventBus } from '@n8n/utils/event-bus';
+import { createEventBus } from '@workflow-automation/utils/event-bus';
 import EnterpriseEdition from '@/app/components/EnterpriseEdition.ee.vue';
 import Modal from './Modal.vue';
 import {
@@ -19,19 +19,19 @@ import { useUsersStore } from '@/features/settings/users/users.store';
 import { useWorkflowsStore } from '@/app/stores/workflows.store';
 import { useWorkflowsEEStore } from '@/app/stores/workflows.ee.store';
 import type { ITelemetryTrackProperties } from 'workflow-automation-workflow';
-import type { BaseTextKey } from '@n8n/i18n';
+import type { BaseTextKey } from '@workflow-automation/i18n';
 import ProjectSharing from '@/features/collaboration/projects/components/ProjectSharing.vue';
 import { useProjectsStore } from '@/features/collaboration/projects/projects.store';
 import type { ProjectSharingData, Project } from '@/features/collaboration/projects/projects.types';
 import { ProjectTypes } from '@/features/collaboration/projects/projects.types';
 import { useRolesStore } from '@/app/stores/roles.store';
 import { usePageRedirectionHelper } from '@/app/composables/usePageRedirectionHelper';
-import { useI18n } from '@n8n/i18n';
+import { useI18n } from '@workflow-automation/i18n';
 import { telemetry } from '@/app/plugins/telemetry';
 import { useWorkflowSaving } from '@/app/composables/useWorkflowSaving';
 import { I18nT } from 'vue-i18n';
 
-import { N8nButton, N8nInfoTip, N8nText } from '@n8n/design-system';
+import { N8nButton, N8nInfoTip, N8nText } from '@workflow-automation/design-system';
 const props = defineProps<{
 	data: {
 		id: string;

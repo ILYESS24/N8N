@@ -1,4 +1,4 @@
-﻿<script lang="ts" setup>
+<script lang="ts" setup>
 import type { INodeTypeDescription, IWebhookDescription } from 'workflow-automation-workflow';
 import { useToast } from '@/app/composables/useToast';
 import {
@@ -12,11 +12,11 @@ import { useClipboard } from '@/app/composables/useClipboard';
 import { useWorkflowHelpers } from '@/app/composables/useWorkflowHelpers';
 import type { INodeUi } from '@/Interface';
 import { computed, ref, watch } from 'vue';
-import { useI18n } from '@n8n/i18n';
+import { useI18n } from '@workflow-automation/i18n';
 import { useTelemetry } from '@/app/composables/useTelemetry';
 
 import { ElCol, ElCollapseTransition, ElRow } from 'element-plus';
-import { N8nIcon, N8nRadioButtons, N8nTooltip } from '@n8n/design-system';
+import { N8nIcon, N8nRadioButtons, N8nTooltip } from '@workflow-automation/design-system';
 const props = defineProps<{
 	node: INodeUi;
 	nodeTypeDescription: INodeTypeDescription | null;

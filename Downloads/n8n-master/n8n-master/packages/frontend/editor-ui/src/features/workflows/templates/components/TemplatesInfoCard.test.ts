@@ -1,7 +1,7 @@
 import { createComponentRenderer } from '@/__tests__/render';
 import { createPinia, setActivePinia } from 'pinia';
 import TemplatesInfoCard from './TemplatesInfoCard.vue';
-import type { ITemplatesCollection } from '@n8n/rest-api-client';
+import type { ITemplatesCollection } from '@workflow-automation/rest-api-client';
 
 let pinia: ReturnType<typeof createPinia>;
 const renderComponent = createComponentRenderer(TemplatesInfoCard);

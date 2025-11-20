@@ -1,4 +1,4 @@
-﻿import { defineComponent, reactive } from 'vue';
+import { defineComponent, reactive } from 'vue';
 import { createComponentRenderer } from '@/__tests__/render';
 import InsightsDashboard from './InsightsDashboard.vue';
 import { createTestingPinia } from '@pinia/testing';
@@ -49,7 +49,7 @@ vi.mock('vue-chartjs', () => ({
 	},
 }));
 
-vi.mock('@n8n/design-system', async (importOriginal) => {
+vi.mock('@workflow-automation/design-system', async (importOriginal) => {
 	const original = await importOriginal<object>();
 	return {
 		...original,

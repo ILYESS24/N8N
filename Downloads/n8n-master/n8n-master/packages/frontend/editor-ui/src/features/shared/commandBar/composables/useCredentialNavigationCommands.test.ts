@@ -1,4 +1,4 @@
-﻿import { ref } from 'vue';
+import { ref } from 'vue';
 import { describe, it, expect, vi, beforeEach } from 'vitest';
 import * as permissionsModule from '@workflow-automation/permissions';
 import { useCredentialNavigationCommands } from './useCredentialNavigationCommands';
@@ -23,14 +23,14 @@ vi.mock('vue-router', () => ({
 	RouterLink: vi.fn(),
 }));
 
-vi.mock('@n8n/i18n', async (importOriginal) => ({
+vi.mock('@workflow-automation/i18n', async (importOriginal) => ({
 	...(await importOriginal()),
 	useI18n: () => ({
 		baseText: (key: string) => key,
 	}),
 }));
 
-vi.mock('@n8n/permissions', async (importOriginal) => ({
+vi.mock('@workflow-automation/permissions', async (importOriginal) => ({
 	...(await importOriginal()),
 	getResourcePermissions: vi.fn(() => ({
 		credential: {

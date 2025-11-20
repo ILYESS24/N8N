@@ -6,7 +6,7 @@ import { useSettingsStore } from '@/app/stores/settings.store';
 import { useUsersStore } from '@/features/settings/users/users.store';
 import { useNDVStore } from '@/features/ndv/shared/ndv.store';
 import { useProjectsStore } from '@/features/collaboration/projects/projects.store';
-import { useRootStore } from '@n8n/stores/useRootStore';
+import { useRootStore } from '@workflow-automation/stores/useRootStore';
 import { useToast } from '@/app/composables/useToast';
 import { renderComponent } from '@/__tests__/render';
 import { mockedStore } from '@/__tests__/utils';

@@ -1,5 +1,5 @@
-﻿import type { INodeUi } from '@/Interface';
-import type { I18nClass } from '@n8n/i18n';
+import type { INodeUi } from '@/Interface';
+import type { I18nClass } from '@workflow-automation/i18n';
 import type { INodeTypeDescription } from 'workflow-automation-workflow';
 
 export function getNodeSubTitleText(

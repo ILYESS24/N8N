@@ -1,12 +1,12 @@
-﻿<script setup lang="ts">
+<script setup lang="ts">
 import { unflattenModel } from '@/features/ai/chatHub/chat.utils';
 import ChatAgentAvatar from '@/features/ai/chatHub/components/ChatAgentAvatar.vue';
 import ChatSidebarLink from '@/features/ai/chatHub/components/ChatSidebarLink.vue';
 import { useAgent } from '@/features/ai/chatHub/composables/useAgent';
 import { CHAT_CONVERSATION_VIEW } from '@/features/ai/chatHub/constants';
 import { type ChatHubSessionDto } from '@workflow-automation/api-types';
-import { N8nInput } from '@n8n/design-system';
-import type { ActionDropdownItem } from '@n8n/design-system/types';
+import { N8nInput } from '@workflow-automation/design-system';
+import type { ActionDropdownItem } from '@workflow-automation/design-system/types';
 import { computed, nextTick, ref, useTemplateRef, watch } from 'vue';
 
 const { session, isRenaming, active } = defineProps<{

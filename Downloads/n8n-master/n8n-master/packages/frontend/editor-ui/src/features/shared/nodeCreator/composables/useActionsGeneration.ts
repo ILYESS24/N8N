@@ -1,4 +1,4 @@
-﻿import type { ActionTypeDescription, ActionsRecord, SimplifiedNodeType } from '@/Interface';
+import type { ActionTypeDescription, ActionsRecord, SimplifiedNodeType } from '@/Interface';
 import {
 	AI_CATEGORY_ROOT_NODES,
 	AI_CATEGORY_TOOLS,
@@ -16,7 +16,7 @@ import type {
 	INodeTypeDescription,
 } from 'workflow-automation-workflow';
 
-import { i18n } from '@n8n/i18n';
+import { i18n } from '@workflow-automation/i18n';
 
 import { getCredentialOnlyNodeType } from '@/app/utils/credentialOnlyNodes';
 import { formatTriggerActionName } from '../nodeCreator.utils';

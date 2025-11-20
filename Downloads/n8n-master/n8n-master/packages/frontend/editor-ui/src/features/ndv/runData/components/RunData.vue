@@ -1,4 +1,4 @@
-﻿<script setup lang="ts">
+<script setup lang="ts">
 import { useStorage } from '@/app/composables/useStorage';
 import { saveAs } from 'file-saver';
 import NodeSettingsHint from '@/features/ndv/settings/components/NodeSettingsHint.vue';
@@ -44,7 +44,7 @@ import JsonEditor from '@/features/shared/editors/components/JsonEditor/JsonEdit
 import { useRunWorkflow } from '@/app/composables/useRunWorkflow';
 import RunDataPinButton from './RunDataPinButton.vue';
 import { useExternalHooks } from '@/app/composables/useExternalHooks';
-import { useI18n } from '@n8n/i18n';
+import { useI18n } from '@workflow-automation/i18n';
 import { useNodeHelpers } from '@/app/composables/useNodeHelpers';
 import { useNodeType } from '@/app/composables/useNodeType';
 import type { PinDataSource, UnpinDataSource } from '@/app/composables/usePinnedData';
@@ -55,7 +55,7 @@ import { dataPinningEventBus } from '@/app/event-bus';
 import { ndvEventBus } from '@/features/ndv/shared/ndv.eventBus';
 import { useNDVStore } from '@/features/ndv/shared/ndv.store';
 import { useNodeTypesStore } from '@/app/stores/nodeTypes.store';
-import { useRootStore } from '@n8n/stores/useRootStore';
+import { useRootStore } from '@workflow-automation/stores/useRootStore';
 import { useSourceControlStore } from '@/features/integrations/sourceControl.ee/sourceControl.store';
 import { useWorkflowsStore } from '@/app/stores/workflows.store';
 import { executionDataToJson } from '@/app/utils/nodeTypesUtils';
@@ -93,7 +93,7 @@ import {
 	N8nTabs,
 	N8nText,
 	N8nTooltip,
-} from '@n8n/design-system';
+} from '@workflow-automation/design-system';
 import { injectWorkflowState } from '@/app/composables/useWorkflowState';
 const LazyRunDataTable = defineAsyncComponent(async () => await import('./RunDataTable.vue'));
 const LazyRunDataJson = defineAsyncComponent(async () => await import('./RunDataJson.vue'));
@@ -450,7 +450,7 @@ const runSelectorOptionsCount = computed(() => {
 	const nodeRunData = currentNodeRunData.value;
 	if (!nodeRunData) return 0;
 
-	// If there is branch selector â€“ we show all runs in the run selector
+	// If there is branch selector – we show all runs in the run selector
 	if (showBranchSwitch.value) {
 		return maxRunIndex.value + 1;
 	}

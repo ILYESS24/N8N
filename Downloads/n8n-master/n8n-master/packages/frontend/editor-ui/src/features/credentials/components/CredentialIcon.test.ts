@@ -1,4 +1,4 @@
-﻿import { createTestingPinia, type TestingPinia } from '@pinia/testing';
+import { createTestingPinia, type TestingPinia } from '@pinia/testing';
 import type { ICredentialType, INodeTypeDescription } from 'workflow-automation-workflow';
 import { mock } from 'vitest-mock-extended';
 
@@ -6,7 +6,7 @@ import CredentialIcon from './CredentialIcon.vue';
 
 import { createComponentRenderer } from '@/__tests__/render';
 import { useCredentialsStore } from '../credentials.store';
-import { useRootStore } from '@n8n/stores/useRootStore';
+import { useRootStore } from '@workflow-automation/stores/useRootStore';
 import { useNodeTypesStore } from '@/app/stores/nodeTypes.store';
 
 describe('CredentialIcon', () => {

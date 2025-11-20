@@ -1,10 +1,10 @@
-﻿import type { CallbackManagerForToolRun } from '@langchain/core/callbacks/manager';
+import type { CallbackManagerForToolRun } from '@langchain/core/callbacks/manager';
 import { DynamicStructuredTool, DynamicTool } from '@langchain/core/tools';
 import isArray from 'lodash/isArray';
 import isObject from 'lodash/isObject';
-import type { SetField, SetNodeOptions } from 'n8n-nodes-base/dist/nodes/Set/v2/helpers/interfaces';
-import * as manual from 'n8n-nodes-base/dist/nodes/Set/v2/manual.mode';
-import { getCurrentWorkflowInputData } from 'n8n-nodes-base/dist/utils/workflowInputsResourceMapping/GenericFunctions';
+import type { SetField, SetNodeOptions } from 'workflow-automation-nodes-base/dist/nodes/Set/v2/helpers/interfaces';
+import * as manual from 'workflow-automation-nodes-base/dist/nodes/Set/v2/manual.mode';
+import { getCurrentWorkflowInputData } from 'workflow-automation-nodes-base/dist/utils/workflowInputsResourceMapping/GenericFunctions';
 import type {
 	ExecuteWorkflowData,
 	ExecutionError,

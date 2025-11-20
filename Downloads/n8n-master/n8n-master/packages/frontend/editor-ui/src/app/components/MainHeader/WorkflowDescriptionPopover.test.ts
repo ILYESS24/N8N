@@ -1,4 +1,4 @@
-﻿import { createComponentRenderer } from '@/__tests__/render';
+import { createComponentRenderer } from '@/__tests__/render';
 import { type MockedStore, mockedStore } from '@/__tests__/utils';
 import { createTestingPinia } from '@pinia/testing';
 import userEvent from '@testing-library/user-event';
@@ -10,7 +10,7 @@ import { useSettingsStore } from '@/app/stores/settings.store';
 import { useToast } from '@/app/composables/useToast';
 import { useTelemetry } from '@/app/composables/useTelemetry';
 import { WEBHOOK_NODE_TYPE } from 'workflow-automation-workflow';
-import { STORES } from '@n8n/stores';
+import { STORES } from '@workflow-automation/stores';
 
 vi.mock('@/app/composables/useToast', () => {
 	const showError = vi.fn();

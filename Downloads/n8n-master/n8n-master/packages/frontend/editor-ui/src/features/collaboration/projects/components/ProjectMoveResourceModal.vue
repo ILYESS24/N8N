@@ -1,4 +1,4 @@
-﻿<script lang="ts" setup>
+<script lang="ts" setup>
 import Modal from '@/app/components/Modal.vue';
 import ProjectMoveResourceModalCredentialsList from './ProjectMoveResourceModalCredentialsList.vue';
 import ProjectMoveSuccessToastMessage from './ProjectMoveSuccessToastMessage.vue';
@@ -22,10 +22,10 @@ import {
 	ResourceType,
 	splitName,
 } from '../projects.utils';
-import { useI18n } from '@n8n/i18n';
-import type { EventBus } from '@n8n/utils/event-bus';
-import { sortByProperty } from '@n8n/utils/sort/sortByProperty';
-import { truncate } from '@n8n/utils/string/truncate';
+import { useI18n } from '@workflow-automation/i18n';
+import type { EventBus } from '@workflow-automation/utils/event-bus';
+import { sortByProperty } from '@workflow-automation/utils/sort/sortByProperty';
+import { truncate } from '@workflow-automation/utils/string/truncate';
 import { computed, h, onMounted, ref } from 'vue';
 import { I18nT } from 'vue-i18n';
 import { useRouter } from 'vue-router';
@@ -39,7 +39,7 @@ import {
 	N8nSelect,
 	N8nText,
 	N8nTooltip,
-} from '@n8n/design-system';
+} from '@workflow-automation/design-system';
 const props = defineProps<{
 	modalName: string;
 	data: {

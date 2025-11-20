@@ -1,4 +1,4 @@
-import type { WorkflowDataCreate } from '@n8n/rest-api-client';
+import type { WorkflowDataCreate } from '@workflow-automation/rest-api-client';
 
 export const READY_TO_RUN_AI_WORKFLOW: WorkflowDataCreate = {
 	name: 'AI Agent workflow',

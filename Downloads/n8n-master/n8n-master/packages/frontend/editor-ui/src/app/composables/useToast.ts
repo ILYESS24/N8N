@@ -1,11 +1,11 @@
-﻿import { ElNotification as Notification } from 'element-plus';
+import { ElNotification as Notification } from 'element-plus';
 import type { NotificationHandle, MessageBoxState } from 'element-plus';
 import type { NotificationOptions } from '@/Interface';
 import { sanitizeHtml } from '@/app/utils/htmlUtils';
 import { useTelemetry } from '@/app/composables/useTelemetry';
 import { useWorkflowsStore } from '@/app/stores/workflows.store';
 import { useUIStore } from '@/app/stores/ui.store';
-import { useI18n } from '@n8n/i18n';
+import { useI18n } from '@workflow-automation/i18n';
 import { useExternalHooks } from './useExternalHooks';
 import { VIEWS } from '@/app/constants';
 import type { ApplicationError } from 'workflow-automation-workflow';

@@ -1,7 +1,7 @@
-﻿import SourceControlPullModalEe from './SourceControlPullModal.vue';
+import SourceControlPullModalEe from './SourceControlPullModal.vue';
 import { createComponentRenderer } from '@/__tests__/render';
 import { createTestingPinia } from '@pinia/testing';
-import { createEventBus } from '@n8n/utils/event-bus';
+import { createEventBus } from '@workflow-automation/utils/event-bus';
 import userEvent from '@testing-library/user-event';
 import { useSourceControlStore } from '../sourceControl.store';
 import { mockedStore } from '@/__tests__/utils';

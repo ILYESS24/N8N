@@ -1,4 +1,4 @@
-﻿import { computed, ref } from 'vue';
+import { computed, ref } from 'vue';
 import Bowser from 'bowser';
 import type {
 	IUserManagementSettings,
@@ -6,17 +6,17 @@ import type {
 	FrontendModuleSettings,
 } from '@workflow-automation/api-types';
 
-import * as eventsApi from '@n8n/rest-api-client/api/events';
-import * as settingsApi from '@n8n/rest-api-client/api/settings';
-import * as moduleSettingsApi from '@n8n/rest-api-client/api/module-settings';
-import { testHealthEndpoint } from '@n8n/rest-api-client/api/templates';
+import * as eventsApi from '@workflow-automation/rest-api-client/api/events';
+import * as settingsApi from '@workflow-automation/rest-api-client/api/settings';
+import * as moduleSettingsApi from '@workflow-automation/rest-api-client/api/module-settings';
+import { testHealthEndpoint } from '@workflow-automation/rest-api-client/api/templates';
 import { INSECURE_CONNECTION_WARNING } from '@/app/constants';
-import { STORES } from '@n8n/stores';
+import { STORES } from '@workflow-automation/stores';
 import { UserManagementAuthenticationMethod } from '@/Interface';
 import type { IDataObject, WorkflowSettings } from 'workflow-automation-workflow';
 import { defineStore } from 'pinia';
-import { useRootStore } from '@n8n/stores/useRootStore';
-import { makeRestApiRequest } from '@n8n/rest-api-client';
+import { useRootStore } from '@workflow-automation/stores/useRootStore';
+import { makeRestApiRequest } from '@workflow-automation/rest-api-client';
 
 export const useSettingsStore = defineStore(STORES.SETTINGS, () => {
 	const initialized = ref(false);

@@ -1,9 +1,9 @@
-﻿<script setup lang="ts">
+<script setup lang="ts">
 import type { RunningJobSummary } from '@workflow-automation/api-types';
 import WorkerAccordion from './WorkerAccordion.vue';
-import { useI18n } from '@n8n/i18n';
+import { useI18n } from '@workflow-automation/i18n';
 
-import { N8nText } from '@n8n/design-system';
+import { N8nText } from '@workflow-automation/design-system';
 const props = defineProps<{
 	items: RunningJobSummary[];
 }>();

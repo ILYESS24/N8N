@@ -1,4 +1,4 @@
-﻿import type {
+import type {
 	ActionTypeDescription,
 	INodeCreateElement,
 	NodeCreateElement,
@@ -37,7 +37,7 @@ import {
 
 import type { NodeViewItem, NodeViewItemSection } from '../views/viewsData';
 import { AINodesView } from '../views/viewsData';
-import { useI18n } from '@n8n/i18n';
+import { useI18n } from '@workflow-automation/i18n';
 import { useKeyboardNavigation } from './useKeyboardNavigation';
 
 import { useNodeTypesStore } from '@/app/stores/nodeTypes.store';

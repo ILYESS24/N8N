@@ -1,4 +1,4 @@
-﻿import { NodeTestHarness } from '@nodes-testing/node-test-harness';
+import { NodeTestHarness } from '@nodes-testing/node-test-harness';
 import pick from 'lodash/pick';
 import type { WorkflowTestData } from 'workflow-automation-workflow';
 import path from 'node:path';
@@ -10,7 +10,7 @@ describe('OpenAI Workflow', () => {
 	};
 
 	const testHarness = new NodeTestHarness({
-		additionalPackagePaths: [path.dirname(require.resolve('n8n-nodes-base'))],
+		additionalPackagePaths: [path.dirname(require.resolve('workflow-automation-nodes-base'))],
 	});
 
 	const assistants = [
@@ -50,7 +50,7 @@ describe('OpenAI Workflow', () => {
 			workflowData: testHarness.readWorkflowJSON('list-assistants.workflow.json'),
 		},
 		output: {
-			nodeExecutionOrder: ['When clicking â€˜Execute workflowâ€™', 'OpenAI'],
+			nodeExecutionOrder: ['When clicking ‘Execute workflow’', 'OpenAI'],
 			nodeData: {
 				OpenAI: [
 					assistants.map((assistant) => ({

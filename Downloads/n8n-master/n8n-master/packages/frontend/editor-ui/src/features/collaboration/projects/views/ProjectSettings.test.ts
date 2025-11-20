@@ -1,4 +1,4 @@
-﻿import { defineComponent, nextTick, reactive } from 'vue';
+import { defineComponent, nextTick, reactive } from 'vue';
 import userEvent from '@testing-library/user-event';
 import { createTestingPinia } from '@pinia/testing';
 import { createComponentRenderer } from '@/__tests__/render';
@@ -94,7 +94,7 @@ vi.mock('../components/ProjectMembersTable.vue', () => ({
 	}),
 }));
 
-vi.mock('@n8n/design-system', async (importOriginal) => {
+vi.mock('@workflow-automation/design-system', async (importOriginal) => {
 	const original = await importOriginal<object>();
 	return {
 		...original,

@@ -1,17 +1,17 @@
 <script setup lang="ts">
-import type { ChatMessage, ChatMessageText } from '@n8n/chat/types';
-import { useI18n } from '@n8n/i18n';
-import MessagesList from '@n8n/chat/components/MessagesList.vue';
+import type { ChatMessage, ChatMessageText } from '@workflow-automation/chat/types';
+import { useI18n } from '@workflow-automation/i18n';
+import MessagesList from '@workflow-automation/chat/components/MessagesList.vue';
 import MessageOptionTooltip from './MessageOptionTooltip.vue';
 import MessageOptionAction from './MessageOptionAction.vue';
-import { chatEventBus } from '@n8n/chat/event-buses';
-import type { ArrowKeyDownPayload } from '@n8n/chat/components/Input.vue';
-import ChatInput from '@n8n/chat/components/Input.vue';
+import { chatEventBus } from '@workflow-automation/chat/event-buses';
+import type { ArrowKeyDownPayload } from '@workflow-automation/chat/components/Input.vue';
+import ChatInput from '@workflow-automation/chat/components/Input.vue';
 import { computed, ref } from 'vue';
 import { useClipboard } from '@/app/composables/useClipboard';
 import { useToast } from '@/app/composables/useToast';
 import LogsPanelHeader from '@/features/execution/logs/components/LogsPanelHeader.vue';
-import { N8nButton, N8nIconButton, N8nTooltip } from '@n8n/design-system';
+import { N8nButton, N8nIconButton, N8nTooltip } from '@workflow-automation/design-system';
 interface Props {
 	pastChatMessages: string[];
 	messages: ChatMessage[];

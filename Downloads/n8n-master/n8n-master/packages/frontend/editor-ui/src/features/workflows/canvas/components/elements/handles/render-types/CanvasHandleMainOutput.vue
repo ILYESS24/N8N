@@ -3,7 +3,7 @@ import { useCanvasNodeHandle } from '../../../../composables/useCanvasNodeHandle
 import { useCanvasNode } from '../../../../composables/useCanvasNode';
 import { computed, ref, useCssModule } from 'vue';
 import type { CanvasNodeDefaultRender } from '../../../../canvas.types';
-import { useI18n } from '@n8n/i18n';
+import { useI18n } from '@workflow-automation/i18n';
 import CanvasHandleDot from './parts/CanvasHandleDot.vue';
 import CanvasHandlePlus from './parts/CanvasHandlePlus.vue';
 

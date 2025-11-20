@@ -1,9 +1,9 @@
-﻿<script setup lang="ts">
+<script setup lang="ts">
 import { ref } from 'vue';
-import { useI18n } from '@n8n/i18n';
-import { N8nHeading, N8nTabs, N8nText } from '@n8n/design-system';
+import { useI18n } from '@workflow-automation/i18n';
+import { N8nHeading, N8nTabs, N8nText } from '@workflow-automation/design-system';
 import type { ApiKey } from '@workflow-automation/api-types';
-import type { TabOptions } from '@n8n/design-system';
+import type { TabOptions } from '@workflow-automation/design-system';
 import type { OAuthClientResponseDto } from '@workflow-automation/api-types';
 import OAuthConnectionInstructions from '@/features/ai/mcpAccess/components/connectionInstructions/OAuthConnectionInstructions.vue';
 import AccessTokenConnectionInstructions from '@/features/ai/mcpAccess/components/connectionInstructions/AccessTokenConnectionInstructions.vue';

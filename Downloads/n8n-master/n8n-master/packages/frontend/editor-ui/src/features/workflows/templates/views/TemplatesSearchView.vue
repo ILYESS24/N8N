@@ -1,11 +1,11 @@
-﻿<script setup lang="ts">
+<script setup lang="ts">
 import { computed, onMounted, ref, watch } from 'vue';
 import TemplatesInfoCarousel from '../components/TemplatesInfoCarousel.vue';
 import TemplateFilters from '../components/TemplateFilters.vue';
 import TemplateList from '../components/TemplateList.vue';
 import TemplatesView from './TemplatesView.vue';
 
-import type { ITemplatesCategory } from '@n8n/rest-api-client/api/templates';
+import type { ITemplatesCategory } from '@workflow-automation/rest-api-client/api/templates';
 import type { IDataObject } from 'workflow-automation-workflow';
 import { CREATOR_HUB_URL, VIEWS } from '@/app/constants';
 import { useSettingsStore } from '@/app/stores/settings.store';
@@ -14,11 +14,11 @@ import { useTemplatesStore } from '@/features/workflows/templates/templates.stor
 import { useToast } from '@/app/composables/useToast';
 import { useDebounce } from '@/app/composables/useDebounce';
 import { useDocumentTitle } from '@/app/composables/useDocumentTitle';
-import { useI18n } from '@n8n/i18n';
+import { useI18n } from '@workflow-automation/i18n';
 import { useRoute, onBeforeRouteLeave, useRouter } from 'vue-router';
 import { useTelemetry } from '@/app/composables/useTelemetry';
 
-import { N8nButton, N8nHeading, N8nIcon, N8nInput, N8nText } from '@n8n/design-system';
+import { N8nButton, N8nHeading, N8nIcon, N8nInput, N8nText } from '@workflow-automation/design-system';
 interface ISearchEvent {
 	search_string: string;
 	workflow_results_count: number;

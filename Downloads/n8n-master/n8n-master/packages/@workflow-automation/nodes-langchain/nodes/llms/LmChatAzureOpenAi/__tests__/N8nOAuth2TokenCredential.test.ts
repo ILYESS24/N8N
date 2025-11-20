@@ -1,4 +1,4 @@
-﻿import { ClientOAuth2 } from '@n8n/client-oauth2';
+import { ClientOAuth2 } from '@workflow-automation/client-oauth2';
 import type { INode } from 'workflow-automation-workflow';
 import { NodeOperationError } from 'workflow-automation-workflow';
 
@@ -6,7 +6,7 @@ import { N8nOAuth2TokenCredential } from '../credentials/N8nOAuth2TokenCredentia
 import type { AzureEntraCognitiveServicesOAuth2ApiCredential } from '../types';
 
 // Mock ClientOAuth2
-jest.mock('@n8n/client-oauth2', () => {
+jest.mock('@workflow-automation/client-oauth2', () => {
 	return {
 		ClientOAuth2: jest.fn().mockImplementation(() => {
 			return {

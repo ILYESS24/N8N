@@ -1,4 +1,4 @@
-﻿<script setup lang="ts">
+<script setup lang="ts">
 import type { ITab } from '@/Interface';
 import { COMMUNITY_NODES_INSTALLATION_DOCS_URL } from '@/features/settings/communityNodes/communityNodes.constants';
 import { useNDVStore } from '@/features/ndv/shared/ndv.store';
@@ -12,9 +12,9 @@ import { useInstalledCommunityPackage } from '@/features/settings/communityNodes
 import { useNodeDocsUrl } from '@/app/composables/useNodeDocsUrl';
 import { useTelemetry } from '@/app/composables/useTelemetry';
 import type { NodeSettingsTab } from '@/app/types/nodeSettings';
-import { useI18n } from '@n8n/i18n';
+import { useI18n } from '@workflow-automation/i18n';
 
-import { N8nTabs } from '@n8n/design-system';
+import { N8nTabs } from '@workflow-automation/design-system';
 type Props = {
 	modelValue?: NodeSettingsTab;
 	nodeType?: INodeTypeDescription | null;

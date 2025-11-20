@@ -1,4 +1,4 @@
-﻿import { setActivePinia } from 'pinia';
+import { setActivePinia } from 'pinia';
 import { createTestingPinia } from '@pinia/testing';
 import { mock } from 'vitest-mock-extended';
 import type { ICredentialType } from 'workflow-automation-workflow';
@@ -7,7 +7,7 @@ import type { ICredentialsResponse } from '@/features/credentials/credentials.ty
 import type {
 	ITemplatesWorkflowFull,
 	IWorkflowTemplateNode,
-} from '@n8n/rest-api-client/api/templates';
+} from '@workflow-automation/rest-api-client/api/templates';
 import { useTemplatesStore } from '@/features/workflows/templates/templates.store';
 import { keyFromCredentialTypeAndName } from './utils/templateTransforms';
 import { useSetupTemplateStore } from './setupTemplate.store';

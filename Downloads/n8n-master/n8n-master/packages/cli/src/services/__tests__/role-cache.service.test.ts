@@ -1,4 +1,4 @@
-﻿import { Logger } from '@workflow-automation/backend-common';
+import { Logger } from '@workflow-automation/backend-common';
 import { mockInstance } from '@n8n/backend-test-utils';
 import { RoleRepository } from '@workflow-automation/db';
 import { Container } from '@workflow-automation/di';
@@ -9,8 +9,8 @@ import type { CacheService } from '@/services/cache/cache.service';
 import { RoleCacheService } from '@/services/role-cache.service';
 
 // Mock static function
-jest.mock('@n8n/permissions', () => ({
-	...jest.requireActual('@n8n/permissions'),
+jest.mock('@workflow-automation/permissions', () => ({
+	...jest.requireActual('@workflow-automation/permissions'),
 	staticRolesWithScope: jest.fn(),
 }));
 

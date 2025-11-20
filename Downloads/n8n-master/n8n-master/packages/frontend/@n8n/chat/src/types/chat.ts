@@ -1,6 +1,6 @@
 import type { Ref } from 'vue';
 
-import type { ChatMessage } from '@n8n/chat/types/messages';
+import type { ChatMessage } from '@workflow-automation/chat/types/messages';
 
 import type { SendMessageResponse } from './webhook';
 

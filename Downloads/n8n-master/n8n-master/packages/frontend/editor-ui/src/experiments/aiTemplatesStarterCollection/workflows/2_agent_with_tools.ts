@@ -1,4 +1,4 @@
-import type { WorkflowDataCreate } from '@n8n/rest-api-client';
+import type { WorkflowDataCreate } from '@workflow-automation/rest-api-client';
 
 export const AGENT_WITH_TOOLS: WorkflowDataCreate = {
 	meta: {

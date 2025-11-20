@@ -1,9 +1,9 @@
-﻿<script setup lang="ts">
+<script setup lang="ts">
 import { onBeforeMount, ref, watchEffect, computed, h } from 'vue';
 import { useRoute, useRouter } from 'vue-router';
 import type { IWorkflowDb, UserAction } from '@/Interface';
 import { VIEWS, WORKFLOW_HISTORY_VERSION_RESTORE } from '@/app/constants';
-import { useI18n } from '@n8n/i18n';
+import { useI18n } from '@workflow-automation/i18n';
 import { useToast } from '@/app/composables/useToast';
 import type {
 	WorkflowHistoryActionTypes,
@@ -11,19 +11,19 @@ import type {
 	WorkflowHistoryRequestParams,
 	WorkflowHistory,
 	WorkflowVersion,
-} from '@n8n/rest-api-client/api/workflowHistory';
+} from '@workflow-automation/rest-api-client/api/workflowHistory';
 import WorkflowHistoryList from '../components/WorkflowHistoryList.vue';
 import WorkflowHistoryContent from '../components/WorkflowHistoryContent.vue';
 import { useWorkflowHistoryStore } from '../workflowHistory.store';
 import { useUIStore } from '@/app/stores/ui.store';
 import { useWorkflowsStore } from '@/app/stores/workflows.store';
 import { telemetry } from '@/app/plugins/telemetry';
-import { useRootStore } from '@n8n/stores/useRootStore';
+import { useRootStore } from '@workflow-automation/stores/useRootStore';
 import { getResourcePermissions } from '@workflow-automation/permissions';
 import { usePageRedirectionHelper } from '@/app/composables/usePageRedirectionHelper';
 import type { IUser } from 'workflow-automation-workflow';
 
-import { N8nBadge, N8nButton, N8nHeading } from '@n8n/design-system';
+import { N8nBadge, N8nButton, N8nHeading } from '@workflow-automation/design-system';
 type WorkflowHistoryActionRecord = {
 	[K in Uppercase<WorkflowHistoryActionTypes[number]>]: Lowercase<K>;
 };

@@ -1,8 +1,8 @@
-﻿import { createPinia, setActivePinia } from 'pinia';
+import { createPinia, setActivePinia } from 'pinia';
 import { usePostHog } from '@/app/stores/posthog.store';
 import { useUsersStore } from '@/features/settings/users/users.store';
 import { useSettingsStore } from '@/app/stores/settings.store';
-import { useRootStore } from '@n8n/stores/useRootStore';
+import { useRootStore } from '@workflow-automation/stores/useRootStore';
 import type { FrontendSettings } from '@workflow-automation/api-types';
 import { LOCAL_STORAGE_EXPERIMENT_OVERRIDES } from '@/app/constants';
 import { nextTick } from 'vue';

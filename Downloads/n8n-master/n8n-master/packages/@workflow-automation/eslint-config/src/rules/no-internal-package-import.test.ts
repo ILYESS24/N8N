@@ -1,4 +1,4 @@
-﻿import { RuleTester } from '@typescript-eslint/rule-tester';
+import { RuleTester } from '@typescript-eslint/rule-tester';
 import { NoInternalPackageImportRule } from './no-internal-package-import.js';
 
 const ruleTester = new RuleTester();
@@ -17,12 +17,12 @@ ruleTester.run('no-internal-package-import', NoInternalPackageImportRule, {
 
 	invalid: [
 		{
-			code: 'import { UpdateDataTableDto } from "@n8n/api-types/src/dto/data-table/update-data-table.dto"',
+			code: 'import { UpdateDataTableDto } from "@workflow-automation/api-types/src/dto/data-table/update-data-table.dto"',
 			output: 'import { UpdateDataTableDto } from "@workflow-automation/api-types"',
 			errors: [{ messageId: 'noInternalPackageImport' }],
 		},
 		{
-			code: 'import { helper } from "@n8n/backend-common/src/utils/helper"',
+			code: 'import { helper } from "@workflow-automation/backend-common/src/utils/helper"',
 			output: 'import { helper } from "@workflow-automation/backend-common"',
 			errors: [{ messageId: 'noInternalPackageImport' }],
 		},

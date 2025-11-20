@@ -1,4 +1,4 @@
-﻿import { defineStore } from 'pinia';
+import { defineStore } from 'pinia';
 import { computed, ref } from 'vue';
 import type { IDataObject, ExecutionSummary, AnnotationVote } from 'workflow-automation-workflow';
 import type {
@@ -11,8 +11,8 @@ import type {
 	IExecutionsListResponse,
 	IExecutionsStopData,
 } from './executions.types';
-import { useRootStore } from '@n8n/stores/useRootStore';
-import { makeRestApiRequest } from '@n8n/rest-api-client';
+import { useRootStore } from '@workflow-automation/stores/useRootStore';
+import { makeRestApiRequest } from '@workflow-automation/rest-api-client';
 import {
 	unflattenExecutionData,
 	executionFilterToQueryFilter,

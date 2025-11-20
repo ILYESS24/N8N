@@ -1,4 +1,4 @@
-﻿/* eslint-disable @typescript-eslint/no-this-alias */
+/* eslint-disable @typescript-eslint/no-this-alias */
 import type { INodeProperties, INodePropertyCollection, INodePropertyOptions } from 'workflow-automation-workflow';
 import { ref } from 'vue';
 import { createI18n } from 'vue-i18n';
@@ -429,7 +429,7 @@ export function addNodeTranslation(
 	language: string,
 ) {
 	const newMessages = {
-		'n8n-nodes-base': {
+		'workflow-automation-nodes-base': {
 			nodes: nodeTranslation,
 		},
 	};
@@ -459,7 +459,7 @@ export function addCredentialTranslation(
 	language: string,
 ) {
 	const newMessages = {
-		'n8n-nodes-base': {
+		'workflow-automation-nodes-base': {
 			credentials: nodeCredentialTranslation,
 		},
 	};

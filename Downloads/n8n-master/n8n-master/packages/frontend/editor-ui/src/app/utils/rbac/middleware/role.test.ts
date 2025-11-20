@@ -1,6 +1,6 @@
-﻿import { roleMiddleware } from '@/app/utils/rbac/middleware/role';
+import { roleMiddleware } from '@/app/utils/rbac/middleware/role';
 import { useUsersStore } from '@/features/settings/users/users.store';
-import type { IUser } from '@n8n/rest-api-client/api/users';
+import type { IUser } from '@workflow-automation/rest-api-client/api/users';
 import type { RouteLocationNormalized } from 'vue-router';
 import { ROLE } from '@workflow-automation/api-types';
 import { VIEWS } from '@/app/constants';

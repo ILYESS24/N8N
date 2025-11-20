@@ -1,11 +1,11 @@
-﻿import { Readability } from '@mozilla/readability';
+import { Readability } from '@mozilla/readability';
 import * as cheerio from 'cheerio';
 import { convert } from 'html-to-text';
 import { JSDOM } from 'jsdom';
 import get from 'lodash/get';
 import set from 'lodash/set';
 import unset from 'lodash/unset';
-import { getOAuth2AdditionalParameters } from 'n8n-nodes-base/dist/nodes/HttpRequest/GenericFunctions';
+import { getOAuth2AdditionalParameters } from 'workflow-automation-nodes-base/dist/nodes/HttpRequest/GenericFunctions';
 import type {
 	IDataObject,
 	IHttpRequestOptions,

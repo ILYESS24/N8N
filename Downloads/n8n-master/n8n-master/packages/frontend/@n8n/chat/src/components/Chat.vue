@@ -2,13 +2,13 @@
 import Close from 'virtual:icons/mdi/close';
 import { computed, nextTick, onMounted } from 'vue';
 
-import GetStarted from '@n8n/chat/components/GetStarted.vue';
-import GetStartedFooter from '@n8n/chat/components/GetStartedFooter.vue';
-import Input from '@n8n/chat/components/Input.vue';
-import Layout from '@n8n/chat/components/Layout.vue';
-import MessagesList from '@n8n/chat/components/MessagesList.vue';
-import { useI18n, useChat, useOptions } from '@n8n/chat/composables';
-import { chatEventBus } from '@n8n/chat/event-buses';
+import GetStarted from '@workflow-automation/chat/components/GetStarted.vue';
+import GetStartedFooter from '@workflow-automation/chat/components/GetStartedFooter.vue';
+import Input from '@workflow-automation/chat/components/Input.vue';
+import Layout from '@workflow-automation/chat/components/Layout.vue';
+import MessagesList from '@workflow-automation/chat/components/MessagesList.vue';
+import { useI18n, useChat, useOptions } from '@workflow-automation/chat/composables';
+import { chatEventBus } from '@workflow-automation/chat/event-buses';
 
 const { t } = useI18n();
 const chatStore = useChat();

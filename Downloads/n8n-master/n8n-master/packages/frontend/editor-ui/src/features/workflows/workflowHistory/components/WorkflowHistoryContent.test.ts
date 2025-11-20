@@ -1,12 +1,12 @@
-﻿import { vi } from 'vitest';
+import { vi } from 'vitest';
 import type { MockInstance } from 'vitest';
 import { createPinia, setActivePinia } from 'pinia';
 import { waitFor } from '@testing-library/vue';
 import userEvent from '@testing-library/user-event';
-import type { UserAction } from '@n8n/design-system';
+import type { UserAction } from '@workflow-automation/design-system';
 import { createComponentRenderer } from '@/__tests__/render';
 import WorkflowHistoryContent from './WorkflowHistoryContent.vue';
-import type { WorkflowHistoryActionTypes } from '@n8n/rest-api-client/api/workflowHistory';
+import type { WorkflowHistoryActionTypes } from '@workflow-automation/rest-api-client/api/workflowHistory';
 import { workflowVersionDataFactory } from '../__tests__/utils';
 import type { IWorkflowDb } from '@/Interface';
 import type { IUser } from 'workflow-automation-workflow';

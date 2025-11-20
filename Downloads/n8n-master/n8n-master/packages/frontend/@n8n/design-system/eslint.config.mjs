@@ -1,7 +1,7 @@
 import storybook from 'eslint-plugin-storybook';
 
 import { defineConfig } from 'eslint/config';
-import { frontendConfig } from '@n8n/eslint-config/frontend';
+import { frontendConfig } from '@workflow-automation/eslint-config/frontend';
 
 export default defineConfig(
 	frontendConfig,

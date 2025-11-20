@@ -1,4 +1,4 @@
-﻿<script setup lang="ts">
+<script setup lang="ts">
 import camelCase from 'lodash/camelCase';
 import { computed } from 'vue';
 import type {
@@ -19,7 +19,7 @@ import {
 	PRE_BUILT_AGENTS_COLLECTION,
 } from '@/app/constants';
 
-import type { BaseTextKey } from '@n8n/i18n';
+import type { BaseTextKey } from '@workflow-automation/i18n';
 import { useNodeCreatorStore } from '@/features/shared/nodeCreator/nodeCreator.store';
 
 import { TriggerView, RegularView, AIView, AINodesView } from '../../views/viewsData';
@@ -38,7 +38,7 @@ import { useKeyboardNavigation } from '../../composables/useKeyboardNavigation';
 import ItemsRenderer from '../Renderers/ItemsRenderer.vue';
 import CategorizedItemsRenderer from '../Renderers/CategorizedItemsRenderer.vue';
 import NoResults from '../Panel/NoResults.vue';
-import { useI18n } from '@n8n/i18n';
+import { useI18n } from '@workflow-automation/i18n';
 
 import { getNodeIconSource } from '@/app/utils/nodeIcon';
 

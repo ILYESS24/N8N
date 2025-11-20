@@ -1,4 +1,4 @@
-﻿<script setup lang="ts">
+<script setup lang="ts">
 import type { INodeUi } from '@/Interface';
 import { useNodeTypesStore } from '@/app/stores/nodeTypes.store';
 import { useWorkflowsStore } from '@/app/stores/workflows.store';
@@ -15,10 +15,10 @@ import type {
 } from 'workflow-automation-workflow';
 import { useDebounce } from '@/app/composables/useDebounce';
 import { OnClickOutside } from '@vueuse/components';
-import { useI18n } from '@n8n/i18n';
+import { useI18n } from '@workflow-automation/i18n';
 import { useNDVStore } from '@/features/ndv/shared/ndv.store';
 
-import { N8nIconButton, N8nTooltip } from '@n8n/design-system';
+import { N8nIconButton, N8nTooltip } from '@workflow-automation/design-system';
 interface Props {
 	rootNode: INodeUi;
 }

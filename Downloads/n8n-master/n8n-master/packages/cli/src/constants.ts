@@ -1,4 +1,4 @@
-﻿import { Time } from '@workflow-automation/constants';
+import { Time } from '@workflow-automation/constants';
 import { readFileSync, statSync } from 'fs';
 import type { n8n } from 'workflow-automation-core';
 import type { ITaskDataConnections } from 'workflow-automation-workflow';
@@ -13,8 +13,8 @@ export const CUSTOM_API_CALL_KEY = '__CUSTOM_API_CALL__';
 
 export const CLI_DIR = resolve(__dirname, '..');
 export const TEMPLATES_DIR = join(CLI_DIR, 'templates');
-export const NODES_BASE_DIR = dirname(require.resolve('n8n-nodes-base'));
-export const EDITOR_UI_DIST_DIR = join(dirname(require.resolve('n8n-editor-ui')), 'dist');
+export const NODES_BASE_DIR = dirname(require.resolve('workflow-automation-nodes-base'));
+export const EDITOR_UI_DIST_DIR = join(dirname(require.resolve('workflow-automation-editor-ui')), 'dist');
 
 const packageJsonPath = join(CLI_DIR, 'package.json');
 const n8nPackageJson = jsonParse<n8n.PackageJson>(readFileSync(packageJsonPath, 'utf8'));
@@ -133,4 +133,4 @@ export const WsStatusCodes = {
 
 export const FREE_AI_CREDITS_CREDENTIAL_NAME = 'n8n free OpenAI API credits';
 
-export const STREAM_SEPARATOR = 'â§‰â‡‹â‡‹âž½âŒ‘â§‰Â§Â§\n';
+export const STREAM_SEPARATOR = '⧉⇋⇋➽⌑⧉§§\n';

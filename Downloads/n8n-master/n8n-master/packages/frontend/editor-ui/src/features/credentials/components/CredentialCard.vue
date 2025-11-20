@@ -1,4 +1,4 @@
-﻿<script setup lang="ts">
+<script setup lang="ts">
 import { computed } from 'vue';
 import dateformat from 'dateformat';
 import { MODAL_CONFIRM } from '@/app/constants';
@@ -11,11 +11,11 @@ import { useCredentialsStore } from '../credentials.store';
 import TimeAgo from '@/app/components/TimeAgo.vue';
 import { useProjectsStore } from '@/features/collaboration/projects/projects.store';
 import ProjectCardBadge from '@/features/collaboration/projects/components/ProjectCardBadge.vue';
-import { useI18n } from '@n8n/i18n';
+import { useI18n } from '@workflow-automation/i18n';
 import { ResourceType } from '@/features/collaboration/projects/projects.utils';
 import type { CredentialsResource } from '@/Interface';
 
-import { N8nActionToggle, N8nBadge, N8nCard, N8nText } from '@n8n/design-system';
+import { N8nActionToggle, N8nBadge, N8nCard, N8nText } from '@workflow-automation/design-system';
 const CREDENTIAL_LIST_ITEM_ACTIONS = {
 	OPEN: 'open',
 	DELETE: 'delete',

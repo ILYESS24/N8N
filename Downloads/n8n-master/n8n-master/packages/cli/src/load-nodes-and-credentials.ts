@@ -1,4 +1,4 @@
-﻿import { inTest, isContainedWithin, Logger, ModuleRegistry } from '@workflow-automation/backend-common';
+import { inTest, isContainedWithin, Logger, ModuleRegistry } from '@workflow-automation/backend-common';
 import { GlobalConfig } from '@workflow-automation/config';
 import { Container, Service } from '@workflow-automation/di';
 import type ParcelWatcher from '@parcel/watcher';
@@ -85,7 +85,7 @@ export class LoadNodesAndCredentials {
 		];
 
 		for (const nodeModulesDir of basePathsToScan) {
-			await this.loadNodesFromNodeModules(nodeModulesDir, 'n8n-nodes-base');
+			await this.loadNodesFromNodeModules(nodeModulesDir, 'workflow-automation-nodes-base');
 			await this.loadNodesFromNodeModules(nodeModulesDir, '@n8n/n8n-nodes-langchain');
 		}
 

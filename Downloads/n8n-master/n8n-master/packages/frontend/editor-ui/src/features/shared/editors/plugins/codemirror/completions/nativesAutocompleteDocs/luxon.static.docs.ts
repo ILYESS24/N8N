@@ -1,5 +1,5 @@
-﻿import type { NativeDoc } from 'workflow-automation-workflow';
-import { i18n } from '@n8n/i18n';
+import type { NativeDoc } from 'workflow-automation-workflow';
+import { i18n } from '@workflow-automation/i18n';
 
 // Autocomplete documentation definition for DateTime class static props and methods
 export const luxonStaticDocs: Required<NativeDoc> = {

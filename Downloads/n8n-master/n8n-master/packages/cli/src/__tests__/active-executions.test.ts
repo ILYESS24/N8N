@@ -1,4 +1,4 @@
-﻿import { Logger } from '@workflow-automation/backend-common';
+import { Logger } from '@workflow-automation/backend-common';
 import { mockInstance } from '@n8n/backend-test-utils';
 import { ExecutionsConfig } from '@workflow-automation/config';
 import type { ExecutionRepository } from '@workflow-automation/db';
@@ -23,8 +23,8 @@ import { v4 as uuid } from 'uuid';
 import { ActiveExecutions } from '@/active-executions';
 import { ConcurrencyControlService } from '@/concurrency/concurrency-control.service';
 
-jest.mock('n8n-workflow', () => ({
-	...jest.requireActual('n8n-workflow'),
+jest.mock('workflow-automation-workflow', () => ({
+	...jest.requireActual('workflow-automation-workflow'),
 	sleep: jest.fn(),
 }));
 

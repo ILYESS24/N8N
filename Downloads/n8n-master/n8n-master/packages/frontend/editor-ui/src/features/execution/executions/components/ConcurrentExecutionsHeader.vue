@@ -1,8 +1,8 @@
 <script lang="ts" setup>
 import { computed } from 'vue';
-import { useI18n } from '@n8n/i18n';
+import { useI18n } from '@workflow-automation/i18n';
 
-import { N8nIcon, N8nLink, N8nText, N8nTooltip } from '@n8n/design-system';
+import { N8nIcon, N8nLink, N8nText, N8nTooltip } from '@workflow-automation/design-system';
 const props = defineProps<{
 	runningExecutionsCount: number;
 	concurrencyCap: number;

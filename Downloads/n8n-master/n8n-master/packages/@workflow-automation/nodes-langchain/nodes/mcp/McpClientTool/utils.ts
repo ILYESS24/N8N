@@ -1,9 +1,9 @@
-﻿import { DynamicStructuredTool, type DynamicStructuredToolInput } from '@langchain/core/tools';
+import { DynamicStructuredTool, type DynamicStructuredToolInput } from '@langchain/core/tools';
 import { Client } from '@modelcontextprotocol/sdk/client/index.js';
 import { SSEClientTransport } from '@modelcontextprotocol/sdk/client/sse.js';
 import { StreamableHTTPClientTransport } from '@modelcontextprotocol/sdk/client/streamableHttp.js';
 import { CompatibilityCallToolResultSchema } from '@modelcontextprotocol/sdk/types.js';
-import type { ClientOAuth2TokenData } from '@n8n/client-oauth2';
+import type { ClientOAuth2TokenData } from '@workflow-automation/client-oauth2';
 import { Toolkit } from 'langchain/agents';
 import {
 	createResultError,

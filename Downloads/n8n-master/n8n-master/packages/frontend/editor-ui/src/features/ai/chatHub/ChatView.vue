@@ -1,4 +1,4 @@
-﻿<script setup lang="ts">
+<script setup lang="ts">
 import { useToast } from '@/app/composables/useToast';
 import {
 	LOCAL_STORAGE_CHAT_HUB_SELECTED_MODEL,
@@ -27,7 +27,7 @@ import {
 	type ChatHubSendMessageRequest,
 	type ChatModelDto,
 } from '@workflow-automation/api-types';
-import { N8nIconButton, N8nScrollArea } from '@n8n/design-system';
+import { N8nIconButton, N8nScrollArea } from '@workflow-automation/design-system';
 import { useLocalStorage, useMediaQuery, useScroll } from '@vueuse/core';
 import { v4 as uuidv4 } from 'uuid';
 import { computed, nextTick, ref, useTemplateRef, watch } from 'vue';

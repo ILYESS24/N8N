@@ -1,10 +1,10 @@
 <script setup lang="ts">
 import { computed } from 'vue';
-import { useI18n } from '@n8n/i18n';
+import { useI18n } from '@workflow-automation/i18n';
 import { useToast } from '@/app/composables/useToast';
 import { useTagsStore } from '../../tags.store';
 import TagsManager from './TagsManager.vue';
-import type { ITag } from '@n8n/rest-api-client/api/tags';
+import type { ITag } from '@workflow-automation/rest-api-client/api/tags';
 import { TAGS_MANAGER_MODAL_KEY } from '../../tags.constants';
 
 const i18n = useI18n();

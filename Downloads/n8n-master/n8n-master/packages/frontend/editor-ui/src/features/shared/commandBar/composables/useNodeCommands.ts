@@ -1,12 +1,12 @@
-﻿import { type Component, computed, type Ref } from 'vue';
-import { useI18n } from '@n8n/i18n';
-import { N8nIcon } from '@n8n/design-system';
+import { type Component, computed, type Ref } from 'vue';
+import { useI18n } from '@workflow-automation/i18n';
+import { N8nIcon } from '@workflow-automation/design-system';
 import { useNodeTypesStore } from '@/app/stores/nodeTypes.store';
 import { useCredentialsStore } from '@/features/credentials/credentials.store';
 import { useCanvasOperations } from '@/app/composables/useCanvasOperations';
 import { useActionsGenerator } from '@/features/shared/nodeCreator/composables/useActionsGeneration';
 import { canvasEventBus } from '@/features/workflows/canvas/canvas.eventBus';
-import { type CommandBarItem } from '@n8n/design-system/components/N8nCommandBar/types';
+import { type CommandBarItem } from '@workflow-automation/design-system/components/N8nCommandBar/types';
 import type { CommandGroup } from '../types';
 import { useSourceControlStore } from '@/features/integrations/sourceControl.ee/sourceControl.store';
 import { useWorkflowsStore } from '@/app/stores/workflows.store';

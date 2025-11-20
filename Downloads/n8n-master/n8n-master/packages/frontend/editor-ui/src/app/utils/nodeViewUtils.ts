@@ -1,4 +1,4 @@
-﻿import {
+import {
 	AI_MCP_TOOL_NODE_TYPE,
 	LIST_LIKE_NODE_OPERATIONS,
 	MAIN_HEADER_TABS,
@@ -28,7 +28,7 @@ import {
 	type Rect,
 	type ViewportTransform,
 } from '@vue-flow/core';
-import * as workflowUtils from 'n8n-workflow/common';
+import * as workflowUtils from 'workflow-automation-workflow/common';
 
 /*
  * Canvas constants and functions
@@ -398,7 +398,7 @@ export function getGenericHints({
 		if (!stringifiedParameters.includes('$fromAI')) {
 			nodeHints.push({
 				message:
-					'No parameters are set up to be filled by AI. Click on the âœ¨ button next to a parameter to allow AI to set its value.',
+					'No parameters are set up to be filled by AI. Click on the ✨ button next to a parameter to allow AI to set its value.',
 				location: 'outputPane',
 				whenToDisplay: 'afterExecution',
 			});
@@ -425,7 +425,7 @@ export function getGenericHints({
 		if (!executeOnce) {
 			nodeHints.push({
 				message:
-					'This node runs multiple times, once for each input item. Use â€˜Execute Onceâ€™ in the node settings if you want to run it only once.',
+					'This node runs multiple times, once for each input item. Use ‘Execute Once’ in the node settings if you want to run it only once.',
 				location: 'outputPane',
 			});
 		}

@@ -1,5 +1,5 @@
-﻿import { useNodeTypesStore } from '@/app/stores/nodeTypes.store';
-import type { ReloadNodeType } from '@n8n/api-types/push/hot-reload';
+import { useNodeTypesStore } from '@/app/stores/nodeTypes.store';
+import type { ReloadNodeType } from '@workflow-automation/api-types/push/hot-reload';
 import { isCommunityPackageName } from 'workflow-automation-workflow';
 
 /**

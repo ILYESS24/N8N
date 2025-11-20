@@ -1,11 +1,11 @@
-﻿import { createTestingPinia } from '@pinia/testing';
+import { createTestingPinia } from '@pinia/testing';
 import { createComponentRenderer } from '@/__tests__/render';
 import FromAiParametersModal from '@/app/components/FromAiParametersModal.vue';
 import { FROM_AI_PARAMETERS_MODAL_KEY, AI_MCP_TOOL_NODE_TYPE } from '@/app/constants';
-import { STORES } from '@n8n/stores';
+import { STORES } from '@workflow-automation/stores';
 import userEvent from '@testing-library/user-event';
 import { useWorkflowsStore } from '@/app/stores/workflows.store';
-import { useAgentRequestStore } from '@n8n/stores/useAgentRequestStore';
+import { useAgentRequestStore } from '@workflow-automation/stores/useAgentRequestStore';
 import { useProjectsStore } from '@/features/collaboration/projects/projects.store';
 import { useRouter } from 'vue-router';
 import type { Workflow } from 'workflow-automation-workflow';

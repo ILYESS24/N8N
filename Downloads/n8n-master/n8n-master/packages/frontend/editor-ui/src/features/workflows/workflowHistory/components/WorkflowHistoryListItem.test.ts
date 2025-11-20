@@ -1,9 +1,9 @@
-﻿import { createPinia, setActivePinia } from 'pinia';
+import { createPinia, setActivePinia } from 'pinia';
 import userEvent from '@testing-library/user-event';
-import type { UserAction } from '@n8n/design-system';
+import type { UserAction } from '@workflow-automation/design-system';
 import { createComponentRenderer } from '@/__tests__/render';
 import WorkflowHistoryListItem from './WorkflowHistoryListItem.vue';
-import type { WorkflowHistoryActionTypes } from '@n8n/rest-api-client/api/workflowHistory';
+import type { WorkflowHistoryActionTypes } from '@workflow-automation/rest-api-client/api/workflowHistory';
 import { workflowHistoryDataFactory } from '../__tests__/utils';
 import { type IUser } from 'workflow-automation-workflow';
 

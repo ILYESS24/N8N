@@ -1,17 +1,17 @@
-﻿<script setup lang="ts">
+<script setup lang="ts">
 import type { ResourceLocatorRequestDto, ActionResultRequestDto } from '@workflow-automation/api-types';
 import type { IResourceLocatorResultExpanded, IUpdateInformation } from '@/Interface';
 import DraggableTarget from '@/app/components/DraggableTarget.vue';
 import ExpressionParameterInput from '../ExpressionParameterInput.vue';
 import ParameterIssues from '../ParameterIssues.vue';
 import { useDebounce } from '@/app/composables/useDebounce';
-import { useI18n } from '@n8n/i18n';
-import type { BaseTextKey } from '@n8n/i18n';
+import { useI18n } from '@workflow-automation/i18n';
+import type { BaseTextKey } from '@workflow-automation/i18n';
 import { useWorkflowHelpers } from '@/app/composables/useWorkflowHelpers';
 import { ndvEventBus } from '@/features/ndv/shared/ndv.eventBus';
 import { useNDVStore } from '@/features/ndv/shared/ndv.store';
 import { useNodeTypesStore } from '@/app/stores/nodeTypes.store';
-import { useRootStore } from '@n8n/stores/useRootStore';
+import { useRootStore } from '@workflow-automation/stores/useRootStore';
 import { useUIStore } from '@/app/stores/ui.store';
 import { useWorkflowsStore } from '@/app/stores/workflows.store';
 import {
@@ -20,8 +20,8 @@ import {
 	hasOnlyListMode as hasOnlyListModeUtil,
 } from '@/app/utils/nodeTypesUtils';
 import stringify from 'fast-json-stable-stringify';
-import type { EventBus } from '@n8n/utils/event-bus';
-import { createEventBus } from '@n8n/utils/event-bus';
+import type { EventBus } from '@workflow-automation/utils/event-bus';
+import { createEventBus } from '@workflow-automation/utils/event-bus';
 import {
 	isResourceLocatorValue,
 	type INode,
@@ -67,7 +67,7 @@ import {
 	N8nOption,
 	N8nSelect,
 	N8nText,
-} from '@n8n/design-system';
+} from '@workflow-automation/design-system';
 /**
  * Regular expression to check if the error message contains credential-related phrases.
  */
@@ -827,9 +827,9 @@ function removeDuplicateTextFromErrorMessage(message: string): string {
 	let segments: string[] = [];
 
 	// Split message into sentences or segments
-	if (/[-â€“â€”]/.test(message)) {
+	if (/[-–—]/.test(message)) {
 		// By various dash types
-		segments = message.split(/\s*[-â€“â€”]\s*/);
+		segments = message.split(/\s*[-–—]\s*/);
 	} else {
 		// By sentence boundaries
 		segments = message.split(/(?<=[.!?])\s+/);

@@ -1,11 +1,11 @@
-﻿<script lang="ts" setup>
+<script lang="ts" setup>
 import WorkflowExecutionAnnotationPanel from './WorkflowExecutionAnnotationPanel.ee.vue';
 import WorkflowExecutionAnnotationTags from './WorkflowExecutionAnnotationTags.ee.vue';
 import WorkflowPreview from '@/app/components/WorkflowPreview.vue';
 import { useExecutionDebugging } from '../../composables/useExecutionDebugging';
 import type { IExecutionUIData } from '../../composables/useExecutionHelpers';
 import { useExecutionHelpers } from '../../composables/useExecutionHelpers';
-import { useI18n } from '@n8n/i18n';
+import { useI18n } from '@workflow-automation/i18n';
 import { useToast } from '@/app/composables/useToast';
 import { useMessage } from '@/app/composables/useMessage';
 import { EnterpriseEditionFeature, MODAL_CONFIRM, VIEWS } from '@/app/constants';
@@ -18,7 +18,7 @@ import { useRoute } from 'vue-router';
 import { useExecutionsStore } from '../../executions.store';
 
 import { ElDropdown, ElDropdownItem, ElDropdownMenu } from 'element-plus';
-import { N8nButton, N8nIconButton, N8nSpinner, N8nText } from '@n8n/design-system';
+import { N8nButton, N8nIconButton, N8nSpinner, N8nText } from '@workflow-automation/design-system';
 import VoteButtons from './VoteButtons.vue';
 
 type RetryDropdownRef = InstanceType<typeof ElDropdown>;

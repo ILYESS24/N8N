@@ -1,4 +1,4 @@
-﻿import type {
+import type {
 	IWorkflowDb,
 	NewWorkflowResponse,
 	WorkflowListResource,
@@ -8,14 +8,14 @@ import type {
 	IExecutionResponse,
 	IExecutionsCurrentSummaryExtended,
 } from '@/features/execution/executions/executions.types';
-import type { IRestApiContext } from '@n8n/rest-api-client';
+import type { IRestApiContext } from '@workflow-automation/rest-api-client';
 import type {
 	ExecutionFilters,
 	ExecutionOptions,
 	ExecutionSummary,
 	IDataObject,
 } from 'workflow-automation-workflow';
-import { getFullApiResponse, makeRestApiRequest } from '@n8n/rest-api-client';
+import { getFullApiResponse, makeRestApiRequest } from '@workflow-automation/rest-api-client';
 
 export async function getNewWorkflow(context: IRestApiContext, data?: IDataObject) {
 	const response = await makeRestApiRequest<NewWorkflowResponse>(

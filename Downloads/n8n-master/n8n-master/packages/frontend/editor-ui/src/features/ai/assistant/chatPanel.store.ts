@@ -1,6 +1,6 @@
-﻿import { computed, watch } from 'vue';
+import { computed, watch } from 'vue';
 import { defineStore } from 'pinia';
-import { STORES } from '@n8n/stores';
+import { STORES } from '@workflow-automation/stores';
 import { useUIStore } from '@/app/stores/ui.store';
 import { useRoute } from 'vue-router';
 import { ASK_AI_SLIDE_OUT_DURATION_MS, EDITABLE_CANVAS_VIEWS } from '@/app/constants';

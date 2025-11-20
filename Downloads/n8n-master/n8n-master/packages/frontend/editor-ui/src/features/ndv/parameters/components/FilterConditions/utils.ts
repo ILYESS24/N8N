@@ -1,5 +1,5 @@
-﻿import { resolveParameter } from '@/app/composables/useWorkflowHelpers';
-import { i18n } from '@n8n/i18n';
+import { resolveParameter } from '@/app/composables/useWorkflowHelpers';
+import { i18n } from '@workflow-automation/i18n';
 import { isExpression } from '@/app/utils/expressions';
 import {
 	FilterError,

@@ -1,9 +1,9 @@
-﻿<script setup lang="ts">
+<script setup lang="ts">
 import { ref, computed, onMounted, onBeforeUnmount } from 'vue';
 import { useRoute } from 'vue-router';
 import { useToast } from '@/app/composables/useToast';
 import type { ITimeoutHMS, IWorkflowSettings, IWorkflowShortResponse } from '@/Interface';
-import type { WorkflowDataUpdate } from '@n8n/rest-api-client/api/workflows';
+import type { WorkflowDataUpdate } from '@workflow-automation/rest-api-client/api/workflows';
 import Modal from '@/app/components/Modal.vue';
 import {
 	EnterpriseEditionFeature,
@@ -13,22 +13,22 @@ import {
 import type { WorkflowSettings } from 'workflow-automation-workflow';
 import { deepCopy } from 'workflow-automation-workflow';
 import { useSettingsStore } from '@/app/stores/settings.store';
-import { useRootStore } from '@n8n/stores/useRootStore';
+import { useRootStore } from '@workflow-automation/stores/useRootStore';
 import { useWorkflowsEEStore } from '@/app/stores/workflows.ee.store';
 import { useWorkflowsStore } from '@/app/stores/workflows.store';
-import { createEventBus } from '@n8n/utils/event-bus';
+import { createEventBus } from '@workflow-automation/utils/event-bus';
 import { useExternalHooks } from '@/app/composables/useExternalHooks';
 import { useSourceControlStore } from '@/features/integrations/sourceControl.ee/sourceControl.store';
 import { ProjectTypes } from '@/features/collaboration/projects/projects.types';
 import { getResourcePermissions } from '@workflow-automation/permissions';
-import { useI18n } from '@n8n/i18n';
+import { useI18n } from '@workflow-automation/i18n';
 import { useTelemetry } from '@/app/composables/useTelemetry';
 import { useDebounce } from '@/app/composables/useDebounce';
 import { injectWorkflowState } from '@/app/composables/useWorkflowState';
 import { useMcp } from '@/features/ai/mcpAccess/composables/useMcp';
 
 import { ElCol, ElRow, ElSwitch } from 'element-plus';
-import { N8nButton, N8nIcon, N8nInput, N8nOption, N8nSelect, N8nTooltip } from '@n8n/design-system';
+import { N8nButton, N8nIcon, N8nInput, N8nOption, N8nSelect, N8nTooltip } from '@workflow-automation/design-system';
 const route = useRoute();
 const i18n = useI18n();
 const externalHooks = useExternalHooks();

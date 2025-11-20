@@ -1,6 +1,6 @@
-﻿import { deepCopy, type ICredentialType, type INodeTypeDescription } from 'workflow-automation-workflow';
+import { deepCopy, type ICredentialType, type INodeTypeDescription } from 'workflow-automation-workflow';
 import { CREDENTIAL_ONLY_NODE_PREFIX } from '../constants';
-import { i18n } from '@n8n/i18n';
+import { i18n } from '@workflow-automation/i18n';
 
 export function isCredentialOnlyNodeType(nodeTypeName: string): boolean {
 	return nodeTypeName?.startsWith(CREDENTIAL_ONLY_NODE_PREFIX) ?? false;

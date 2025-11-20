@@ -1,4 +1,4 @@
-﻿import { createComponentRenderer } from '@/__tests__/render';
+import { createComponentRenderer } from '@/__tests__/render';
 import { createTestProject } from '@/features/collaboration/projects/__tests__/utils';
 import { createTestingPinia } from '@pinia/testing';
 import { useCredentialsStore } from '../credentials.store';
@@ -6,7 +6,7 @@ import CredentialsView from './CredentialsView.vue';
 import { useUIStore } from '@/app/stores/ui.store';
 import { mockedStore } from '@/__tests__/utils';
 import { waitFor, within, fireEvent } from '@testing-library/vue';
-import { STORES } from '@n8n/stores';
+import { STORES } from '@workflow-automation/stores';
 import { CREDENTIAL_SELECT_MODAL_KEY } from '../credentials.constants';
 import { VIEWS } from '@/app/constants';
 import { useProjectsStore } from '@/features/collaboration/projects/projects.store';

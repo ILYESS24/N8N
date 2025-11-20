@@ -1,4 +1,4 @@
-﻿import type { SourceControlledFile } from '@workflow-automation/api-types';
+import type { SourceControlledFile } from '@workflow-automation/api-types';
 import { isContainedWithin } from '@workflow-automation/backend-common';
 import { GLOBAL_ADMIN_ROLE, GLOBAL_MEMBER_ROLE, User, type WorkflowEntity } from '@workflow-automation/db';
 import { Container } from '@workflow-automation/di';
@@ -21,8 +21,8 @@ const mockStatusService = {
 	getStatus: jest.fn(),
 };
 
-jest.mock('@n8n/backend-common', () => ({
-	...jest.requireActual('@n8n/backend-common'),
+jest.mock('@workflow-automation/backend-common', () => ({
+	...jest.requireActual('@workflow-automation/backend-common'),
 	isContainedWithin: jest.fn(() => true),
 }));
 

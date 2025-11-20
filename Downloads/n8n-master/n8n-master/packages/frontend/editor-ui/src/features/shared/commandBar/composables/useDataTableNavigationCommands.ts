@@ -1,13 +1,13 @@
-﻿import { computed, ref, type Ref } from 'vue';
+import { computed, ref, type Ref } from 'vue';
 import { useRouter, useRoute } from 'vue-router';
-import { useI18n } from '@n8n/i18n';
+import { useI18n } from '@workflow-automation/i18n';
 import debounce from 'lodash/debounce';
 import { useDataTableStore } from '@/features/core/dataTable/dataTable.store';
 import { useProjectsStore } from '@/features/collaboration/projects/projects.store';
 import { DATA_TABLE_DETAILS, PROJECT_DATA_TABLES } from '@/features/core/dataTable/constants';
 import type { CommandBarItem } from '../types';
 import type { DataTable } from '@/features/core/dataTable/dataTable.types';
-import { N8nIcon } from '@n8n/design-system';
+import { N8nIcon } from '@workflow-automation/design-system';
 import { useSourceControlStore } from '@/features/integrations/sourceControl.ee/sourceControl.store';
 import CommandBarItemTitle from '@/features/shared/commandBar/components/CommandBarItemTitle.vue';
 import { getResourcePermissions } from '@workflow-automation/permissions';

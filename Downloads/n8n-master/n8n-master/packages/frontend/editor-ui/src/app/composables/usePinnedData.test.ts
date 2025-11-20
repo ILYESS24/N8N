@@ -1,4 +1,4 @@
-﻿import { describe, it, expect, vi, beforeEach } from 'vitest';
+import { describe, it, expect, vi, beforeEach } from 'vitest';
 import { setActivePinia, createPinia } from 'pinia';
 import { ref } from 'vue';
 import { usePinnedData } from '@/app/composables/usePinnedData';
@@ -10,7 +10,7 @@ import { NodeConnectionTypes, STICKY_NODE_TYPE } from 'workflow-automation-workf
 import type { NodeConnectionType, INodeTypeDescription } from 'workflow-automation-workflow';
 
 vi.mock('@/app/composables/useToast', () => ({ useToast: vi.fn(() => ({ showError: vi.fn() })) }));
-vi.mock('@n8n/i18n', () => ({
+vi.mock('@workflow-automation/i18n', () => ({
 	useI18n: vi.fn(() => ({ baseText: vi.fn((key) => key) })),
 }));
 vi.mock('@/app/composables/useExternalHooks', () => ({

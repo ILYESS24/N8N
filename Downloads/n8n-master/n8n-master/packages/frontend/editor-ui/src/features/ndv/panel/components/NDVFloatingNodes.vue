@@ -1,4 +1,4 @@
-﻿<script setup lang="ts">
+<script setup lang="ts">
 import type { INodeUi } from '@/Interface';
 import { useNodeTypesStore } from '@/app/stores/nodeTypes.store';
 import { useWorkflowsStore } from '@/app/stores/workflows.store';
@@ -8,7 +8,7 @@ import { NodeConnectionTypes, type INodeTypeDescription } from 'workflow-automat
 import { NDV_UI_OVERHAUL_EXPERIMENT } from '@/app/constants';
 import { usePostHog } from '@/app/stores/posthog.store';
 
-import { N8nTooltip } from '@n8n/design-system';
+import { N8nTooltip } from '@workflow-automation/design-system';
 interface Props {
 	rootNode: INodeUi;
 }

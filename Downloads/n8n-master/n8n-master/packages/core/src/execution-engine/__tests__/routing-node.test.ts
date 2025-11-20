@@ -1,4 +1,4 @@
-﻿import { mock } from 'jest-mock-extended';
+import { mock } from 'jest-mock-extended';
 import get from 'lodash/get';
 import type {
 	DeclarativeRestApiSettings,
@@ -20,7 +20,7 @@ import type {
 	IWorkflowExecuteAdditionalData,
 } from 'workflow-automation-workflow';
 import { Workflow, createEmptyRunExecutionData } from 'workflow-automation-workflow';
-import type { ICredentialsDecrypted } from 'n8n-workflow/src';
+import type { ICredentialsDecrypted } from 'workflow-automation-workflow/src';
 
 import * as executionContexts from '@/execution-engine/node-execution-context';
 import { DirectoryLoader } from '@/nodes-loader';
@@ -2139,7 +2139,7 @@ describe('RoutingNode', () => {
 					}
 				}
 
-				const workflowPackage = await import('n8n-workflow');
+				const workflowPackage = await import('workflow-automation-workflow');
 				const spy = jest.spyOn(workflowPackage, 'sleep').mockReturnValue(
 					new Promise((resolve) => {
 						resolve();

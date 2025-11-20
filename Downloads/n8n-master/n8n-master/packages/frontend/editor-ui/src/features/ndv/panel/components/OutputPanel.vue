@@ -1,4 +1,4 @@
-﻿<script setup lang="ts">
+<script setup lang="ts">
 import { ref, computed, onMounted, watch } from 'vue';
 import { NodeConnectionTypes, type IRunData, type Workflow } from 'workflow-automation-workflow';
 import RunData from '@/features/ndv/runData/components/RunData.vue';
@@ -11,7 +11,7 @@ import RunDataAi from '@/features/ndv/runData/components/ai/RunDataAi.vue';
 import { useNodeType } from '@/app/composables/useNodeType';
 import { usePinnedData } from '@/app/composables/usePinnedData';
 import { useTelemetry } from '@/app/composables/useTelemetry';
-import { useI18n } from '@n8n/i18n';
+import { useI18n } from '@workflow-automation/i18n';
 import { waitingNodeTooltip } from '@/features/execution/executions/executions.utils';
 import { useNodeDirtiness } from '@/app/composables/useNodeDirtiness';
 import { CanvasNodeDirtiness } from '@/features/workflows/canvas/canvas.types';
@@ -23,7 +23,7 @@ import { useExecutionData } from '@/features/execution/executions/composables/us
 import NDVEmptyState from '@/features/ndv/panel/components/NDVEmptyState.vue';
 import NodeExecuteButton from '@/app/components/NodeExecuteButton.vue';
 
-import { N8nIcon, N8nRadioButtons, N8nSpinner, N8nText } from '@n8n/design-system';
+import { N8nIcon, N8nRadioButtons, N8nSpinner, N8nText } from '@workflow-automation/design-system';
 import { injectWorkflowState } from '@/app/composables/useWorkflowState';
 // Types
 

@@ -1,4 +1,4 @@
-﻿import { watch, computed, ref, type ComputedRef } from 'vue';
+import { watch, computed, ref, type ComputedRef } from 'vue';
 import type { IExecutionResponse } from '@/features/execution/executions/executions.types';
 import { Workflow, type IRunExecutionData, type ITaskStartedData } from 'workflow-automation-workflow';
 import { useWorkflowsStore } from '@/app/stores/workflows.store';
@@ -19,7 +19,7 @@ import {
 } from '@/app/constants';
 import { useThrottleFn } from '@vueuse/core';
 import { injectWorkflowState } from '@/app/composables/useWorkflowState';
-import { useThrottleWithReactiveDelay } from '@n8n/composables/useThrottleWithReactiveDelay';
+import { useThrottleWithReactiveDelay } from '@workflow-automation/composables/useThrottleWithReactiveDelay';
 
 interface UseLogsExecutionDataOptions {
 	/**

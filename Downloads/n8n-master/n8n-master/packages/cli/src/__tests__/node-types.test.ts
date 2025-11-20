@@ -1,4 +1,4 @@
-﻿import { mock } from 'jest-mock-extended';
+import { mock } from 'jest-mock-extended';
 import { RoutingNode, UnrecognizedNodeTypeError } from 'workflow-automation-core';
 import type {
 	LoadedClass,
@@ -101,7 +101,7 @@ describe('NodeTypes', () => {
 
 	loadNodesAndCredentials.getNode.mockImplementation((fullNodeType) => {
 		const [packageName, nodeType] = fullNodeType.split('.');
-		if (packageName === 'n8n-nodes-base') {
+		if (packageName === 'workflow-automation-nodes-base') {
 			if (nodeType === 'nonVersioned') return nonVersionedNode;
 			if (nodeType === 'versioned') return versionedNode;
 			if (nodeType === 'testNode') return toolSupportingNode;

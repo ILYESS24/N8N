@@ -1,4 +1,4 @@
-import { sharedConfig } from '@n8n/storybook/main';
+import { sharedConfig } from '@workflow-automation/storybook/main';
 
 const config = { ...sharedConfig };
 export default config;

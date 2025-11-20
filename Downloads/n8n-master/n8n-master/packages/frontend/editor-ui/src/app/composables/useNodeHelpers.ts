@@ -1,4 +1,4 @@
-﻿import { ref, computed } from 'vue';
+import { ref, computed } from 'vue';
 import { useHistoryStore } from '@/app/stores/history.store';
 import {
 	CUSTOM_API_CALL_KEY,
@@ -41,7 +41,7 @@ import { isObject } from '@/app/utils/objectUtils';
 import { useWorkflowsStore } from '@/app/stores/workflows.store';
 import { useNodeTypesStore } from '@/app/stores/nodeTypes.store';
 import { useCredentialsStore } from '@/features/credentials/credentials.store';
-import { useI18n } from '@n8n/i18n';
+import { useI18n } from '@workflow-automation/i18n';
 import { EnableNodeToggleCommand } from '@/app/models/history';
 import { useTelemetry } from './useTelemetry';
 import { hasPermission } from '@/app/utils/rbac/permissions';

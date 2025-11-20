@@ -1,4 +1,4 @@
-﻿<script setup lang="ts">
+<script setup lang="ts">
 import { computed, ref } from 'vue';
 import {
 	DUPLICATE_MODAL_KEY,
@@ -18,18 +18,18 @@ import { useWorkflowsStore } from '@/app/stores/workflows.store';
 import TimeAgo from '@/app/components/TimeAgo.vue';
 import { useProjectsStore } from '@/features/collaboration/projects/projects.store';
 import ProjectCardBadge from '@/features/collaboration/projects/components/ProjectCardBadge.vue';
-import { useI18n } from '@n8n/i18n';
+import { useI18n } from '@workflow-automation/i18n';
 import { useRoute, useRouter } from 'vue-router';
 import { useTelemetry } from '@/app/composables/useTelemetry';
 import { ResourceType } from '@/features/collaboration/projects/projects.utils';
-import type { EventBus } from '@n8n/utils/event-bus';
+import type { EventBus } from '@workflow-automation/utils/event-bus';
 import type { UserAction, WorkflowResource } from '@/Interface';
 import type { IUser } from 'workflow-automation-workflow';
 import {
 	type ProjectSharingData,
 	ProjectTypes,
 } from '@/features/collaboration/projects/projects.types';
-import type { PathItem } from '@n8n/design-system/components/N8nBreadcrumbs/Breadcrumbs.vue';
+import type { PathItem } from '@workflow-automation/design-system/components/N8nBreadcrumbs/Breadcrumbs.vue';
 import { useFoldersStore } from '@/features/core/folders/folders.store';
 
 import {
@@ -41,7 +41,7 @@ import {
 	N8nTags,
 	N8nText,
 	N8nTooltip,
-} from '@n8n/design-system';
+} from '@workflow-automation/design-system';
 import { useMCPStore } from '@/features/ai/mcpAccess/mcp.store';
 import { useMcp } from '@/features/ai/mcpAccess/composables/useMcp';
 const WORKFLOW_LIST_ITEM_ACTIONS = {

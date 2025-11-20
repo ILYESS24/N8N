@@ -1,4 +1,4 @@
-﻿import { Logger } from '@workflow-automation/backend-common';
+import { Logger } from '@workflow-automation/backend-common';
 import { GlobalConfig } from '@workflow-automation/config';
 import {
 	ProjectRelationRepository,
@@ -184,7 +184,7 @@ export class Telemetry {
 			if (
 				!properties.success &&
 				properties.is_manual &&
-				properties.error_node_type?.startsWith('n8n-nodes-base')
+				properties.error_node_type?.startsWith('workflow-automation-nodes-base')
 			) {
 				this.track('Workflow execution errored', properties);
 			}

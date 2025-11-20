@@ -1,4 +1,4 @@
-﻿import { useTelemetry } from '@/app/composables/useTelemetry';
+import { useTelemetry } from '@/app/composables/useTelemetry';
 import { useToast } from '@/app/composables/useToast';
 import { READY_TO_RUN_V2_PART2_EXPERIMENT, VIEWS } from '@/app/constants';
 import { useCredentialsStore } from '@/features/credentials/credentials.store';
@@ -7,9 +7,9 @@ import { useCloudPlanStore } from '@/app/stores/cloudPlan.store';
 import { usePostHog } from '@/app/stores/posthog.store';
 import { useSettingsStore } from '@/app/stores/settings.store';
 import { useWorkflowsStore } from '@/app/stores/workflows.store';
-import { useI18n } from '@n8n/i18n';
-import type { WorkflowDataCreate } from '@n8n/rest-api-client';
-import { STORES } from '@n8n/stores';
+import { useI18n } from '@workflow-automation/i18n';
+import type { WorkflowDataCreate } from '@workflow-automation/rest-api-client';
+import { STORES } from '@workflow-automation/stores';
 import { useLocalStorage } from '@vueuse/core';
 import { OPEN_AI_API_CREDENTIAL_TYPE, deepCopy } from 'workflow-automation-workflow';
 import { defineStore } from 'pinia';

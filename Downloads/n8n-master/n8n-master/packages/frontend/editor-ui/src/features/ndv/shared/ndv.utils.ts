@@ -1,4 +1,4 @@
-﻿import {
+import {
 	type IConnection,
 	type IConnections,
 	type IDataObject,
@@ -31,7 +31,7 @@ import { isPresent } from '@/app/utils/typesUtils';
 import { setParameterValue } from '@/app/utils/parameterUtils';
 import type { Ref } from 'vue';
 import { omitKey } from '@/app/utils/objectUtils';
-import type { BaseTextKey } from '@n8n/i18n';
+import type { BaseTextKey } from '@workflow-automation/i18n';
 
 export function getNodeSettingsInitialValues(): INodeParameters {
 	return {

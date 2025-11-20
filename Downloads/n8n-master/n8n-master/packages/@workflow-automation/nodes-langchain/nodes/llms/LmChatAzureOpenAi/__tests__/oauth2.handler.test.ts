@@ -1,5 +1,5 @@
-﻿/* eslint-disable @typescript-eslint/unbound-method */
-import { createMockExecuteFunction } from 'n8n-nodes-base/test/nodes/Helpers';
+/* eslint-disable @typescript-eslint/unbound-method */
+import { createMockExecuteFunction } from 'workflow-automation-nodes-base/test/nodes/Helpers';
 import type { INode, ISupplyDataFunctions } from 'workflow-automation-workflow';
 import { NodeOperationError } from 'workflow-automation-workflow';
 

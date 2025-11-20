@@ -1,5 +1,5 @@
-﻿import { useNodeTypesStore } from '@/app/stores/nodeTypes.store';
-import type { RemoveNodeType } from '@n8n/api-types/push/hot-reload';
+import { useNodeTypesStore } from '@/app/stores/nodeTypes.store';
+import type { RemoveNodeType } from '@workflow-automation/api-types/push/hot-reload';
 import type { INodeTypeDescription, INodeTypeNameVersion } from 'workflow-automation-workflow';
 import { useCredentialsStore } from '@/features/credentials/credentials.store';
 

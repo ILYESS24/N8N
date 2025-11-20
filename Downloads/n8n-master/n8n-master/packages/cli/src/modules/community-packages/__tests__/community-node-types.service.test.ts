@@ -1,10 +1,10 @@
-﻿import { inProduction } from '@workflow-automation/backend-common';
+import { inProduction } from '@workflow-automation/backend-common';
 
 import { getCommunityNodeTypes } from '../community-node-types-utils';
 import { CommunityNodeTypesService } from '../community-node-types.service';
 
-jest.mock('@n8n/backend-common', () => ({
-	...jest.requireActual('@n8n/backend-common'),
+jest.mock('@workflow-automation/backend-common', () => ({
+	...jest.requireActual('@workflow-automation/backend-common'),
 	inProduction: jest.fn().mockReturnValue(false),
 }));
 

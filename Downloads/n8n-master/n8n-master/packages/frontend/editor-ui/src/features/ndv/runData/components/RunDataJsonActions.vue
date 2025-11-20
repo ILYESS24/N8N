@@ -1,4 +1,4 @@
-﻿<script lang="ts" setup>
+<script lang="ts" setup>
 import jp from 'jsonpath';
 import type { INodeUi } from '@/Interface';
 import type { IDataObject } from 'workflow-automation-workflow';
@@ -8,7 +8,7 @@ import { useWorkflowsStore } from '@/app/stores/workflows.store';
 import { useNDVStore } from '@/features/ndv/shared/ndv.store';
 import { useNodeHelpers } from '@/app/composables/useNodeHelpers';
 import { useToast } from '@/app/composables/useToast';
-import { useI18n } from '@n8n/i18n';
+import { useI18n } from '@workflow-automation/i18n';
 import { nonExistingJsonPath, PopOutWindowKey } from '@/app/constants';
 import { useClipboard } from '@/app/composables/useClipboard';
 import { usePinnedData } from '@/app/composables/usePinnedData';
@@ -16,7 +16,7 @@ import { inject, computed, ref } from 'vue';
 import { useRoute } from 'vue-router';
 import { useTelemetry } from '@/app/composables/useTelemetry';
 import { ElDropdown, ElDropdownItem, ElDropdownMenu } from 'element-plus';
-import { N8nIconButton } from '@n8n/design-system';
+import { N8nIconButton } from '@workflow-automation/design-system';
 type JsonPathData = {
 	path: string;
 	startPath: string;

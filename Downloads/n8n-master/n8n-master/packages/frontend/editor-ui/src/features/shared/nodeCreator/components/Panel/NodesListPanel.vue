@@ -18,7 +18,7 @@ import { useKeyboardNavigation } from '../../composables/useKeyboardNavigation';
 import SearchBar from './SearchBar.vue';
 import ActionsRenderer from '../Modes/ActionsMode.vue';
 import NodesRenderer from '../Modes/NodesMode.vue';
-import { useI18n } from '@n8n/i18n';
+import { useI18n } from '@workflow-automation/i18n';
 import { useDebounce } from '@/app/composables/useDebounce';
 import NodeIcon from '@/app/components/NodeIcon.vue';
 
@@ -28,7 +28,7 @@ import CommunityNodeDocsLink from '@/features/settings/communityNodes/components
 import CommunityNodeFooter from '@/features/settings/communityNodes/components/nodeCreator/CommunityNodeFooter.vue';
 import { useUsersStore } from '@/features/settings/users/users.store';
 
-import { N8nIcon, N8nNotice } from '@n8n/design-system';
+import { N8nIcon, N8nNotice } from '@workflow-automation/design-system';
 const i18n = useI18n();
 const { callDebounced } = useDebounce();
 

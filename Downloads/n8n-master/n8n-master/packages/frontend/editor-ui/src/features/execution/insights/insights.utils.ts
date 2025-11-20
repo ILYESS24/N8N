@@ -1,4 +1,4 @@
-﻿import { useI18n } from '@n8n/i18n';
+import { useI18n } from '@workflow-automation/i18n';
 import type { InsightsSummary, InsightsSummaryType } from '@workflow-automation/api-types';
 import type { InsightsSummaryDisplay } from '@/features/execution/insights/insights.types';
 import {

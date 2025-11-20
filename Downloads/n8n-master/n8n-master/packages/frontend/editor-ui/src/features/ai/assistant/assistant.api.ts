@@ -1,13 +1,13 @@
-﻿import { useAIAssistantHelpers } from '@/features/ai/assistant/composables/useAIAssistantHelpers';
+import { useAIAssistantHelpers } from '@/features/ai/assistant/composables/useAIAssistantHelpers';
 import { AI_ASSISTANT_MAX_CONTENT_LENGTH } from '@/app/constants';
 import type { ICredentialsResponse } from '@/features/credentials/credentials.types';
-import type { IRestApiContext } from '@n8n/rest-api-client';
+import type { IRestApiContext } from '@workflow-automation/rest-api-client';
 import type {
 	AskAiRequest,
 	ChatRequest,
 	ReplaceCodeRequest,
 } from '@/features/ai/assistant/assistant.types';
-import { makeRestApiRequest, streamRequest } from '@n8n/rest-api-client';
+import { makeRestApiRequest, streamRequest } from '@workflow-automation/rest-api-client';
 import { getObjectSizeInKB } from '@/app/utils/objectUtils';
 import type { IDataObject } from 'workflow-automation-workflow';
 

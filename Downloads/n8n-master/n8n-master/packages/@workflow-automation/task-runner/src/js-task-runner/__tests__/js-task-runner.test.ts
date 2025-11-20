@@ -1,4 +1,4 @@
-﻿import { DateTime, Duration, Interval } from 'luxon';
+import { DateTime, Duration, Interval } from 'luxon';
 import {
 	type IBinaryData,
 	setGlobalState,
@@ -1177,7 +1177,7 @@ describe('JsTaskRunner', () => {
 
 			const allowedCases = [['nanoid', 'require("nanoid").nanoid()', expect.any(String)]];
 
-			const blockedCases = [['n8n-core']];
+			const blockedCases = [['workflow-automation-core']];
 
 			test.each(allowedCases)(
 				'should allow requiring %s in runOnceForAllItems mode',

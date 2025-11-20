@@ -1,4 +1,4 @@
-﻿<script setup lang="ts">
+<script setup lang="ts">
 import isEmpty from 'lodash/isEmpty';
 import isEqual from 'lodash/isEqual';
 
@@ -18,14 +18,14 @@ import {
 	DEFAULT_MAX_CONDITIONS,
 	DEFAULT_OPERATOR_VALUE,
 } from './constants';
-import { useI18n } from '@n8n/i18n';
+import { useI18n } from '@workflow-automation/i18n';
 import { useDebounce } from '@/app/composables/useDebounce';
 import Condition from './Condition.vue';
 import CombinatorSelect from './CombinatorSelect.vue';
 import { resolveParameter } from '@/app/composables/useWorkflowHelpers';
 import Draggable from 'vuedraggable';
 
-import { N8nButton, N8nInputLabel } from '@n8n/design-system';
+import { N8nButton, N8nInputLabel } from '@workflow-automation/design-system';
 interface Props {
 	parameter: INodeProperties;
 	value: FilterValue;

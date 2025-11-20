@@ -1,4 +1,4 @@
-﻿import {
+import {
 	computed,
 	inject,
 	onBeforeUnmount,
@@ -43,12 +43,12 @@ import {
 import { EditorView, type ViewUpdate } from '@codemirror/view';
 import debounce from 'lodash/debounce';
 import isEqual from 'lodash/isEqual';
-import { useI18n } from '@n8n/i18n';
+import { useI18n } from '@workflow-automation/i18n';
 import { useWorkflowsStore } from '@/app/stores/workflows.store';
 import { useAutocompleteTelemetry } from '@/app/composables/useAutocompleteTelemetry';
 import { ignoreUpdateAnnotation } from '@/app/utils/forceParse';
 import { TARGET_NODE_PARAMETER_FACET } from '../plugins/codemirror/completions/constants';
-import { useDeviceSupport } from '@n8n/composables/useDeviceSupport';
+import { useDeviceSupport } from '@workflow-automation/composables/useDeviceSupport';
 import { isEventTargetContainedBy } from '@/app/utils/htmlUtils';
 
 export const useExpressionEditor = ({

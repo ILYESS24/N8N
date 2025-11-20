@@ -1,11 +1,11 @@
 <script setup lang="ts">
-import type { BaseTextKey } from '@n8n/i18n';
+import type { BaseTextKey } from '@workflow-automation/i18n';
 import { useLogStreamingStore } from '../logStreaming.store';
 import { computed } from 'vue';
-import { useI18n } from '@n8n/i18n';
+import { useI18n } from '@workflow-automation/i18n';
 
 import { ElCheckbox as Checkbox, type CheckboxValueType } from 'element-plus';
-import { N8nIcon, N8nTooltip } from '@n8n/design-system';
+import { N8nIcon, N8nTooltip } from '@workflow-automation/design-system';
 
 interface Props {
 	destinationId?: string;

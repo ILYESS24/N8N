@@ -1,4 +1,4 @@
-﻿<script lang="ts" setup>
+<script lang="ts" setup>
 import { useLoadingService } from '@/app/composables/useLoadingService';
 import { useTelemetry } from '@/app/composables/useTelemetry';
 import { useToast } from '@/app/composables/useToast';
@@ -16,8 +16,8 @@ import {
 	notifyUserAboutPullWorkFolderOutcome,
 } from '../sourceControl.utils';
 import { type SourceControlledFile, SOURCE_CONTROL_FILE_TYPE } from '@workflow-automation/api-types';
-import { useI18n } from '@n8n/i18n';
-import type { EventBus } from '@n8n/utils/event-bus';
+import { useI18n } from '@workflow-automation/i18n';
+import type { EventBus } from '@workflow-automation/utils/event-bus';
 import dateformat from 'dateformat';
 import orderBy from 'lodash/orderBy';
 import { computed, onBeforeMount, onMounted, ref } from 'vue';
@@ -35,7 +35,7 @@ import {
 	N8nLink,
 	N8nText,
 	N8nTooltip,
-} from '@n8n/design-system';
+} from '@workflow-automation/design-system';
 type SourceControlledFileType = SourceControlledFile['type'];
 type SourceControlledFileWithProject = SourceControlledFile & { project?: ProjectListItem };
 

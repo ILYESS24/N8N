@@ -1,7 +1,7 @@
-﻿import type { RenderOptions } from '@/__tests__/render';
+import type { RenderOptions } from '@/__tests__/render';
 import { SETTINGS_STORE_DEFAULT_STATE } from '@/__tests__/utils';
 import type ResourceMapper from './ResourceMapper.vue';
-import { STORES } from '@n8n/stores';
+import { STORES } from '@workflow-automation/stores';
 import { createTestingPinia } from '@pinia/testing';
 import merge from 'lodash/merge';
 import type { ResourceMapperFields, ResourceMapperValue } from 'workflow-automation-workflow';

@@ -1,7 +1,7 @@
 <script lang="ts" setup>
 import KeyboardShortcutTooltip from '@/app/components/KeyboardShortcutTooltip.vue';
 import { useCanvasOperations } from '@/app/composables/useCanvasOperations';
-import { useI18n } from '@n8n/i18n';
+import { useI18n } from '@workflow-automation/i18n';
 import { useRunWorkflow } from '@/app/composables/useRunWorkflow';
 import { CHAT_TRIGGER_NODE_TYPE } from '@/app/constants';
 import { useLogsStore } from '@/app/stores/logs.store';
@@ -9,7 +9,7 @@ import { useWorkflowsStore } from '@/app/stores/workflows.store';
 import { computed, useCssModule } from 'vue';
 import { useRouter } from 'vue-router';
 
-import { N8nButton, N8nIcon } from '@n8n/design-system';
+import { N8nButton, N8nIcon } from '@workflow-automation/design-system';
 const {
 	name,
 	type,

@@ -1,9 +1,9 @@
 <script setup lang="ts">
-import { useI18n } from '@n8n/i18n';
-import type { BaseTextKey } from '@n8n/i18n';
+import { useI18n } from '@workflow-automation/i18n';
+import type { BaseTextKey } from '@workflow-automation/i18n';
 
 import { ElCol } from 'element-plus';
-import { N8nButton, N8nHeading } from '@n8n/design-system';
+import { N8nButton, N8nHeading } from '@workflow-automation/design-system';
 type Props = {
 	titleLocaleKey: BaseTextKey;
 	descriptionLocaleKey: BaseTextKey;

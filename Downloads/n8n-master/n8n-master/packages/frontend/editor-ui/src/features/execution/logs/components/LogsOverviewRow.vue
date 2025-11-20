@@ -4,7 +4,7 @@ import { useNodeTypesStore } from '@/app/stores/nodeTypes.store';
 import LogsViewConsumedTokenCountText from '@/features/execution/logs/components/LogsViewConsumedTokenCountText.vue';
 import NodeIcon from '@/app/components/NodeIcon.vue';
 import upperFirst from 'lodash/upperFirst';
-import { type BaseTextKey, useI18n } from '@n8n/i18n';
+import { type BaseTextKey, useI18n } from '@workflow-automation/i18n';
 import { I18nT } from 'vue-i18n';
 import { toDayMonth, toTime } from '@/app/utils/formatters/dateFormatter';
 import LogsViewNodeName from '@/features/execution/logs/components/LogsViewNodeName.vue';
@@ -15,7 +15,7 @@ import {
 import { useTimestamp } from '@vueuse/core';
 import type { LatestNodeInfo, LogEntry } from '@/features/execution/logs/logs.types';
 
-import { N8nButton, N8nIcon, N8nIconButton, N8nText } from '@n8n/design-system';
+import { N8nButton, N8nIcon, N8nIconButton, N8nText } from '@workflow-automation/design-system';
 import AnimatedSpinner from '@/app/components/AnimatedSpinner.vue';
 const props = defineProps<{
 	data: LogEntry;

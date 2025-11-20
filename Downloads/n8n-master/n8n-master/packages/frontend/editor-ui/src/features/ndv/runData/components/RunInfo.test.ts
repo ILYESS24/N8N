@@ -1,4 +1,4 @@
-﻿import { describe, it, expect, vi } from 'vitest';
+import { describe, it, expect, vi } from 'vitest';
 import type { ITaskData } from 'workflow-automation-workflow';
 import RunInfo from './RunInfo.vue';
 import { createComponentRenderer } from '@/__tests__/render';
@@ -11,7 +11,7 @@ vi.mock('@/app/utils/formatters/dateFormatter', () => ({
 	})),
 }));
 
-vi.mock('@n8n/i18n', async (importOriginal) => {
+vi.mock('@workflow-automation/i18n', async (importOriginal) => {
 	return {
 		...(await importOriginal()),
 		useI18n: () => ({

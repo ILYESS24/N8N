@@ -1,5 +1,5 @@
-﻿<script lang="ts" setup>
-import { useI18n } from '@n8n/i18n';
+<script lang="ts" setup>
+import { useI18n } from '@workflow-automation/i18n';
 import { useTelemetry } from '@/app/composables/useTelemetry';
 import { useToast } from '@/app/composables/useToast';
 import { useCredentialsStore } from '@/features/credentials/credentials.store';
@@ -9,7 +9,7 @@ import { useSettingsStore } from '@/app/stores/settings.store';
 import { useUsersStore } from '@/features/settings/users/users.store';
 import { computed, ref } from 'vue';
 import { OPEN_AI_API_CREDENTIAL_TYPE } from 'workflow-automation-workflow';
-import { N8nButton, N8nCallout, N8nText } from '@n8n/design-system';
+import { N8nButton, N8nCallout, N8nText } from '@workflow-automation/design-system';
 type Props = {
 	credentialTypeName?: string;
 };

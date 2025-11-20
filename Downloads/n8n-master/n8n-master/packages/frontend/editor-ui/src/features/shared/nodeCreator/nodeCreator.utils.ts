@@ -1,4 +1,4 @@
-﻿import type {
+import type {
 	NodeCreateElement,
 	ActionCreateElement,
 	SubcategorizedNodeTypes,
@@ -28,10 +28,10 @@ import {
 } from '@/app/constants';
 import { v4 as uuidv4 } from 'uuid';
 
-import { sublimeSearch } from '@n8n/utils/search/sublimeSearch';
-import { reRankSearchResults } from '@n8n/utils/search/reRankSearchResults';
+import { sublimeSearch } from '@workflow-automation/utils/search/sublimeSearch';
+import { reRankSearchResults } from '@workflow-automation/utils/search/reRankSearchResults';
 import type { NodeViewItemSection } from './views/viewsData';
-import { i18n } from '@n8n/i18n';
+import { i18n } from '@workflow-automation/i18n';
 import sortBy from 'lodash/sortBy';
 import * as changeCase from 'change-case';
 

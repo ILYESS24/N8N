@@ -1,8 +1,8 @@
-﻿import * as schemaPreviewApi from './schemaPreview.api';
+import * as schemaPreviewApi from './schemaPreview.api';
 import { createResultError, createResultOk, type Result } from 'workflow-automation-workflow';
 import { defineStore } from 'pinia';
 import { reactive } from 'vue';
-import { useRootStore } from '@n8n/stores/useRootStore';
+import { useRootStore } from '@workflow-automation/stores/useRootStore';
 import type { JSONSchema7 } from 'json-schema';
 import type { PushPayload } from '@workflow-automation/api-types';
 import { useTelemetry } from '@/app/composables/useTelemetry';

@@ -1,6 +1,6 @@
-﻿import { NodeConnectionTypes } from 'workflow-automation-workflow';
+import { NodeConnectionTypes } from 'workflow-automation-workflow';
 import type { INodeUi } from '@/Interface';
-import type { WorkflowDataCreate } from '@n8n/rest-api-client/api/workflows';
+import type { WorkflowDataCreate } from '@workflow-automation/rest-api-client/api/workflows';
 
 export const DUMMY_PIN_DATA = [
 	{

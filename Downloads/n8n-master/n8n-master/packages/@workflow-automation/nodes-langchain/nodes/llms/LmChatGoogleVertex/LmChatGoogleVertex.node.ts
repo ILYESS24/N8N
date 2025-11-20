@@ -1,7 +1,7 @@
-﻿import { ProjectsClient } from '@google-cloud/resource-manager';
+import { ProjectsClient } from '@google-cloud/resource-manager';
 import type { GoogleAISafetySetting } from '@langchain/google-common';
 import { ChatVertexAI, type ChatVertexAIInput } from '@langchain/google-vertexai';
-import { formatPrivateKey } from 'n8n-nodes-base/dist/utils/utilities';
+import { formatPrivateKey } from 'workflow-automation-nodes-base/dist/utils/utilities';
 import {
 	NodeConnectionTypes,
 	type INodeType,

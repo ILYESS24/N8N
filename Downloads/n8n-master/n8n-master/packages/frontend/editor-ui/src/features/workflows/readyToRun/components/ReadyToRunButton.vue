@@ -1,8 +1,8 @@
-﻿<script setup lang="ts">
+<script setup lang="ts">
 import { computed } from 'vue';
 import { useRoute } from 'vue-router';
-import { N8nButton } from '@n8n/design-system';
-import { useI18n } from '@n8n/i18n';
+import { N8nButton } from '@workflow-automation/design-system';
+import { useI18n } from '@workflow-automation/i18n';
 import { getResourcePermissions } from '@workflow-automation/permissions';
 import { useProjectPages } from '@/features/collaboration/projects/composables/useProjectPages';
 import { useProjectsStore } from '@/features/collaboration/projects/projects.store';

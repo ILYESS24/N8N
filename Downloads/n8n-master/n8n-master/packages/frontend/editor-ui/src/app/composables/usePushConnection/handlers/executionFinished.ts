@@ -1,4 +1,4 @@
-﻿import type { IExecutionResponse } from '@/features/execution/executions/executions.types';
+import type { IExecutionResponse } from '@/features/execution/executions/executions.types';
 import { useExternalHooks } from '@/app/composables/useExternalHooks';
 import { useNodeHelpers } from '@/app/composables/useNodeHelpers';
 import { useRunWorkflow } from '@/app/composables/useRunWorkflow';
@@ -25,8 +25,8 @@ import {
 	getExecutionErrorToastConfiguration,
 } from '@/features/execution/executions/executions.utils';
 import { getTriggerNodeServiceName } from '@/app/utils/nodeTypesUtils';
-import type { ExecutionFinished } from '@n8n/api-types/push/execution';
-import { useI18n } from '@n8n/i18n';
+import type { ExecutionFinished } from '@workflow-automation/api-types/push/execution';
+import { useI18n } from '@workflow-automation/i18n';
 import { parse } from 'flatted';
 import type { ExpressionError, IDataObject, IRunExecutionData, IWorkflowBase } from 'workflow-automation-workflow';
 import {

@@ -1,4 +1,4 @@
-﻿import { defineStore } from 'pinia';
+import { defineStore } from 'pinia';
 import { CHAT_STORE } from './constants';
 import { computed, ref } from 'vue';
 import { v4 as uuidv4 } from 'uuid';
@@ -19,7 +19,7 @@ import {
 	deleteAgentApi,
 	updateConversationApi,
 } from './chat.api';
-import { useRootStore } from '@n8n/stores/useRootStore';
+import { useRootStore } from '@workflow-automation/stores/useRootStore';
 import {
 	emptyChatModelsResponse,
 	type ChatHubConversationModel,
@@ -42,7 +42,7 @@ import type {
 	ChatConversation,
 	ChatStreamingState,
 } from './chat.types';
-import { retry } from '@n8n/utils/retry';
+import { retry } from '@workflow-automation/utils/retry';
 import { buildUiMessages, isMatchedAgent } from './chat.utils';
 import { createAiMessageFromStreamingState, flattenModel } from './chat.utils';
 import { useTelemetry } from '@/app/composables/useTelemetry';

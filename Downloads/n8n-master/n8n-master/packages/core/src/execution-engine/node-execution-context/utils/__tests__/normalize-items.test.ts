@@ -1,4 +1,4 @@
-﻿import { ApplicationError } from '@n8n/errors';
+import { ApplicationError } from '@workflow-automation/errors';
 import type { IBinaryData, INodeExecutionData } from 'workflow-automation-workflow';
 
 import { normalizeItems } from '../normalize-items';

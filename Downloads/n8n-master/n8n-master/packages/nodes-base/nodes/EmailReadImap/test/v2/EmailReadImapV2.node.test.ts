@@ -1,12 +1,12 @@
-﻿import { mock } from 'jest-mock-extended';
+import { mock } from 'jest-mock-extended';
 import type { INode, INodeTypeBaseDescription, ITriggerFunctions } from 'workflow-automation-workflow';
 
 import { type ICredentialsDataImap } from '@credentials/Imap.credentials';
 
 import { EmailReadImapV2 } from '../../v2/EmailReadImapV2.node';
 
-jest.mock('@n8n/imap', () => {
-	const originalModule = jest.requireActual('@n8n/imap');
+jest.mock('@workflow-automation/imap', () => {
+	const originalModule = jest.requireActual('@workflow-automation/imap');
 
 	return {
 		...originalModule,

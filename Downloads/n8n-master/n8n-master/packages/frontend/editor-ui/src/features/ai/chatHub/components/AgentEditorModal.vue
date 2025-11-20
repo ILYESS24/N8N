@@ -1,14 +1,14 @@
-﻿<script setup lang="ts">
+<script setup lang="ts">
 import Modal from '@/app/components/Modal.vue';
 import { useMessage } from '@/app/composables/useMessage';
 import { useToast } from '@/app/composables/useToast';
 import { useChatStore } from '@/features/ai/chatHub/chat.store';
 import ModelSelector from '@/features/ai/chatHub/components/ModelSelector.vue';
 import type { ChatHubProvider, ChatModelDto } from '@workflow-automation/api-types';
-import { N8nButton, N8nHeading, N8nInput, N8nInputLabel } from '@n8n/design-system';
-import { useI18n } from '@n8n/i18n';
-import { assert } from '@n8n/utils/assert';
-import { createEventBus } from '@n8n/utils/event-bus';
+import { N8nButton, N8nHeading, N8nInput, N8nInputLabel } from '@workflow-automation/design-system';
+import { useI18n } from '@workflow-automation/i18n';
+import { assert } from '@workflow-automation/utils/assert';
+import { createEventBus } from '@workflow-automation/utils/event-bus';
 import { computed, onMounted, ref } from 'vue';
 import type { CredentialsMap } from '../chat.types';
 import type { INode } from 'workflow-automation-workflow';

@@ -1,4 +1,4 @@
-﻿<script setup lang="ts">
+<script setup lang="ts">
 import {
 	COMMUNITY_PACKAGE_INSTALL_MODAL_KEY,
 	COMMUNITY_NODES_INSTALLATION_DOCS_URL,
@@ -15,11 +15,11 @@ import { useExternalHooks } from '@/app/composables/useExternalHooks';
 import { useRouter } from 'vue-router';
 import { usePushConnection } from '@/app/composables/usePushConnection';
 import { usePushConnectionStore } from '@/app/stores/pushConnection.store';
-import { useI18n } from '@n8n/i18n';
+import { useI18n } from '@workflow-automation/i18n';
 import { useTelemetry } from '@/app/composables/useTelemetry';
 import { useSettingsStore } from '@/app/stores/settings.store';
 
-import { N8nActionBox, N8nButton, N8nHeading } from '@n8n/design-system';
+import { N8nActionBox, N8nButton, N8nHeading } from '@workflow-automation/design-system';
 const PACKAGE_COUNT_THRESHOLD = 31;
 
 const loading = ref(false);

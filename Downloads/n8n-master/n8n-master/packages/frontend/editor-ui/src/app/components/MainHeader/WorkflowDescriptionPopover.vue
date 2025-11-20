@@ -1,4 +1,4 @@
-﻿<script setup lang="ts">
+<script setup lang="ts">
 import { computed, nextTick, ref, useTemplateRef, watch } from 'vue';
 import {
 	N8nButton,
@@ -7,8 +7,8 @@ import {
 	N8nInputLabel,
 	N8nPopoverReka,
 	N8nTooltip,
-} from '@n8n/design-system';
-import { useI18n } from '@n8n/i18n';
+} from '@workflow-automation/design-system';
+import { useI18n } from '@workflow-automation/i18n';
 import { useSettingsStore } from '@/app/stores/settings.store';
 import { useWorkflowsStore } from '@/app/stores/workflows.store';
 import { useUIStore } from '@/app/stores/ui.store';

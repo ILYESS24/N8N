@@ -1,4 +1,4 @@
-﻿import type { Plugin } from 'vue';
+import type { Plugin } from 'vue';
 import type { ITelemetrySettings } from '@workflow-automation/api-types';
 import type { ITelemetryTrackProperties, IDataObject } from 'workflow-automation-workflow';
 import type { RouteLocation } from 'vue-router';
@@ -11,7 +11,7 @@ import {
 	SLACK_NODE_TYPE,
 	TELEGRAM_NODE_TYPE,
 } from '@/app/constants';
-import { useRootStore } from '@n8n/stores/useRootStore';
+import { useRootStore } from '@workflow-automation/stores/useRootStore';
 import { useNDVStore } from '@/features/ndv/shared/ndv.store';
 import { useSettingsStore } from '@/app/stores/settings.store';
 import { useUIStore } from '@/app/stores/ui.store';

@@ -1,8 +1,8 @@
-﻿<script setup lang="ts">
+<script setup lang="ts">
 import type { WorkerStatus } from '@workflow-automation/api-types';
 import WorkerAccordion from './WorkerAccordion.vue';
 import { useClipboard } from '@/app/composables/useClipboard';
-import { useI18n } from '@n8n/i18n';
+import { useI18n } from '@workflow-automation/i18n';
 import { useToast } from '@/app/composables/useToast';
 
 const props = defineProps<{

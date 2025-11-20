@@ -1,4 +1,4 @@
-﻿import { mockInstance } from '@n8n/backend-test-utils';
+import { mockInstance } from '@n8n/backend-test-utils';
 import { GlobalConfig } from '@workflow-automation/config';
 import type { WorkflowEntity } from '@workflow-automation/db';
 import { ExecutionRepository, WorkflowRepository } from '@workflow-automation/db';
@@ -74,9 +74,9 @@ const getCancelablePromise = async (run: IRun) =>
 
 const processRunExecutionData = jest.fn();
 
-jest.mock('n8n-core', () => ({
+jest.mock('workflow-automation-core', () => ({
 	__esModule: true,
-	...jest.requireActual('n8n-core'),
+	...jest.requireActual('workflow-automation-core'),
 	WorkflowExecute: jest.fn().mockImplementation(() => ({
 		processRunExecutionData,
 	})),

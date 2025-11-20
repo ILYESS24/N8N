@@ -1,7 +1,7 @@
 <script lang="ts" setup>
-import type { IconOrEmoji } from '@n8n/design-system/components/N8nIconPicker/types';
-import type { KeyboardShortcut } from '@n8n/design-system/types/keyboardshortcut';
-import { N8nKeyboardShortcut } from '@n8n/design-system';
+import type { IconOrEmoji } from '@workflow-automation/design-system/components/N8nIconPicker/types';
+import type { KeyboardShortcut } from '@workflow-automation/design-system/types/keyboardshortcut';
+import { N8nKeyboardShortcut } from '@workflow-automation/design-system';
 import ProjectIcon from '@/features/collaboration/projects/components/ProjectIcon.vue';
 
 interface Props {

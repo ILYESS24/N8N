@@ -1,11 +1,11 @@
-﻿import { createPinia, setActivePinia } from 'pinia';
+import { createPinia, setActivePinia } from 'pinia';
 import { useRBACStore } from '@/app/stores/rbac.store';
 import type { Scope } from '@workflow-automation/permissions';
 import { hasScope } from '@workflow-automation/permissions';
 
-vi.mock('@n8n/permissions', async () => {
+vi.mock('@workflow-automation/permissions', async () => {
 	// eslint-disable-next-line @typescript-eslint/consistent-type-imports
-	const { hasScope } = await vi.importActual<typeof import('@n8n/permissions')>('@n8n/permissions');
+	const { hasScope } = await vi.importActual<typeof import('@workflow-automation/permissions')>('@workflow-automation/permissions');
 	return {
 		hasScope: vi.fn().mockImplementation(hasScope),
 	};

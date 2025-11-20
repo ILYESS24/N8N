@@ -1,5 +1,5 @@
-﻿import type { Scope, Role } from '@workflow-automation/permissions';
-import type { IUserResponse } from '@n8n/rest-api-client/api/users';
+import type { Scope, Role } from '@workflow-automation/permissions';
+import type { IUserResponse } from '@workflow-automation/rest-api-client/api/users';
 
 export const ProjectTypes = {
 	Personal: 'personal',

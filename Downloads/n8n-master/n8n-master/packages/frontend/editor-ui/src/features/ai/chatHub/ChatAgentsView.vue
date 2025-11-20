@@ -1,9 +1,9 @@
-﻿<script setup lang="ts">
+<script setup lang="ts">
 import { useChatStore } from '@/features/ai/chatHub/chat.store';
 import { useToast } from '@/app/composables/useToast';
 import { useMessage } from '@/app/composables/useMessage';
 import { MODAL_CONFIRM, VIEWS } from '@/app/constants';
-import { N8nButton, N8nIcon, N8nInput, N8nOption, N8nSelect, N8nText } from '@n8n/design-system';
+import { N8nButton, N8nIcon, N8nInput, N8nOption, N8nSelect, N8nText } from '@workflow-automation/design-system';
 import { computed, ref, watch } from 'vue';
 import { useUIStore } from '@/app/stores/ui.store';
 import ChatAgentCard from '@/features/ai/chatHub/components/ChatAgentCard.vue';

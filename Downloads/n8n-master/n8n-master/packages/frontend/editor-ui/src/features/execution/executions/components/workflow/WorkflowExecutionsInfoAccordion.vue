@@ -1,4 +1,4 @@
-﻿<script setup lang="ts">
+<script setup lang="ts">
 import { computed, ref, watch, onMounted } from 'vue';
 import { useRouter } from 'vue-router';
 import { useSettingsStore } from '@/app/stores/settings.store';
@@ -8,13 +8,13 @@ import { PLACEHOLDER_EMPTY_WORKFLOW_ID, WORKFLOW_SETTINGS_MODAL_KEY } from '@/ap
 import type { IWorkflowSettings } from 'workflow-automation-workflow';
 import { deepCopy } from 'workflow-automation-workflow';
 import { useNpsSurveyStore } from '@/app/stores/npsSurvey.store';
-import { useI18n } from '@n8n/i18n';
+import { useI18n } from '@workflow-automation/i18n';
 import { useWorkflowSaving } from '@/app/composables/useWorkflowSaving';
-import type { IconColor } from '@n8n/design-system';
-import { type IAccordionItem } from '@n8n/design-system/components/N8nInfoAccordion/InfoAccordion.vue';
-import { type IconName } from '@n8n/design-system/components/N8nIcon/icons';
+import type { IconColor } from '@workflow-automation/design-system';
+import { type IAccordionItem } from '@workflow-automation/design-system/components/N8nInfoAccordion/InfoAccordion.vue';
+import { type IconName } from '@workflow-automation/design-system/components/N8nIcon/icons';
 
-import { N8nInfoAccordion, N8nLink, N8nTooltip } from '@n8n/design-system';
+import { N8nInfoAccordion, N8nLink, N8nTooltip } from '@workflow-automation/design-system';
 interface IWorkflowSaveSettings {
 	saveFailedExecutions: boolean;
 	saveSuccessfulExecutions: boolean;

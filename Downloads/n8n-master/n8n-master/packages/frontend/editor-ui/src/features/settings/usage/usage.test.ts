@@ -1,6 +1,6 @@
 import { createPinia, setActivePinia } from 'pinia';
 import { useUsageStore } from '@/features/settings/usage/usage.store';
-import * as usageApi from '@n8n/rest-api-client/api/usage';
+import * as usageApi from '@workflow-automation/rest-api-client/api/usage';
 
 vi.mock('@n8n/rest-api-client/api/usage');
 

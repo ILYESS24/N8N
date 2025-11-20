@@ -1,4 +1,4 @@
-﻿import { ApplicationError } from 'workflow-automation-workflow';
+import { ApplicationError } from 'workflow-automation-workflow';
 
 global.fetch = jest.fn();
 
@@ -6,13 +6,13 @@ class MockSecurityConfig {
 	awsSystemCredentialsAccess = true;
 }
 
-jest.mock('@n8n/di', () => ({
+jest.mock('@workflow-automation/di', () => ({
 	Container: {
 		get: jest.fn(),
 	},
 }));
 
-jest.mock('@n8n/config', () => ({
+jest.mock('@workflow-automation/config', () => ({
 	SecurityConfig: MockSecurityConfig,
 }));
 

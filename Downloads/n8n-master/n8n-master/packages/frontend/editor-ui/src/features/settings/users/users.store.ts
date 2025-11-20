@@ -1,4 +1,4 @@
-﻿import { useAsyncState } from '@vueuse/core';
+import { useAsyncState } from '@vueuse/core';
 import {
 	type LoginRequestDto,
 	type PasswordUpdateRequestDto,
@@ -8,29 +8,29 @@ import {
 	ROLE,
 	type UsersListFilterDto,
 } from '@workflow-automation/api-types';
-import type { UpdateGlobalRolePayload } from '@n8n/rest-api-client/api/users';
-import * as usersApi from '@n8n/rest-api-client/api/users';
+import type { UpdateGlobalRolePayload } from '@workflow-automation/rest-api-client/api/users';
+import * as usersApi from '@workflow-automation/rest-api-client/api/users';
 import { BROWSER_ID_STORAGE_KEY } from '@workflow-automation/constants';
 import { PERSONALIZATION_MODAL_KEY } from './users.constants';
-import { STORES } from '@n8n/stores';
+import { STORES } from '@workflow-automation/stores';
 import type { InvitableRoleName } from './users.types';
-import type { IUserResponse } from '@n8n/rest-api-client/api/users';
+import type { IUserResponse } from '@workflow-automation/rest-api-client/api/users';
 import type {
 	IUser,
 	CurrentUserResponse,
 	IPersonalizationLatestVersion,
-} from '@n8n/rest-api-client/api/users';
+} from '@workflow-automation/rest-api-client/api/users';
 import { getPersonalizedNodeTypes } from './users.utils';
 import { defineStore } from 'pinia';
-import { useRootStore } from '@n8n/stores/useRootStore';
+import { useRootStore } from '@workflow-automation/stores/useRootStore';
 import { useUIStore } from '@/app/stores/ui.store';
-import * as mfaApi from '@n8n/rest-api-client/api/mfa';
-import * as cloudApi from '@n8n/rest-api-client/api/cloudPlans';
+import * as mfaApi from '@workflow-automation/rest-api-client/api/mfa';
+import * as cloudApi from '@workflow-automation/rest-api-client/api/cloudPlans';
 import * as invitationsApi from './invitation.api';
 import { computed, ref } from 'vue';
 import { useSettingsStore } from '@/app/stores/settings.store';
 import * as onboardingApi from '@/app/api/workflow-webhooks';
-import * as promptsApi from '@n8n/rest-api-client/api/prompts';
+import * as promptsApi from '@workflow-automation/rest-api-client/api/prompts';
 
 const _isPendingUser = (user: IUserResponse | null) => !!user?.isPending;
 const _isInstanceOwner = (user: IUserResponse | null) => user?.role === ROLE.Owner;

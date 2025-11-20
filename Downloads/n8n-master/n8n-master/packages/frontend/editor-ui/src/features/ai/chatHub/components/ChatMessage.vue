@@ -1,10 +1,10 @@
-﻿<script setup lang="ts">
+<script setup lang="ts">
 import { useClipboard } from '@/app/composables/useClipboard';
 import ChatAgentAvatar from '@/features/ai/chatHub/components/ChatAgentAvatar.vue';
 import ChatTypingIndicator from '@/features/ai/chatHub/components/ChatTypingIndicator.vue';
 import { useChatHubMarkdownOptions } from '@/features/ai/chatHub/composables/useChatHubMarkdownOptions';
 import type { ChatMessageId } from '@workflow-automation/api-types';
-import { N8nButton, N8nIcon, N8nInput } from '@n8n/design-system';
+import { N8nButton, N8nIcon, N8nInput } from '@workflow-automation/design-system';
 import { useSpeechSynthesis } from '@vueuse/core';
 import type MarkdownIt from 'markdown-it';
 import markdownLink from 'markdown-it-link-attributes';

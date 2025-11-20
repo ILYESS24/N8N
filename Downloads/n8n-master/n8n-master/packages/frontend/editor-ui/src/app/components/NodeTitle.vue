@@ -1,7 +1,7 @@
-﻿<script setup lang="ts">
+<script setup lang="ts">
 import NodeIcon from '@/app/components/NodeIcon.vue';
 import type { NodeIconSource } from '@/app/utils/nodeIcon';
-import { N8nInlineTextEdit } from '@n8n/design-system';
+import { N8nInlineTextEdit } from '@workflow-automation/design-system';
 import { useElementSize } from '@vueuse/core';
 import type { INodeTypeDescription } from 'workflow-automation-workflow';
 import { useTemplateRef } from 'vue';

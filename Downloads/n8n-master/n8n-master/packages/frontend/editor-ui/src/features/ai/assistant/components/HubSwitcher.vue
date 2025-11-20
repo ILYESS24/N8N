@@ -1,8 +1,8 @@
 <script lang="ts" setup>
-import { useI18n } from '@n8n/i18n';
+import { useI18n } from '@workflow-automation/i18n';
 import { computed } from 'vue';
 
-import { N8nRadioButtons } from '@n8n/design-system';
+import { N8nRadioButtons } from '@workflow-automation/design-system';
 defineProps<{
 	isBuildMode: boolean;
 }>();

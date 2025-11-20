@@ -1,17 +1,17 @@
-﻿<script setup lang="ts">
+<script setup lang="ts">
 import { ref, watch, computed } from 'vue';
 import get from 'lodash/get';
 import type { INodeParameters, INodeProperties } from 'workflow-automation-workflow';
 import { deepCopy } from 'workflow-automation-workflow';
 
-import { useI18n } from '@n8n/i18n';
+import { useI18n } from '@workflow-automation/i18n';
 import type { IUpdateInformation } from '@/Interface';
 import CollectionParameter from './CollectionParameter.vue';
 import ParameterInputFull from './ParameterInputFull.vue';
 import { useNDVStore } from '@/features/ndv/shared/ndv.store';
 import { storeToRefs } from 'pinia';
 
-import { N8nButton, N8nIcon, N8nInputLabel, N8nText } from '@n8n/design-system';
+import { N8nButton, N8nIcon, N8nInputLabel, N8nText } from '@workflow-automation/design-system';
 defineOptions({ name: 'MultipleParameter' });
 
 const props = withDefaults(

@@ -1,8 +1,8 @@
-﻿import { defineStore } from 'pinia';
+import { defineStore } from 'pinia';
 import { MCP_STORE } from './mcp.constants';
 import { useWorkflowsStore } from '@/app/stores/workflows.store';
 import type { WorkflowListItem } from '@/Interface';
-import { useRootStore } from '@n8n/stores/useRootStore';
+import { useRootStore } from '@workflow-automation/stores/useRootStore';
 import {
 	updateMcpSettings,
 	toggleWorkflowMcpAccessApi,

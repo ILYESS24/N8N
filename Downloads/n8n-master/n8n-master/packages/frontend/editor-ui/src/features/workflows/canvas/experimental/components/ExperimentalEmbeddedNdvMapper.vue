@@ -1,4 +1,4 @@
-﻿<script setup lang="ts">
+<script setup lang="ts">
 import InputPanel from '@/features/ndv/panel/components/InputPanel.vue';
 import type { INodeUi } from '@/Interface';
 import { useNDVStore } from '@/features/ndv/shared/ndv.store';
@@ -14,7 +14,7 @@ import {
 import { useExperimentalNdvStore } from '../experimentalNdv.store';
 import { isEventTargetContainedBy } from '@/app/utils/htmlUtils';
 
-import { N8nPopoverReka } from '@n8n/design-system';
+import { N8nPopoverReka } from '@workflow-automation/design-system';
 type MapperState = { isOpen: true; closeOnMouseLeave: boolean } | { isOpen: false };
 
 const hoverOptions: UseElementHoverOptions = {

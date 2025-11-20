@@ -1,4 +1,4 @@
-﻿<script lang="ts" setup>
+<script lang="ts" setup>
 import type { INodeUi } from '@/Interface';
 import type { IExecutionResponse } from '@/features/execution/executions/executions.types';
 import Draggable from '@/app/components/Draggable.vue';
@@ -13,7 +13,7 @@ import {
 	type SchemaNode,
 } from '@/app/composables/useDataSchema';
 import { useExternalHooks } from '@/app/composables/useExternalHooks';
-import { useI18n } from '@n8n/i18n';
+import { useI18n } from '@workflow-automation/i18n';
 import { useNodeHelpers } from '@/app/composables/useNodeHelpers';
 import { useTelemetry } from '@/app/composables/useTelemetry';
 import { useNDVStore } from '@/features/ndv/shared/ndv.store';
@@ -50,7 +50,7 @@ import { I18nT } from 'vue-i18n';
 import { useTelemetryContext } from '@/app/composables/useTelemetryContext';
 import NDVEmptyState from '@/features/ndv/panel/components/NDVEmptyState.vue';
 
-import { N8nIcon, N8nText, N8nTooltip } from '@n8n/design-system';
+import { N8nIcon, N8nText, N8nTooltip } from '@workflow-automation/design-system';
 type Props = {
 	nodes?: IConnectedNode[];
 	node?: INodeUi | null;

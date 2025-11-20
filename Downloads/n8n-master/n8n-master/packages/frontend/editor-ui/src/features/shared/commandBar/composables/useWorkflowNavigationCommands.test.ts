@@ -1,4 +1,4 @@
-﻿import { describe, it, expect, vi, beforeEach } from 'vitest';
+import { describe, it, expect, vi, beforeEach } from 'vitest';
 import { ref } from 'vue';
 import { waitFor } from '@testing-library/vue';
 import { useWorkflowNavigationCommands } from './useWorkflowNavigationCommands';
@@ -18,7 +18,7 @@ vi.mock('lodash/debounce', () => ({
 	default: (fn: (...args: unknown[]) => unknown) => fn,
 }));
 
-vi.mock('@n8n/i18n', async (importOriginal) => ({
+vi.mock('@workflow-automation/i18n', async (importOriginal) => ({
 	...(await importOriginal()),
 	useI18n: () => ({
 		baseText: (key: string) => key,
@@ -43,7 +43,7 @@ vi.mock('@/features/shared/nodeCreator/composables/useActionsGeneration', () => 
 	}),
 }));
 
-vi.mock('@n8n/permissions', async (importOriginal) => ({
+vi.mock('@workflow-automation/permissions', async (importOriginal) => ({
 	...(await importOriginal()),
 	getResourcePermissions: vi.fn(() => ({
 		workflow: {

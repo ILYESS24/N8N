@@ -1,6 +1,6 @@
-﻿import type { FrontendSettings, UserUpdateRequestDto } from '@workflow-automation/api-types';
+import type { FrontendSettings, UserUpdateRequestDto } from '@workflow-automation/api-types';
 import { Logger } from '@workflow-automation/backend-common';
-import type { ClientOAuth2Options } from '@n8n/client-oauth2';
+import type { ClientOAuth2Options } from '@workflow-automation/client-oauth2';
 import { GlobalConfig } from '@workflow-automation/config';
 import type { TagEntity, User, ICredentialsDb, PublicUser } from '@workflow-automation/db';
 import {

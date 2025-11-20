@@ -1,5 +1,5 @@
-﻿<script lang="ts" setup="">
-import { useI18n } from '@n8n/i18n';
+<script lang="ts" setup="">
+import { useI18n } from '@workflow-automation/i18n';
 import { INSIGHTS_UNIT_MAPPING } from '@/features/execution/insights/insights.constants';
 import {
 	transformInsightsAverageRunTime,
@@ -7,14 +7,14 @@ import {
 	transformInsightsTimeSaved,
 } from '@/features/execution/insights/insights.utils';
 import type { InsightsByWorkflow } from '@workflow-automation/api-types';
-import type { TableHeader } from '@n8n/design-system/components/N8nDataTableServer';
-import { smartDecimal } from '@n8n/utils/number/smartDecimal';
+import type { TableHeader } from '@workflow-automation/design-system/components/N8nDataTableServer';
+import { smartDecimal } from '@workflow-automation/utils/number/smartDecimal';
 import { useTelemetry } from '@/app/composables/useTelemetry';
 import { VIEWS } from '@/app/constants';
 import { computed, defineAsyncComponent, ref, watch } from 'vue';
 import { type RouteLocationRaw, type LocationQueryRaw, RouterLink } from 'vue-router';
 
-import { N8nDataTableServer, N8nHeading, N8nTooltip } from '@n8n/design-system';
+import { N8nDataTableServer, N8nHeading, N8nTooltip } from '@workflow-automation/design-system';
 const InsightsPaywall = defineAsyncComponent(
 	async () => await import('@/features/execution/insights/components/InsightsPaywall.vue'),
 );

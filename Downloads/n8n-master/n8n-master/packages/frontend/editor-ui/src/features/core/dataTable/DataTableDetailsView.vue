@@ -7,7 +7,7 @@ import type {
 } from '@/features/core/dataTable/dataTable.types';
 import { useDataTableStore } from '@/features/core/dataTable/dataTable.store';
 import { useToast } from '@/app/composables/useToast';
-import { useI18n } from '@n8n/i18n';
+import { useI18n } from '@workflow-automation/i18n';
 import { useRouter } from 'vue-router';
 import { DATA_TABLE_VIEW, MIN_LOADING_TIME } from '@/features/core/dataTable/constants';
 import DataTableBreadcrumbs from '@/features/core/dataTable/components/DataTableBreadcrumbs.vue';
@@ -23,7 +23,7 @@ import {
 	N8nText,
 	N8nIcon,
 	N8nTooltip,
-} from '@n8n/design-system';
+} from '@workflow-automation/design-system';
 
 type Props = {
 	id: string;

@@ -1,4 +1,4 @@
-﻿import { createWorkflow, testDb } from '@n8n/backend-test-utils';
+import { createWorkflow, testDb } from '@n8n/backend-test-utils';
 import type { User } from '@workflow-automation/db';
 import {
 	GLOBAL_MEMBER_ROLE,
@@ -7,7 +7,7 @@ import {
 	TestRunRepository,
 } from '@workflow-automation/db';
 import { Container } from '@workflow-automation/di';
-import { mockInstance } from 'n8n-core/test/utils';
+import { mockInstance } from 'workflow-automation-core/test/utils';
 import type { IWorkflowBase } from 'workflow-automation-workflow';
 
 import { TestRunnerService } from '@/evaluation.ee/test-runner/test-runner.service.ee';

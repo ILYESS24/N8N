@@ -1,9 +1,9 @@
-﻿import { vi, describe, it, expect } from 'vitest';
+import { vi, describe, it, expect } from 'vitest';
 import merge from 'lodash/merge';
 import { createTestingPinia } from '@pinia/testing';
 import userEvent from '@testing-library/user-event';
 import { faker } from '@faker-js/faker';
-import { STORES } from '@n8n/stores';
+import { STORES } from '@workflow-automation/stores';
 import { VIEWS } from '@/app/constants';
 import ExecutionsList from './GlobalExecutionsList.vue';
 import { randomInt, type ExecutionSummary } from 'workflow-automation-workflow';
@@ -27,7 +27,7 @@ vi.mock('vue-router', () => ({
 	RouterLink: vi.fn(),
 }));
 
-vi.mock('@n8n/i18n', async (importOriginal) => ({
+vi.mock('@workflow-automation/i18n', async (importOriginal) => ({
 	...(await importOriginal()),
 	useI18n: () => ({
 		displayTimer: (timer: number) => timer,

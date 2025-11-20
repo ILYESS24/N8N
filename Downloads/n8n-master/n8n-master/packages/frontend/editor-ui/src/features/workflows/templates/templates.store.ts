@@ -11,10 +11,10 @@ import type {
 	ITemplatesWorkflow,
 	ITemplatesWorkflowFull,
 	IWorkflowTemplate,
-} from '@n8n/rest-api-client/api/templates';
-import * as templatesApi from '@n8n/rest-api-client/api/templates';
-import { STORES } from '@n8n/stores';
-import { useRootStore } from '@n8n/stores/useRootStore';
+} from '@workflow-automation/rest-api-client/api/templates';
+import * as templatesApi from '@workflow-automation/rest-api-client/api/templates';
+import { STORES } from '@workflow-automation/stores';
+import { useRootStore } from '@workflow-automation/stores/useRootStore';
 import { defineStore } from 'pinia';
 import { computed, ref } from 'vue';
 import { useSettingsStore } from '@/app/stores/settings.store';

@@ -1,7 +1,7 @@
-﻿import { waitFor } from '@testing-library/vue';
+import { waitFor } from '@testing-library/vue';
 import { createPinia, setActivePinia } from 'pinia';
 import WorkflowCanvas from './WorkflowCanvas.vue';
-import { createEventBus } from '@n8n/utils/event-bus';
+import { createEventBus } from '@workflow-automation/utils/event-bus';
 import type { Workflow } from 'workflow-automation-workflow';
 import { createComponentRenderer } from '@/__tests__/render';
 import { STICKY_NODE_TYPE } from '@/app/constants';

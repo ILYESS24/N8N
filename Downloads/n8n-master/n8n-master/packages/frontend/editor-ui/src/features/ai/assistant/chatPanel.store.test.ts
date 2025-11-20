@@ -1,4 +1,4 @@
-﻿import { describe, it, expect, beforeEach, vi, afterEach } from 'vitest';
+import { describe, it, expect, beforeEach, vi, afterEach } from 'vitest';
 import { setActivePinia } from 'pinia';
 import { createTestingPinia } from '@pinia/testing';
 import {
@@ -17,7 +17,7 @@ import { reactive } from 'vue';
 import { mockedStore } from '@/__tests__/utils';
 import type { ICredentialType } from 'workflow-automation-workflow';
 import type { ChatRequest } from '@/features/ai/assistant/assistant.types';
-import type { ChatUI } from '@n8n/design-system/types/assistant';
+import type { ChatUI } from '@workflow-automation/design-system/types/assistant';
 
 // Mock vue-router
 const mockRoute = reactive({ name: VIEWS.WORKFLOW });

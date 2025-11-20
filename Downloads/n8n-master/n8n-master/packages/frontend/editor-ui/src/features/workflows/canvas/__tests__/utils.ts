@@ -1,4 +1,4 @@
-﻿import { CanvasKey, CanvasNodeHandleKey, CanvasNodeKey } from '@/app/constants';
+import { CanvasKey, CanvasNodeHandleKey, CanvasNodeKey } from '@/app/constants';
 import { computed, ref } from 'vue';
 import type {
 	CanvasInjectionData,
@@ -17,8 +17,8 @@ import {
 import type { NodeConnectionType } from 'workflow-automation-workflow';
 import { NodeConnectionTypes } from 'workflow-automation-workflow';
 import type { GraphEdge, GraphNode, ViewportTransform } from '@vue-flow/core';
-import type { EventBus } from '@n8n/utils/event-bus';
-import { createEventBus } from '@n8n/utils/event-bus';
+import type { EventBus } from '@workflow-automation/utils/event-bus';
+import { createEventBus } from '@workflow-automation/utils/event-bus';
 
 export function createCanvasNodeData({
 	id = 'node',

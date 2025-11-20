@@ -1,9 +1,9 @@
-﻿<script lang="ts" setup="">
+<script lang="ts" setup="">
 import type { ExecutionStatus } from 'workflow-automation-workflow';
-import { useI18n } from '@n8n/i18n';
+import { useI18n } from '@workflow-automation/i18n';
 import { I18nT } from 'vue-i18n';
 
-import { N8nLink, N8nTooltip } from '@n8n/design-system';
+import { N8nLink, N8nTooltip } from '@workflow-automation/design-system';
 const props = defineProps<{
 	status: ExecutionStatus;
 	concurrencyCap: number;

@@ -1,5 +1,5 @@
-﻿import type { IRestApiContext } from '@n8n/rest-api-client';
-import { makeRestApiRequest, request } from '@n8n/rest-api-client';
+import type { IRestApiContext } from '@workflow-automation/rest-api-client';
+import { makeRestApiRequest, request } from '@workflow-automation/rest-api-client';
 import type { JsonObject } from 'workflow-automation-workflow';
 
 export interface TestRunRecord {

@@ -1,10 +1,10 @@
-﻿import { defineStore } from 'pinia';
+import { defineStore } from 'pinia';
 import { computed, ref, watch } from 'vue';
 import type { PushMessage } from '@workflow-automation/api-types';
 
-import { STORES } from '@n8n/stores';
+import { STORES } from '@workflow-automation/stores';
 import { useSettingsStore } from './settings.store';
-import { useRootStore } from '@n8n/stores/useRootStore';
+import { useRootStore } from '@workflow-automation/stores/useRootStore';
 import { useWebSocketClient } from '@/app/push-connection/useWebSocketClient';
 import { useEventSourceClient } from '@/app/push-connection/useEventSourceClient';
 import { useLocalStorage } from '@vueuse/core';

@@ -7,15 +7,15 @@ import {
 	N8nText,
 	N8nTooltip,
 	N8nLoading,
-} from '@n8n/design-system';
+} from '@workflow-automation/design-system';
 import { VIEWS } from '@/app/constants';
-import * as breakingChangesApi from '@n8n/rest-api-client/api/breaking-changes';
-import { useRootStore } from '@n8n/stores/useRootStore';
+import * as breakingChangesApi from '@workflow-automation/rest-api-client/api/breaking-changes';
+import { useRootStore } from '@workflow-automation/stores/useRootStore';
 import { useAsyncState } from '@vueuse/core';
 import { computed, ref, useCssModule } from 'vue';
 import SeverityTag from './components/SeverityTag.vue';
 import EmptyTab from './components/EmptyTab.vue';
-import { useI18n } from '@n8n/i18n';
+import { useI18n } from '@workflow-automation/i18n';
 
 const $style = useCssModule();
 const rootStore = useRootStore();

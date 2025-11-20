@@ -1,10 +1,10 @@
 <script lang="ts" setup>
 import { computed } from 'vue';
-import { useI18n } from '@n8n/i18n';
+import { useI18n } from '@workflow-automation/i18n';
 import { useToast } from '@/app/composables/useToast';
 import { useClipboard } from '@/app/composables/useClipboard';
 
-import { N8nTooltip } from '@n8n/design-system';
+import { N8nTooltip } from '@workflow-automation/design-system';
 const i18n = useI18n();
 const clipboard = useClipboard();
 const { showMessage } = useToast();

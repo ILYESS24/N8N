@@ -1,4 +1,4 @@
-﻿import userEvent from '@testing-library/user-event';
+import userEvent from '@testing-library/user-event';
 import { createTestingPinia } from '@pinia/testing';
 import { waitFor, screen, within } from '@testing-library/vue';
 import { faker } from '@faker-js/faker';
@@ -28,7 +28,7 @@ import { useWorkflowsStore } from '@/app/stores/workflows.store';
 import { useFoldersStore } from '../folders.store';
 import { useProjectsStore } from '@/features/collaboration/projects/projects.store';
 import MoveToFolderModal from './MoveToFolderModal.vue';
-import type { EventBus } from '@n8n/utils/event-bus';
+import type { EventBus } from '@workflow-automation/utils/event-bus';
 
 vi.mock('vue-router', () => {
 	const push = vi.fn();

@@ -1,4 +1,4 @@
-﻿<script setup lang="ts">
+<script setup lang="ts">
 import { computed, onMounted } from 'vue';
 import { useRoute } from 'vue-router';
 import type { IExecutionUIData } from '../../composables/useExecutionHelpers';
@@ -7,7 +7,7 @@ import ExecutionsTime from '../ExecutionsTime.vue';
 import { useExecutionHelpers } from '../../composables/useExecutionHelpers';
 import type { ExecutionSummary } from 'workflow-automation-workflow';
 import { useWorkflowsStore } from '@/app/stores/workflows.store';
-import { useI18n } from '@n8n/i18n';
+import { useI18n } from '@workflow-automation/i18n';
 import type { PermissionsRecord } from '@workflow-automation/permissions';
 import { useSettingsStore } from '@/app/stores/settings.store';
 import { toDayMonth, toTime } from '@/app/utils/formatters/dateFormatter';
@@ -19,7 +19,7 @@ import {
 	N8nTags,
 	N8nText,
 	N8nTooltip,
-} from '@n8n/design-system';
+} from '@workflow-automation/design-system';
 const props = defineProps<{
 	execution: ExecutionSummary;
 	highlight?: boolean;

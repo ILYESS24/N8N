@@ -1,10 +1,10 @@
-﻿<script lang="ts" setup>
+<script lang="ts" setup>
 import { ref } from 'vue';
-import { useI18n } from '@n8n/i18n';
+import { useI18n } from '@workflow-automation/i18n';
 import type { ApiKey } from '@workflow-automation/api-types';
 import { DateTime } from 'luxon';
 
-import { N8nActionToggle, N8nCard, N8nText } from '@n8n/design-system';
+import { N8nActionToggle, N8nCard, N8nText } from '@workflow-automation/design-system';
 const API_KEY_ITEM_ACTIONS = {
 	EDIT: 'edit',
 	DELETE: 'delete',

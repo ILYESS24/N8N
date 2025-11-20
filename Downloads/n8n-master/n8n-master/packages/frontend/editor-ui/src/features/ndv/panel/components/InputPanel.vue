@@ -1,5 +1,5 @@
-﻿<script setup lang="ts">
-import { useI18n } from '@n8n/i18n';
+<script setup lang="ts">
+import { useI18n } from '@workflow-automation/i18n';
 import { useTelemetry } from '@/app/composables/useTelemetry';
 import {
 	CRON_NODE_TYPE,
@@ -33,7 +33,7 @@ import { type SearchShortcut } from '@/features/workflows/canvas/canvas.types';
 import { useRouter } from 'vue-router';
 import { useRunWorkflow } from '@/app/composables/useRunWorkflow';
 
-import { N8nIcon, N8nRadioButtons, N8nText, N8nTooltip } from '@n8n/design-system';
+import { N8nIcon, N8nRadioButtons, N8nText, N8nTooltip } from '@workflow-automation/design-system';
 import { injectWorkflowState } from '@/app/composables/useWorkflowState';
 type MappingMode = 'debugging' | 'mapping';
 

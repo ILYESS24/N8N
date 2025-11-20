@@ -1,5 +1,5 @@
-﻿import { VALID_EMAIL_REGEX } from '@/app/constants';
-import { i18n } from '@n8n/i18n';
+import { VALID_EMAIL_REGEX } from '@/app/constants';
+import { i18n } from '@workflow-automation/i18n';
 import { useEnvironmentsStore } from '@/features/settings/environments.ee/environments.store';
 import { useExternalSecretsStore } from '@/features/integrations/externalSecrets.ee/externalSecrets.ee.store';
 

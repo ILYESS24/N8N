@@ -1,4 +1,4 @@
-﻿import { defineStore } from 'pinia';
+import { defineStore } from 'pinia';
 import {
 	AI_NODE_CREATOR_VIEW,
 	AI_OTHERS_NODE_CREATOR_VIEW,
@@ -8,7 +8,7 @@ import {
 	REGULAR_NODE_CREATOR_VIEW,
 	TRIGGER_NODE_CREATOR_VIEW,
 } from '@/app/constants';
-import { STORES } from '@n8n/stores';
+import { STORES } from '@workflow-automation/stores';
 import type {
 	NodeFilterType,
 	NodeCreatorOpenSource,

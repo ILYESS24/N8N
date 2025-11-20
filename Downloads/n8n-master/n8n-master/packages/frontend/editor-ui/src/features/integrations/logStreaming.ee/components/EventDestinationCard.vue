@@ -1,17 +1,17 @@
-﻿<script lang="ts" setup>
+<script lang="ts" setup>
 import { computed, onBeforeMount, onMounted, ref } from 'vue';
 import { MODAL_CONFIRM } from '@/app/constants';
 import { useMessage } from '@/app/composables/useMessage';
 import { useLogStreamingStore } from '../logStreaming.store';
 import type { MessageEventBusDestinationOptions } from 'workflow-automation-workflow';
 import { deepCopy, defaultMessageEventBusDestinationOptions } from 'workflow-automation-workflow';
-import type { BaseTextKey } from '@n8n/i18n';
-import type { EventBus } from '@n8n/utils/event-bus';
-import { useI18n } from '@n8n/i18n';
-import { assert } from '@n8n/utils/assert';
+import type { BaseTextKey } from '@workflow-automation/i18n';
+import type { EventBus } from '@workflow-automation/utils/event-bus';
+import { useI18n } from '@workflow-automation/i18n';
+import { assert } from '@workflow-automation/utils/assert';
 
 import { ElSwitch } from 'element-plus';
-import { N8nActionToggle, N8nCard, N8nHeading, N8nText } from '@n8n/design-system';
+import { N8nActionToggle, N8nCard, N8nHeading, N8nText } from '@workflow-automation/design-system';
 
 const DESTINATION_LIST_ITEM_ACTIONS = {
 	OPEN: 'open',

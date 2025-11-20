@@ -1,4 +1,4 @@
-import type { ChatOptions } from '@n8n/chat/types';
+import type { ChatOptions } from '@workflow-automation/chat/types';
 
 export const defaultOptions: ChatOptions = {
 	webhookUrl: 'http://localhost:5678',

@@ -1,4 +1,4 @@
-﻿import { describe, it, expect, beforeEach, vi } from 'vitest';
+import { describe, it, expect, beforeEach, vi } from 'vitest';
 import { createTestingPinia } from '@pinia/testing';
 import { setActivePinia } from 'pinia';
 import { NodeHelpers } from 'workflow-automation-workflow';
@@ -8,7 +8,7 @@ import { getParameterDisplayableOptions } from './nodeTransforms';
 import type { INodeUi } from '@/Interface';
 import { useNodeTypesStore } from '@/app/stores/nodeTypes.store';
 
-vi.mock('n8n-workflow', () => ({
+vi.mock('workflow-automation-workflow', () => ({
 	NodeHelpers: {
 		displayParameter: vi.fn(),
 		getNodeParameters: vi.fn(),

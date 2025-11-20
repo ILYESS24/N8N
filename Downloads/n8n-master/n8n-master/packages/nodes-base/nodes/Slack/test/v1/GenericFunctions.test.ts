@@ -1,9 +1,9 @@
-﻿import type { IExecuteFunctions } from 'workflow-automation-workflow';
+import type { IExecuteFunctions } from 'workflow-automation-workflow';
 
 import { slackApiRequest, slackApiRequestAllItems, validateJSON } from '../../V1/GenericFunctions';
 
-jest.mock('n8n-workflow', () => ({
-	...jest.requireActual('n8n-workflow'),
+jest.mock('workflow-automation-workflow', () => ({
+	...jest.requireActual('workflow-automation-workflow'),
 	NodeApiError: jest.fn(),
 }));
 

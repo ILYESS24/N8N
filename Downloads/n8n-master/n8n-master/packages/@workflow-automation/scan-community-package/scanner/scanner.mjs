@@ -114,7 +114,7 @@ const downloadAndExtractPackage = async (packageName, version) => {
 };
 
 const analyzePackage = async (packageDir) => {
-	const { n8nCommunityNodesPlugin } = await import('@n8n/eslint-plugin-community-nodes');
+	const { n8nCommunityNodesPlugin } = await import('@workflow-automation/eslint-plugin-community-nodes');
 	const eslint = new ESLint({
 		cwd: packageDir,
 		allowInlineConfig: false,

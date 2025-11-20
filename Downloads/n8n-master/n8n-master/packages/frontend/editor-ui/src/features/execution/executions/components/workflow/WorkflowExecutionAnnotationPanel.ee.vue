@@ -1,13 +1,13 @@
-﻿<script setup lang="ts">
+<script setup lang="ts">
 import { computed, ref } from 'vue';
 import type { ExecutionSummary } from 'workflow-automation-workflow';
-import { useI18n } from '@n8n/i18n';
+import { useI18n } from '@workflow-automation/i18n';
 import { getResourcePermissions } from '@workflow-automation/permissions';
 import { useWorkflowsStore } from '@/app/stores/workflows.store';
 import { useRoute } from 'vue-router';
 
 import { ElDropdown } from 'element-plus';
-import { N8nBadge, N8nButton, N8nHeading, N8nText } from '@n8n/design-system';
+import { N8nBadge, N8nButton, N8nHeading, N8nText } from '@workflow-automation/design-system';
 const props = defineProps<{
 	execution: ExecutionSummary & {
 		customData?: Record<string, string>;

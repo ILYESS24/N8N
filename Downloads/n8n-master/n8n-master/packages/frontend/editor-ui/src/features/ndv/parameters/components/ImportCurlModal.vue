@@ -3,12 +3,12 @@ import Modal from '@/app/components/Modal.vue';
 import { IMPORT_CURL_MODAL_KEY } from '@/app/constants';
 import { onMounted, ref } from 'vue';
 import { useUIStore } from '@/app/stores/ui.store';
-import { createEventBus } from '@n8n/utils/event-bus';
+import { createEventBus } from '@workflow-automation/utils/event-bus';
 import { useTelemetry } from '@/app/composables/useTelemetry';
-import { useI18n } from '@n8n/i18n';
+import { useI18n } from '@workflow-automation/i18n';
 import { useNDVStore } from '@/features/ndv/shared/ndv.store';
 
-import { N8nButton, N8nInput, N8nInputLabel, N8nNotice } from '@n8n/design-system';
+import { N8nButton, N8nInput, N8nInputLabel, N8nNotice } from '@workflow-automation/design-system';
 const telemetry = useTelemetry();
 const i18n = useI18n();
 

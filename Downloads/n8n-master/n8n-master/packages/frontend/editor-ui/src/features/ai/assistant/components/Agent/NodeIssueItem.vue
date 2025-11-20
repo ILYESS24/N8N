@@ -1,4 +1,4 @@
-﻿<script setup lang="ts">
+<script setup lang="ts">
 import type { INodeTypeDescription } from 'workflow-automation-workflow';
 // Types for node issues
 interface WorkflowNodeIssue {
@@ -8,7 +8,7 @@ interface WorkflowNodeIssue {
 }
 import { useNDVStore } from '@/features/ndv/shared/ndv.store';
 import NodeIcon from '@/app/components/NodeIcon.vue';
-import { N8nIcon } from '@n8n/design-system';
+import { N8nIcon } from '@workflow-automation/design-system';
 
 interface Props {
 	/** The node issue to display */

@@ -1,6 +1,6 @@
-﻿import { useRootStore } from '@n8n/stores/useRootStore';
+import { useRootStore } from '@workflow-automation/stores/useRootStore';
 import { useSettingsStore } from '@/app/stores/settings.store';
-import { useDeviceSupport } from '@n8n/composables/useDeviceSupport';
+import { useDeviceSupport } from '@workflow-automation/composables/useDeviceSupport';
 import type { WorkflowSettings } from 'workflow-automation-workflow';
 
 type DebugInfo = {

@@ -1,11 +1,11 @@
-﻿<script setup lang="ts">
+<script setup lang="ts">
 import { ref, computed, watch, onMounted } from 'vue';
-import { N8nButton, N8nHeading, N8nIcon, N8nOption, N8nSelect, N8nText } from '@n8n/design-system';
+import { N8nButton, N8nHeading, N8nIcon, N8nOption, N8nSelect, N8nText } from '@workflow-automation/design-system';
 import Modal from '@/app/components/Modal.vue';
 import NodeIcon from '@/app/components/NodeIcon.vue';
 import { useCredentialsStore } from '@/features/credentials/credentials.store';
 import type { ICredentialsResponse } from '@/features/credentials/credentials.types';
-import { createEventBus } from '@n8n/utils/event-bus';
+import { createEventBus } from '@workflow-automation/utils/event-bus';
 import { type ChatHubAgentTool } from '@workflow-automation/api-types';
 import {
 	type INode,
@@ -17,7 +17,7 @@ import { AVAILABLE_TOOLS, type ChatHubToolProvider } from '../composables/availa
 import { ElSwitch } from 'element-plus';
 import { useUIStore } from '@/app/stores/ui.store';
 import { useNodeTypesStore } from '@/app/stores/nodeTypes.store';
-import { useI18n } from '@n8n/i18n';
+import { useI18n } from '@workflow-automation/i18n';
 
 const props = defineProps<{
 	modalName: string;

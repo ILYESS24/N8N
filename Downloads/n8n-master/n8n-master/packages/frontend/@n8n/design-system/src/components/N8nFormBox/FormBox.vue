@@ -4,7 +4,7 @@ import type {
 	IFormInput,
 	FormFieldValueUpdate,
 	FormValues,
-} from '@n8n/design-system/types';
+} from '@workflow-automation/design-system/types';
 
 import { createFormEventBus } from '../../utils';
 import N8nButton from '../N8nButton';

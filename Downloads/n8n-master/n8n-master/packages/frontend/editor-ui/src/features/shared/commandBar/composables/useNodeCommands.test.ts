@@ -1,4 +1,4 @@
-﻿import { ref } from 'vue';
+import { ref } from 'vue';
 import { describe, it, expect, vi, beforeEach } from 'vitest';
 import { useNodeCommands } from './useNodeCommands';
 import { useNodeTypesStore } from '@/app/stores/nodeTypes.store';
@@ -44,11 +44,11 @@ vi.mock('@/features/shared/nodeCreator/composables/useActionsGeneration', () => 
 	}),
 }));
 
-vi.mock('@n8n/permissions', () => ({
+vi.mock('@workflow-automation/permissions', () => ({
 	getResourcePermissions: vi.fn(),
 }));
 
-vi.mock('@n8n/i18n', async (importOriginal) => ({
+vi.mock('@workflow-automation/i18n', async (importOriginal) => ({
 	...(await importOriginal()),
 	useI18n: () => ({
 		baseText: (key: string) => key,

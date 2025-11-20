@@ -1,4 +1,4 @@
-﻿<script lang="ts" setup>
+<script lang="ts" setup>
 import { useStorage } from '@/app/composables/useStorage';
 
 import type { INodeTypeDescription } from 'workflow-automation-workflow';
@@ -14,7 +14,7 @@ import { ref, onMounted, onBeforeUnmount, computed, watch, nextTick } from 'vue'
 import { useUIStore } from '@/app/stores/ui.store';
 import { useThrottleFn } from '@vueuse/core';
 
-import { N8nResizeWrapper } from '@n8n/design-system';
+import { N8nResizeWrapper } from '@workflow-automation/design-system';
 const SIDE_MARGIN = 24;
 const SIDE_PANELS_MARGIN = 80;
 const MIN_PANEL_WIDTH = 310;

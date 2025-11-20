@@ -1,16 +1,16 @@
-﻿import type { IVersionNotificationSettings } from '@workflow-automation/api-types';
-import * as versionsApi from '@n8n/rest-api-client/api/versions';
+import type { IVersionNotificationSettings } from '@workflow-automation/api-types';
+import * as versionsApi from '@workflow-automation/rest-api-client/api/versions';
 import {
 	LOCAL_STORAGE_DISMISSED_WHATS_NEW_CALLOUT,
 	LOCAL_STORAGE_READ_WHATS_NEW_ARTICLES,
 	VERSIONS_MODAL_KEY,
 	WHATS_NEW_MODAL_KEY,
 } from '@/app/constants';
-import { STORES } from '@n8n/stores';
-import type { Version, WhatsNewSection } from '@n8n/rest-api-client/api/versions';
+import { STORES } from '@workflow-automation/stores';
+import type { Version, WhatsNewSection } from '@workflow-automation/rest-api-client/api/versions';
 import { defineStore } from 'pinia';
 import type { NotificationHandle } from 'element-plus';
-import { useRootStore } from '@n8n/stores/useRootStore';
+import { useRootStore } from '@workflow-automation/stores/useRootStore';
 import { useToast } from '@/app/composables/useToast';
 import { useUIStore } from '@/app/stores/ui.store';
 import { computed, ref } from 'vue';

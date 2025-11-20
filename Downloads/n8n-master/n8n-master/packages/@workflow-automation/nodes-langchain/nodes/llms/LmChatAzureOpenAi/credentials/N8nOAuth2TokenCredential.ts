@@ -1,6 +1,6 @@
-﻿import type { TokenCredential, AccessToken } from '@azure/identity';
-import type { ClientOAuth2TokenData } from '@n8n/client-oauth2';
-import { ClientOAuth2 } from '@n8n/client-oauth2';
+import type { TokenCredential, AccessToken } from '@azure/identity';
+import type { ClientOAuth2TokenData } from '@workflow-automation/client-oauth2';
+import { ClientOAuth2 } from '@workflow-automation/client-oauth2';
 import type { INode } from 'workflow-automation-workflow';
 import { NodeOperationError } from 'workflow-automation-workflow';
 

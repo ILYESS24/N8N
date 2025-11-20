@@ -1,4 +1,4 @@
-﻿<script setup lang="ts">
+<script setup lang="ts">
 import { useMessage } from '@/app/composables/useMessage';
 import { useTelemetry } from '@/app/composables/useTelemetry';
 import { useToast } from '@/app/composables/useToast';
@@ -11,8 +11,8 @@ import {
 	N8nLoading,
 	N8nText,
 	N8nTooltip,
-} from '@n8n/design-system';
-import { useI18n } from '@n8n/i18n';
+} from '@workflow-automation/design-system';
+import { useI18n } from '@workflow-automation/i18n';
 import type { Role } from '@workflow-automation/permissions';
 import { useAsyncState } from '@vueuse/core';
 import isEqual from 'lodash/isEqual';

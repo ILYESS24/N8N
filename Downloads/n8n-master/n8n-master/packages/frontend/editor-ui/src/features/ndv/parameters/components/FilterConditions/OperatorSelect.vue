@@ -1,12 +1,12 @@
-﻿<script setup lang="ts">
-import { useI18n } from '@n8n/i18n';
+<script setup lang="ts">
+import { useI18n } from '@workflow-automation/i18n';
 import { computed, ref, watch } from 'vue';
 import { OPERATOR_GROUPS } from './constants';
 import type { FilterOperator } from './types';
 import { getFilterOperator } from './utils';
 import type { FilterOperatorType } from 'workflow-automation-workflow';
 
-import { N8nIcon, N8nOption, N8nPopover, N8nSelect } from '@n8n/design-system';
+import { N8nIcon, N8nOption, N8nPopover, N8nSelect } from '@workflow-automation/design-system';
 interface Props {
 	selected: string;
 	suggestedType?: FilterOperatorType;

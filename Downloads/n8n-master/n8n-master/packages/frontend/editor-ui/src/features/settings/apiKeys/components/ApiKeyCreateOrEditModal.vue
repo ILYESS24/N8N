@@ -1,4 +1,4 @@
-﻿<script lang="ts" setup>
+<script lang="ts" setup>
 import ApiKeyScopes from './ApiKeyScopes.vue';
 import CopyInput from '@/app/components/CopyInput.vue';
 import Modal from '@/app/components/Modal.vue';
@@ -6,13 +6,13 @@ import { EnterpriseEditionFeature } from '@/app/constants';
 import { API_KEY_CREATE_OR_EDIT_MODAL_KEY } from '../apiKeys.constants';
 import { computed, onMounted, ref } from 'vue';
 import { useUIStore } from '@/app/stores/ui.store';
-import { createEventBus } from '@n8n/utils/event-bus';
-import { useI18n } from '@n8n/i18n';
-import { useRootStore } from '@n8n/stores/useRootStore';
+import { createEventBus } from '@workflow-automation/utils/event-bus';
+import { useI18n } from '@workflow-automation/i18n';
+import { useRootStore } from '@workflow-automation/stores/useRootStore';
 import { useDocumentTitle } from '@/app/composables/useDocumentTitle';
 import { useApiKeysStore } from '../apiKeys.store';
 import { useToast } from '@/app/composables/useToast';
-import type { BaseTextKey } from '@n8n/i18n';
+import type { BaseTextKey } from '@workflow-automation/i18n';
 import { DateTime } from 'luxon';
 import type { ApiKey, ApiKeyWithRawValue, CreateApiKeyRequestDto } from '@workflow-automation/api-types';
 import type { ApiKeyScope } from '@workflow-automation/permissions';
@@ -27,7 +27,7 @@ import {
 	N8nOption,
 	N8nSelect,
 	N8nText,
-} from '@n8n/design-system';
+} from '@workflow-automation/design-system';
 const EXPIRATION_OPTIONS = {
 	'7_DAYS': 7,
 	'30_DAYS': 30,

@@ -1,4 +1,4 @@
-﻿import type { MessageEventBusDestinationOptions } from 'workflow-automation-workflow';
+import type { MessageEventBusDestinationOptions } from 'workflow-automation-workflow';
 import { defineStore } from 'pinia';
 import {
 	deleteDestinationFromDb,
@@ -7,8 +7,8 @@ import {
 	hasDestinationId,
 	saveDestinationToDb,
 	sendTestMessageToDestination,
-} from '@n8n/rest-api-client/api/eventbus.ee';
-import { useRootStore } from '@n8n/stores/useRootStore';
+} from '@workflow-automation/rest-api-client/api/eventbus.ee';
+import { useRootStore } from '@workflow-automation/stores/useRootStore';
 import { ref } from 'vue';
 
 export interface EventSelectionItem {

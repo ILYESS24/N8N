@@ -3,7 +3,7 @@ import { CHAT_VIEW, MOBILE_MEDIA_QUERY } from '@/features/ai/chatHub/constants';
 import { useMediaQuery, useEventListener } from '@vueuse/core';
 import { useRouter } from 'vue-router';
 import { useUIStore } from '@/app/stores/ui.store';
-import { useDeviceSupport } from '@n8n/composables/useDeviceSupport';
+import { useDeviceSupport } from '@workflow-automation/composables/useDeviceSupport';
 
 const isMobileDevice = useMediaQuery(MOBILE_MEDIA_QUERY);
 const router = useRouter();

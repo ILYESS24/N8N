@@ -1,10 +1,10 @@
-﻿<script setup lang="ts">
+<script setup lang="ts">
 import { useResolvedExpression } from '@/app/composables/useResolvedExpression';
 import { BINARY_DATA_ACCESS_TOOLTIP } from '@/app/constants';
 import { useNDVStore } from '@/features/ndv/shared/ndv.store';
 import useEnvironmentsStore from '@/features/settings/environments.ee/environments.store';
 import type { IUpdateInformation } from '@/Interface';
-import { useI18n } from '@n8n/i18n';
+import { useI18n } from '@workflow-automation/i18n';
 import type { AssignmentValue, INodeProperties } from 'workflow-automation-workflow';
 import { computed, ref } from 'vue';
 import InputTriple from '../InputTriple/InputTriple.vue';
@@ -15,7 +15,7 @@ import TypeSelect from './TypeSelect.vue';
 
 import { removeExpressionPrefix } from '@/app/utils/expressions';
 import { propertyNameFromExpression } from '@/app/utils/mappingUtils';
-import { N8nIconButton, N8nTooltip } from '@n8n/design-system';
+import { N8nIconButton, N8nTooltip } from '@workflow-automation/design-system';
 import { typeFromExpression } from '../../utils/assignmentCollection.utils';
 
 interface Props {

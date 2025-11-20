@@ -1,5 +1,5 @@
-﻿import { useToast } from '@/app/composables/useToast';
-import { useI18n } from '@n8n/i18n';
+import { useToast } from '@/app/composables/useToast';
+import { useI18n } from '@workflow-automation/i18n';
 import type { INodeExecutionData, IPinData, Workflow } from 'workflow-automation-workflow';
 import { jsonParse, jsonStringify, NodeConnectionTypes, NodeHelpers } from 'workflow-automation-workflow';
 import {
@@ -15,7 +15,7 @@ import { useExternalHooks } from '@/app/composables/useExternalHooks';
 import { useTelemetry } from '@/app/composables/useTelemetry';
 import type { MaybeRef } from 'vue';
 import { computed, unref } from 'vue';
-import { useRootStore } from '@n8n/stores/useRootStore';
+import { useRootStore } from '@workflow-automation/stores/useRootStore';
 import { useNodeType } from '@/app/composables/useNodeType';
 import { useDataSchema } from './useDataSchema';
 import { useNodeTypesStore } from '@/app/stores/nodeTypes.store';

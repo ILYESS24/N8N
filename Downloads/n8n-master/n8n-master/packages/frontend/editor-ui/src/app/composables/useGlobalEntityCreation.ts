@@ -1,8 +1,8 @@
-﻿import { computed, ref } from 'vue';
+import { computed, ref } from 'vue';
 import { VIEWS } from '@/app/constants';
 import { useRouter } from 'vue-router';
-import { useI18n } from '@n8n/i18n';
-import { sortByProperty } from '@n8n/utils/sort/sortByProperty';
+import { useI18n } from '@workflow-automation/i18n';
+import { sortByProperty } from '@workflow-automation/utils/sort/sortByProperty';
 import { useToast } from '@/app/composables/useToast';
 import { useProjectsStore } from '@/features/collaboration/projects/projects.store';
 import { useSettingsStore } from '@/app/stores/settings.store';
@@ -12,7 +12,7 @@ import { getResourcePermissions } from '@workflow-automation/permissions';
 import { usePageRedirectionHelper } from '@/app/composables/usePageRedirectionHelper';
 import type { Scope } from '@workflow-automation/permissions';
 import type { RouteLocationRaw } from 'vue-router';
-import { updatedIconSet, type IconName } from '@n8n/design-system/components/N8nIcon/icons';
+import { updatedIconSet, type IconName } from '@workflow-automation/design-system/components/N8nIcon/icons';
 
 type ProjectIcon = IconName | { type: 'icon'; value: IconName } | { type: 'emoji'; value: string };
 

@@ -1,5 +1,5 @@
-﻿import { makeRestApiRequest, streamRequest } from '@n8n/rest-api-client';
-import type { IRestApiContext } from '@n8n/rest-api-client';
+import { makeRestApiRequest, streamRequest } from '@workflow-automation/rest-api-client';
+import type { IRestApiContext } from '@workflow-automation/rest-api-client';
 import type {
 	ChatHubSendMessageRequest,
 	ChatModelsRequest,

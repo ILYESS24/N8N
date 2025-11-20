@@ -1,4 +1,4 @@
-﻿import type { ModuleInterface } from '@workflow-automation/decorators';
+import type { ModuleInterface } from '@workflow-automation/decorators';
 import { BackendModule, OnShutdown } from '@workflow-automation/decorators';
 import { Container } from '@workflow-automation/di';
 
@@ -8,7 +8,7 @@ export class ExternalSecretsModule implements ModuleInterface {
 		await import('./external-secrets.controller.ee');
 
 		const { ExternalSecretsManager } = await import('./external-secrets-manager.ee');
-		const { ExternalSecretsProxy } = await import('n8n-core');
+		const { ExternalSecretsProxy } = await import('workflow-automation-core');
 
 		const externalSecretsManager = Container.get(ExternalSecretsManager);
 		const externalSecretsProxy = Container.get(ExternalSecretsProxy);

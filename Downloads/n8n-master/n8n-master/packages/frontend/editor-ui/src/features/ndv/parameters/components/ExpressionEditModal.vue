@@ -1,4 +1,4 @@
-﻿<script setup lang="ts">
+<script setup lang="ts">
 import ExpressionEditorModalInput from './ExpressionEditorModal/ExpressionEditorModalInput.vue';
 import { computed, ref, toRaw, watch } from 'vue';
 import Close from 'virtual:icons/mdi/close';
@@ -16,7 +16,7 @@ import { outputTheme } from './ExpressionEditorModal/theme';
 import ExpressionOutput from '@/features/shared/editors/components/InlineExpressionEditor/ExpressionOutput.vue';
 import VirtualSchema from '@/features/ndv/runData/components/VirtualSchema.vue';
 import OutputItemSelect from '@/features/shared/editors/components/InlineExpressionEditor/OutputItemSelect.vue';
-import { useI18n } from '@n8n/i18n';
+import { useI18n } from '@workflow-automation/i18n';
 import { useDebounce } from '@/app/composables/useDebounce';
 import DraggableTarget from '@/app/components/DraggableTarget.vue';
 import { dropInExpressionEditor } from '@/features/shared/editors/plugins/codemirror/dragAndDrop';
@@ -32,7 +32,7 @@ import {
 	N8nResizeWrapper,
 	N8nText,
 	type ResizeData,
-} from '@n8n/design-system';
+} from '@workflow-automation/design-system';
 const DEFAULT_LEFT_SIDEBAR_WIDTH = 360;
 
 type Props = {

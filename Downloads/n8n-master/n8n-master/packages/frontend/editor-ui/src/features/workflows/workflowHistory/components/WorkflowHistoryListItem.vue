@@ -1,16 +1,16 @@
-﻿<script setup lang="ts">
+<script setup lang="ts">
 import { computed, ref, onMounted } from 'vue';
 import dateformat from 'dateformat';
-import type { UserAction } from '@n8n/design-system';
+import type { UserAction } from '@workflow-automation/design-system';
 import type {
 	WorkflowHistory,
 	WorkflowVersionId,
 	WorkflowHistoryActionTypes,
-} from '@n8n/rest-api-client/api/workflowHistory';
-import { useI18n } from '@n8n/i18n';
+} from '@workflow-automation/rest-api-client/api/workflowHistory';
+import { useI18n } from '@workflow-automation/i18n';
 import type { IUser } from 'workflow-automation-workflow';
 
-import { N8nActionToggle, N8nBadge, N8nTooltip } from '@n8n/design-system';
+import { N8nActionToggle, N8nBadge, N8nTooltip } from '@workflow-automation/design-system';
 const props = defineProps<{
 	item: WorkflowHistory;
 	index: number;

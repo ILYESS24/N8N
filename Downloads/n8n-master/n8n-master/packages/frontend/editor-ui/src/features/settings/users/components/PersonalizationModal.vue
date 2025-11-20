@@ -1,4 +1,4 @@
-﻿<script lang="ts" setup>
+<script lang="ts" setup>
 import { computed, ref } from 'vue';
 import { VIEWS } from '@/app/constants';
 import {
@@ -84,19 +84,19 @@ import { COMMUNITY_PLUS_ENROLLMENT_MODAL } from '@/features/settings/usage/usage
 import { useToast } from '@/app/composables/useToast';
 import Modal from '@/app/components/Modal.vue';
 import type { IFormInputs } from '@/Interface';
-import type { IPersonalizationLatestVersion } from '@n8n/rest-api-client/api/users';
-import { useRootStore } from '@n8n/stores/useRootStore';
+import type { IPersonalizationLatestVersion } from '@workflow-automation/rest-api-client/api/users';
+import { useRootStore } from '@workflow-automation/stores/useRootStore';
 import { useUsersStore } from '../users.store';
-import { createFormEventBus } from '@n8n/design-system/utils';
-import { createEventBus } from '@n8n/utils/event-bus';
+import { createFormEventBus } from '@workflow-automation/design-system/utils';
+import { createEventBus } from '@workflow-automation/utils/event-bus';
 import { usePostHog } from '@/app/stores/posthog.store';
 import { useExternalHooks } from '@/app/composables/useExternalHooks';
-import { useI18n } from '@n8n/i18n';
+import { useI18n } from '@workflow-automation/i18n';
 import { useRoute, useRouter } from 'vue-router';
 import { useUIStore } from '@/app/stores/ui.store';
 import { getResourcePermissions } from '@workflow-automation/permissions';
 
-import { N8nButton, N8nFormInputs } from '@n8n/design-system';
+import { N8nButton, N8nFormInputs } from '@workflow-automation/design-system';
 const SURVEY_VERSION = 'v4';
 
 const externalHooks = useExternalHooks();

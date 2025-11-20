@@ -5,12 +5,12 @@ import { usePostHog } from '@/app/stores/posthog.store';
 import { useSettingsStore } from '@/app/stores/settings.store';
 import { useUIStore } from '@/app/stores/ui.store';
 import { hasPermission } from '@/app/utils/rbac/permissions';
-import { useI18n } from '@n8n/i18n';
-import { useRootStore } from '@n8n/stores/useRootStore';
+import { useI18n } from '@workflow-automation/i18n';
+import { useRootStore } from '@workflow-automation/stores/useRootStore';
 import { computed } from 'vue';
 import { useRouter } from 'vue-router';
 
-import { N8nIcon, N8nLink, N8nMenuItem, N8nText, type IMenuItem } from '@n8n/design-system';
+import { N8nIcon, N8nLink, N8nMenuItem, N8nText, type IMenuItem } from '@workflow-automation/design-system';
 const emit = defineEmits<{
 	return: [];
 }>();

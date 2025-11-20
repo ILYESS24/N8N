@@ -1,4 +1,4 @@
-﻿import { createComponentRenderer } from '@/__tests__/render';
+import { createComponentRenderer } from '@/__tests__/render';
 import ParameterInput from './ParameterInput.vue';
 import type { useNDVStore } from '@/features/ndv/shared/ndv.store';
 import type { CompletionResult } from '@codemirror/autocomplete';
@@ -9,7 +9,7 @@ import userEvent from '@testing-library/user-event';
 import type { useNodeTypesStore } from '@/app/stores/nodeTypes.store';
 import { useSettingsStore } from '@/app/stores/settings.store';
 import { mockedStore } from '@/__tests__/utils';
-import { createEventBus } from '@n8n/utils/event-bus';
+import { createEventBus } from '@workflow-automation/utils/event-bus';
 import {
 	createTestExpressionLocalResolveContext,
 	createMockEnterpriseSettings,

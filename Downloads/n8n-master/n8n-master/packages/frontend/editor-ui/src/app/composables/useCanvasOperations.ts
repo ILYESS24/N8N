@@ -1,4 +1,4 @@
-﻿/**
+/**
  * Canvas V2 Only
  * @TODO Remove this notice when Canvas V2 is the only one in use
  */
@@ -14,12 +14,12 @@ import type {
 } from '@/Interface';
 import type { IExecutionResponse } from '@/features/execution/executions/executions.types';
 import type { IUsedCredential } from '@/features/credentials/credentials.types';
-import type { ITag } from '@n8n/rest-api-client/api/tags';
-import type { IWorkflowTemplate } from '@n8n/rest-api-client/api/templates';
-import type { WorkflowData, WorkflowDataUpdate } from '@n8n/rest-api-client/api/workflows';
+import type { ITag } from '@workflow-automation/rest-api-client/api/tags';
+import type { IWorkflowTemplate } from '@workflow-automation/rest-api-client/api/templates';
+import type { WorkflowData, WorkflowDataUpdate } from '@workflow-automation/rest-api-client/api/workflows';
 import { useDataSchema } from '@/app/composables/useDataSchema';
 import { useExternalHooks } from '@/app/composables/useExternalHooks';
-import { useI18n } from '@n8n/i18n';
+import { useI18n } from '@workflow-automation/i18n';
 import { useNodeHelpers } from '@/app/composables/useNodeHelpers';
 import { type PinDataSource, usePinnedData } from '@/app/composables/usePinnedData';
 import { useTelemetry } from '@/app/composables/useTelemetry';
@@ -51,7 +51,7 @@ import { useHistoryStore } from '@/app/stores/history.store';
 import { useNDVStore } from '@/features/ndv/shared/ndv.store';
 import { useNodeCreatorStore } from '@/features/shared/nodeCreator/nodeCreator.store';
 import { useNodeTypesStore } from '@/app/stores/nodeTypes.store';
-import { useRootStore } from '@n8n/stores/useRootStore';
+import { useRootStore } from '@workflow-automation/stores/useRootStore';
 import { useSettingsStore } from '@/app/stores/settings.store';
 import { useTagsStore } from '@/features/shared/tags/tags.store';
 import { useUIStore } from '@/app/stores/ui.store';
@@ -117,7 +117,7 @@ import { injectWorkflowState } from '@/app/composables/useWorkflowState';
 import { isPresent, tryToParseNumber } from '@/app/utils/typesUtils';
 import { useProjectsStore } from '@/features/collaboration/projects/projects.store';
 import type { CanvasLayoutEvent } from '@/features/workflows/canvas/composables/useCanvasLayout';
-import { chatEventBus } from '@n8n/chat/event-buses';
+import { chatEventBus } from '@workflow-automation/chat/event-buses';
 import { useLogsStore } from '@/app/stores/logs.store';
 import { isChatNode } from '@/app/utils/aiUtils';
 import cloneDeep from 'lodash/cloneDeep';

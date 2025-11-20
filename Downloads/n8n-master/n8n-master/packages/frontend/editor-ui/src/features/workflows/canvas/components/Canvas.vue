@@ -1,4 +1,4 @@
-﻿<script lang="ts" setup>
+<script lang="ts" setup>
 import ContextMenu from '@/features/shared/contextMenu/components/ContextMenu.vue';
 import type { ContextMenuTarget } from '@/features/shared/contextMenu/composables/useContextMenu';
 import { useContextMenu } from '@/features/shared/contextMenu/composables/useContextMenu';
@@ -26,10 +26,10 @@ import {
 	updateViewportToContainNodes,
 } from '@/app/utils/nodeViewUtils';
 import { isPresent } from '@/app/utils/typesUtils';
-import { useDeviceSupport } from '@n8n/composables/useDeviceSupport';
-import { useShortKeyPress } from '@n8n/composables/useShortKeyPress';
-import type { EventBus } from '@n8n/utils/event-bus';
-import { createEventBus } from '@n8n/utils/event-bus';
+import { useDeviceSupport } from '@workflow-automation/composables/useDeviceSupport';
+import { useShortKeyPress } from '@workflow-automation/composables/useShortKeyPress';
+import type { EventBus } from '@workflow-automation/utils/event-bus';
+import { createEventBus } from '@workflow-automation/utils/event-bus';
 import type {
 	Connection,
 	Dimensions,

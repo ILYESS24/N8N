@@ -22,9 +22,9 @@ export interface Props {
 	expanded?: boolean;
 }
 
-import { useI18n } from '@n8n/i18n';
+import { useI18n } from '@workflow-automation/i18n';
 
-import { N8nIcon, N8nTooltip } from '@n8n/design-system';
+import { N8nIcon, N8nTooltip } from '@workflow-automation/design-system';
 const props = withDefaults(defineProps<Props>(), {
 	elements: () => [],
 });

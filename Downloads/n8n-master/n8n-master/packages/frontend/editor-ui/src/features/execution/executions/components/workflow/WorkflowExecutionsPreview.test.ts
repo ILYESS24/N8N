@@ -1,4 +1,4 @@
-﻿import { describe, expect } from 'vitest';
+import { describe, expect } from 'vitest';
 import userEvent from '@testing-library/user-event';
 import { faker } from '@faker-js/faker';
 import { createRouter, createWebHistory, RouterLink } from 'vue-router';
@@ -13,7 +13,7 @@ import { createComponentRenderer } from '@/__tests__/render';
 import { createTestingPinia } from '@pinia/testing';
 import { mockedStore } from '@/__tests__/utils';
 import type { FrontendSettings } from '@workflow-automation/api-types';
-import { STORES } from '@n8n/stores';
+import { STORES } from '@workflow-automation/stores';
 import { nextTick } from 'vue';
 
 const showMessage = vi.fn();

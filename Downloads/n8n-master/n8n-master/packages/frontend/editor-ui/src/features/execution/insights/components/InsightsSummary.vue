@@ -1,4 +1,4 @@
-﻿<script setup lang="ts">
+<script setup lang="ts">
 import { useTelemetry } from '@/app/composables/useTelemetry';
 import { VIEWS } from '@/app/constants';
 import {
@@ -7,14 +7,14 @@ import {
 } from '@/features/execution/insights/insights.constants';
 import type { InsightsSummaryDisplay } from '@/features/execution/insights/insights.types';
 import type { InsightsDateRange, InsightsSummary } from '@workflow-automation/api-types';
-import { useI18n } from '@n8n/i18n';
-import { smartDecimal } from '@n8n/utils/number/smartDecimal';
+import { useI18n } from '@workflow-automation/i18n';
+import { smartDecimal } from '@workflow-automation/utils/number/smartDecimal';
 import { computed, useCssModule } from 'vue';
 import { I18nT } from 'vue-i18n';
 import { useRoute } from 'vue-router';
 import { getTimeRangeLabels } from '../insights.utils';
 
-import { N8nIcon, N8nTooltip } from '@n8n/design-system';
+import { N8nIcon, N8nTooltip } from '@workflow-automation/design-system';
 const props = defineProps<{
 	summary: InsightsSummaryDisplay;
 	timeRange: InsightsDateRange['key'];

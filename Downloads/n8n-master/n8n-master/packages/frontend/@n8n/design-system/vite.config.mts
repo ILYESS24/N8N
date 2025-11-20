@@ -36,7 +36,7 @@ export default mergeConfig(
 		resolve: {
 			alias: {
 				'@': resolve(__dirname, 'src'),
-				'@n8n/design-system': resolve(__dirname, 'src'),
+				'@workflow-automation/design-system': resolve(__dirname, 'src'),
 				'@n8n/composables(.*)': resolve(packagesDir, 'frontend', '@n8n', 'composables', 'src$1'),
 				'@n8n/utils(.*)': resolve(packagesDir, '@n8n', 'utils', 'src$1'),
 			},

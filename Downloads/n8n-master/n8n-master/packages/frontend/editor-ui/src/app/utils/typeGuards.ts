@@ -1,4 +1,4 @@
-﻿import type {
+import type {
 	INodeTypeDescription,
 	NodeConnectionType,
 	TriggerPanelDefinition,
@@ -22,7 +22,7 @@ import type { RouteLocationRaw } from 'vue-router';
 import type { CanvasConnectionMode } from '@/features/workflows/canvas/canvas.types';
 import { canvasConnectionModes } from '@/features/workflows/canvas/canvas.types';
 import type { ComponentPublicInstance } from 'vue';
-import { type BaseTextKey, useI18n } from '@n8n/i18n';
+import { type BaseTextKey, useI18n } from '@workflow-automation/i18n';
 
 /*
 	Type guards used in editor-ui project

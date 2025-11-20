@@ -1,4 +1,4 @@
-﻿<script setup lang="ts">
+<script setup lang="ts">
 import type { ResourceMapperFieldsRequestDto } from '@workflow-automation/api-types';
 import type { IUpdateInformation } from '@/Interface';
 import { resolveRequiredParameters } from '@/app/composables/useWorkflowHelpers';
@@ -24,7 +24,7 @@ import {
 	parseResourceMapperFieldName,
 } from '@/app/utils/nodeTypesUtils';
 import { isFullExecutionResponse, isResourceMapperValue } from '@/app/utils/typeGuards';
-import { i18n as locale } from '@n8n/i18n';
+import { i18n as locale } from '@workflow-automation/i18n';
 import { useNDVStore } from '@/features/ndv/shared/ndv.store';
 import { useWorkflowsStore } from '@/app/stores/workflows.store';
 import { useDocumentVisibility } from '@/app/composables/useDocumentVisibility';
@@ -32,7 +32,7 @@ import isEqual from 'lodash/isEqual';
 import { useProjectsStore } from '@/features/collaboration/projects/projects.store';
 import ParameterInputFull from '../ParameterInputFull.vue';
 
-import { N8nButton, N8nCallout, N8nIcon, N8nNotice, N8nText } from '@n8n/design-system';
+import { N8nButton, N8nCallout, N8nIcon, N8nNotice, N8nText } from '@workflow-automation/design-system';
 type Props = {
 	parameter: INodeProperties;
 	node: INode | null;

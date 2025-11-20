@@ -1,4 +1,4 @@
-﻿<script setup lang="ts">
+<script setup lang="ts">
 import { computed, inject, nextTick, onBeforeUnmount, onMounted, ref, toRaw, watch } from 'vue';
 import { onClickOutside } from '@vueuse/core';
 
@@ -16,12 +16,12 @@ import type { Segment } from '@/app/types/expressions';
 import { startCompletion } from '@codemirror/autocomplete';
 import type { EditorState, SelectionRange } from '@codemirror/state';
 import type { IDataObject } from 'workflow-automation-workflow';
-import { createEventBus, type EventBus } from '@n8n/utils/event-bus';
+import { createEventBus, type EventBus } from '@workflow-automation/utils/event-bus';
 import { CanvasKey } from '@/app/constants';
 import { useIsInExperimentalNdv } from '@/features/workflows/canvas/experimental/composables/useIsInExperimentalNdv';
 import { isEventTargetContainedBy } from '@/app/utils/htmlUtils';
 
-import { N8nButton } from '@n8n/design-system';
+import { N8nButton } from '@workflow-automation/design-system';
 const isFocused = ref(false);
 const segments = ref<Segment[]>([]);
 const editorState = ref<EditorState>();

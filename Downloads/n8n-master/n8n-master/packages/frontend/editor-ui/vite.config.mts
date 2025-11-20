@@ -27,7 +27,7 @@ const alias = [
 	{ find: '@', replacement: resolve(__dirname, 'src') },
 	{ find: 'stream', replacement: 'stream-browserify' },
 	// Ensure bare imports resolve to sources (not dist)
-	{ find: '@n8n/i18n', replacement: resolve(packagesDir, 'frontend', '@n8n', 'i18n', 'src') },
+	{ find: '@workflow-automation/i18n', replacement: resolve(packagesDir, 'frontend', '@n8n', 'i18n', 'src') },
 	{
 		find: /^@n8n\/chat(.+)$/,
 		replacement: resolve(packagesDir, 'frontend', '@n8n', 'chat', 'src$1'),

@@ -1,4 +1,4 @@
-﻿import { reactive } from 'vue';
+import { reactive } from 'vue';
 import { createTestingPinia } from '@pinia/testing';
 import userEvent from '@testing-library/user-event';
 import { waitFor } from '@testing-library/vue';
@@ -45,7 +45,7 @@ vi.mock('@/app/composables/useWorkflowSaving', () => {
 		}),
 	};
 });
-vi.mock('@n8n/permissions', () => ({
+vi.mock('@workflow-automation/permissions', () => ({
 	getResourcePermissions: () => ({
 		workflow: { share: true },
 	}),

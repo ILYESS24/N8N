@@ -1,7 +1,7 @@
 import { defineConfig, globalIgnores } from 'eslint/config';
-import { nodeConfig } from '@n8n/eslint-config/node';
+import { nodeConfig } from '@workflow-automation/eslint-config/node';
 import nodesBasePlugin from 'eslint-plugin-n8n-nodes-base';
-import { n8nCommunityNodesPlugin } from '@n8n/eslint-plugin-community-nodes';
+import { n8nCommunityNodesPlugin } from '@workflow-automation/eslint-plugin-community-nodes';
 
 export default defineConfig(
 	nodeConfig,
@@ -66,7 +66,7 @@ export default defineConfig(
 	{
 		files: ['./credentials/*.ts'],
 		plugins: {
-			'n8n-nodes-base': nodesBasePlugin,
+			'workflow-automation-nodes-base': nodesBasePlugin,
 		},
 		rules: {
 			'n8n-nodes-base/cred-class-field-authenticate-type-assertion': 'error',
@@ -86,7 +86,7 @@ export default defineConfig(
 	{
 		files: ['./nodes/**/*.ts'],
 		plugins: {
-			'n8n-nodes-base': nodesBasePlugin,
+			'workflow-automation-nodes-base': nodesBasePlugin,
 		},
 		rules: {
 			'n8n-nodes-base/node-class-description-credentials-name-unsuffixed': 'error',

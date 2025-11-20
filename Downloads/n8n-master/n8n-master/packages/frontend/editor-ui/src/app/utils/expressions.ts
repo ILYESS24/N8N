@@ -1,4 +1,4 @@
-﻿import { i18n } from '@n8n/i18n';
+import { i18n } from '@workflow-automation/i18n';
 import { useWorkflowsStore } from '@/app/stores/workflows.store';
 import type { ResolvableState } from '@/app/types/expressions';
 import { ExpressionError, ExpressionParser, isExpression, type Result } from 'workflow-automation-workflow';

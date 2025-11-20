@@ -1,12 +1,12 @@
-﻿import { DynamicStructuredTool, DynamicTool } from '@langchain/core/tools';
+import { DynamicStructuredTool, DynamicTool } from '@langchain/core/tools';
 import { TaskRunnersConfig } from '@workflow-automation/config';
 import { Container } from '@workflow-automation/di';
 import type { JSONSchema7 } from 'json-schema';
-import { JavaScriptSandbox } from 'n8n-nodes-base/dist/nodes/Code/JavaScriptSandbox';
-import { JsTaskRunnerSandbox } from 'n8n-nodes-base/dist/nodes/Code/JsTaskRunnerSandbox';
-import { PythonSandbox } from 'n8n-nodes-base/dist/nodes/Code/PythonSandbox';
-import type { Sandbox } from 'n8n-nodes-base/dist/nodes/Code/Sandbox';
-import { getSandboxContext } from 'n8n-nodes-base/dist/nodes/Code/Sandbox';
+import { JavaScriptSandbox } from 'workflow-automation-nodes-base/dist/nodes/Code/JavaScriptSandbox';
+import { JsTaskRunnerSandbox } from 'workflow-automation-nodes-base/dist/nodes/Code/JsTaskRunnerSandbox';
+import { PythonSandbox } from 'workflow-automation-nodes-base/dist/nodes/Code/PythonSandbox';
+import type { Sandbox } from 'workflow-automation-nodes-base/dist/nodes/Code/Sandbox';
+import { getSandboxContext } from 'workflow-automation-nodes-base/dist/nodes/Code/Sandbox';
 import type {
 	ExecutionError,
 	IDataObject,

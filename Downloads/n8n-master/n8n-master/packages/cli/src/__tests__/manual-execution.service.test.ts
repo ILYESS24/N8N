@@ -1,4 +1,4 @@
-﻿import { mock } from 'jest-mock-extended';
+import { mock } from 'jest-mock-extended';
 import * as core from 'workflow-automation-core';
 import { DirectedGraph, recreateNodeExecutionStack, WorkflowExecute } from 'workflow-automation-core';
 import type {
@@ -18,7 +18,7 @@ import type PCancelable from 'p-cancelable';
 
 import { ManualExecutionService } from '@/manual-execution.service';
 
-jest.mock('n8n-core');
+jest.mock('workflow-automation-core');
 
 describe('ManualExecutionService', () => {
 	const manualExecutionService = new ManualExecutionService(mock());
@@ -80,7 +80,7 @@ describe('ManualExecutionService', () => {
 
 			const manualTrigger = mock<INode>({
 				type: 'n8n-nodes-base.manualTrigger',
-				name: 'When clicking â€˜Execute workflowâ€™',
+				name: 'When clicking ‘Execute workflow’',
 			});
 
 			const data = mock<IWorkflowExecutionDataProcess>({
@@ -251,7 +251,7 @@ describe('ManualExecutionService', () => {
 			const executionId = 'test-execution-id';
 
 			const mockRun = jest.fn().mockReturnValue('mockRunReturn');
-			require('n8n-core').WorkflowExecute.mockImplementationOnce(() => ({
+			require('workflow-automation-core').WorkflowExecute.mockImplementationOnce(() => ({
 				run: mockRun,
 				processRunExecutionData: jest.fn(),
 			}));
@@ -285,7 +285,7 @@ describe('ManualExecutionService', () => {
 			jest.spyOn(manualExecutionService, 'getExecutionStartNode').mockReturnValue(startNode);
 
 			const mockRun = jest.fn().mockReturnValue('mockRunReturn');
-			require('n8n-core').WorkflowExecute.mockImplementationOnce(() => ({
+			require('workflow-automation-core').WorkflowExecute.mockImplementationOnce(() => ({
 				run: mockRun,
 				processRunExecutionData: jest.fn(),
 			}));
@@ -331,7 +331,7 @@ describe('ManualExecutionService', () => {
 			jest.spyOn(manualExecutionService, 'getExecutionStartNode').mockReturnValue(startNode);
 
 			const mockRun = jest.fn().mockReturnValue('mockRunReturn');
-			require('n8n-core').WorkflowExecute.mockImplementationOnce(() => ({
+			require('workflow-automation-core').WorkflowExecute.mockImplementationOnce(() => ({
 				run: mockRun,
 				processRunExecutionData: jest.fn(),
 			}));
@@ -362,7 +362,7 @@ describe('ManualExecutionService', () => {
 			const executionId = 'test-execution-id';
 
 			const mockRunPartialWorkflow = jest.fn().mockReturnValue('mockPartialReturn');
-			require('n8n-core').WorkflowExecute.mockImplementationOnce(() => ({
+			require('workflow-automation-core').WorkflowExecute.mockImplementationOnce(() => ({
 				runPartialWorkflow2: mockRunPartialWorkflow,
 			}));
 
@@ -396,7 +396,7 @@ describe('ManualExecutionService', () => {
 			const pinData: IPinData = { node1: [{ json: { pinned: true } }] };
 
 			const mockRunPartialWorkflow2 = jest.fn().mockReturnValue('mockPartial2Return');
-			require('n8n-core').WorkflowExecute.mockImplementationOnce(() => ({
+			require('workflow-automation-core').WorkflowExecute.mockImplementationOnce(() => ({
 				runPartialWorkflow2: mockRunPartialWorkflow2,
 				processRunExecutionData: jest.fn(),
 			}));
@@ -550,7 +550,7 @@ describe('ManualExecutionService', () => {
 		const executionId = 'test-execution-id-evaluation';
 
 		const mockRun = jest.fn().mockReturnValue('mockRunReturnEvaluation');
-		require('n8n-core').WorkflowExecute.mockImplementationOnce(() => ({
+		require('workflow-automation-core').WorkflowExecute.mockImplementationOnce(() => ({
 			run: mockRun,
 			processRunExecutionData: jest.fn(),
 		}));

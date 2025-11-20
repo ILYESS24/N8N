@@ -1,4 +1,4 @@
-﻿<script setup lang="ts">
+<script setup lang="ts">
 import { useExternalHooks } from '@/app/composables/useExternalHooks';
 import type { INodeUi, IRunDataDisplayMode, ITableData } from '@/Interface';
 import { useNDVStore } from '@/features/ndv/shared/ndv.store';
@@ -11,14 +11,14 @@ import { useTemplateRef, computed, onMounted, ref, watch } from 'vue';
 import Draggable from '@/app/components/Draggable.vue';
 import MappingPill from './MappingPill.vue';
 import TextWithHighlights from './TextWithHighlights.vue';
-import { useI18n } from '@n8n/i18n';
+import { useI18n } from '@workflow-automation/i18n';
 import { useTelemetry } from '@/app/composables/useTelemetry';
 import { storeToRefs } from 'pinia';
 import { useExecutionHelpers } from '@/features/execution/executions/composables/useExecutionHelpers';
 import { I18nT } from 'vue-i18n';
 import { useTelemetryContext } from '@/app/composables/useTelemetryContext';
 
-import { N8nIcon, N8nIconButton, N8nInfoTip, N8nTooltip, N8nTree } from '@n8n/design-system';
+import { N8nIcon, N8nIconButton, N8nInfoTip, N8nTooltip, N8nTree } from '@workflow-automation/design-system';
 const MAX_COLUMNS_LIMIT = 40;
 
 type DraggableRef = InstanceType<typeof Draggable>;

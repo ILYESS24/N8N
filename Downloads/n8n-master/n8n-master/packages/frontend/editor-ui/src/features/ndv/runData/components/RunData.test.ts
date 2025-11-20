@@ -1,4 +1,4 @@
-﻿import { reactive } from 'vue';
+import { reactive } from 'vue';
 import {
 	createTestNode,
 	createTestWorkflowObject,
@@ -7,7 +7,7 @@ import {
 import { createComponentRenderer } from '@/__tests__/render';
 import { type MockedStore, mockedStore, SETTINGS_STORE_DEFAULT_STATE } from '@/__tests__/utils';
 import RunData from './RunData.vue';
-import { STORES } from '@n8n/stores';
+import { STORES } from '@workflow-automation/stores';
 import { SET_NODE_TYPE } from '@/app/constants';
 import type { INodeUi, IRunDataDisplayMode } from '@/Interface';
 import type { NodePanelType } from '@/features/ndv/shared/ndv.types';
@@ -471,7 +471,7 @@ describe('RunData', () => {
 					executionTime: 2,
 					source: [
 						{
-							previousNode: 'When clicking â€˜Execute workflowâ€™',
+							previousNode: 'When clicking ‘Execute workflow’',
 						},
 					],
 					executionStatus: 'error',
@@ -502,7 +502,7 @@ describe('RunData', () => {
 		const testNodes = [
 			{
 				id: '1',
-				name: 'When clicking â€˜Execute workflowâ€™',
+				name: 'When clicking ‘Execute workflow’',
 				type: 'n8n-nodes-base.manualTrigger',
 				typeVersion: 1,
 				position: [80, -180],
@@ -556,7 +556,7 @@ describe('RunData', () => {
 					executionTime: 2,
 					source: [
 						{
-							previousNode: 'When clicking â€˜Execute workflowâ€™',
+							previousNode: 'When clicking ‘Execute workflow’',
 						},
 					],
 					executionStatus: 'error',

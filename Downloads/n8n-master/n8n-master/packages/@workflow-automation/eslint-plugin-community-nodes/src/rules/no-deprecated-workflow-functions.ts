@@ -50,7 +50,7 @@ export const NoDeprecatedWorkflowFunctionsRule = createRule({
 
 		return {
 			ImportDeclaration(node) {
-				if (node.source.value === 'n8n-workflow') {
+				if (node.source.value === 'workflow-automation-workflow') {
 					node.specifiers.forEach((specifier) => {
 						if (
 							specifier.type === AST_NODE_TYPES.ImportSpecifier &&
@@ -139,7 +139,7 @@ export const NoDeprecatedWorkflowFunctionsRule = createRule({
 				const importDeclaration = node.parent;
 				if (
 					importDeclaration?.type === AST_NODE_TYPES.ImportDeclaration &&
-					importDeclaration.source.value === 'n8n-workflow' &&
+					importDeclaration.source.value === 'workflow-automation-workflow' &&
 					node.imported.type === AST_NODE_TYPES.Identifier &&
 					isDeprecatedTypeName(node.imported.name)
 				) {

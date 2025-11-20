@@ -1,7 +1,7 @@
-﻿import { defineStore } from 'pinia';
+import { defineStore } from 'pinia';
 import { DATA_TABLE_STORE } from '@/features/core/dataTable/constants';
 import { computed, ref } from 'vue';
-import { useRootStore } from '@n8n/stores/useRootStore';
+import { useRootStore } from '@workflow-automation/stores/useRootStore';
 import {
 	fetchDataTablesApi,
 	createDataTableApi,

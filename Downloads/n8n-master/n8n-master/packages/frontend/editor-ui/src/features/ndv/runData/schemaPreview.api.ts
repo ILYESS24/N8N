@@ -1,4 +1,4 @@
-﻿import { request } from '@n8n/rest-api-client';
+import { request } from '@workflow-automation/rest-api-client';
 import type { JSONSchema7 } from 'json-schema';
 import type { NodeParameterValueType } from 'workflow-automation-workflow';
 import { isEmpty } from '@/app/utils/typesUtils';

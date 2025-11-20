@@ -1,7 +1,7 @@
-﻿<script lang="ts" setup>
+<script lang="ts" setup>
 import { computed } from 'vue';
 import { type UsersList } from '@workflow-automation/api-types';
-import { useI18n } from '@n8n/i18n';
+import { useI18n } from '@workflow-automation/i18n';
 import { formatTimeAgo } from '@/app/utils/formatters/dateFormatter';
 
 const i18n = useI18n();

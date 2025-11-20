@@ -1,9 +1,9 @@
-﻿<script lang="ts" setup="">
+<script lang="ts" setup="">
 import type { UsersList } from '@workflow-automation/api-types';
-import type { UserAction } from '@n8n/design-system';
-import type { IUser } from '@n8n/rest-api-client/api/users';
+import type { UserAction } from '@workflow-automation/design-system';
+import type { IUser } from '@workflow-automation/rest-api-client/api/users';
 
-import { N8nActionToggle } from '@n8n/design-system';
+import { N8nActionToggle } from '@workflow-automation/design-system';
 const props = defineProps<{
 	data: UsersList['items'][number];
 	actions: Array<UserAction<IUser>>;

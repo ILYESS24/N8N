@@ -1,6 +1,6 @@
-﻿<script setup lang="ts">
+<script setup lang="ts">
 import { useDebounce } from '@/app/composables/useDebounce';
-import { useI18n } from '@n8n/i18n';
+import { useI18n } from '@workflow-automation/i18n';
 import { useNDVStore } from '@/features/ndv/shared/ndv.store';
 import type {
 	AssignmentCollectionValue,
@@ -20,7 +20,7 @@ import ExperimentalEmbeddedNdvMapper from '@/features/workflows/canvas/experimen
 import { ExpressionLocalResolveContextSymbol } from '@/app/constants';
 import { useExperimentalNdvStore } from '@/features/workflows/canvas/experimental/experimentalNdv.store';
 
-import { N8nInputLabel } from '@n8n/design-system';
+import { N8nInputLabel } from '@workflow-automation/design-system';
 interface Props {
 	parameter: INodeProperties;
 	value: AssignmentCollectionValue;

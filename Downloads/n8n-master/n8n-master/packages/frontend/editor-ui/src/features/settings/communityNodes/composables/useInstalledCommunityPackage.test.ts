@@ -1,4 +1,4 @@
-﻿import { vi, describe, it, expect, beforeEach } from 'vitest';
+import { vi, describe, it, expect, beforeEach } from 'vitest';
 import { createTestingPinia } from '@pinia/testing';
 import { setActivePinia } from 'pinia';
 import { nextTick } from 'vue';
@@ -10,7 +10,7 @@ import { useUsersStore } from '@/features/settings/users/users.store';
 import type { ExtendedPublicInstalledPackage } from '../communityNodes.utils';
 import type * as n8nWorkflow from 'workflow-automation-workflow';
 
-vi.mock('n8n-workflow', async (importOriginal) => {
+vi.mock('workflow-automation-workflow', async (importOriginal) => {
 	const original = await importOriginal();
 	return {
 		...(original as typeof n8nWorkflow),

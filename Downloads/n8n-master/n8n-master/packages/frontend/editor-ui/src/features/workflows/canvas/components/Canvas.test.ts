@@ -1,4 +1,4 @@
-﻿// @vitest-environment jsdom
+// @vitest-environment jsdom
 import { fireEvent, waitFor } from '@testing-library/vue';
 import { createComponentRenderer } from '@/__tests__/render';
 import Canvas from './Canvas.vue';
@@ -9,7 +9,7 @@ import {
 	createCanvasNodeElement,
 } from '@/features/workflows/canvas/__tests__/utils';
 import { NodeConnectionTypes } from 'workflow-automation-workflow';
-import type { useDeviceSupport } from '@n8n/composables/useDeviceSupport';
+import type { useDeviceSupport } from '@workflow-automation/composables/useDeviceSupport';
 import { useVueFlow } from '@vue-flow/core';
 import { SIMULATE_NODE_TYPE } from '@/app/constants';
 import { canvasEventBus } from '@/features/workflows/canvas/canvas.eventBus';
@@ -19,7 +19,7 @@ const matchMedia = global.window.matchMedia;
 global.window = jsdom.window as unknown as Window & typeof globalThis;
 global.window.matchMedia = matchMedia;
 
-vi.mock('@n8n/design-system', async (importOriginal) => {
+vi.mock('@workflow-automation/design-system', async (importOriginal) => {
 	const actual = await importOriginal<typeof useDeviceSupport>();
 	return { ...actual, useDeviceSupport: vi.fn(() => ({ isCtrlKeyPressed: vi.fn() })) };
 });

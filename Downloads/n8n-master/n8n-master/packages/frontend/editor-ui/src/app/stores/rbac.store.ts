@@ -1,8 +1,8 @@
-﻿import { defineStore } from 'pinia';
+import { defineStore } from 'pinia';
 import { hasScope as genericHasScope } from '@workflow-automation/permissions';
 import type { ScopeOptions, Scope, Resource } from '@workflow-automation/permissions';
 import { ref } from 'vue';
-import { STORES } from '@n8n/stores';
+import { STORES } from '@workflow-automation/stores';
 import type { Role } from '@workflow-automation/api-types';
 
 export const useRBACStore = defineStore(STORES.RBAC, () => {

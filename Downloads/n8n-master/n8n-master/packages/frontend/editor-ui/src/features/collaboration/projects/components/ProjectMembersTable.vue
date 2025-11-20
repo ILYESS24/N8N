@@ -1,14 +1,14 @@
-﻿<script lang="ts" setup>
+<script lang="ts" setup>
 import {
 	N8nDataTableServer,
 	N8nText,
 	N8nUserInfo,
 	type ActionDropdownItem,
 	type UserAction,
-} from '@n8n/design-system';
-import type { TableHeader, TableOptions } from '@n8n/design-system/components/N8nDataTableServer';
-import type { UsersInfoProps } from '@n8n/design-system/components/N8nUserInfo/UserInfo.vue';
-import { useI18n } from '@n8n/i18n';
+} from '@workflow-automation/design-system';
+import type { TableHeader, TableOptions } from '@workflow-automation/design-system/components/N8nDataTableServer';
+import type { UsersInfoProps } from '@workflow-automation/design-system/components/N8nUserInfo/UserInfo.vue';
+import { useI18n } from '@workflow-automation/i18n';
 import type { AllRolesMap, Role } from '@workflow-automation/permissions';
 import { computed, ref } from 'vue';
 import type { ProjectMemberData } from '../projects.types';

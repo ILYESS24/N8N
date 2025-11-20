@@ -1,6 +1,6 @@
-﻿<script setup lang="ts">
+<script setup lang="ts">
 import { computed, ref, useTemplateRef, watch } from 'vue';
-import { N8nNavigationDropdown, N8nIcon, N8nButton, N8nText, N8nAvatar } from '@n8n/design-system';
+import { N8nNavigationDropdown, N8nIcon, N8nButton, N8nText, N8nAvatar } from '@workflow-automation/design-system';
 import { type ComponentProps } from 'vue-component-type-helpers';
 import {
 	PROVIDER_CREDENTIAL_TYPE_MAP,
@@ -20,7 +20,7 @@ import {
 } from '@/features/ai/chatHub/constants';
 import CredentialIcon from '@/features/credentials/components/CredentialIcon.vue';
 import { onClickOutside } from '@vueuse/core';
-import { useI18n } from '@n8n/i18n';
+import { useI18n } from '@workflow-automation/i18n';
 
 import type { CredentialsMap } from '../chat.types';
 import { useUIStore } from '@/app/stores/ui.store';
@@ -33,7 +33,7 @@ import {
 	stringifyModel,
 } from '@/features/ai/chatHub/chat.utils';
 import { fetchChatModelsApi } from '@/features/ai/chatHub/chat.api';
-import { useRootStore } from '@n8n/stores/useRootStore';
+import { useRootStore } from '@workflow-automation/stores/useRootStore';
 import { useTelemetry } from '@/app/composables/useTelemetry';
 
 const NEW_AGENT_MENU_ID = 'agent::new';

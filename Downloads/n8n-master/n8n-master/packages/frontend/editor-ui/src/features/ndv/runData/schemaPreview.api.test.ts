@@ -1,7 +1,7 @@
 import { getSchemaPreview } from './schemaPreview.api';
-import * as apiUtils from '@n8n/rest-api-client';
+import * as apiUtils from '@workflow-automation/rest-api-client';
 
-vi.mock('@n8n/rest-api-client');
+vi.mock('@workflow-automation/rest-api-client');
 
 describe('API: schemaPreview', () => {
 	describe('getSchemaPreview', () => {

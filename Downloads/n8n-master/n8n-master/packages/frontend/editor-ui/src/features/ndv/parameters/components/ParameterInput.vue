@@ -1,4 +1,4 @@
-﻿<script setup lang="ts">
+<script setup lang="ts">
 import { computed, inject, nextTick, onBeforeUnmount, onMounted, onUpdated, ref, watch } from 'vue';
 
 import get from 'lodash/get';
@@ -64,7 +64,7 @@ import {
 
 import { useDebounce } from '@/app/composables/useDebounce';
 import { useExternalHooks } from '@/app/composables/useExternalHooks';
-import { useI18n } from '@n8n/i18n';
+import { useI18n } from '@workflow-automation/i18n';
 import { useNodeHelpers } from '@/app/composables/useNodeHelpers';
 import { useTelemetry } from '@/app/composables/useTelemetry';
 import { useWorkflowHelpers } from '@/app/composables/useWorkflowHelpers';
@@ -76,8 +76,8 @@ import { useNodeTypesStore } from '@/app/stores/nodeTypes.store';
 import { useSettingsStore } from '@/app/stores/settings.store';
 import { useWorkflowsStore } from '@/app/stores/workflows.store';
 import { useUIStore } from '@/app/stores/ui.store';
-import type { EventBus } from '@n8n/utils/event-bus';
-import { createEventBus } from '@n8n/utils/event-bus';
+import type { EventBus } from '@workflow-automation/utils/event-bus';
+import { createEventBus } from '@workflow-automation/utils/event-bus';
 import { useElementSize } from '@vueuse/core';
 import { captureMessage } from '@sentry/vue';
 import { isCredentialOnlyNodeType } from '@/app/utils/credentialOnlyNodes';
@@ -97,7 +97,7 @@ import { useProjectsStore } from '@/features/collaboration/projects/projects.sto
 import { getParameterDisplayableOptions } from '@/app/utils/nodes/nodeTransforms';
 
 import { ElColorPicker, ElDatePicker, ElDialog, ElSwitch } from 'element-plus';
-import { N8nIcon, N8nInput, N8nInputNumber, N8nOption, N8nSelect } from '@n8n/design-system';
+import { N8nIcon, N8nInput, N8nInputNumber, N8nOption, N8nSelect } from '@workflow-automation/design-system';
 import { injectWorkflowState } from '@/app/composables/useWorkflowState';
 type Picker = { $emit: (arg0: string, arg1: Date) => void };
 
@@ -749,7 +749,7 @@ function trackExpressionEditOpen() {
 		return;
 	}
 
-	if (node.value.type.startsWith('n8n-nodes-base') || isCredentialOnlyNodeType(node.value.type)) {
+	if (node.value.type.startsWith('workflow-automation-nodes-base') || isCredentialOnlyNodeType(node.value.type)) {
 		telemetry.track('User opened Expression Editor', {
 			node_type: node.value.type,
 			parameter_name: props.parameter.displayName,

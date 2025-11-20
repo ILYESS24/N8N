@@ -6,11 +6,11 @@ import { MODAL_CONFIRM } from '@/app/constants';
 import { DATA_TABLE_CARD_ACTIONS } from '@/features/core/dataTable/constants';
 import { useDataTableStore } from '@/features/core/dataTable/dataTable.store';
 import type { DataTable } from '@/features/core/dataTable/dataTable.types';
-import type { IUser, UserAction } from '@n8n/design-system';
-import { useI18n } from '@n8n/i18n';
+import type { IUser, UserAction } from '@workflow-automation/design-system';
+import { useI18n } from '@workflow-automation/i18n';
 import { computed } from 'vue';
 
-import { N8nActionToggle } from '@n8n/design-system';
+import { N8nActionToggle } from '@workflow-automation/design-system';
 type Props = {
 	dataTable: DataTable;
 	isReadOnly?: boolean;

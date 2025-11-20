@@ -1,9 +1,9 @@
-﻿<script setup lang="ts">
+<script setup lang="ts">
 import { VIEWS } from '@/app/constants';
 import type { ChatMessage } from '@/features/ai/chatHub/chat.types';
 import type { ChatMessageId } from '@workflow-automation/api-types';
-import { N8nIconButton, N8nLink, N8nText, N8nTooltip } from '@n8n/design-system';
-import { useI18n } from '@n8n/i18n';
+import { N8nIconButton, N8nLink, N8nText, N8nTooltip } from '@workflow-automation/design-system';
+import { useI18n } from '@workflow-automation/i18n';
 import { computed } from 'vue';
 import { useRouter } from 'vue-router';
 

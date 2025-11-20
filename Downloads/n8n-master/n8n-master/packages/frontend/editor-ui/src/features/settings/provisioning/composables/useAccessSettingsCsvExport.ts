@@ -1,7 +1,7 @@
-﻿import { type UsersListFilterDto } from '@workflow-automation/api-types';
+import { type UsersListFilterDto } from '@workflow-automation/api-types';
 import { ref } from 'vue';
-import * as usersApi from '@n8n/rest-api-client/api/users';
-import { useRootStore } from '@n8n/stores/useRootStore';
+import * as usersApi from '@workflow-automation/rest-api-client/api/users';
+import { useRootStore } from '@workflow-automation/stores/useRootStore';
 
 interface AccessSettingsUserData {
 	count: number;

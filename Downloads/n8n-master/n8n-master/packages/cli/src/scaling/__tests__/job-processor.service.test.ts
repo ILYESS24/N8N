@@ -1,10 +1,10 @@
-﻿import type { Logger } from '@workflow-automation/backend-common';
+import type { Logger } from '@workflow-automation/backend-common';
 import type { ExecutionsConfig } from '@workflow-automation/config';
 import type { IExecutionResponse, ExecutionRepository, Project } from '@workflow-automation/db';
 import { mock } from 'jest-mock-extended';
 import type { WorkflowExecute as ActualWorkflowExecute } from 'workflow-automation-core';
 import { ExternalSecretsProxy } from 'workflow-automation-core';
-import { mockInstance } from 'n8n-core/test/utils';
+import { mockInstance } from 'workflow-automation-core/test/utils';
 import {
 	type IPinData,
 	type ITaskData,
@@ -42,8 +42,8 @@ mockInstance(OwnershipService, {
 });
 
 const processRunExecutionDataMock = jest.fn();
-jest.mock('n8n-core', () => {
-	const original = jest.requireActual('n8n-core');
+jest.mock('workflow-automation-core', () => {
+	const original = jest.requireActual('workflow-automation-core');
 
 	// Mock class constructor and prototype methods
 	return {
@@ -230,7 +230,7 @@ describe('JobProcessor', () => {
 	it.each(['manual', 'evaluation', 'trigger'] satisfies WorkflowExecuteMode[])(
 		'should use workflowExecute to process a job with mode %p with execution data',
 		async (mode) => {
-			const { WorkflowExecute } = await import('n8n-core');
+			const { WorkflowExecute } = await import('workflow-automation-core');
 			// Type it correctly so we can use mock methods later
 			const MockedWorkflowExecute = WorkflowExecute as jest.MockedClass<
 				typeof ActualWorkflowExecute

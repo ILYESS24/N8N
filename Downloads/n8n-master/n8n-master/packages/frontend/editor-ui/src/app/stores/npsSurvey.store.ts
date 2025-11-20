@@ -1,4 +1,4 @@
-﻿import { ref } from 'vue';
+import { ref } from 'vue';
 import { defineStore } from 'pinia';
 import { useUIStore } from './ui.store';
 import {
@@ -8,13 +8,13 @@ import {
 	NPS_SURVEY_MODAL_KEY,
 	CONTACT_PROMPT_MODAL_KEY,
 } from '@/app/constants';
-import { useRootStore } from '@n8n/stores/useRootStore';
+import { useRootStore } from '@workflow-automation/stores/useRootStore';
 import type { IUserSettings, NpsSurveyState } from 'workflow-automation-workflow';
 import { useSettingsStore } from './settings.store';
-import { updateNpsSurveyState } from '@n8n/rest-api-client/api/npsSurvey';
-import type { N8nPrompts } from '@n8n/rest-api-client/api/prompts';
-import { getPromptsData } from '@n8n/rest-api-client/api/prompts';
-import { assert } from '@n8n/utils/assert';
+import { updateNpsSurveyState } from '@workflow-automation/rest-api-client/api/npsSurvey';
+import type { N8nPrompts } from '@workflow-automation/rest-api-client/api/prompts';
+import { getPromptsData } from '@workflow-automation/rest-api-client/api/prompts';
+import { assert } from '@workflow-automation/utils/assert';
 
 export const MAXIMUM_TIMES_TO_SHOW_SURVEY_IF_IGNORED = 3;
 

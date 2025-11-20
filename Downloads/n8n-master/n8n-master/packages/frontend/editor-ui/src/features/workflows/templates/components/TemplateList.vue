@@ -1,10 +1,10 @@
 <script lang="ts" setup>
 import { onBeforeUnmount, onMounted, ref } from 'vue';
 import TemplateCard from './TemplateCard.vue';
-import type { ITemplatesWorkflow } from '@n8n/rest-api-client/api/templates';
-import { useI18n } from '@n8n/i18n';
+import type { ITemplatesWorkflow } from '@workflow-automation/rest-api-client/api/templates';
+import { useI18n } from '@workflow-automation/i18n';
 
-import { N8nHeading } from '@n8n/design-system';
+import { N8nHeading } from '@workflow-automation/design-system';
 interface Props {
 	workflows?: ITemplatesWorkflow[];
 	infiniteScrollEnabled?: boolean;

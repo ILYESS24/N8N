@@ -1,5 +1,5 @@
-﻿import type { AppliedThemeOption, INodeUi, NodeAuthenticationOption } from '@/Interface';
-import type { ITemplatesNode } from '@n8n/rest-api-client/api/templates';
+import type { AppliedThemeOption, INodeUi, NodeAuthenticationOption } from '@/Interface';
+import type { ITemplatesNode } from '@workflow-automation/rest-api-client/api/templates';
 import {
 	CORE_NODES_CATEGORY,
 	MAIN_AUTH_FIELD_NAME,
@@ -7,7 +7,7 @@ import {
 	NON_ACTIVATABLE_TRIGGER_NODE_TYPES,
 	TEMPLATES_NODES_FILTER,
 } from '@/app/constants';
-import { i18n as locale } from '@n8n/i18n';
+import { i18n as locale } from '@workflow-automation/i18n';
 import { useCredentialsStore } from '@/features/credentials/credentials.store';
 import { useNodeTypesStore } from '@/app/stores/nodeTypes.store';
 import { isJsonKeyObject } from '@/app/utils/typesUtils';

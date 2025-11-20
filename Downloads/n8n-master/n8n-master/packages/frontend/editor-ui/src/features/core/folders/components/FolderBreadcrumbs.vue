@@ -1,16 +1,16 @@
-﻿<script setup lang="ts">
-import { useI18n } from '@n8n/i18n';
+<script setup lang="ts">
+import { useI18n } from '@workflow-automation/i18n';
 import { useProjectsStore } from '@/features/collaboration/projects/projects.store';
 import { ProjectTypes } from '@/features/collaboration/projects/projects.types';
-import type { UserAction } from '@n8n/design-system/types';
-import { type PathItem } from '@n8n/design-system/components/N8nBreadcrumbs/Breadcrumbs.vue';
+import type { UserAction } from '@workflow-automation/design-system/types';
+import { type PathItem } from '@workflow-automation/design-system/components/N8nBreadcrumbs/Breadcrumbs.vue';
 import { computed, onBeforeUnmount, ref, watch } from 'vue';
 import { useFoldersStore } from '../folders.store';
 import type { FolderPathItem, FolderShortInfo } from '../folders.types';
 import type { IUser } from 'workflow-automation-workflow';
 import ProjectBreadcrumb from '@/features/core/folders/components/ProjectBreadcrumb.vue';
 
-import { N8nActionToggle, N8nBreadcrumbs } from '@n8n/design-system';
+import { N8nActionToggle, N8nBreadcrumbs } from '@workflow-automation/design-system';
 type Props = {
 	// Current folder can be null when showing breadcrumbs for workflows in project root
 	currentFolder?: FolderShortInfo | null;

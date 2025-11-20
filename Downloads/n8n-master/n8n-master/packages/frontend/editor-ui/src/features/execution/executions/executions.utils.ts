@@ -1,4 +1,4 @@
-﻿import { MANUAL_TRIGGER_NODE_TYPE, TRIMMED_TASK_DATA_CONNECTIONS_KEY } from 'workflow-automation-workflow';
+import { MANUAL_TRIGGER_NODE_TYPE, TRIMMED_TASK_DATA_CONNECTIONS_KEY } from 'workflow-automation-workflow';
 import type {
 	ITaskData,
 	ExecutionStatus,
@@ -29,8 +29,8 @@ import {
 	WORKFLOW_TRIGGER_NODE_TYPE,
 } from '@/app/constants';
 import { useWorkflowsStore } from '@/app/stores/workflows.store';
-import { useRootStore } from '@n8n/stores/useRootStore';
-import { i18n } from '@n8n/i18n';
+import { useRootStore } from '@workflow-automation/stores/useRootStore';
+import { i18n } from '@workflow-automation/i18n';
 import { h } from 'vue';
 import NodeExecutionErrorMessage from '@/app/components/NodeExecutionErrorMessage.vue';
 import { parse } from 'flatted';
@@ -359,7 +359,7 @@ export function getExecutionErrorToastConfiguration({
 		const nodeErrorName = 'node' in error && error.node?.name ? error.node.name : '';
 
 		return {
-			title: nodeErrorName ? `Error in sub-node â€˜${nodeErrorName}â€˜` : 'Problem executing workflow',
+			title: nodeErrorName ? `Error in sub-node ‘${nodeErrorName}‘` : 'Problem executing workflow',
 			message: h(NodeExecutionErrorMessage, {
 				errorMessage: error.description ?? message,
 				nodeName: nodeErrorName,
@@ -369,7 +369,7 @@ export function getExecutionErrorToastConfiguration({
 
 	return {
 		title: lastNodeExecuted
-			? `Problem in node â€˜${lastNodeExecuted}â€˜`
+			? `Problem in node ‘${lastNodeExecuted}‘`
 			: 'Problem executing workflow',
 		message,
 	};

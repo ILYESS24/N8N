@@ -1,5 +1,5 @@
 import { defineConfig } from 'eslint/config';
-import { nodeConfig } from '@n8n/eslint-config/node';
+import { nodeConfig } from '@workflow-automation/eslint-config/node';
 import eslintPlugin from 'eslint-plugin-eslint-plugin';
 
 export default defineConfig([

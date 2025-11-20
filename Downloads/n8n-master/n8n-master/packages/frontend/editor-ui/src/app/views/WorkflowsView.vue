@@ -1,4 +1,4 @@
-﻿<script lang="ts" setup>
+<script lang="ts" setup>
 import Draggable from '@/app/components/Draggable.vue';
 import EmptySharedSectionActionBox from '@/features/core/folders/components/EmptySharedSectionActionBox.vue';
 import FolderBreadcrumbs from '@/features/core/folders/components/FolderBreadcrumbs.vue';
@@ -71,10 +71,10 @@ import {
 	TemplateClickSource,
 	trackTemplatesClick,
 } from '@/experiments/utils';
-import type { PathItem } from '@n8n/design-system/components/N8nBreadcrumbs/Breadcrumbs.vue';
-import { useI18n } from '@n8n/i18n';
+import type { PathItem } from '@workflow-automation/design-system/components/N8nBreadcrumbs/Breadcrumbs.vue';
+import { useI18n } from '@workflow-automation/i18n';
 import { getResourcePermissions } from '@workflow-automation/permissions';
-import { createEventBus } from '@n8n/utils/event-bus';
+import { createEventBus } from '@workflow-automation/utils/event-bus';
 import debounce from 'lodash/debounce';
 import { type IUser, PROJECT_ROOT } from 'workflow-automation-workflow';
 import { computed, onBeforeUnmount, onMounted, ref, useTemplateRef, watch } from 'vue';
@@ -97,7 +97,7 @@ import {
 	N8nSelect,
 	N8nText,
 	N8nTooltip,
-} from '@n8n/design-system';
+} from '@workflow-automation/design-system';
 const SEARCH_DEBOUNCE_TIME = 300;
 const FILTERS_DEBOUNCE_TIME = 100;
 

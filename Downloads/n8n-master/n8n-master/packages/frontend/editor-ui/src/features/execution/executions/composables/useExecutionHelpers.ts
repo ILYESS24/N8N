@@ -1,6 +1,6 @@
-﻿import type { ExecutionSummary, RelatedExecution } from 'workflow-automation-workflow';
+import type { ExecutionSummary, RelatedExecution } from 'workflow-automation-workflow';
 import { convertToDisplayDate } from '@/app/utils/formatters/dateFormatter';
-import { useI18n } from '@n8n/i18n';
+import { useI18n } from '@workflow-automation/i18n';
 import { useRouter } from 'vue-router';
 import { VIEWS } from '@/app/constants';
 import { useTelemetry } from '@/app/composables/useTelemetry';

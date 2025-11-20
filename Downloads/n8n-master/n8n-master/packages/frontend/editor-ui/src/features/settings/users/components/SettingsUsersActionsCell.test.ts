@@ -1,12 +1,12 @@
-﻿import { createTestingPinia } from '@pinia/testing';
+import { createTestingPinia } from '@pinia/testing';
 import { screen } from '@testing-library/vue';
 import userEvent from '@testing-library/user-event';
 import { vi } from 'vitest';
 import { ROLE, type UsersList } from '@workflow-automation/api-types';
-import { type UserAction } from '@n8n/design-system';
+import { type UserAction } from '@workflow-automation/design-system';
 import SettingsUsersActionsCell from './SettingsUsersActionsCell.vue';
 import { createComponentRenderer } from '@/__tests__/render';
-import type { IUser } from '@n8n/rest-api-client/api/users';
+import type { IUser } from '@workflow-automation/rest-api-client/api/users';
 
 const baseUser: UsersList['items'][number] = {
 	id: '1',

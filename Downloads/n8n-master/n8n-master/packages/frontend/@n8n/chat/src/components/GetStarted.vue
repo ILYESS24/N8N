@@ -1,6 +1,6 @@
 <script setup lang="ts">
-import Button from '@n8n/chat/components/Button.vue';
-import { useI18n } from '@n8n/chat/composables';
+import Button from '@workflow-automation/chat/components/Button.vue';
+import { useI18n } from '@workflow-automation/chat/composables';
 
 const { t } = useI18n();
 </script>

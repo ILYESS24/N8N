@@ -6,7 +6,7 @@ import {
 } from '../utils/index.js';
 
 const allowedModules = [
-	'n8n-workflow',
+	'workflow-automation-workflow',
 	'lodash',
 	'moment',
 	'p-limit',

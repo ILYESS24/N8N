@@ -1,4 +1,4 @@
-﻿import type { INode, NodeApiError, Workflow } from 'workflow-automation-workflow';
+import type { INode, NodeApiError, Workflow } from 'workflow-automation-workflow';
 import { NodeConnectionTypes } from 'workflow-automation-workflow';
 import { setActivePinia } from 'pinia';
 import type { Ref } from 'vue';
@@ -27,8 +27,8 @@ import {
 	type CanvasNodeDefaultRender,
 } from '../canvas.types';
 import { createCanvasConnectionHandleString, createCanvasConnectionId } from '../canvas.utils';
-import { STORES } from '@n8n/stores';
-import { useRootStore } from '@n8n/stores/useRootStore';
+import { STORES } from '@workflow-automation/stores';
+import { useRootStore } from '@workflow-automation/stores/useRootStore';
 import { createTestingPinia } from '@pinia/testing';
 import { MarkerType } from '@vue-flow/core';
 import { mock } from 'vitest-mock-extended';
@@ -39,7 +39,7 @@ import {
 	type WorkflowState,
 } from '@/app/composables/useWorkflowState';
 
-vi.mock('@n8n/i18n', async (importOriginal) => ({
+vi.mock('@workflow-automation/i18n', async (importOriginal) => ({
 	...(await importOriginal()),
 	useI18n: () => ({
 		shortNodeType: (nodeType: string) => nodeType,

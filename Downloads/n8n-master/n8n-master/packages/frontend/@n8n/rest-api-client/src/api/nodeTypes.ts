@@ -1,11 +1,11 @@
-﻿import type {
+import type {
 	ActionResultRequestDto,
 	CommunityNodeType,
 	OptionsRequestDto,
 	ResourceLocatorRequestDto,
 	ResourceMapperFieldsRequestDto,
 } from '@workflow-automation/api-types';
-import type { INodeTranslationHeaders } from '@n8n/i18n';
+import type { INodeTranslationHeaders } from '@workflow-automation/i18n';
 import axios from 'axios';
 import type {
 	INodeListSearchResult,

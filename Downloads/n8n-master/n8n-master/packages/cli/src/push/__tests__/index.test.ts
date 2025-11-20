@@ -1,4 +1,4 @@
-﻿import type { Logger } from '@workflow-automation/backend-common';
+import type { Logger } from '@workflow-automation/backend-common';
 import { mockInstance } from '@n8n/backend-test-utils';
 import type { User } from '@workflow-automation/db';
 import type { Application } from 'express';
@@ -19,9 +19,9 @@ jest.mock('ws', () => ({
 	Server: jest.fn(),
 }));
 jest.unmock('@/push');
-jest.mock('@n8n/backend-common', () => {
+jest.mock('@workflow-automation/backend-common', () => {
 	return {
-		...jest.requireActual('@n8n/backend-common'),
+		...jest.requireActual('@workflow-automation/backend-common'),
 		inProduction: true,
 	};
 });

@@ -1,4 +1,4 @@
-﻿<script setup lang="ts">
+<script setup lang="ts">
 import { computed, onMounted, onUnmounted, ref, useTemplateRef } from 'vue';
 import get from 'lodash/get';
 import set from 'lodash/set';
@@ -22,8 +22,8 @@ import {
 	defaultMessageEventBusDestinationSyslogOptions,
 	defaultMessageEventBusDestinationSentryOptions,
 } from 'workflow-automation-workflow';
-import type { EventBus } from '@n8n/utils/event-bus';
-import { createEventBus } from '@n8n/utils/event-bus';
+import type { EventBus } from '@workflow-automation/utils/event-bus';
+import { createEventBus } from '@workflow-automation/utils/event-bus';
 
 import { useLogStreamingStore } from '../logStreaming.store';
 import { useNDVStore } from '@/features/ndv/shared/ndv.store';
@@ -32,16 +32,16 @@ import ParameterInputList from '@/features/ndv/parameters/components/ParameterIn
 import type { IMenuItem, IUpdateInformation, ModalKey } from '@/Interface';
 import { LOG_STREAM_MODAL_KEY, MODAL_CONFIRM } from '@/app/constants';
 import Modal from '@/app/components/Modal.vue';
-import { useI18n } from '@n8n/i18n';
+import { useI18n } from '@workflow-automation/i18n';
 import { useMessage } from '@/app/composables/useMessage';
 import { useUIStore } from '@/app/stores/ui.store';
 import { hasPermission } from '@/app/utils/rbac/permissions';
 import { destinationToFakeINodeUi } from '../logStreaming.utils';
-import type { BaseTextKey } from '@n8n/i18n';
+import type { BaseTextKey } from '@workflow-automation/i18n';
 import SaveButton from '@/app/components/SaveButton.vue';
 import EventSelection from './EventSelection.vue';
 import { useTelemetry } from '@/app/composables/useTelemetry';
-import { useRootStore } from '@n8n/stores/useRootStore';
+import { useRootStore } from '@workflow-automation/stores/useRootStore';
 
 import {
 	webhookModalDescription,
@@ -59,7 +59,7 @@ import {
 	N8nOption,
 	N8nSelect,
 	N8nText,
-} from '@n8n/design-system';
+} from '@workflow-automation/design-system';
 import {
 	injectWorkflowState,
 	type WorkflowStateBusEvents,

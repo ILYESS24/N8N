@@ -25,7 +25,7 @@ function createConfig(supportCloud = true): ConfigArray {
 			},
 		},
 		{
-			plugins: { 'n8n-nodes-base': n8nNodesPlugin },
+			plugins: { 'workflow-automation-nodes-base': n8nNodesPlugin },
 			settings: {
 				'import-x/resolver-next': [createTypeScriptImportResolver()],
 			},

@@ -1,5 +1,5 @@
-﻿import type { JSONSchema7 } from 'json-schema';
-import { createMockExecuteFunction } from 'n8n-nodes-base/test/nodes/Helpers';
+import type { JSONSchema7 } from 'json-schema';
+import { createMockExecuteFunction } from 'workflow-automation-nodes-base/test/nodes/Helpers';
 import { NodeOperationError } from 'workflow-automation-workflow';
 import type { INode, IExecuteFunctions } from 'workflow-automation-workflow';
 

@@ -1,13 +1,13 @@
-﻿import { defineComponent } from 'vue';
+import { defineComponent } from 'vue';
 import { createTestingPinia } from '@pinia/testing';
 import { screen, within } from '@testing-library/vue';
 import { vi } from 'vitest';
 import { ROLE, type UsersList } from '@workflow-automation/api-types';
-import { type UserAction } from '@n8n/design-system';
+import { type UserAction } from '@workflow-automation/design-system';
 import SettingsUsersTable from './SettingsUsersTable.vue';
 import { createComponentRenderer } from '@/__tests__/render';
 import { useEmitters } from '@/__tests__/utils';
-import type { IUser } from '@n8n/rest-api-client/api/users';
+import type { IUser } from '@workflow-automation/rest-api-client/api/users';
 
 const { emitters, addEmitter } = useEmitters<
 	'settingsUsersRoleCell' | 'settingsUsersActionsCell' | 'n8nDataTableServer'
@@ -42,7 +42,7 @@ vi.mock('./SettingsUsersActionsCell.vue', () => ({
 }));
 
 // Mock N8nDataTableServer to emit events
-vi.mock('@n8n/design-system', async (importOriginal) => {
+vi.mock('@workflow-automation/design-system', async (importOriginal) => {
 	const original = await importOriginal<object>();
 	return {
 		...original,

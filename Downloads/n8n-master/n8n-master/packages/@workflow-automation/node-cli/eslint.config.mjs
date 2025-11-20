@@ -1,5 +1,5 @@
 import { defineConfig, globalIgnores } from 'eslint/config';
-import { nodeConfig } from '@n8n/eslint-config/node';
+import { nodeConfig } from '@workflow-automation/eslint-config/node';
 
 export default defineConfig(
 	globalIgnores(['src/template/templates/**/template', 'src/template/templates/shared']),

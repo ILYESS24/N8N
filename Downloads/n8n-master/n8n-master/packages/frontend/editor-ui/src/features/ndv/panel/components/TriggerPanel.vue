@@ -1,4 +1,4 @@
-﻿<script setup lang="ts">
+<script setup lang="ts">
 import { computed, ref } from 'vue';
 import {
 	CHAT_TRIGGER_NODE_TYPE,
@@ -17,11 +17,11 @@ import { useUIStore } from '@/app/stores/ui.store';
 import { useWorkflowsStore } from '@/app/stores/workflows.store';
 import { useNDVStore } from '@/features/ndv/shared/ndv.store';
 import { useNodeTypesStore } from '@/app/stores/nodeTypes.store';
-import { createEventBus } from '@n8n/utils/event-bus';
+import { createEventBus } from '@workflow-automation/utils/event-bus';
 import { useRouter } from 'vue-router';
 import { useWorkflowHelpers } from '@/app/composables/useWorkflowHelpers';
 import { isTriggerPanelObject } from '@/app/utils/typeGuards';
-import { useI18n } from '@n8n/i18n';
+import { useI18n } from '@workflow-automation/i18n';
 import { useTelemetry } from '@/app/composables/useTelemetry';
 
 import {
@@ -32,7 +32,7 @@ import {
 	N8nPulse,
 	N8nSpinner,
 	N8nText,
-} from '@n8n/design-system';
+} from '@workflow-automation/design-system';
 const props = withDefaults(
 	defineProps<{
 		nodeName: string;

@@ -1,14 +1,14 @@
-﻿<script lang="ts" setup>
+<script lang="ts" setup>
 import { computed, onBeforeUnmount, onMounted, ref, watch } from 'vue';
 import WorkflowExecutionsList from '../components/workflow/WorkflowExecutionsList.vue';
 import { useExecutionsStore } from '../executions.store';
-import { useI18n } from '@n8n/i18n';
+import { useI18n } from '@workflow-automation/i18n';
 import type { ExecutionFilterType } from '../executions.types';
 import type { IWorkflowDb } from '@/Interface';
 import { useWorkflowsStore } from '@/app/stores/workflows.store';
 import { useNodeTypesStore } from '@/app/stores/nodeTypes.store';
 import { useProjectsStore } from '@/features/collaboration/projects/projects.store';
-import { NO_NETWORK_ERROR_CODE } from '@n8n/rest-api-client';
+import { NO_NETWORK_ERROR_CODE } from '@workflow-automation/rest-api-client';
 import { useToast } from '@/app/composables/useToast';
 import { NEW_WORKFLOW_ID, PLACEHOLDER_EMPTY_WORKFLOW_ID, VIEWS } from '@/app/constants';
 import { useRoute, useRouter } from 'vue-router';

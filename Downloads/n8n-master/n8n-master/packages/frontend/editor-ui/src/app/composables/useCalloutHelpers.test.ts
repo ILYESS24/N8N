@@ -1,5 +1,5 @@
 import { useCalloutHelpers } from '@/app/composables/useCalloutHelpers';
-import { updateCurrentUserSettings } from '@n8n/rest-api-client/api/users';
+import { updateCurrentUserSettings } from '@workflow-automation/rest-api-client/api/users';
 import { createTestingPinia } from '@pinia/testing';
 import {
 	PrebuiltAgentTemplates,

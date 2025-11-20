@@ -1,4 +1,4 @@
-﻿import { DynamicTool } from '@langchain/core/tools';
+import { DynamicTool } from '@langchain/core/tools';
 import { ApplicationError, NodeOperationError } from 'workflow-automation-workflow';
 import type {
 	ISupplyDataFunctions,
@@ -11,8 +11,8 @@ import type {
 import { WorkflowToolService } from './utils/WorkflowToolService';
 
 // Mock the sleep functions
-jest.mock('n8n-workflow', () => ({
-	...jest.requireActual('n8n-workflow'),
+jest.mock('workflow-automation-workflow', () => ({
+	...jest.requireActual('workflow-automation-workflow'),
 	sleep: jest.fn().mockResolvedValue(undefined),
 	sleepWithAbort: jest.fn().mockResolvedValue(undefined),
 }));
@@ -570,7 +570,7 @@ describe('WorkflowTool::WorkflowToolService', () => {
 		});
 
 		it('should respect waitBetweenTries with sleepWithAbort', async () => {
-			const { sleepWithAbort } = jest.requireMock('n8n-workflow');
+			const { sleepWithAbort } = jest.requireMock('workflow-automation-workflow');
 			sleepWithAbort.mockClear();
 			const executeWorkflowMock = jest.fn().mockRejectedValue(new Error('Test error'));
 
@@ -686,7 +686,7 @@ describe('WorkflowTool::WorkflowToolService', () => {
 		});
 
 		it('should handle abort signal during retry wait', async () => {
-			const { sleepWithAbort } = jest.requireMock('n8n-workflow');
+			const { sleepWithAbort } = jest.requireMock('workflow-automation-workflow');
 			sleepWithAbort.mockRejectedValue(new Error('Execution was cancelled'));
 
 			const executeWorkflowMock = jest
@@ -744,7 +744,7 @@ describe('WorkflowTool::WorkflowToolService', () => {
 		});
 
 		it('should complete successfully if not aborted', async () => {
-			const { sleepWithAbort } = jest.requireMock('n8n-workflow');
+			const { sleepWithAbort } = jest.requireMock('workflow-automation-workflow');
 			sleepWithAbort.mockClear().mockResolvedValue(undefined);
 
 			const executeWorkflowMock = jest
@@ -776,7 +776,7 @@ describe('WorkflowTool::WorkflowToolService', () => {
 		});
 
 		it('should work when getExecutionCancelSignal is not available', async () => {
-			const { sleepWithAbort } = jest.requireMock('n8n-workflow');
+			const { sleepWithAbort } = jest.requireMock('workflow-automation-workflow');
 			sleepWithAbort.mockClear().mockResolvedValue(undefined);
 
 			const executeWorkflowMock = jest

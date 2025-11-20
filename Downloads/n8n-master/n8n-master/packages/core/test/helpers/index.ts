@@ -1,4 +1,4 @@
-﻿import { readdirSync, readFileSync } from 'fs';
+import { readdirSync, readFileSync } from 'fs';
 import { mock } from 'jest-mock-extended';
 import type {
 	IDataObject,
@@ -99,7 +99,7 @@ export function getNodeTypes(testData: WorkflowTestData[] | WorkflowTestData) {
 	for (const nodeName of nodeNames) {
 		const loadInfo = knownNodes[nodeName.replace('n8n-nodes-base.', '')];
 		if (!loadInfo) {
-			throw new UnrecognizedNodeTypeError('n8n-nodes-base', nodeName);
+			throw new UnrecognizedNodeTypeError('workflow-automation-nodes-base', nodeName);
 		}
 		const sourcePath = loadInfo.sourcePath.replace(/^dist\//, './').replace(/\.js$/, '.ts');
 		const nodeSourcePath = path.join(BASE_DIR, 'nodes-base', sourcePath);

@@ -1,4 +1,4 @@
-﻿import type { SamlPreferences } from '@workflow-automation/api-types';
+import type { SamlPreferences } from '@workflow-automation/api-types';
 import { mockInstance, mockLogger } from '@n8n/backend-test-utils';
 import type { GlobalConfig } from '@workflow-automation/config';
 import { SettingsRepository } from '@workflow-automation/db';
@@ -215,7 +215,7 @@ describe('SamlService', () => {
 			provisioningService,
 		);
 		// Mock GlobalConfig container access
-		Container.set(require('@n8n/config').GlobalConfig, globalConfig);
+		Container.set(require('@workflow-automation/config').GlobalConfig, globalConfig);
 	});
 
 	describe('getAttributesFromLoginResponse', () => {

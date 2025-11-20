@@ -1,11 +1,11 @@
-﻿<script lang="ts" setup>
+<script lang="ts" setup>
 import { useToast } from '@/app/composables/useToast';
 import { useWorkflowActivate } from '@/app/composables/useWorkflowActivate';
 import { useWorkflowsStore } from '@/app/stores/workflows.store';
 import { getActivatableTriggerNodes } from '@/app/utils/nodeTypesUtils';
 import type { VNode } from 'vue';
 import { computed, h, watch } from 'vue';
-import { useI18n } from '@n8n/i18n';
+import { useI18n } from '@workflow-automation/i18n';
 import type { PermissionsRecord } from '@workflow-automation/permissions';
 import {
 	WORKFLOW_ACTIVATION_CONFLICTING_WEBHOOK_MODAL_KEY,
@@ -22,7 +22,7 @@ import { useUIStore } from '@/app/stores/ui.store';
 import { useWorkflowHelpers } from '@/app/composables/useWorkflowHelpers';
 
 import { ElSwitch } from 'element-plus';
-import { N8nIcon, N8nText, N8nTooltip } from '@n8n/design-system';
+import { N8nIcon, N8nText, N8nTooltip } from '@workflow-automation/design-system';
 const props = defineProps<{
 	isArchived: boolean;
 	workflowActive: boolean;

@@ -1,4 +1,4 @@
-﻿import { useI18n } from '@n8n/i18n';
+import { useI18n } from '@workflow-automation/i18n';
 import type { INodeUi, Optional, Primitives, Schema, SchemaType } from '@/Interface';
 import { useWorkflowsStore } from '@/app/stores/workflows.store';
 import { generatePath, getNodeParentExpression } from '@/app/utils/mappingUtils';
@@ -15,7 +15,7 @@ import {
 	NodeConnectionTypes,
 } from 'workflow-automation-workflow';
 import { ref } from 'vue';
-import { type IconName } from '@n8n/design-system/components/N8nIcon/icons';
+import { type IconName } from '@workflow-automation/design-system/components/N8nIcon/icons';
 import { DATA_TYPE_ICON_MAP } from '@/app/constants';
 
 export function useDataSchema() {

@@ -1,4 +1,4 @@
-﻿<script lang="ts" setup>
+<script lang="ts" setup>
 import ProjectCardBadge from '@/features/collaboration/projects/components/ProjectCardBadge.vue';
 import { useLoadingService } from '@/app/composables/useLoadingService';
 import { useTelemetry } from '@/app/composables/useTelemetry';
@@ -23,8 +23,8 @@ import {
 	SOURCE_CONTROL_FILE_STATUS,
 	SOURCE_CONTROL_FILE_TYPE,
 } from '@workflow-automation/api-types';
-import { useI18n } from '@n8n/i18n';
-import type { EventBus } from '@n8n/utils/event-bus';
+import { useI18n } from '@workflow-automation/i18n';
+import type { EventBus } from '@workflow-automation/utils/event-bus';
 import { refDebounced, useStorage } from '@vueuse/core';
 import dateformat from 'dateformat';
 import orderBy from 'lodash/orderBy';
@@ -52,7 +52,7 @@ import {
 	N8nSelect,
 	N8nText,
 	N8nTooltip,
-} from '@n8n/design-system';
+} from '@workflow-automation/design-system';
 const props = defineProps<{
 	data: { eventBus: EventBus; status?: SourceControlledFile[] };
 }>();

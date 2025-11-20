@@ -1,4 +1,4 @@
-﻿import { createComponentRenderer } from '@/__tests__/render';
+import { createComponentRenderer } from '@/__tests__/render';
 import { createTestingPinia } from '@pinia/testing';
 import { ref } from 'vue';
 import WorkflowProductionChecklist from '@/app/components/WorkflowProductionChecklist.vue';
@@ -45,9 +45,9 @@ vi.mock('@/app/composables/useTelemetry', () => ({
 	useTelemetry: vi.fn(),
 }));
 
-vi.mock('@n8n/i18n', async (importOriginal) => {
+vi.mock('@workflow-automation/i18n', async (importOriginal) => {
 	// eslint-disable-next-line @typescript-eslint/consistent-type-imports
-	const actual = await importOriginal<typeof import('@n8n/i18n')>();
+	const actual = await importOriginal<typeof import('@workflow-automation/i18n')>();
 	return {
 		...actual,
 		useI18n: () => ({

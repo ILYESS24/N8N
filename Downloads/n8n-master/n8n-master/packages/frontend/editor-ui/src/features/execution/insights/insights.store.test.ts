@@ -1,12 +1,12 @@
-﻿import { describe, it, expect, vi, beforeEach, afterEach } from 'vitest';
+import { describe, it, expect, vi, beforeEach, afterEach } from 'vitest';
 import { createTestingPinia } from '@pinia/testing';
 import { useInsightsStore } from '@/features/execution/insights/insights.store';
 import * as insightsApi from '@/features/execution/insights/insights.api';
-import { useRootStore } from '@n8n/stores/useRootStore';
+import { useRootStore } from '@workflow-automation/stores/useRootStore';
 import { useUsersStore } from '@/features/settings/users/users.store';
 import { useSettingsStore } from '@/app/stores/settings.store';
 import { mockedStore, type MockedStore } from '@/__tests__/utils';
-import type { IUser } from '@n8n/rest-api-client/api/users';
+import type { IUser } from '@workflow-automation/rest-api-client/api/users';
 import { reactive } from 'vue';
 import type { FrontendModuleSettings } from '@workflow-automation/api-types';
 

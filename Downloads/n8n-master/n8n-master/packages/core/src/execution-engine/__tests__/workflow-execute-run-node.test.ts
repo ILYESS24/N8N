@@ -1,4 +1,4 @@
-﻿/**
+/**
  * Tests for the actual WorkflowExecute.runNode method
  * These tests ensure the real implementation behavior is preserved
  * during refactoring
@@ -7,13 +7,13 @@
  */
 
 // Mock all external dependencies first, before any imports
-jest.mock('@n8n/config', () => ({
+jest.mock('@workflow-automation/config', () => ({
 	GlobalConfig: jest.fn().mockImplementation(() => ({
 		sentry: { backendDsn: '' },
 	})),
 }));
 
-jest.mock('@n8n/di', () => ({
+jest.mock('@workflow-automation/di', () => ({
 	Container: {
 		get: jest.fn(),
 	},

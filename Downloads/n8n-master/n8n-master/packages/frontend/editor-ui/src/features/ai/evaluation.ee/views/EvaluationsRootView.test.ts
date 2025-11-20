@@ -1,4 +1,4 @@
-﻿import { describe, it, expect, beforeEach, vi } from 'vitest';
+import { describe, it, expect, beforeEach, vi } from 'vitest';
 import { mock } from 'vitest-mock-extended';
 import { createTestingPinia } from '@pinia/testing';
 import { createComponentRenderer } from '@/__tests__/render';
@@ -34,7 +34,7 @@ vi.mock('@/app/stores/nodeTypes.store', () => ({
 	})),
 }));
 
-vi.mock('@n8n/i18n', async (importOriginal) => {
+vi.mock('@workflow-automation/i18n', async (importOriginal) => {
 	return {
 		...(await importOriginal()),
 		useI18n: () => ({

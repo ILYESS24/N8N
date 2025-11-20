@@ -1,9 +1,9 @@
 <script setup lang="ts">
 import { useClipboard } from '@/app/composables/useClipboard';
-import { useI18n } from '@n8n/i18n';
+import { useI18n } from '@workflow-automation/i18n';
 import { useToast } from '@/app/composables/useToast';
 
-import { N8nInputLabel } from '@n8n/design-system';
+import { N8nInputLabel } from '@workflow-automation/design-system';
 type Props = {
 	label?: string;
 	hint?: string;

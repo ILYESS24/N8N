@@ -1,14 +1,14 @@
-﻿<script lang="ts" setup>
+<script lang="ts" setup>
 import { computed, onMounted, ref, watch } from 'vue';
-import { useI18n } from '@n8n/i18n';
-import { sortByProperty } from '@n8n/utils/sort/sortByProperty';
+import { useI18n } from '@workflow-automation/i18n';
+import { sortByProperty } from '@workflow-automation/utils/sort/sortByProperty';
 import { EnterpriseEditionFeature } from '@/app/constants';
 import { MOVE_FOLDER_MODAL_KEY } from '../folders.constants';
 import { useFoldersStore } from '../folders.store';
 import { useProjectsStore } from '@/features/collaboration/projects/projects.store';
 import { useUIStore } from '@/app/stores/ui.store';
 import { useCredentialsStore } from '@/features/credentials/credentials.store';
-import { type EventBus, createEventBus } from '@n8n/utils/event-bus';
+import { type EventBus, createEventBus } from '@workflow-automation/utils/event-bus';
 import { ProjectTypes } from '@/features/collaboration/projects/projects.types';
 import type {
 	ProjectListItem,
@@ -32,7 +32,7 @@ import {
 import { useWorkflowsStore } from '@/app/stores/workflows.store';
 import { I18nT } from 'vue-i18n';
 
-import { N8nButton, N8nCallout, N8nCheckbox, N8nText, N8nTooltip } from '@n8n/design-system';
+import { N8nButton, N8nCallout, N8nCheckbox, N8nText, N8nTooltip } from '@workflow-automation/design-system';
 /**
  * This modal is used to move a resource (folder or workflow) to a different folder.
  */

@@ -1,4 +1,4 @@
-﻿import type { IUser } from '@n8n/rest-api-client/api/users';
+import type { IUser } from '@workflow-automation/rest-api-client/api/users';
 import type { Role, ROLE } from '@workflow-automation/api-types';
 
 export type ILogInStatus = 'LoggedIn' | 'LoggedOut';

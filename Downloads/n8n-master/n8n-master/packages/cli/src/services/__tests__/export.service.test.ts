@@ -1,4 +1,4 @@
-﻿import { type Logger } from '@workflow-automation/backend-common';
+import { type Logger } from '@workflow-automation/backend-common';
 import { ExportService } from '../export.service';
 import { type DataSource } from '@n8n/typeorm';
 import { mkdir, rm, readdir, appendFile, readFile } from 'fs/promises';
@@ -25,7 +25,7 @@ jest.mock('@/utils/validate-database-type', () => ({
 }));
 
 // Mock @n8n/db
-jest.mock('@n8n/db', () => ({
+jest.mock('@workflow-automation/db', () => ({
 	DataSource: mock<DataSource>(),
 }));
 
@@ -122,7 +122,7 @@ describe('ExportService', () => {
 
 			expect(mockDataSource.query).toHaveBeenCalled();
 			expect(appendFile).toHaveBeenCalled();
-			expect(mockLogger.info).toHaveBeenCalledWith('âœ… Task completed successfully! \n');
+			expect(mockLogger.info).toHaveBeenCalledWith('✅ Task completed successfully! \n');
 		});
 
 		it('should export entities successfully with a custom encryption key', async () => {
@@ -150,7 +150,7 @@ describe('ExportService', () => {
 
 			expect(mockCipher.encrypt).toHaveBeenCalledWith(expect.any(String), 'custom-encryption-key');
 			expect(appendFile).toHaveBeenCalledWith(expect.any(String), expect.any(String), 'utf8');
-			expect(mockLogger.info).toHaveBeenCalledWith('âœ… Task completed successfully! \n');
+			expect(mockLogger.info).toHaveBeenCalledWith('✅ Task completed successfully! \n');
 		});
 
 		it('should handle multiple pages of data', async () => {
@@ -231,7 +231,7 @@ describe('ExportService', () => {
 			// which means no entities to export, so clearExistingEntityFiles is never called for non-empty entities
 			// Since all entities are empty, no files are created and no existing files are removed
 			// Let's verify that the function completed without errors instead
-			expect(mockLogger.info).toHaveBeenCalledWith('âœ… Task completed successfully! \n');
+			expect(mockLogger.info).toHaveBeenCalledWith('✅ Task completed successfully! \n');
 		});
 
 		it('should handle empty tables', async () => {
@@ -370,7 +370,7 @@ describe('ExportService', () => {
 
 			// Verify logging
 			expect(mockLogger.info).toHaveBeenCalledWith(
-				'   âœ… Completed export for migrations: 2 entities in 1 file',
+				'   ✅ Completed export for migrations: 2 entities in 1 file',
 			);
 		});
 

@@ -1,4 +1,4 @@
-﻿import type * as express from 'express';
+import type * as express from 'express';
 import { type IncomingHttpHeaders } from 'http';
 import { mock } from 'jest-mock-extended';
 import get from 'lodash/get';
@@ -6,7 +6,7 @@ import merge from 'lodash/merge';
 import set from 'lodash/set';
 import { PollContext, returnJsonArray } from 'workflow-automation-core';
 import type { InstanceSettings, ExecutionLifecycleHooks } from 'workflow-automation-core';
-import { ScheduledTaskManager } from 'n8n-core/dist/execution-engine/scheduled-task-manager';
+import { ScheduledTaskManager } from 'workflow-automation-core/dist/execution-engine/scheduled-task-manager';
 import {
 	createDeferredPromise,
 	type IBinaryData,

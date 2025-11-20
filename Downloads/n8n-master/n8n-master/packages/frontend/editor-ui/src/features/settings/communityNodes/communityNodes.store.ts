@@ -1,8 +1,8 @@
-﻿import * as communityNodesApi from '@n8n/rest-api-client/api/communityNodes';
+import * as communityNodesApi from '@workflow-automation/rest-api-client/api/communityNodes';
 import { defineStore } from 'pinia';
-import { useRootStore } from '@n8n/stores/useRootStore';
+import { useRootStore } from '@workflow-automation/stores/useRootStore';
 import type { PublicInstalledPackage } from 'workflow-automation-workflow';
-import { STORES } from '@n8n/stores';
+import { STORES } from '@workflow-automation/stores';
 import { computed, ref } from 'vue';
 import { isAuthenticated } from '@/app/utils/rbac/checks';
 import type { CommunityPackageMap } from './communityNodes.types';

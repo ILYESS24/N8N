@@ -1,9 +1,9 @@
 <script lang="ts" setup>
 import { computed } from 'vue';
 import { VIEWS } from '@/app/constants';
-import { useI18n } from '@n8n/i18n';
+import { useI18n } from '@workflow-automation/i18n';
 
-import { N8nIconButton, N8nTooltip } from '@n8n/design-system';
+import { N8nIconButton, N8nTooltip } from '@workflow-automation/design-system';
 const locale = useI18n();
 
 const props = defineProps<{

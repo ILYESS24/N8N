@@ -1,4 +1,4 @@
-﻿<script lang="ts" setup>
+<script lang="ts" setup>
 import { ref, computed } from 'vue';
 import ParameterInputList from './ParameterInputList.vue';
 import type { IUpdateInformation } from '@/Interface';
@@ -15,10 +15,10 @@ import get from 'lodash/get';
 
 import { useNDVStore } from '@/features/ndv/shared/ndv.store';
 import { useNodeHelpers } from '@/app/composables/useNodeHelpers';
-import { useI18n } from '@n8n/i18n';
+import { useI18n } from '@workflow-automation/i18n';
 import { storeToRefs } from 'pinia';
 
-import { N8nButton, N8nOption, N8nSelect, N8nText } from '@n8n/design-system';
+import { N8nButton, N8nOption, N8nSelect, N8nText } from '@workflow-automation/design-system';
 const selectedOption = ref<string | undefined>(undefined);
 export interface Props {
 	hideDelete?: boolean;

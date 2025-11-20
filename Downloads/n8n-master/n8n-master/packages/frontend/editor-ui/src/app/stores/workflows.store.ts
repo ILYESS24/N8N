@@ -1,4 +1,4 @@
-﻿import {
+import {
 	AI_NODES_PACKAGE_NAME,
 	CHAT_TRIGGER_NODE_TYPE,
 	DEFAULT_WORKFLOW_PAGE_SIZE,
@@ -10,7 +10,7 @@
 	START_NODE_TYPE,
 	WAIT_NODE_TYPE,
 } from '@/app/constants';
-import { STORES } from '@n8n/stores';
+import { STORES } from '@workflow-automation/stores';
 import type {
 	INodeMetadata,
 	INodeUi,
@@ -28,12 +28,12 @@ import type {
 	IExecutionFlattedResponse,
 } from '@/features/execution/executions/executions.types';
 import type { IUsedCredential } from '@/features/credentials/credentials.types';
-import type { IWorkflowTemplateNode } from '@n8n/rest-api-client/api/templates';
+import type { IWorkflowTemplateNode } from '@workflow-automation/rest-api-client/api/templates';
 import type {
 	WorkflowMetadata,
 	WorkflowDataCreate,
 	WorkflowDataUpdate,
-} from '@n8n/rest-api-client/api/workflows';
+} from '@workflow-automation/rest-api-client/api/workflows';
 import { defineStore } from 'pinia';
 import type {
 	IConnection,
@@ -61,14 +61,14 @@ import {
 	Workflow,
 	TelemetryHelpers,
 } from 'workflow-automation-workflow';
-import * as workflowUtils from 'n8n-workflow/common';
+import * as workflowUtils from 'workflow-automation-workflow/common';
 
-import { useRootStore } from '@n8n/stores/useRootStore';
+import { useRootStore } from '@workflow-automation/stores/useRootStore';
 import * as workflowsApi from '@/app/api/workflows';
 import { useUIStore } from '@/app/stores/ui.store';
 import { dataPinningEventBus } from '@/app/event-bus';
 import { isJsonKeyObject, stringSizeInBytes, isPresent } from '@/app/utils/typesUtils';
-import { makeRestApiRequest, ResponseError } from '@n8n/rest-api-client';
+import { makeRestApiRequest, ResponseError } from '@workflow-automation/rest-api-client';
 import {
 	unflattenExecutionData,
 	findTriggerNodeToAutoSelect,
@@ -77,7 +77,7 @@ import {
 import { useNDVStore } from '@/features/ndv/shared/ndv.store';
 import { useNodeTypesStore } from '@/app/stores/nodeTypes.store';
 import { getCredentialOnlyNodeTypeName } from '@/app/utils/credentialOnlyNodes';
-import { i18n } from '@n8n/i18n';
+import { i18n } from '@workflow-automation/i18n';
 
 import { computed, ref, watch } from 'vue';
 import { useProjectsStore } from '@/features/collaboration/projects/projects.store';
@@ -87,8 +87,8 @@ import { useWorkflowHelpers } from '@/app/composables/useWorkflowHelpers';
 import { useSettingsStore } from './settings.store';
 import { useNodeHelpers } from '@/app/composables/useNodeHelpers';
 import { useUsersStore } from '@/features/settings/users/users.store';
-import { updateCurrentUserSettings } from '@n8n/rest-api-client/api/users';
-import type { NodeExecuteBefore } from '@n8n/api-types/push/execution';
+import { updateCurrentUserSettings } from '@workflow-automation/rest-api-client/api/users';
+import type { NodeExecuteBefore } from '@workflow-automation/api-types/push/execution';
 import { isChatNode } from '@/app/utils/aiUtils';
 import { snapPositionToGrid } from '@/app/utils/nodeViewUtils';
 import { useSourceControlStore } from '@/features/integrations/sourceControl.ee/sourceControl.store';

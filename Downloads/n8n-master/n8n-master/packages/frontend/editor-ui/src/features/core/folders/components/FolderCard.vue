@@ -1,13 +1,13 @@
-﻿<script setup lang="ts">
+<script setup lang="ts">
 import { computed, ref } from 'vue';
 import { FOLDER_LIST_ITEM_ACTIONS } from '../folders.constants';
 import { ProjectTypes, type Project } from '@/features/collaboration/projects/projects.types';
-import { useI18n } from '@n8n/i18n';
+import { useI18n } from '@workflow-automation/i18n';
 import { useRoute, useRouter } from 'vue-router';
 import { VIEWS } from '@/app/constants';
 import type { UserAction, FolderResource } from '@/Interface';
 import { ResourceType } from '@/features/collaboration/projects/projects.utils';
-import type { PathItem } from '@n8n/design-system/components/N8nBreadcrumbs/Breadcrumbs.vue';
+import type { PathItem } from '@workflow-automation/design-system/components/N8nBreadcrumbs/Breadcrumbs.vue';
 import { useFoldersStore } from '../folders.store';
 import { type IUser } from 'workflow-automation-workflow';
 import TimeAgo from '@/app/components/TimeAgo.vue';
@@ -21,7 +21,7 @@ import {
 	N8nHeading,
 	N8nIcon,
 	N8nText,
-} from '@n8n/design-system';
+} from '@workflow-automation/design-system';
 
 type Props = {
 	data: FolderResource;

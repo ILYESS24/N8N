@@ -1,5 +1,5 @@
-﻿<script lang="ts" setup>
-import { useI18n } from '@n8n/i18n';
+<script lang="ts" setup>
+import { useI18n } from '@workflow-automation/i18n';
 import { onMounted, ref, computed } from 'vue';
 import { useDataTableStore } from '@/features/core/dataTable/dataTable.store';
 import { useUIStore } from '@/app/stores/ui.store';
@@ -19,7 +19,7 @@ import {
 	N8nSelect,
 	N8nOption,
 	N8nText,
-} from '@n8n/design-system';
+} from '@workflow-automation/design-system';
 import Modal from '@/app/components/Modal.vue';
 import { ElUpload, ElRadio, ElRadioGroup } from 'element-plus';
 import type { UploadFile } from 'element-plus';

@@ -1,5 +1,5 @@
-﻿<script setup lang="ts">
-import { useI18n } from '@n8n/i18n';
+<script setup lang="ts">
+import { useI18n } from '@workflow-automation/i18n';
 import type { OAuthClientResponseDto } from '@workflow-automation/api-types';
 import type { UserAction } from '@/Interface';
 import {
@@ -11,9 +11,9 @@ import {
 	N8nLoading,
 	N8nText,
 	N8nTooltip,
-} from '@n8n/design-system';
+} from '@workflow-automation/design-system';
 import { ref } from 'vue';
-import type { TableHeader } from '@n8n/design-system/components/N8nDataTableServer';
+import type { TableHeader } from '@workflow-automation/design-system/components/N8nDataTableServer';
 import TimeAgo from '@/app/components/TimeAgo.vue';
 
 const i18n = useI18n();

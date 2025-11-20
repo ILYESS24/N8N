@@ -1,7 +1,7 @@
-﻿import { computed } from 'vue';
+import { computed } from 'vue';
 import { useRouter, useRoute } from 'vue-router';
-import { useI18n } from '@n8n/i18n';
-import { N8nIcon } from '@n8n/design-system';
+import { useI18n } from '@workflow-automation/i18n';
+import { N8nIcon } from '@workflow-automation/design-system';
 import { useExecutionsStore } from '@/features/execution/executions/executions.store';
 import { useWorkflowsStore } from '@/app/stores/workflows.store';
 import { useSettingsStore } from '@/app/stores/settings.store';

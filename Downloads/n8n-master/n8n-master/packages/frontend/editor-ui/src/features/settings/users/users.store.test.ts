@@ -1,4 +1,4 @@
-import type { CurrentUserResponse } from '@n8n/rest-api-client/api/users';
+import type { CurrentUserResponse } from '@workflow-automation/rest-api-client/api/users';
 import { useUsersStore } from './users.store';
 import { createPinia, setActivePinia } from 'pinia';
 

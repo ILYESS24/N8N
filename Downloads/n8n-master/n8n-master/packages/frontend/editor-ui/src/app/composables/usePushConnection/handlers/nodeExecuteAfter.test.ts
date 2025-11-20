@@ -1,10 +1,10 @@
-﻿import { createTestingPinia } from '@pinia/testing';
+import { createTestingPinia } from '@pinia/testing';
 import { setActivePinia } from 'pinia';
 import { nodeExecuteAfter } from './nodeExecuteAfter';
 import { useWorkflowsStore } from '@/app/stores/workflows.store';
 import { useAssistantStore } from '@/features/ai/assistant/assistant.store';
 import { mockedStore } from '@/__tests__/utils';
-import type { NodeExecuteAfter } from '@n8n/api-types/push/execution';
+import type { NodeExecuteAfter } from '@workflow-automation/api-types/push/execution';
 import { TRIMMED_TASK_DATA_CONNECTIONS_KEY } from 'workflow-automation-workflow';
 import type { WorkflowState } from '@/app/composables/useWorkflowState';
 import { mock } from 'vitest-mock-extended';

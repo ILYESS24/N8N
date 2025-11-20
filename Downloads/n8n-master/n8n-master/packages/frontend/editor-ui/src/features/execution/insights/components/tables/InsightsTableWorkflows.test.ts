@@ -1,4 +1,4 @@
-﻿import { defineComponent } from 'vue';
+import { defineComponent } from 'vue';
 import { createTestingPinia } from '@pinia/testing';
 import { screen, within } from '@testing-library/vue';
 import { vi } from 'vitest';
@@ -17,7 +17,7 @@ vi.mock('@/app/composables/useTelemetry', () => ({
 	useTelemetry: () => mockTelemetry,
 }));
 
-vi.mock('@n8n/design-system', async (importOriginal) => {
+vi.mock('@workflow-automation/design-system', async (importOriginal) => {
 	const original = await importOriginal<object>();
 	return {
 		...original,

@@ -1,4 +1,4 @@
-﻿/* eslint-disable @typescript-eslint/no-explicit-any */
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import { describe, it, expect, vi, beforeEach } from 'vitest';
 import { mount } from '@vue/test-utils';
 import { createTestingPinia } from '@pinia/testing';
@@ -6,7 +6,7 @@ import ButtonParameter, { type Props } from './ButtonParameter.vue';
 import { useNDVStore } from '@/features/ndv/shared/ndv.store';
 import { useWorkflowsStore } from '@/app/stores/workflows.store';
 import { usePostHog } from '@/app/stores/posthog.store';
-import { useRootStore } from '@n8n/stores/useRootStore';
+import { useRootStore } from '@workflow-automation/stores/useRootStore';
 import { useToast } from '@/app/composables/useToast';
 import type { INodeProperties } from 'workflow-automation-workflow';
 
@@ -15,7 +15,7 @@ vi.mock('@/app/stores/workflows.store');
 vi.mock('@/app/stores/posthog.store');
 vi.mock('@n8n/stores/useRootStore');
 vi.mock('@/features/ai/assistant/assistant.api');
-vi.mock('@n8n/i18n', async (importOriginal) => ({
+vi.mock('@workflow-automation/i18n', async (importOriginal) => ({
 	...(await importOriginal()),
 	useI18n: () => ({
 		baseText: vi.fn().mockReturnValue('Mocked Text'),

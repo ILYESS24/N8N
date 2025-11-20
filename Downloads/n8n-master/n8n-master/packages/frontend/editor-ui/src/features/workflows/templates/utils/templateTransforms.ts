@@ -1,7 +1,7 @@
-﻿import type {
+import type {
 	IWorkflowTemplateNode,
 	IWorkflowTemplateNodeCredentials,
-} from '@n8n/rest-api-client/api/templates';
+} from '@workflow-automation/rest-api-client/api/templates';
 
 import type { NodeTypeProvider } from '@/app/utils/nodeTypes/nodeTypeTransforms';
 import { getNodeTypeDisplayableCredentials } from '@/app/utils/nodes/nodeTransforms';

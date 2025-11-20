@@ -1,4 +1,4 @@
-﻿import { STORES } from '@n8n/stores';
+import { STORES } from '@workflow-automation/stores';
 import { defineStore } from 'pinia';
 import { computed, ref } from 'vue';
 import get from 'lodash/get';

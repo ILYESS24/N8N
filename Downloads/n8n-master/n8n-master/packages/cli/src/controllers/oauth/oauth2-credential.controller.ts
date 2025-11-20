@@ -1,11 +1,11 @@
-﻿import type {
+import type {
 	ClientOAuth2Options,
 	OAuth2AuthenticationMethod,
 	OAuth2CredentialData,
 	OAuth2GrantType,
 	OAuthAuthorizationServerMetadata,
-} from '@n8n/client-oauth2';
-import { ClientOAuth2 } from '@n8n/client-oauth2';
+} from '@workflow-automation/client-oauth2';
+import { ClientOAuth2 } from '@workflow-automation/client-oauth2';
 import { Get, RestController } from '@workflow-automation/decorators';
 import axios from 'axios';
 import { Response } from 'express';

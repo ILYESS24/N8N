@@ -1,4 +1,4 @@
-﻿import type { INodeUi } from '@/Interface';
+import type { INodeUi } from '@/Interface';
 import type {
 	ICredentialMap,
 	ICredentialsDecryptedResponse,
@@ -10,10 +10,10 @@ import type {
 import * as credentialsApi from './credentials.api';
 import * as credentialsEeApi from './credentials.ee.api';
 import { EnterpriseEditionFeature } from '@/app/constants';
-import { STORES } from '@n8n/stores';
-import { i18n } from '@n8n/i18n';
+import { STORES } from '@workflow-automation/stores';
+import { i18n } from '@workflow-automation/i18n';
 import type { ProjectSharingData } from '@/features/collaboration/projects/projects.types';
-import { makeRestApiRequest } from '@n8n/rest-api-client';
+import { makeRestApiRequest } from '@workflow-automation/rest-api-client';
 import { getAppNameFromCredType } from '@/app/utils/nodeTypesUtils';
 import { splitName } from '@/features/collaboration/projects/projects.utils';
 import { isEmpty, isPresent } from '@/app/utils/typesUtils';
@@ -28,7 +28,7 @@ import type {
 import { defineStore } from 'pinia';
 import { computed, ref } from 'vue';
 import { useNodeTypesStore } from '@/app/stores/nodeTypes.store';
-import { useRootStore } from '@n8n/stores/useRootStore';
+import { useRootStore } from '@workflow-automation/stores/useRootStore';
 import { useSettingsStore } from '@/app/stores/settings.store';
 import * as aiApi from '@/features/ai/assistant/assistant.api';
 

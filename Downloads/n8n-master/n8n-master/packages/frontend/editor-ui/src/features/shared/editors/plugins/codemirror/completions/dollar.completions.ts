@@ -1,4 +1,4 @@
-import { i18n } from '@n8n/i18n';
+import { i18n } from '@workflow-automation/i18n';
 import {
 	autocompletableNodeNames,
 	receivesNoBinaryData,

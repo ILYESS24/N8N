@@ -1,11 +1,11 @@
 <script lang="ts" setup>
-import { useI18n } from '@n8n/i18n';
+import { useI18n } from '@workflow-automation/i18n';
 import Modal from '@/app/components/Modal.vue';
 import { useUIStore } from '@/app/stores/ui.store';
-import type { ButtonType } from '@n8n/design-system';
+import type { ButtonType } from '@workflow-automation/design-system';
 import { I18nT } from 'vue-i18n';
 
-import { N8nButton, N8nHeading, N8nText } from '@n8n/design-system';
+import { N8nButton, N8nHeading, N8nText } from '@workflow-automation/design-system';
 const props = defineProps<{
 	modalName: string;
 	data: {

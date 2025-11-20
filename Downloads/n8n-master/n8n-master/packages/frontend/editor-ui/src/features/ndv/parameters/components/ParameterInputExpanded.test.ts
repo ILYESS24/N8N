@@ -1,6 +1,6 @@
-﻿import { createComponentRenderer } from '@/__tests__/render';
+import { createComponentRenderer } from '@/__tests__/render';
 import { createTestingPinia } from '@pinia/testing';
-import { STORES } from '@n8n/stores';
+import { STORES } from '@workflow-automation/stores';
 import { SETTINGS_STORE_DEFAULT_STATE } from '@/__tests__/utils';
 import { createTestNodeProperties } from '@/__tests__/mocks';
 import ParameterInputExpanded from './ParameterInputExpanded.vue';
@@ -14,7 +14,7 @@ vi.mock('@/app/composables/useTelemetry', () => ({
 	}),
 }));
 
-vi.mock('@n8n/i18n', () => ({
+vi.mock('@workflow-automation/i18n', () => ({
 	i18n: {
 		baseText: vi.fn().mockImplementation((key) => key),
 		credText: vi.fn().mockReturnValue({

@@ -1,4 +1,4 @@
-﻿<script setup lang="ts">
+<script setup lang="ts">
 import Node from '@/features/workflows/canvas/components/elements/nodes/CanvasNode.vue';
 import Modal from '@/app/components/Modal.vue';
 import NodeIcon from '@/app/components/NodeIcon.vue';
@@ -15,9 +15,9 @@ import { useNodeTypesStore } from '@/app/stores/nodeTypes.store';
 import { useSourceControlStore } from '@/features/integrations/sourceControl.ee/sourceControl.store';
 import { useWorkflowsStore } from '@/app/stores/workflows.store';
 import { removeWorkflowExecutionData } from '@/app/utils/workflowUtils';
-import type { BaseTextKey } from '@n8n/i18n';
-import { useI18n } from '@n8n/i18n';
-import type { EventBus } from '@n8n/utils/event-bus';
+import type { BaseTextKey } from '@workflow-automation/i18n';
+import { useI18n } from '@workflow-automation/i18n';
+import type { EventBus } from '@workflow-automation/utils/event-bus';
 import { useAsyncState } from '@vueuse/core';
 import { NodeDiffStatus, type IWorkflowSettings } from 'workflow-automation-workflow';
 import { computed, onMounted, onUnmounted, ref, useCssModule } from 'vue';
@@ -34,7 +34,7 @@ import {
 	N8nIconButton,
 	N8nRadioButtons,
 	N8nText,
-} from '@n8n/design-system';
+} from '@workflow-automation/design-system';
 const props = defineProps<{
 	data: { eventBus: EventBus; workflowId: string; direction: 'push' | 'pull' };
 }>();

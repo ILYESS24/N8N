@@ -1,6 +1,6 @@
-﻿import { ProjectsClient } from '@google-cloud/resource-manager';
+import { ProjectsClient } from '@google-cloud/resource-manager';
 import { VertexAIEmbeddings } from '@langchain/google-vertexai';
-import { formatPrivateKey } from 'n8n-nodes-base/dist/utils/utilities';
+import { formatPrivateKey } from 'workflow-automation-nodes-base/dist/utils/utilities';
 import { NodeConnectionTypes } from 'workflow-automation-workflow';
 import type {
 	ILoadOptionsFunctions,

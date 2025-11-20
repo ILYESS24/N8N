@@ -1,9 +1,9 @@
-﻿<script setup lang="ts">
+<script setup lang="ts">
 import { computed, ref } from 'vue';
 import { useRoute, useRouter } from 'vue-router';
 import { useElementSize, useResizeObserver } from '@vueuse/core';
-import type { TabOptions, UserAction } from '@n8n/design-system';
-import { useI18n } from '@n8n/i18n';
+import type { TabOptions, UserAction } from '@workflow-automation/design-system';
+import { useI18n } from '@workflow-automation/i18n';
 import { ProjectTypes } from '../projects.types';
 import { useProjectsStore } from '../projects.store';
 import ProjectTabs from './ProjectTabs.vue';
@@ -15,14 +15,14 @@ import ProjectCreateResource from './ProjectCreateResource.vue';
 import { useSettingsStore } from '@/app/stores/settings.store';
 import { useProjectPages } from '@/features/collaboration/projects/composables/useProjectPages';
 import { truncateTextToFitWidth } from '@/app/utils/formatters/textFormatter';
-import { type IconName } from '@n8n/design-system/components/N8nIcon/icons';
+import { type IconName } from '@workflow-automation/design-system/components/N8nIcon/icons';
 import type { IUser } from 'workflow-automation-workflow';
-import { type IconOrEmoji, isIconOrEmoji } from '@n8n/design-system/components/N8nIconPicker/types';
+import { type IconOrEmoji, isIconOrEmoji } from '@workflow-automation/design-system/components/N8nIconPicker/types';
 import { useUIStore } from '@/app/stores/ui.store';
 import { PROJECT_DATA_TABLES } from '@/features/core/dataTable/constants';
 import ReadyToRunButton from '@/features/workflows/readyToRun/components/ReadyToRunButton.vue';
 
-import { N8nButton, N8nHeading, N8nText, N8nTooltip } from '@n8n/design-system';
+import { N8nButton, N8nHeading, N8nText, N8nTooltip } from '@workflow-automation/design-system';
 import { VARIABLE_MODAL_KEY } from '@/features/settings/environments.ee/environments.constants';
 import { useTelemetry } from '@/app/composables/useTelemetry';
 import { useUsersStore } from '@/features/settings/users/users.store';

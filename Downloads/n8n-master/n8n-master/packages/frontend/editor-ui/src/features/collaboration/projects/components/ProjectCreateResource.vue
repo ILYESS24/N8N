@@ -1,9 +1,9 @@
-﻿<script lang="ts" setup>
-import type { ButtonType, UserAction } from '@n8n/design-system';
+<script lang="ts" setup>
+import type { ButtonType, UserAction } from '@workflow-automation/design-system';
 import type { IUser } from 'workflow-automation-workflow';
 import { useTemplateRef } from 'vue';
 
-import { N8nActionToggle, N8nIconButton } from '@n8n/design-system';
+import { N8nActionToggle, N8nIconButton } from '@workflow-automation/design-system';
 defineProps<{
 	actions: Array<UserAction<IUser>>;
 	disabled?: boolean;

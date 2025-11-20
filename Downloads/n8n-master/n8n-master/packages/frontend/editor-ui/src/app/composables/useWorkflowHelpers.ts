@@ -1,4 +1,4 @@
-﻿import {
+import {
 	HTTP_REQUEST_NODE_TYPE,
 	PLACEHOLDER_EMPTY_WORKFLOW_ID,
 	PLACEHOLDER_FILLED_AT_EXECUTION_TIME,
@@ -30,31 +30,31 @@ import {
 	NodeHelpers,
 	WEBHOOK_NODE_TYPE,
 } from 'workflow-automation-workflow';
-import * as workflowUtils from 'n8n-workflow/common';
+import * as workflowUtils from 'workflow-automation-workflow/common';
 
 import type { INodeTypesMaxCount, INodeUi, IWorkflowDb, TargetItem, XYPosition } from '@/Interface';
 import type { IExecutionResponse } from '@/features/execution/executions/executions.types';
 import type { ICredentialsResponse } from '@/features/credentials/credentials.types';
-import type { ITag } from '@n8n/rest-api-client/api/tags';
-import type { WorkflowData, WorkflowDataUpdate } from '@n8n/rest-api-client/api/workflows';
+import type { ITag } from '@workflow-automation/rest-api-client/api/tags';
+import type { WorkflowData, WorkflowDataUpdate } from '@workflow-automation/rest-api-client/api/workflows';
 
 import { useNodeHelpers } from '@/app/composables/useNodeHelpers';
 
 import get from 'lodash/get';
 
 import { useEnvironmentsStore } from '@/features/settings/environments.ee/environments.store';
-import { useRootStore } from '@n8n/stores/useRootStore';
+import { useRootStore } from '@workflow-automation/stores/useRootStore';
 import { useNDVStore } from '@/features/ndv/shared/ndv.store';
 import { useNodeTypesStore } from '@/app/stores/nodeTypes.store';
 import { useUIStore } from '@/app/stores/ui.store';
 import { useWorkflowsStore } from '@/app/stores/workflows.store';
 import { getSourceItems } from '@/app/utils/pairedItemUtils';
 import { getCredentialTypeName, isCredentialOnlyNodeType } from '@/app/utils/credentialOnlyNodes';
-import { useI18n } from '@n8n/i18n';
+import { useI18n } from '@workflow-automation/i18n';
 import { useProjectsStore } from '@/features/collaboration/projects/projects.store';
 import { useTagsStore } from '@/features/shared/tags/tags.store';
 import { useWorkflowsEEStore } from '@/app/stores/workflows.ee.store';
-import { findWebhook } from '@n8n/rest-api-client/api/webhooks';
+import { findWebhook } from '@workflow-automation/rest-api-client/api/webhooks';
 import type { ExpressionLocalResolveContext } from '@/app/types/expressions';
 import { injectWorkflowState } from '@/app/composables/useWorkflowState';
 

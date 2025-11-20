@@ -1,4 +1,4 @@
-﻿import { useI18n } from '@n8n/i18n';
+import { useI18n } from '@workflow-automation/i18n';
 import type { Completion, CompletionContext, CompletionResult } from '@codemirror/autocomplete';
 import type { CodeExecutionMode } from 'workflow-automation-workflow';
 import { toValue, type MaybeRefOrGetter } from 'vue';

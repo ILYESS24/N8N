@@ -1,4 +1,4 @@
-﻿import { useStorage } from '@/app/composables/useStorage';
+import { useStorage } from '@/app/composables/useStorage';
 import { useTelemetry } from '@/app/composables/useTelemetry';
 import {
 	LOCAL_STORAGE_EXPERIMENTAL_DISMISSED_SUGGESTED_WORKFLOWS,
@@ -8,8 +8,8 @@ import {
 import { useCloudPlanStore } from '@/app/stores/cloudPlan.store';
 import { usePostHog } from '@/app/stores/posthog.store';
 import { useTemplatesStore } from '@/features/workflows/templates/templates.store';
-import type { ITemplatesWorkflowFull } from '@n8n/rest-api-client';
-import { STORES } from '@n8n/stores';
+import type { ITemplatesWorkflowFull } from '@workflow-automation/rest-api-client';
+import { STORES } from '@workflow-automation/stores';
 import { jsonParse } from 'workflow-automation-workflow';
 import { defineStore } from 'pinia';
 import { computed, ref, watch } from 'vue';

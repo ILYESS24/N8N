@@ -19,11 +19,11 @@ import { useDataTableStore } from '@/features/core/dataTable/dataTable.store';
 import type { DataTableResource } from '@/features/core/dataTable/types';
 import { useSourceControlStore } from '@/features/integrations/sourceControl.ee/sourceControl.store';
 import type { SortingAndPaginationUpdates } from '@/Interface';
-import { useI18n } from '@n8n/i18n';
+import { useI18n } from '@workflow-automation/i18n';
 import { computed, onMounted, ref, watch } from 'vue';
 import { useRoute, useRouter } from 'vue-router';
 
-import { N8nActionBox } from '@n8n/design-system';
+import { N8nActionBox } from '@workflow-automation/design-system';
 import ResourcesListLayout from '@/app/components/layouts/ResourcesListLayout.vue';
 
 const i18n = useI18n();

@@ -59,7 +59,7 @@ export default mergeConfig(
 					replacement: srcPath,
 				},
 				{
-					find: '@n8n/chat',
+					find: '@workflow-automation/chat',
 					replacement: srcPath,
 				},
 				{

@@ -1,17 +1,17 @@
-﻿<script lang="ts" setup>
+<script lang="ts" setup>
 import AnimatedSpinner from '@/app/components/AnimatedSpinner.vue';
 import ExecutionsTime from '../ExecutionsTime.vue';
 import GlobalExecutionsListItemQueuedTooltip from './GlobalExecutionsListItemQueuedTooltip.vue';
 import { useExecutionHelpers } from '../../composables/useExecutionHelpers';
-import { useI18n } from '@n8n/i18n';
+import { useI18n } from '@workflow-automation/i18n';
 import { VIEWS } from '@/app/constants';
 import type { PermissionsRecord } from '@workflow-automation/permissions';
 import { convertToDisplayDate } from '@/app/utils/formatters/dateFormatter';
-import type { IconColor } from '@n8n/design-system/types/icon';
+import type { IconColor } from '@workflow-automation/design-system/types/icon';
 import type { ExecutionStatus, ExecutionSummary } from 'workflow-automation-workflow';
 import { WAIT_INDEFINITELY } from 'workflow-automation-workflow';
 import { computed, ref, useCssModule } from 'vue';
-import { type IconName } from '@n8n/design-system/components/N8nIcon/icons';
+import { type IconName } from '@workflow-automation/design-system/components/N8nIcon/icons';
 
 import { ElDropdown, ElDropdownItem, ElDropdownMenu } from 'element-plus';
 import {
@@ -21,7 +21,7 @@ import {
 	N8nIconButton,
 	N8nText,
 	N8nTooltip,
-} from '@n8n/design-system';
+} from '@workflow-automation/design-system';
 type Command = 'retrySaved' | 'retryOriginal' | 'delete';
 
 const emit = defineEmits<{

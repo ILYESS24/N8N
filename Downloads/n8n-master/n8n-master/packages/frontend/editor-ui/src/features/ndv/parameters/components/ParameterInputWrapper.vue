@@ -1,4 +1,4 @@
-﻿<script setup lang="ts">
+<script setup lang="ts">
 import type { IUpdateInformation, InputSize } from '@/Interface';
 import ParameterInput from './ParameterInput.vue';
 import InputHint from './ParameterInputHint.vue';
@@ -16,13 +16,13 @@ import useEnvironmentsStore from '@/features/settings/environments.ee/environmen
 import { useExternalSecretsStore } from '@/features/integrations/externalSecrets.ee/externalSecrets.ee.store';
 import { useNDVStore } from '@/features/ndv/shared/ndv.store';
 import { isValueExpression, parseResourceMapperFieldName } from '@/app/utils/nodeTypesUtils';
-import type { EventBus } from '@n8n/utils/event-bus';
-import { createEventBus } from '@n8n/utils/event-bus';
+import type { EventBus } from '@workflow-automation/utils/event-bus';
+import { createEventBus } from '@workflow-automation/utils/event-bus';
 import { computed, useTemplateRef } from 'vue';
 
 import { BINARY_DATA_ACCESS_TOOLTIP } from '@/app/constants';
 
-import { N8nTooltip } from '@n8n/design-system';
+import { N8nTooltip } from '@workflow-automation/design-system';
 type Props = {
 	parameter: INodeProperties;
 	path: string;

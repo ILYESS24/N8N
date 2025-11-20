@@ -1,8 +1,8 @@
 import type { Plugin } from 'vue';
 import { AxiosError } from 'axios';
-import { ResponseError } from '@n8n/rest-api-client';
+import { ResponseError } from '@workflow-automation/rest-api-client';
 import * as Sentry from '@sentry/vue';
-import { getAndParseConfigFromMetaTag } from '@n8n/stores/metaTagConfig';
+import { getAndParseConfigFromMetaTag } from '@workflow-automation/stores/metaTagConfig';
 
 const ignoredErrors = [
 	{ instanceof: AxiosError },

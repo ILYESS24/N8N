@@ -1,4 +1,4 @@
-﻿import '@/app/polyfills';
+import '@/app/polyfills';
 import SourceControlInitializationErrorMessage from '@/features/integrations/sourceControl.ee/components/SourceControlInitializationErrorMessage.vue';
 import { useExternalHooks } from '@/app/composables/useExternalHooks';
 import { useTelemetry } from '@/app/composables/useTelemetry';
@@ -24,8 +24,8 @@ import { useUsersStore } from '@/features/settings/users/users.store';
 import { useVersionsStore } from '@/app/stores/versions.store';
 import { useBannersStore } from '@/features/shared/banners/banners.store';
 import type { BannerName } from '@workflow-automation/api-types';
-import { useI18n } from '@n8n/i18n';
-import { useRootStore } from '@n8n/stores/useRootStore';
+import { useI18n } from '@workflow-automation/i18n';
+import { useRootStore } from '@workflow-automation/stores/useRootStore';
 import { h } from 'vue';
 import { useRolesStore } from '@/app/stores/roles.store';
 import { useDataTableStore } from '@/features/core/dataTable/dataTable.store';

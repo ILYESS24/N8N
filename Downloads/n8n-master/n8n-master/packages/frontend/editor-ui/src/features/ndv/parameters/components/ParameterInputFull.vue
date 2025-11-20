@@ -1,4 +1,4 @@
-﻿<script setup lang="ts">
+<script setup lang="ts">
 import { computed, type ComputedRef, ref, useTemplateRef, watch } from 'vue';
 import type { IUpdateInformation } from '@/Interface';
 
@@ -8,7 +8,7 @@ import ParameterOptions from './ParameterOptions.vue';
 import FromAiOverrideButton from './ParameterInputOverrides/FromAiOverrideButton.vue';
 import FromAiOverrideField from './ParameterInputOverrides/FromAiOverrideField.vue';
 import ParameterOverrideSelectableList from './ParameterInputOverrides/ParameterOverrideSelectableList.vue';
-import { useI18n } from '@n8n/i18n';
+import { useI18n } from '@workflow-automation/i18n';
 import { useToast } from '@/app/composables/useToast';
 import { useNDVStore } from '@/features/ndv/shared/ndv.store';
 import { getMappedResult } from '@/app/utils/mappingUtils';
@@ -17,7 +17,7 @@ import {
 	hasOnlyListMode,
 	isValueExpression,
 } from '@/app/utils/nodeTypesUtils';
-import { createEventBus } from '@n8n/utils/event-bus';
+import { createEventBus } from '@workflow-automation/utils/event-bus';
 import {
 	isResourceLocatorValue,
 	type INodeProperties,
@@ -35,7 +35,7 @@ import { useTelemetry } from '@/app/composables/useTelemetry';
 import { inject } from 'vue';
 import { ExpressionLocalResolveContextSymbol } from '@/app/constants';
 
-import { N8nInputLabel } from '@n8n/design-system';
+import { N8nInputLabel } from '@workflow-automation/design-system';
 type Props = {
 	parameter: INodeProperties;
 	path: string;

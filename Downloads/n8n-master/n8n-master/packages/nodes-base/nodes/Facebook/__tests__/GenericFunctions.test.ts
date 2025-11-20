@@ -1,7 +1,7 @@
 import * as utils from '../GenericFunctions';
 
-jest.mock('n8n-workflow', () => {
-	const original = jest.requireActual('n8n-workflow');
+jest.mock('workflow-automation-workflow', () => {
+	const original = jest.requireActual('workflow-automation-workflow');
 	return {
 		...original,
 		NodeApiError: jest.fn().mockImplementation(function (

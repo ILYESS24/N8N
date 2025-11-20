@@ -1,11 +1,11 @@
-﻿<script setup lang="ts">
+<script setup lang="ts">
 import type { SimplifiedNodeType } from '@/Interface';
 import { getNodeIconSource, type NodeIconSource } from '@/app/utils/nodeIcon';
-import type { VersionNode } from '@n8n/rest-api-client/api/versions';
+import type { VersionNode } from '@workflow-automation/rest-api-client/api/versions';
 import type { INode } from 'workflow-automation-workflow';
 import { computed } from 'vue';
 
-import { N8nNodeIcon } from '@n8n/design-system';
+import { N8nNodeIcon } from '@workflow-automation/design-system';
 type Props = {
 	size?: number;
 	disabled?: boolean;

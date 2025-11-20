@@ -1,4 +1,4 @@
-﻿import type { NotificationOptions as ElementNotificationOptions } from 'element-plus';
+import type { NotificationOptions as ElementNotificationOptions } from 'element-plus';
 import type {
 	FrontendSettings,
 	IUserManagementSettings,
@@ -8,7 +8,7 @@ import type {
 import type { ILogInStatus } from '@/features/settings/users/users.types';
 import type { IUsedCredential } from '@/features/credentials/credentials.types';
 import type { Scope } from '@workflow-automation/permissions';
-import type { NodeCreatorTag } from '@n8n/design-system';
+import type { NodeCreatorTag } from '@workflow-automation/design-system';
 import type {
 	GenericValue,
 	IConnections,
@@ -33,15 +33,15 @@ import type {
 	ISourceData,
 	PublicInstalledPackage,
 } from 'workflow-automation-workflow';
-import type { Version } from '@n8n/rest-api-client/api/versions';
-import type { Cloud, InstanceUsage } from '@n8n/rest-api-client/api/cloudPlans';
+import type { Version } from '@workflow-automation/rest-api-client/api/versions';
+import type { Cloud, InstanceUsage } from '@workflow-automation/rest-api-client/api/cloudPlans';
 import type {
 	WorkflowMetadata,
 	WorkflowData,
 	WorkflowDataCreate,
 	WorkflowDataUpdate,
-} from '@n8n/rest-api-client/api/workflows';
-import type { ITag } from '@n8n/rest-api-client/api/tags';
+} from '@workflow-automation/rest-api-client/api/workflows';
+import type { ITag } from '@workflow-automation/rest-api-client/api/tags';
 
 import type {
 	AI_NODE_CREATOR_VIEW,
@@ -55,14 +55,14 @@ import type { CREDENTIAL_EDIT_MODAL_KEY } from '@/features/credentials/credentia
 import type { BulkCommand, Undoable } from '@/app/models/history';
 
 import type { ProjectSharingData } from '@/features/collaboration/projects/projects.types';
-import type { IconName } from '@n8n/design-system/src/components/N8nIcon/icons';
+import type { IconName } from '@workflow-automation/design-system/src/components/N8nIcon/icons';
 import type {
 	BaseFolderItem,
 	FolderListItem,
 	ResourceParentFolder,
 } from '@/features/core/folders/folders.types';
 
-export * from '@n8n/design-system/types';
+export * from '@workflow-automation/design-system/types';
 
 declare global {
 	interface Window {

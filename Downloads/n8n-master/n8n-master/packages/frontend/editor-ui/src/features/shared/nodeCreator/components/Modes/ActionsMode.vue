@@ -1,4 +1,4 @@
-﻿<script setup lang="ts">
+<script setup lang="ts">
 import { computed, onMounted } from 'vue';
 import type {
 	INodeCreateElement,
@@ -26,7 +26,7 @@ import ItemsRenderer from '../Renderers/ItemsRenderer.vue';
 import CategorizedItemsRenderer from '../Renderers/CategorizedItemsRenderer.vue';
 import type { IDataObject } from 'workflow-automation-workflow';
 import { useTelemetry } from '@/app/composables/useTelemetry';
-import { useI18n } from '@n8n/i18n';
+import { useI18n } from '@workflow-automation/i18n';
 import { useNodeCreatorStore } from '@/features/shared/nodeCreator/nodeCreator.store';
 import OrderSwitcher from './../OrderSwitcher.vue';
 import { getActiveViewCallouts, isNodePreviewKey } from '../../nodeCreator.utils';
@@ -35,7 +35,7 @@ import CommunityNodeInfo from '@/features/settings/communityNodes/components/nod
 import CommunityNodeFooter from '@/features/settings/communityNodes/components/nodeCreator/CommunityNodeFooter.vue';
 import { useCalloutHelpers } from '@/app/composables/useCalloutHelpers';
 
-import { N8nCallout, N8nInfoTip } from '@n8n/design-system';
+import { N8nCallout, N8nInfoTip } from '@workflow-automation/design-system';
 const emit = defineEmits<{
 	nodeTypeSelected: [value: NodeTypeSelectedPayload[]];
 }>();

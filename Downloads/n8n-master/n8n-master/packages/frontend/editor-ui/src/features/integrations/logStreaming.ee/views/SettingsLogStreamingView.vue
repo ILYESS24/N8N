@@ -1,4 +1,4 @@
-﻿<script lang="ts" setup>
+<script lang="ts" setup>
 import { computed, nextTick, onBeforeMount, onMounted, ref, getCurrentInstance } from 'vue';
 import { v4 as uuid } from 'uuid';
 import { useWorkflowsStore } from '@/app/stores/workflows.store';
@@ -11,14 +11,14 @@ import { LOG_STREAM_MODAL_KEY, EnterpriseEditionFeature } from '@/app/constants'
 import type { MessageEventBusDestinationOptions } from 'workflow-automation-workflow';
 import { deepCopy, defaultMessageEventBusDestinationOptions } from 'workflow-automation-workflow';
 import EventDestinationCard from '../components/EventDestinationCard.vue';
-import { createEventBus } from '@n8n/utils/event-bus';
+import { createEventBus } from '@workflow-automation/utils/event-bus';
 import { useDocumentTitle } from '@/app/composables/useDocumentTitle';
-import { useI18n } from '@n8n/i18n';
+import { useI18n } from '@workflow-automation/i18n';
 import { usePageRedirectionHelper } from '@/app/composables/usePageRedirectionHelper';
 import { injectWorkflowState } from '@/app/composables/useWorkflowState';
 
 import { ElCol, ElRow, ElSwitch } from 'element-plus';
-import { N8nActionBox, N8nButton, N8nHeading, N8nInfoTip } from '@n8n/design-system';
+import { N8nActionBox, N8nButton, N8nHeading, N8nInfoTip } from '@workflow-automation/design-system';
 const environment = process.env.NODE_ENV;
 
 const settingsStore = useSettingsStore();

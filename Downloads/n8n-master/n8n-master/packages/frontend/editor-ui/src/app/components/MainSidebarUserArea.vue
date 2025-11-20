@@ -8,8 +8,8 @@ import {
 	N8nMenuItem,
 	N8nPopoverReka,
 	N8nText,
-} from '@n8n/design-system';
-import { useI18n } from '@n8n/i18n';
+} from '@workflow-automation/design-system';
+import { useI18n } from '@workflow-automation/i18n';
 import { ref } from 'vue';
 import { useRouter } from 'vue-router';
 

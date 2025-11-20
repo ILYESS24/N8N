@@ -1,6 +1,6 @@
 <script setup lang="ts">
-import PoweredBy from '@n8n/chat/components/PoweredBy.vue';
-import { useI18n } from '@n8n/chat/composables';
+import PoweredBy from '@workflow-automation/chat/components/PoweredBy.vue';
+import { useI18n } from '@workflow-automation/chat/composables';
 
 const { t, te } = useI18n();
 </script>

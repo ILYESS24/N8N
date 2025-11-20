@@ -1,4 +1,4 @@
-﻿<script setup lang="ts">
+<script setup lang="ts">
 import { ref, computed, watch } from 'vue';
 import type { ComponentPublicInstance } from 'vue';
 import type { RouteLocationNormalizedLoaded } from 'vue-router';
@@ -13,14 +13,14 @@ import type { IWorkflowDb } from '@/Interface';
 import type { ExecutionFilterType } from '../../executions.types';
 import { isComponentPublicInstance } from '@/app/utils/typeGuards';
 import { getResourcePermissions } from '@workflow-automation/permissions';
-import { useI18n } from '@n8n/i18n';
+import { useI18n } from '@workflow-automation/i18n';
 import { useSettingsStore } from '@/app/stores/settings.store';
 import ConcurrentExecutionsHeader from '../ConcurrentExecutionsHeader.vue';
 import { usePageRedirectionHelper } from '@/app/composables/usePageRedirectionHelper';
 import { useIntersectionObserver } from '@/app/composables/useIntersectionObserver';
 
 import { ElCheckbox } from 'element-plus';
-import { N8nHeading, N8nLoading, N8nText } from '@n8n/design-system';
+import { N8nHeading, N8nLoading, N8nText } from '@workflow-automation/design-system';
 type AutoScrollDeps = { activeExecutionSet: boolean; cardsMounted: boolean; scroll: boolean };
 
 const props = defineProps<{

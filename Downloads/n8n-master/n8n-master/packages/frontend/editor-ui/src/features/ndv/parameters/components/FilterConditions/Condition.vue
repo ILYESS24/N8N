@@ -1,9 +1,9 @@
-﻿<script setup lang="ts">
+<script setup lang="ts">
 import type { IUpdateInformation } from '@/Interface';
 import InputTriple from '../InputTriple/InputTriple.vue';
 import ParameterInputFull from '../ParameterInputFull.vue';
 import ParameterIssues from '../ParameterIssues.vue';
-import { useI18n } from '@n8n/i18n';
+import { useI18n } from '@workflow-automation/i18n';
 import { DateTime } from 'luxon';
 import type {
 	FilterConditionValue,
@@ -24,7 +24,7 @@ import {
 } from './utils';
 import { useDebounce } from '@/app/composables/useDebounce';
 
-import { N8nIcon, N8nIconButton, N8nTooltip } from '@n8n/design-system';
+import { N8nIcon, N8nIconButton, N8nTooltip } from '@workflow-automation/design-system';
 interface Props {
 	path: string;
 	condition: FilterConditionValue;

@@ -1,6 +1,6 @@
-import { i18n, i18nInstance, setLanguage, updateLocaleMessages } from '@n8n/i18n';
-import type { LocaleMessages } from '@n8n/i18n/types';
-import { locale as designLocale } from '@n8n/design-system';
+import { i18n, i18nInstance, setLanguage, updateLocaleMessages } from '@workflow-automation/i18n';
+import type { LocaleMessages } from '@workflow-automation/i18n/types';
+import { locale as designLocale } from '@workflow-automation/design-system';
 
 const hot = import.meta.hot;
 const DEFAULT_LOCALE = 'en';

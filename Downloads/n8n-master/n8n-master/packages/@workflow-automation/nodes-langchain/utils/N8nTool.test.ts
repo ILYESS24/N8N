@@ -1,5 +1,5 @@
-﻿import { DynamicStructuredTool, DynamicTool } from '@langchain/core/tools';
-import { createMockExecuteFunction } from 'n8n-nodes-base/test/nodes/Helpers';
+import { DynamicStructuredTool, DynamicTool } from '@langchain/core/tools';
+import { createMockExecuteFunction } from 'workflow-automation-nodes-base/test/nodes/Helpers';
 import type { INode, ISupplyDataFunctions } from 'workflow-automation-workflow';
 import { z } from 'zod';
 

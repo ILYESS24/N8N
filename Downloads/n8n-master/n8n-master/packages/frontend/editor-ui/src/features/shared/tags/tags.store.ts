@@ -1,8 +1,8 @@
 import { createTagsApi } from './tags.api';
-import { STORES } from '@n8n/stores';
-import type { ITag } from '@n8n/rest-api-client/api/tags';
+import { STORES } from '@workflow-automation/stores';
+import type { ITag } from '@workflow-automation/rest-api-client/api/tags';
 import { defineStore } from 'pinia';
-import { useRootStore } from '@n8n/stores/useRootStore';
+import { useRootStore } from '@workflow-automation/stores/useRootStore';
 import { computed, ref } from 'vue';
 import { useWorkflowsStore } from '@/app/stores/workflows.store';
 

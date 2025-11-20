@@ -1,10 +1,10 @@
-﻿<script setup lang="ts">
+<script setup lang="ts">
 import { useDebounce } from '@/app/composables/useDebounce';
 import type { IResourceLocatorResultExpanded } from '@/Interface';
-import { N8nBadge, N8nIcon, N8nInput, N8nLoading, N8nPopover } from '@n8n/design-system';
-import { useI18n } from '@n8n/i18n';
-import type { EventBus } from '@n8n/utils/event-bus';
-import { createEventBus } from '@n8n/utils/event-bus';
+import { N8nBadge, N8nIcon, N8nInput, N8nLoading, N8nPopover } from '@workflow-automation/design-system';
+import { useI18n } from '@workflow-automation/i18n';
+import type { EventBus } from '@workflow-automation/utils/event-bus';
+import { createEventBus } from '@workflow-automation/utils/event-bus';
 import type { INodeParameterResourceLocator } from 'workflow-automation-workflow';
 import { computed, onBeforeUnmount, onMounted, ref, useCssModule, watch } from 'vue';
 

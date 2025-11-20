@@ -1,6 +1,6 @@
 import { createPinia, setActivePinia } from 'pinia';
 import { useEvaluationStore } from './evaluation.store'; // Adjust the import path as necessary
-import { useRootStore } from '@n8n/stores/useRootStore';
+import { useRootStore } from '@workflow-automation/stores/useRootStore';
 import { useAnnotationTagsStore } from '@/features/shared/tags/tags.store';
 import type { TestRunRecord } from './evaluation.api';
 import { mockedStore } from '@/__tests__/utils';

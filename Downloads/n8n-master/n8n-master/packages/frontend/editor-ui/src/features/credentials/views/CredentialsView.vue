@@ -1,4 +1,4 @@
-﻿<script setup lang="ts">
+<script setup lang="ts">
 import CredentialCard from '../components/CredentialCard.vue';
 import EmptySharedSectionActionBox from '@/features/core/folders/components/EmptySharedSectionActionBox.vue';
 import ResourcesListLayout from '@/app/components/layouts/ResourcesListLayout.vue';
@@ -21,7 +21,7 @@ import { listenForModalChanges, useUIStore } from '@/app/stores/ui.store';
 import { useUsersStore } from '@/features/settings/users/users.store';
 import type { Project } from '@/features/collaboration/projects/projects.types';
 import { isCredentialsResource } from '@/app/utils/typeGuards';
-import { useI18n } from '@n8n/i18n';
+import { useI18n } from '@workflow-automation/i18n';
 import { getResourcePermissions } from '@workflow-automation/permissions';
 import pickBy from 'lodash/pickBy';
 import type { ICredentialType, ICredentialsDecrypted } from 'workflow-automation-workflow';
@@ -31,7 +31,7 @@ import { useRoute, useRouter, type LocationQueryRaw } from 'vue-router';
 import { useCredentialsStore } from '../credentials.store';
 import { useEnvironmentsStore } from '@/features/settings/environments.ee/environments.store';
 
-import { N8nActionBox, N8nCheckbox, N8nInputLabel, N8nOption, N8nSelect } from '@n8n/design-system';
+import { N8nActionBox, N8nCheckbox, N8nInputLabel, N8nOption, N8nSelect } from '@workflow-automation/design-system';
 const props = defineProps<{
 	credentialId?: string;
 }>();
@@ -327,7 +327,7 @@ onMounted(() => {
 			<N8nActionBox
 				v-else
 				data-test-id="empty-resources-list"
-				emoji="ðŸ‘‹"
+				emoji="👋"
 				:heading="
 					i18n.baseText(
 						usersStore.currentUser?.firstName

@@ -1,4 +1,4 @@
-﻿import type { N8nInput } from '@n8n/design-system';
+import type { N8nInput } from '@workflow-automation/design-system';
 import type {
 	ExecutionError,
 	GenericValue,
@@ -18,8 +18,8 @@ import type {
 	IWorkflowDb,
 	NodeFilterType,
 } from '@/Interface';
-import type { IPersonalizationLatestVersion } from '@n8n/rest-api-client/api/users';
-import type { IWorkflowTemplateNode } from '@n8n/rest-api-client/api/templates';
+import type { IPersonalizationLatestVersion } from '@workflow-automation/rest-api-client/api/users';
+import type { IWorkflowTemplateNode } from '@workflow-automation/rest-api-client/api/templates';
 import type { ComponentPublicInstance } from 'vue';
 import type { useWebhooksStore } from '@/app/stores/webhooks.store';
 

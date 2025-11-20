@@ -1,6 +1,6 @@
-﻿import type { ICredentialsResponse, IShareCredentialsPayload } from './credentials.types';
-import type { IRestApiContext } from '@n8n/rest-api-client';
-import { makeRestApiRequest } from '@n8n/rest-api-client';
+import type { ICredentialsResponse, IShareCredentialsPayload } from './credentials.types';
+import type { IRestApiContext } from '@workflow-automation/rest-api-client';
+import { makeRestApiRequest } from '@workflow-automation/rest-api-client';
 import type { IDataObject } from 'workflow-automation-workflow';
 
 export async function setCredentialSharedWith(

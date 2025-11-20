@@ -1,8 +1,8 @@
-﻿<script setup lang="ts">
+<script setup lang="ts">
 import { computed, ref } from 'vue';
 import { useRoute } from 'vue-router';
-import { N8nCard, N8nHeading, N8nText, N8nIcon } from '@n8n/design-system';
-import { useI18n } from '@n8n/i18n';
+import { N8nCard, N8nHeading, N8nText, N8nIcon } from '@workflow-automation/design-system';
+import { useI18n } from '@workflow-automation/i18n';
 import { useUsersStore } from '@/features/settings/users/users.store';
 import { useProjectsStore } from '@/features/collaboration/projects/projects.store';
 import { useSourceControlStore } from '@/features/integrations/sourceControl.ee/sourceControl.store';

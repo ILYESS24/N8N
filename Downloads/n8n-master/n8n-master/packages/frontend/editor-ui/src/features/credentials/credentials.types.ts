@@ -1,8 +1,8 @@
-﻿import type { Iso8601DateTimeString } from '@workflow-automation/api-types';
+import type { Iso8601DateTimeString } from '@workflow-automation/api-types';
 import type { ICredentialsDecrypted, ICredentialsEncrypted, ICredentialType } from 'workflow-automation-workflow';
 import type { ProjectSharingData } from '@/features/collaboration/projects/projects.types';
 import type { Scope } from '@workflow-automation/permissions';
-import type { IUserResponse } from '@n8n/rest-api-client/api/users';
+import type { IUserResponse } from '@workflow-automation/rest-api-client/api/users';
 
 export interface ICredentialsResponse extends ICredentialsEncrypted {
 	id: string;

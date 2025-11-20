@@ -1,6 +1,6 @@
-﻿import type { ITag } from '@n8n/rest-api-client/api/tags';
-import type { IRestApiContext } from '@n8n/rest-api-client';
-import { makeRestApiRequest } from '@n8n/rest-api-client';
+import type { ITag } from '@workflow-automation/rest-api-client/api/tags';
+import type { IRestApiContext } from '@workflow-automation/rest-api-client';
+import { makeRestApiRequest } from '@workflow-automation/rest-api-client';
 import type { CreateOrUpdateTagRequestDto, RetrieveTagQueryDto } from '@workflow-automation/api-types';
 
 type TagsApiEndpoint = '/tags' | '/annotation-tags';

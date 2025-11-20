@@ -1,4 +1,4 @@
-﻿import { mockLogger, mockInstance } from '@n8n/backend-test-utils';
+import { mockLogger, mockInstance } from '@n8n/backend-test-utils';
 import { GlobalConfig } from '@workflow-automation/config';
 import { LDAP_FEATURE_NAME, type LdapConfig } from '@workflow-automation/constants';
 import type { Settings, User } from '@workflow-automation/db';
@@ -55,8 +55,8 @@ jest.mock('../helpers.ee', () => ({
 	createLdapUserOnLocalDb: jest.fn(),
 }));
 
-jest.mock('n8n-workflow', () => ({
-	...jest.requireActual('n8n-workflow'),
+jest.mock('workflow-automation-workflow', () => ({
+	...jest.requireActual('workflow-automation-workflow'),
 	randomString: jest.fn(),
 }));
 

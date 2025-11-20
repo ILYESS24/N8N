@@ -1,4 +1,4 @@
-﻿import { mock } from 'jest-mock-extended';
+import { mock } from 'jest-mock-extended';
 import {
 	sleep,
 	type IExecuteFunctions,
@@ -30,8 +30,8 @@ jest.mock('@langchain/core/runnables', () => ({
 	},
 }));
 
-jest.mock('n8n-workflow', () => ({
-	...jest.requireActual('n8n-workflow'),
+jest.mock('workflow-automation-workflow', () => ({
+	...jest.requireActual('workflow-automation-workflow'),
 	sleep: jest.fn(),
 }));
 

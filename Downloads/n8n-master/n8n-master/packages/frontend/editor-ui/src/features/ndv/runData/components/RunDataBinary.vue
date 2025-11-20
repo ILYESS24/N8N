@@ -1,10 +1,10 @@
-﻿<script setup lang="ts">
+<script setup lang="ts">
 import { saveAs } from 'file-saver';
 import { useWorkflowsStore } from '@/app/stores/workflows.store';
 import { ViewableMimeTypes } from '@workflow-automation/api-types';
-import { useI18n } from '@n8n/i18n';
+import { useI18n } from '@workflow-automation/i18n';
 import type { IBinaryKeyData } from 'workflow-automation-workflow';
-import { N8nButton, N8nText } from '@n8n/design-system';
+import { N8nButton, N8nText } from '@workflow-automation/design-system';
 const { binaryData } = defineProps<{ binaryData: IBinaryKeyData[] }>();
 
 const emit = defineEmits<{ preview: [index: number, key: string | number] }>();

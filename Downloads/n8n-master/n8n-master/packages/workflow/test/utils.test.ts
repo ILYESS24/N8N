@@ -1,5 +1,5 @@
 import { ALPHABET } from '../src/constants';
-import { ApplicationError } from '@n8n/errors';
+import { ApplicationError } from '@workflow-automation/errors';
 import { ManualExecutionCancelledError } from '../src/errors/execution-cancelled.error';
 import {
 	jsonParse,
@@ -713,14 +713,14 @@ describe('isCommunityPackageName', () => {
 	// Official n8n packages that should not be identified as community packages
 	it('should not identify official n8n packages as community nodes', () => {
 		expect(isCommunityPackageName('@n8n/n8n-nodes-example')).toBe(false);
-		expect(isCommunityPackageName('n8n-nodes-base')).toBe(false);
+		expect(isCommunityPackageName('workflow-automation-nodes-base')).toBe(false);
 	});
 
 	// Additional edge cases
 	it('should handle edge cases correctly', () => {
 		// Non-matching patterns
 		expect(isCommunityPackageName('not-n8n-nodes')).toBe(false);
-		expect(isCommunityPackageName('n8n-core')).toBe(false);
+		expect(isCommunityPackageName('workflow-automation-core')).toBe(false);
 
 		// With node name after package
 		expect(isCommunityPackageName('n8n-nodes-example.NodeName')).toBe(true);
@@ -730,7 +730,7 @@ describe('isCommunityPackageName', () => {
 	// Multiple executions to test regex state
 	it('should work correctly with multiple consecutive calls', () => {
 		expect(isCommunityPackageName('@user/n8n-nodes-example')).toBe(true);
-		expect(isCommunityPackageName('n8n-nodes-base')).toBe(false);
+		expect(isCommunityPackageName('workflow-automation-nodes-base')).toBe(false);
 		expect(isCommunityPackageName('@test-scope/n8n-nodes-test')).toBe(true);
 	});
 });

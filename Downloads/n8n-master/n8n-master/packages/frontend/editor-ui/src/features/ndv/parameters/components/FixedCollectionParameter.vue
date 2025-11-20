@@ -1,4 +1,4 @@
-﻿<script lang="ts" setup>
+<script lang="ts" setup>
 import type { IUpdateInformation } from '@/Interface';
 
 import type {
@@ -12,7 +12,7 @@ import { deepCopy, isINodePropertyCollectionList } from 'workflow-automation-wor
 import get from 'lodash/get';
 
 import { computed, ref, watch, onBeforeMount } from 'vue';
-import { useI18n } from '@n8n/i18n';
+import { useI18n } from '@workflow-automation/i18n';
 import ParameterInputList from './ParameterInputList.vue';
 import Draggable from 'vuedraggable';
 import { useWorkflowsStore } from '@/app/stores/workflows.store';
@@ -27,7 +27,7 @@ import {
 	N8nOption,
 	N8nSelect,
 	N8nText,
-} from '@n8n/design-system';
+} from '@workflow-automation/design-system';
 const locale = useI18n();
 
 export type Props = {

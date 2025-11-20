@@ -1,4 +1,4 @@
-﻿import type { IStartRunData, IWorkflowDb } from '@/Interface';
+import type { IStartRunData, IWorkflowDb } from '@/Interface';
 import type {
 	IExecutionPushResponse,
 	IExecutionResponse,
@@ -16,7 +16,7 @@ import type {
 	IWorkflowBase,
 } from 'workflow-automation-workflow';
 import { createRunExecutionData, NodeConnectionTypes, TelemetryHelpers } from 'workflow-automation-workflow';
-import { retry } from '@n8n/utils/retry';
+import { retry } from '@workflow-automation/utils/retry';
 
 import { useToast } from '@/app/composables/useToast';
 import { useNodeHelpers } from '@/app/composables/useNodeHelpers';
@@ -27,14 +27,14 @@ import {
 	SINGLE_WEBHOOK_TRIGGERS,
 } from '@/app/constants';
 
-import { useRootStore } from '@n8n/stores/useRootStore';
+import { useRootStore } from '@workflow-automation/stores/useRootStore';
 import { useWorkflowsStore } from '@/app/stores/workflows.store';
 import { displayForm } from '@/features/execution/executions/executions.utils';
 import { useExternalHooks } from '@/app/composables/useExternalHooks';
 import { useWorkflowHelpers } from '@/app/composables/useWorkflowHelpers';
 import type { useRouter } from 'vue-router';
 import { isEmpty } from '@/app/utils/typesUtils';
-import { useI18n } from '@n8n/i18n';
+import { useI18n } from '@workflow-automation/i18n';
 import get from 'lodash/get';
 import { useExecutionsStore } from '@/features/execution/executions/executions.store';
 import { useTelemetry } from './useTelemetry';
@@ -42,7 +42,7 @@ import { useSettingsStore } from '@/app/stores/settings.store';
 import { usePushConnectionStore } from '@/app/stores/pushConnection.store';
 import { useNodeDirtiness } from '@/app/composables/useNodeDirtiness';
 import { useCanvasOperations } from './useCanvasOperations';
-import { useAgentRequestStore } from '@n8n/stores/useAgentRequestStore';
+import { useAgentRequestStore } from '@workflow-automation/stores/useAgentRequestStore';
 import { useWorkflowSaving } from './useWorkflowSaving';
 import { computed } from 'vue';
 import { injectWorkflowState, type WorkflowState } from '@/app/composables/useWorkflowState';

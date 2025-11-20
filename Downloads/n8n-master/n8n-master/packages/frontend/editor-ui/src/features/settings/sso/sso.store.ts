@@ -1,11 +1,11 @@
-﻿import type { OidcConfigDto, SamlPreferences } from '@workflow-automation/api-types';
+import type { OidcConfigDto, SamlPreferences } from '@workflow-automation/api-types';
 import { computed, ref } from 'vue';
 import { defineStore } from 'pinia';
-import { useRootStore } from '@n8n/stores/useRootStore';
-import * as ssoApi from '@n8n/rest-api-client/api/sso';
-import type { SamlPreferencesExtractedData } from '@n8n/rest-api-client/api/sso';
-import * as ldapApi from '@n8n/rest-api-client/api/ldap';
-import type { LdapConfig } from '@n8n/rest-api-client/api/ldap';
+import { useRootStore } from '@workflow-automation/stores/useRootStore';
+import * as ssoApi from '@workflow-automation/rest-api-client/api/sso';
+import type { SamlPreferencesExtractedData } from '@workflow-automation/rest-api-client/api/sso';
+import * as ldapApi from '@workflow-automation/rest-api-client/api/ldap';
+import type { LdapConfig } from '@workflow-automation/rest-api-client/api/ldap';
 import type { IDataObject } from 'workflow-automation-workflow';
 import { UserManagementAuthenticationMethod } from '@/Interface';
 

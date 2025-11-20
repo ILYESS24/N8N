@@ -1,7 +1,7 @@
-﻿import { computed, ref, type Ref } from 'vue';
+import { computed, ref, type Ref } from 'vue';
 import { useRoute, useRouter } from 'vue-router';
-import { N8nIcon } from '@n8n/design-system';
-import { useI18n } from '@n8n/i18n';
+import { N8nIcon } from '@workflow-automation/design-system';
+import { useI18n } from '@workflow-automation/i18n';
 import debounce from 'lodash/debounce';
 import type { ICredentialsResponse } from '@/features/credentials/credentials.types';
 import { useCredentialsStore } from '@/features/credentials/credentials.store';

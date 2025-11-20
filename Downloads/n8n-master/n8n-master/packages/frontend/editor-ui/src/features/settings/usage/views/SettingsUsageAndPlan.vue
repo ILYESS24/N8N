@@ -1,10 +1,10 @@
-﻿<script lang="ts" setup>
+<script lang="ts" setup>
 import { computed, onMounted, ref } from 'vue';
 import { useRoute, useRouter } from 'vue-router';
 import type { UsageTelemetry } from '../usage.store';
 import { useUsageStore } from '../usage.store';
 import { telemetry } from '@/app/plugins/telemetry';
-import { i18n as locale } from '@n8n/i18n';
+import { i18n as locale } from '@workflow-automation/i18n';
 import { useUIStore } from '@/app/stores/ui.store';
 import { useToast } from '@/app/composables/useToast';
 import { useDocumentTitle } from '@/app/composables/useDocumentTitle';
@@ -25,7 +25,7 @@ import {
 	N8nNotice,
 	N8nText,
 	N8nTooltip,
-} from '@n8n/design-system';
+} from '@workflow-automation/design-system';
 import EulaAcceptanceModal from '../components/EulaAcceptanceModal.vue';
 
 const usageStore = useUsageStore();

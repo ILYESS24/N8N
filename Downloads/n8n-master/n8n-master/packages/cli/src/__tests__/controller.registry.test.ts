@@ -1,6 +1,6 @@
-﻿jest.mock('@n8n/backend-common', () => {
+jest.mock('@workflow-automation/backend-common', () => {
 	return {
-		...jest.requireActual('@n8n/backend-common'),
+		...jest.requireActual('@workflow-automation/backend-common'),
 		inProduction: true,
 	};
 });

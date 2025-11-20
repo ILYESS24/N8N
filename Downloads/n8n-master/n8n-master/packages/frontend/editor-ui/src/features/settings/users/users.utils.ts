@@ -1,4 +1,4 @@
-﻿import {
+import {
 	CALENDLY_TRIGGER_NODE_TYPE,
 	CLEARBIT_NODE_TYPE,
 	SCHEDULE_TRIGGER_NODE_TYPE,
@@ -69,7 +69,7 @@ import type {
 	IPersonalizationSurveyAnswersV3,
 	IPersonalizationSurveyVersions,
 	IUser,
-} from '@n8n/rest-api-client/api/users';
+} from '@workflow-automation/rest-api-client/api/users';
 import type { ILogInStatus } from './users.types';
 import type { IPersonalizationSurveyAnswersV4 } from 'workflow-automation-workflow';
 

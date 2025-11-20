@@ -1,8 +1,8 @@
-﻿import { useNpsSurveyStore } from '@/app/stores/npsSurvey.store';
+import { useNpsSurveyStore } from '@/app/stores/npsSurvey.store';
 import { useUIStore } from '@/app/stores/ui.store';
 import type { LocationQuery, NavigationGuardNext, useRouter } from 'vue-router';
 import { useMessage } from './useMessage';
-import { useI18n } from '@n8n/i18n';
+import { useI18n } from '@workflow-automation/i18n';
 import {
 	MODAL_CANCEL,
 	MODAL_CLOSE,
@@ -16,8 +16,8 @@ import { useWorkflowsStore } from '@/app/stores/workflows.store';
 import { useSourceControlStore } from '@/features/integrations/sourceControl.ee/sourceControl.store';
 import { useCanvasStore } from '@/app/stores/canvas.store';
 import type { IUpdateInformation, IWorkflowDb, NotificationOptions } from '@/Interface';
-import type { ITag } from '@n8n/rest-api-client/api/tags';
-import type { WorkflowDataCreate, WorkflowDataUpdate } from '@n8n/rest-api-client/api/workflows';
+import type { ITag } from '@workflow-automation/rest-api-client/api/tags';
+import type { WorkflowDataCreate, WorkflowDataUpdate } from '@workflow-automation/rest-api-client/api/workflows';
 import type { IDataObject, INode, IWorkflowSettings } from 'workflow-automation-workflow';
 import { useNodeTypesStore } from '@/app/stores/nodeTypes.store';
 import { useToast } from './useToast';

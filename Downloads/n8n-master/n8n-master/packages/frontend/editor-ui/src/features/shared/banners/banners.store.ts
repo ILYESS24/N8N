@@ -1,14 +1,14 @@
-﻿import type { Component } from 'vue';
+import type { Component } from 'vue';
 import { computed, markRaw, ref } from 'vue';
 import { defineStore } from 'pinia';
-import { STORES } from '@n8n/stores';
+import { STORES } from '@workflow-automation/stores';
 import { useSettingsStore } from '@/app/stores/settings.store';
-import type { DynamicBanner } from '@n8n/rest-api-client/api/dynamic-banners';
-import { getDynamicBanners } from '@n8n/rest-api-client/api/dynamic-banners';
+import type { DynamicBanner } from '@workflow-automation/rest-api-client/api/dynamic-banners';
+import { getDynamicBanners } from '@workflow-automation/rest-api-client/api/dynamic-banners';
 import type { BannerName } from '@workflow-automation/api-types';
 import DynamicBannerComponent from '@/features/shared/banners/components/banners/DynamicBanner.vue';
-import { dismissBannerPermanently } from '@n8n/rest-api-client';
-import { useRootStore } from '@n8n/stores/useRootStore';
+import { dismissBannerPermanently } from '@workflow-automation/rest-api-client';
+import { useRootStore } from '@workflow-automation/stores/useRootStore';
 import { useUsersStore } from '@/features/settings/users/users.store';
 
 export const useBannersStore = defineStore(STORES.BANNERS, () => {

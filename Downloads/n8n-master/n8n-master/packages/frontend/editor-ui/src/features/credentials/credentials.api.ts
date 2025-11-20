@@ -1,6 +1,6 @@
-﻿import type { ICredentialsDecryptedResponse, ICredentialsResponse } from './credentials.types';
-import type { IRestApiContext } from '@n8n/rest-api-client';
-import { makeRestApiRequest } from '@n8n/rest-api-client';
+import type { ICredentialsDecryptedResponse, ICredentialsResponse } from './credentials.types';
+import type { IRestApiContext } from '@workflow-automation/rest-api-client';
+import { makeRestApiRequest } from '@workflow-automation/rest-api-client';
 import type {
 	ICredentialsDecrypted,
 	ICredentialType,
