@@ -197,13 +197,13 @@ export default mergeConfig(
 		envPrefix: ['VUE', 'N8N_ENV_FEAT'],
 		css: {
 			preprocessorOptions: {
-				scss: {
-					additionalData: [
-						'',
-						'@use "@/app/css/_variables.scss" as *;',
-						'@use "@n8n/design-system/css/mixins" as mixins;',
-					].join('\n'),
-				},
+			scss: {
+				additionalData: [
+					'',
+					'@use "@/app/css/_variables.scss" as *;',
+					'@use "@n8n/design-system/css/mixins" as mixins;',
+				].join('\n'),
+			},
 			},
 		},
 		build: {
