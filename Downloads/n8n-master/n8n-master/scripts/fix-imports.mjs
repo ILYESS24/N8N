@@ -69,11 +69,30 @@ function fixImports(content, filePath) {
 	});
 
 	// Étape 2: Remplacer tous les @n8n/ restants par @workflow-automation/
-	const n8nPattern = /@n8n\//g;
-	if (n8nPattern.test(newContent)) {
-		newContent = newContent.replace(n8nPattern, '@workflow-automation/');
+	// MAIS ignorer les chemins relatifs (../@n8n/ ou ./@n8n/) car les dossiers physiques s'appellent toujours @n8n
+	// On remplace ligne par ligne pour mieux détecter les chemins relatifs
+	const lines = newContent.split('\n');
+	let contentModified = false;
+	const newLines = lines.map((line) => {
+		// Si la ligne contient un chemin relatif avec @n8n/, on ne le modifie pas
+		if (line.match(/['"]\.\.\/.*@n8n\//) || line.match(/['"]\.\/.*@n8n\//)) {
+			return line;
+		}
+		// Sinon, on remplace @n8n/ par @workflow-automation/
+		if (line.includes('@n8n/')) {
+			const newLine = line.replace(/@n8n\//g, '@workflow-automation/');
+			if (newLine !== line) {
+				contentModified = true;
+				replacements++;
+			}
+			return newLine;
+		}
+		return line;
+	});
+	
+	if (contentModified) {
+		newContent = newLines.join('\n');
 		modified = true;
-		replacements++;
 	}
 
 	// Étape 3: Restaurer les packages externes depuis les marqueurs
