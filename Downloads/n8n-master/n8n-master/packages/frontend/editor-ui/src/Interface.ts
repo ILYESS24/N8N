@@ -62,7 +62,7 @@ import type {
 	ResourceParentFolder,
 } from '@/features/core/folders/folders.types';
 
-export * from '@workflow-automation/design-system/types';
+export * from '../../@n8n/design-system/src/types';
 
 declare global {
 	interface Window {
