@@ -10,6 +10,8 @@
   "scripts": {
     "prepare": "node scripts/prepare.mjs",
     "preinstall": "node scripts/block-npm-install.js",
+    "fix:imports": "node scripts/fix-imports.mjs",
+    "prebuild": "node scripts/fix-imports.mjs",
     "build": "turbo run build",
     "build:workflow-automation": "node scripts/build-workflow-automation.mjs",
     "build:deploy": "node scripts/build-workflow-automation.mjs",
