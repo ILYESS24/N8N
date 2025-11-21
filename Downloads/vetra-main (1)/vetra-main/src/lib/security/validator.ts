@@ -91,8 +91,8 @@ export const validationSchemas = {
 
   // Project
   project: z.object({
-    name: z.string().min(1).max(200).transform(sanitizeString),
-    description: z.string().max(2000).optional().transform((val) => val ? sanitizeString(val) : undefined),
+    name: z.string().min(1).max(200).transform(sanitizeForZod),
+    description: z.string().max(2000).optional().transform((val) => val ? sanitizeForZod(val) : undefined),
     type: z.enum(['website', 'app', 'api', 'other']).optional(),
   }),
 
@@ -105,8 +105,8 @@ export const validationSchemas = {
 
   // Agent
   agent: z.object({
-    name: z.string().min(1).max(200).transform(sanitizeString),
-    description: z.string().max(2000).optional().transform((val) => val ? sanitizeString(val) : undefined),
+    name: z.string().min(1).max(200).transform(sanitizeForZod),
+    description: z.string().max(2000).optional().transform((val) => val ? sanitizeForZod(val) : undefined),
     config: z.record(z.any()).optional(),
   }),
 };
