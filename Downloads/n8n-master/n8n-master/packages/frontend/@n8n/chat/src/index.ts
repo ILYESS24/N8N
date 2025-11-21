@@ -27,6 +27,9 @@ export { MessagesList, Input as ChatInput } from './components';
 export { default as Chat } from './components/Chat.vue';
 export { default } from './components/Chat.vue';
 
+// Export composables
+export { useChat, useI18n, useOptions } from './composables';
+
 // Export types
 export type * from './types';
 export type { ArrowKeyDownPayload } from './components/Input.vue';
