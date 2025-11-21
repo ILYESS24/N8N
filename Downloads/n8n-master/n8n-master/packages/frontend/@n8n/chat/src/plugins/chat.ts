@@ -1,21 +1,21 @@
 import { v4 as uuidv4 } from 'uuid';
 import { type Plugin, computed, nextTick, ref, type Ref } from 'vue';
 
-import * as api from '@workflow-automation/chat/api';
-import { ChatOptionsSymbol, ChatSymbol, localStorageSessionIdKey } from '@workflow-automation/chat/constants';
-import { chatEventBus } from '@workflow-automation/chat/event-buses';
+import * as api from '../api';
+import { ChatOptionsSymbol, ChatSymbol, localStorageSessionIdKey } from '../constants';
+import { chatEventBus } from '../event-buses';
 import type {
 	ChatMessage,
 	ChatOptions,
 	ChatMessageText,
 	SendMessageResponse,
-} from '@workflow-automation/chat/types';
-import { StreamingMessageManager, createBotMessage } from '@workflow-automation/chat/utils/streaming';
+} from '../types';
+import { StreamingMessageManager, createBotMessage } from '../utils/streaming';
 import {
 	handleStreamingChunk,
 	handleNodeStart,
 	handleNodeComplete,
-} from '@workflow-automation/chat/utils/streamingHandlers';
+} from '../utils/streamingHandlers';
 
 /**
  * Creates a new user message object with a unique ID

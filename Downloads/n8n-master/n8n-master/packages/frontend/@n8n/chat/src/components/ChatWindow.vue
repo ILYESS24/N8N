@@ -3,8 +3,8 @@ import IconChat from 'virtual:icons/mdi/chat';
 import IconChevronDown from 'virtual:icons/mdi/chevron-down';
 import { nextTick, ref } from 'vue';
 
-import Chat from '@workflow-automation/chat/components/Chat.vue';
-import { chatEventBus } from '@workflow-automation/chat/event-buses';
+import Chat from './Chat.vue';
+import { chatEventBus } from '../event-buses';
 
 const isOpen = ref(false);
 

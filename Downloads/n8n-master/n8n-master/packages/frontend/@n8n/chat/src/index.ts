@@ -2,10 +2,10 @@ import './main.scss';
 
 import { createApp } from 'vue';
 
-import { defaultMountingTarget, defaultOptions } from '@workflow-automation/chat/constants';
-import { ChatPlugin } from '@workflow-automation/chat/plugins';
-import type { ChatOptions } from '@workflow-automation/chat/types';
-import { createDefaultMountingTarget } from '@workflow-automation/chat/utils';
+import { defaultMountingTarget, defaultOptions } from './constants';
+import { ChatPlugin } from './plugins';
+import type { ChatOptions } from './types';
+import { createDefaultMountingTarget } from './utils';
 
 import App from './App.vue';
 
@@ -14,12 +14,18 @@ export { chatEventBus } from './event-buses';
 
 // Export constants
 export { ChatOptionsSymbol, ChatSymbol } from './constants';
+export { defaultMountingTarget, defaultOptions } from './constants';
+
+// Export plugins
+export { ChatPlugin } from './plugins';
 
 // Export utils
-export { constructChatWebsocketUrl } from './utils';
+export { constructChatWebsocketUrl, createDefaultMountingTarget } from './utils';
 
 // Export components
-export { MessagesList, Input as ChatInput } from './components';
+export { MessagesList, Input as ChatInput, Chat } from './components';
+export { default as Chat } from './components/Chat.vue';
+export { default } from './components/Chat.vue';
 
 // Export types
 export type * from './types';
