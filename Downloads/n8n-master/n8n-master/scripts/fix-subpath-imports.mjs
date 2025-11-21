@@ -64,7 +64,8 @@ function fixSubpathImports(content, filePath) {
 
 	// Étape 1: Corriger les chemins relatifs vers @workflow-automation/package/src/...
 	// Pattern: ../../../../@workflow-automation/package/src/...
-	const relativePathPattern = /(['"])(\.\.\/)+@workflow-automation\/(chat|design-system)\/src\/([^'"]+)(['"])/g;
+	// Ce pattern doit capturer n'importe quel nombre de ../ avant @workflow-automation
+	const relativePathPattern = /(['"])((?:\.\.\/)+)@workflow-automation\/(chat|design-system)\/src\/([^'"]+)(['"])/g;
 	newContent = newContent.replace(relativePathPattern, (match, quote1, dots, pkg, subpath, quote2) => {
 		const fullPath = `@workflow-automation/${pkg}/src/${subpath}`;
 		
@@ -185,9 +186,25 @@ function main() {
 
 	const startTime = Date.now();
 
-	// Traiter seulement editor-ui, pas les packages eux-mêmes
-	const editorUiDir = join(rootDir, 'packages', 'frontend', 'editor-ui', 'src');
-	walkDirectory(editorUiDir, processFile);
+	// Traiter editor-ui ET tous les autres packages frontend qui pourraient avoir des imports problématiques
+	const frontendDir = join(rootDir, 'packages', 'frontend');
+	
+	// Traiter editor-ui
+	const editorUiDir = join(frontendDir, 'editor-ui', 'src');
+	if (statSync(editorUiDir).isDirectory()) {
+		console.log(`📁 Traitement de: ${editorUiDir}`);
+		walkDirectory(editorUiDir, processFile);
+	}
+	
+	// Traiter aussi les autres packages frontend si nécessaire
+	const otherDirs = ['design-system', 'chat'];
+	for (const dir of otherDirs) {
+		const dirPath = join(frontendDir, `@n8n`, dir, 'src');
+		if (statSync(dirPath).isDirectory()) {
+			console.log(`📁 Traitement de: ${dirPath}`);
+			walkDirectory(dirPath, processFile);
+		}
+	}
 
 	const duration = ((Date.now() - startTime) / 1000).toFixed(2);
 
