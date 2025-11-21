@@ -166,16 +166,26 @@ function processFile(filePath) {
 
 	try {
 		const content = readFileSync(filePath, 'utf8');
+		
+		// Vérifier si le fichier contient des imports problématiques
+		const hasProblematicImports = /(\.\.\/)+@workflow-automation\/(chat|design-system)\/src\//.test(content) ||
+			/@workflow-automation\/(chat|design-system)\/src\//.test(content);
+		
+		if (hasProblematicImports) {
+			console.log(`⚠️  Fichier avec imports problématiques: ${filePath}`);
+		}
+		
 		const { content: newContent, modified, replacements } = fixSubpathImports(content, filePath);
 
 		if (modified) {
 			writeFileSync(filePath, newContent, 'utf8');
 			modifiedFiles++;
 			totalReplacements += replacements;
+			console.log(`✅ Corrigé: ${filePath} (${replacements} remplacements)`);
 			return true;
 		}
 	} catch (error) {
-		console.error(`Erreur avec ${filePath}:`, error.message);
+		console.error(`❌ Erreur avec ${filePath}:`, error.message);
 	}
 
 	return false;
