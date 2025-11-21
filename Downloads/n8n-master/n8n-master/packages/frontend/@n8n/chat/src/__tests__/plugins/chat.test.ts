@@ -5,7 +5,7 @@ import * as api from '@workflow-automation/chat/api';
 
 import { ChatPlugin } from '../../plugins/chat';
 
-vi.mock('@n8n/chat/api');
+vi.mock('@workflow-automation/chat/api');
 
 describe('ChatPlugin', () => {
 	it('should return sendMessageResponse when executionStarted is true', async () => {

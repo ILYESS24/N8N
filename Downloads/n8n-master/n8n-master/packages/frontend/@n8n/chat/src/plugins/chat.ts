@@ -78,8 +78,11 @@ function handleEmptyStreamResponse(config: EmptyStreamConfig): void {
 			messages.value.push(receivedMessage.value);
 		}
 	}
-	receivedMessage.value.text =
-		'[No response received. This could happen if streaming is enabled in the trigger but disabled in agent node(s)]';
+	// receivedMessage.value is guaranteed to be non-null at this point
+	if (receivedMessage.value) {
+		receivedMessage.value.text =
+			'[No response received. This could happen if streaming is enabled in the trigger but disabled in agent node(s)]';
+	}
 }
 
 interface ErrorConfig {

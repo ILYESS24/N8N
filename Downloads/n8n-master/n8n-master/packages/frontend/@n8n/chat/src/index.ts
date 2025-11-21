@@ -23,7 +23,7 @@ export { ChatPlugin } from './plugins';
 export { constructChatWebsocketUrl, createDefaultMountingTarget } from './utils';
 
 // Export components
-export { MessagesList, Input as ChatInput, Chat } from './components';
+export { MessagesList, Input as ChatInput } from './components';
 export { default as Chat } from './components/Chat.vue';
 export { default } from './components/Chat.vue';
 

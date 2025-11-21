@@ -9,8 +9,8 @@ import { ChatPlugin } from '@workflow-automation/chat/plugins/chat';
 import type { Chat, ChatOptions, LoadPreviousSessionResponse } from '@workflow-automation/chat/types';
 
 // Mock dependencies
-vi.mock('@n8n/chat/api');
-vi.mock('@n8n/chat/event-buses', () => ({
+vi.mock('@workflow-automation/chat/api');
+vi.mock('@workflow-automation/chat/event-buses', () => ({
 	chatEventBus: {
 		emit: vi.fn(),
 	},

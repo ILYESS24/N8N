@@ -1,7 +1,7 @@
 import { nextTick } from 'vue';
 import type { Ref } from 'vue';
 
-import { chatEventBus } from '@workflow-automation/chat/event-buses';
+import { chatEventBus } from '../event-buses';
 import type { ChatMessage, ChatMessageText } from '../types';
 
 import type { StreamingMessageManager } from './streaming';

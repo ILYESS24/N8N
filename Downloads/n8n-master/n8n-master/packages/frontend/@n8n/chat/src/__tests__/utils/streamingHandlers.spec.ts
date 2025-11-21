@@ -10,7 +10,7 @@ import {
 } from '@workflow-automation/chat/utils/streamingHandlers';
 
 // Mock the chatEventBus
-vi.mock('@n8n/chat/event-buses', () => ({
+vi.mock('@workflow-automation/chat/event-buses', () => ({
 	chatEventBus: {
 		emit: vi.fn(),
 	},
