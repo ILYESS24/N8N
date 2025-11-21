@@ -51,7 +51,13 @@ export function VideoStudioPanel() {
   const [creating, setCreating] = useState(false);
   const [error, setError] = useState<string | null>(null);
   const [success, setSuccess] = useState<string | null>(null);
-  const [form, setForm] = useState({
+  const [form, setForm] = useState<{
+    tool: "mochi" | "open-sora" | "wan";
+    prompt: string;
+    duration: string;
+    aspect: string;
+    style: string;
+  }>({
     tool: toolOptions[0].value,
     prompt: "",
     duration: "10",
@@ -127,7 +133,7 @@ export function VideoStudioPanel() {
                 <Label className="text-white/80">Moteur</Label>
                 <Select
                   value={form.tool}
-                  onValueChange={(value) => setForm((prev) => ({ ...prev, tool: value }))}
+                  onValueChange={(value) => setForm((prev) => ({ ...prev, tool: value as "mochi" | "open-sora" | "wan" }))}
                 >
                   <SelectTrigger className="bg-white/5 border-white/10 text-white">
                     <SelectValue />
