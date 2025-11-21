@@ -9,3 +9,9 @@ export { default as N8nSelect2 } from './v2/components/Select/Select.vue';
 export { default as N8nSelect2Item } from './v2/components/Select/SelectItem.vue';
 export type * from './v2/components/Select/Select.types';
 export { locale };
+
+// Export composables
+export { useProvideTooltipAppendTo, useInjectTooltipAppendTo } from './composables/useTooltipAppendTo';
+
+// Export IconPicker types and utilities
+export { isIconOrEmoji, type IconOrEmoji } from './components/N8nIconPicker/types';
