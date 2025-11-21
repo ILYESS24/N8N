@@ -72,7 +72,7 @@ export function VerticalNavbar({
   const outsideClickRef = React.useRef<HTMLDivElement>(null);
   const router = useRouter();
 
-  useOnClickOutside(outsideClickRef, () => {
+  useOnClickOutside(outsideClickRef as React.RefObject<HTMLElement>, () => {
     setSelected(null);
   });
 
