@@ -18,6 +18,13 @@ export function sanitizeString(input: string, maxLength: number = 10000): string
 }
 
 /**
+ * Wrapper pour Zod transform - accepte seulement un paramètre
+ */
+function sanitizeForZod(input: string): string {
+  return sanitizeString(input);
+}
+
+/**
  * Sanitize object - nettoie récursivement un objet
  */
 export function sanitizeObject<T extends Record<string, any>>(obj: T): T {
@@ -40,7 +47,7 @@ export function sanitizeObject<T extends Record<string, any>>(obj: T): T {
 export const validationSchemas = {
   // Prompt AI
   aiPrompt: z.object({
-    prompt: z.string().min(1).max(10000).transform(sanitizeString),
+    prompt: z.string().min(1).max(10000).transform(sanitizeForZod),
     model: z.enum(['deepseek', 'openai', 'ollama']).optional(),
     options: z.object({
       temperature: z.number().min(0).max(2).optional(),
@@ -51,7 +58,7 @@ export const validationSchemas = {
   // Video generation
   videoJob: z.object({
     tool: z.enum(['mochi', 'open-sora', 'wan']),
-    prompt: z.string().min(10).max(5000).transform(sanitizeString),
+    prompt: z.string().min(10).max(5000).transform(sanitizeForZod),
     config: z.object({
       duration: z.number().min(4).max(60).optional(),
       aspect: z.string().max(20).optional(),
@@ -61,14 +68,14 @@ export const validationSchemas = {
 
   // Code suggestion
   codeSuggestion: z.object({
-    code: z.string().min(1).max(50000).transform(sanitizeString),
-    context: z.string().max(5000).optional().transform((val) => val ? sanitizeString(val) : undefined),
+    code: z.string().min(1).max(50000).transform(sanitizeForZod),
+    context: z.string().max(5000).optional().transform((val) => val ? sanitizeForZod(val) : undefined),
     action: z.enum(['suggest', 'explain', 'refactor', 'debug']).optional(),
   }),
 
   // Text improvement
   textImprovement: z.object({
-    text: z.string().min(1).max(50000).transform(sanitizeString),
+    text: z.string().min(1).max(50000).transform(sanitizeForZod),
     action: z.enum(['improve', 'rewrite', 'summarize', 'expand']).optional(),
     style: z.string().max(200).optional(),
     tone: z.string().max(200).optional(),
@@ -91,8 +98,8 @@ export const validationSchemas = {
 
   // Content
   content: z.object({
-    title: z.string().min(1).max(500).transform(sanitizeString),
-    content: z.string().min(1).max(100000).transform(sanitizeString),
+    title: z.string().min(1).max(500).transform(sanitizeForZod),
+    content: z.string().min(1).max(100000).transform(sanitizeForZod),
     type: z.enum(['text', 'image', 'video', 'code']).optional(),
   }),
 
