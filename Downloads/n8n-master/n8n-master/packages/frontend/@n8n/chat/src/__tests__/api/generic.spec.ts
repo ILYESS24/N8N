@@ -1,6 +1,6 @@
 import { beforeEach, describe, expect, it, vi } from 'vitest';
 
-import { postWithFiles } from '../../api/generic.ts';
+import { postWithFiles } from '../../api/generic';
 
 describe('postWithFiles', () => {
 	beforeEach(() => {
