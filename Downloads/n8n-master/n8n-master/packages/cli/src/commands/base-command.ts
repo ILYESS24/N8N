@@ -179,7 +179,10 @@ export abstract class BaseCommand<F = never> {
 	}
 
 	protected async exitWithCrash(message: string, error: unknown) {
-		this.errorReporter.error(new Error(message, { cause: error }), { level: 'fatal' });
+		const ensuredError = ensureError(error);
+		this.logger.error(message, { error: ensuredError });
+		console.error(`[n8n fatal] ${message}`, ensuredError);
+		this.errorReporter.error(new Error(message, { cause: ensuredError }), { level: 'fatal' });
 		await sleep(2000);
 		process.exit(1);
 	}

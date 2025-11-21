@@ -54,6 +54,12 @@ services:
       # Désactiver le tunnel (non nécessaire sur Render)
       - key: N8N_DISABLE_PRODUCTION_MAIN_PROCESS
         value: "false"
+      - key: N8N_ENCRYPTION_KEY
+        value: "Lh9Ux9XbIy+oJsH2PlFDCOFmY+r5wo1Q"
+      - key: DB_POSTGRESDB_SSL_ENABLED
+        value: "true"
+      - key: DB_POSTGRESDB_SSL_REJECT_UNAUTHORIZED
+        value: "false"
       # Activer les logs pour le débogage
       - key: N8N_LOG_LEVEL
         value: "info"
