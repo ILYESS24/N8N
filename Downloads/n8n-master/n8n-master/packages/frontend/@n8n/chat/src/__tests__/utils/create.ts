@@ -1,4 +1,4 @@
-import { createChat } from '@workflow-automation/chat/index';
+import { createChat } from '../../index';
 
 export function createTestChat(options: Parameters<typeof createChat>[0] = {}): {
 	unmount: () => void;

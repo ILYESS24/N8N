@@ -16,8 +16,8 @@ import {
 	getChatWrapper,
 	getGetStartedButton,
 	getMountingTarget,
-} from '@workflow-automation/chat/__tests__/utils';
-import { createChat } from '@workflow-automation/chat/index';
+} from './utils';
+import { createChat } from '../index';
 
 describe('createChat()', () => {
 	let app: ReturnType<typeof createChat>;

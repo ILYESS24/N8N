@@ -1,11 +1,11 @@
 import { vi, describe, it, expect } from 'vitest';
 import { createApp } from 'vue';
 
-import * as api from '@workflow-automation/chat/api';
+import * as api from '../../api';
 
 import { ChatPlugin } from '../../plugins/chat';
 
-vi.mock('@workflow-automation/chat/api');
+vi.mock('../../api');
 
 describe('ChatPlugin', () => {
 	it('should return sendMessageResponse when executionStarted is true', async () => {

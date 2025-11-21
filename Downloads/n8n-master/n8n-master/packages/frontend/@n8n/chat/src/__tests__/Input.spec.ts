@@ -24,7 +24,7 @@ vi.mock('virtual:icons/mdi/send', () => ({
 	default: { name: 'IconSend' },
 }));
 
-vi.mock('@workflow-automation/chat/composables', () => ({
+vi.mock('../composables/index.ts', () => ({
 	useI18n: () => ({
 		t: (key: string) => key,
 	}),
@@ -45,7 +45,7 @@ vi.mock('@workflow-automation/chat/composables', () => ({
 	}),
 }));
 
-vi.mock('@workflow-automation/chat/event-buses', () => ({
+vi.mock('../event-buses/index.ts', () => ({
 	chatEventBus: {
 		on: vi.fn(),
 		off: vi.fn(),

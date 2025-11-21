@@ -7,7 +7,7 @@
  */
 
 import { readFileSync, writeFileSync, readdirSync, statSync } from 'fs';
-import { join, dirname, relative } from 'path';
+import { join, dirname, relative as pathRelative } from 'path';
 import { fileURLToPath } from 'url';
 
 const __filename = fileURLToPath(import.meta.url);
@@ -57,10 +57,133 @@ function shouldIgnore(path) {
 	return IGNORE_DIRS.some((dir) => parts.includes(dir));
 }
 
+function getRelativePath(fromPath, toPath) {
+	const fromDir = dirname(fromPath);
+	let relPath = pathRelative(fromDir, toPath);
+	// Normaliser les séparateurs de chemin
+	relPath = relPath.replace(/\\/g, '/');
+	// S'assurer que le chemin commence par ./
+	if (!relPath.startsWith('.')) {
+		relPath = `./${relPath}`;
+	}
+	return relPath;
+}
+
 function fixSubpathImports(content, filePath) {
 	let modified = false;
 	let replacements = 0;
 	let newContent = content;
+
+	// Étape 0: Corriger les imports internes du package @workflow-automation/chat
+	// Si le fichier est dans packages/frontend/@n8n/chat/src, remplacer les imports depuis @workflow-automation/chat par des chemins relatifs
+	const chatPackagePath = join(rootDir, 'packages', 'frontend', '@n8n', 'chat', 'src');
+	const normalizedChatPath = chatPackagePath.replace(/\\/g, '/');
+	const normalizedFilePath = filePath.replace(/\\/g, '/');
+	
+	if (normalizedFilePath.startsWith(normalizedChatPath)) {
+		// CORRECTION FORCÉE: Remplacer TOUS les imports depuis @workflow-automation/chat par des chemins relatifs
+		
+		// Pattern 1: import DefaultName from "@workflow-automation/chat"
+		const defaultImportPattern = /import\s+(\w+)\s+from\s+(['"])(@workflow-automation\/chat)(['"])/g;
+		newContent = newContent.replace(defaultImportPattern, (match, importName, quote1, pkg, quote2) => {
+			// Vérifier si le composant existe dans components/
+			const componentPath = join(chatPackagePath, 'components', `${importName}.vue`);
+			const componentIndexPath = join(chatPackagePath, 'components', 'index.ts');
+			
+			let targetPath;
+			try {
+				if (statSync(componentPath).isFile()) {
+					// Le composant existe directement
+					targetPath = componentPath;
+				} else {
+					// Essayer depuis components/index.ts
+					targetPath = componentIndexPath;
+				}
+			} catch (e) {
+				// Le composant n'existe pas, utiliser index.ts principal
+				targetPath = join(chatPackagePath, 'index.ts');
+			}
+			
+			// Calculer le chemin relatif
+			const relativePath = getRelativePath(filePath, targetPath).replace(/\\/g, '/');
+			modified = true;
+			replacements++;
+			return `import ${importName} from ${quote1}${relativePath}${quote2}`;
+		});
+		
+		// Pattern 2: import { Name1, Name2 } from "@workflow-automation/chat"
+		const namedImportPattern = /import\s+\{([^}]+)\}\s+from\s+(['"])(@workflow-automation\/chat)(['"])/g;
+		newContent = newContent.replace(namedImportPattern, (match, imports, quote1, pkg, quote2) => {
+			const targetPath = join(chatPackagePath, 'index.ts');
+			const relativePath = getRelativePath(filePath, targetPath).replace(/\\/g, '/');
+			modified = true;
+			replacements++;
+			return `import {${imports}} from ${quote1}${relativePath}${quote2}`;
+		});
+		
+		// Pattern 3: import * as Name from "@workflow-automation/chat"
+		const namespaceImportPattern = /import\s+\*\s+as\s+(\w+)\s+from\s+(['"])(@workflow-automation\/chat)(['"])/g;
+		newContent = newContent.replace(namespaceImportPattern, (match, importName, quote1, pkg, quote2) => {
+			const targetPath = join(chatPackagePath, 'index.ts');
+			const relativePath = getRelativePath(filePath, targetPath).replace(/\\/g, '/');
+			modified = true;
+			replacements++;
+			return `import * as ${importName} from ${quote1}${relativePath}${quote2}`;
+		});
+		
+		// Pattern 4: Tous les autres imports depuis @workflow-automation/chat (avec ou sans sous-chemin)
+		const internalImportPattern = /(['"])(@workflow-automation\/chat)(\/([^'"]+))?(['"])/g;
+		newContent = newContent.replace(internalImportPattern, (match, quote1, pkg, subpathPart, subpath, quote2) => {
+			// Nettoyer le sous-chemin (enlever src/ si présent)
+			let cleanSubpath = subpath ? subpath.replace(/^src\//, '') : '';
+			
+			// Déterminer le chemin cible
+			let targetPath;
+			if (!cleanSubpath) {
+				// Import depuis le point d'entrée principal -> utiliser index.ts
+				targetPath = join(chatPackagePath, 'index.ts');
+			} else {
+				// Construire le chemin cible
+				targetPath = join(chatPackagePath, cleanSubpath);
+				
+				// Si le chemin ne se termine pas par .ts, .vue, .mts, etc., essayer d'ajouter l'extension
+				try {
+					const stat = statSync(targetPath);
+					if (stat.isDirectory()) {
+						// C'est un répertoire, chercher index.ts
+						targetPath = join(targetPath, 'index.ts');
+					} else if (!targetPath.match(/\.(ts|vue|mts|js|mjs)$/)) {
+						// Pas d'extension, essayer avec .ts
+						const tsPath = targetPath + '.ts';
+						try {
+							if (statSync(tsPath).isFile()) {
+								targetPath = tsPath;
+							}
+						} catch (e) {
+							// Ignorer
+						}
+					}
+				} catch (e) {
+					// Le fichier n'existe pas, essayer avec .ts
+					const tsPath = targetPath + '.ts';
+					try {
+						if (statSync(tsPath).isFile()) {
+							targetPath = tsPath;
+						}
+					} catch (e2) {
+						// Ignorer l'erreur, utiliser index.ts
+						targetPath = join(chatPackagePath, 'index.ts');
+					}
+				}
+			}
+			
+			// Calculer le chemin relatif
+			const relativePath = getRelativePath(filePath, targetPath).replace(/\\/g, '/');
+			modified = true;
+			replacements++;
+			return `${quote1}${relativePath}${quote2}`;
+		});
+	}
 
 	// Étape 1: Corriger les chemins relatifs vers @workflow-automation/package/src/...
 	// Pattern: ../../../../@workflow-automation/package/src/...

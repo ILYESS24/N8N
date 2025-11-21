@@ -1,6 +1,6 @@
 import { beforeEach, describe, expect, it, vi } from 'vitest';
 
-import { postWithFiles } from '@workflow-automation/chat/api/generic';
+import { postWithFiles } from '../../api/generic.ts';
 
 describe('postWithFiles', () => {
 	beforeEach(() => {

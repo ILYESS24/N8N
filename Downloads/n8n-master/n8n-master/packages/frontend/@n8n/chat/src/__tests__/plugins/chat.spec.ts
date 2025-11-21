@@ -1,16 +1,16 @@
 import { describe, it, expect, vi, beforeEach, afterEach } from 'vitest';
 import { createApp } from 'vue';
 
-import * as api from '@workflow-automation/chat/api';
-import type { StreamingEventHandlers } from '@workflow-automation/chat/api/message';
-import { localStorageSessionIdKey } from '@workflow-automation/chat/constants';
-import { chatEventBus } from '@workflow-automation/chat/event-buses';
-import { ChatPlugin } from '@workflow-automation/chat/plugins/chat';
-import type { Chat, ChatOptions, LoadPreviousSessionResponse } from '@workflow-automation/chat/types';
+import * as api from '../../api';
+import type { StreamingEventHandlers } from '../../api/message';
+import { localStorageSessionIdKey } from '../../constants';
+import { chatEventBus } from '../../event-buses';
+import { ChatPlugin } from '../../plugins/chat';
+import type { Chat, ChatOptions, LoadPreviousSessionResponse } from '../../types';
 
 // Mock dependencies
-vi.mock('@workflow-automation/chat/api');
-vi.mock('@workflow-automation/chat/event-buses', () => ({
+vi.mock('../../api');
+vi.mock('../../event-buses', () => ({
 	chatEventBus: {
 		emit: vi.fn(),
 	},

@@ -11,8 +11,8 @@ import markdownLink from 'markdown-it-link-attributes';
 import { computed, ref, toRefs, onMounted } from 'vue';
 import VueMarkdown from 'vue-markdown-render';
 
-import { useOptions } from '@workflow-automation/chat/composables';
-import type { ChatMessage, ChatMessageText } from '@workflow-automation/chat/types';
+import { useOptions } from '../composables';
+import type { ChatMessage, ChatMessageText } from '../types';
 
 import ChatFile from './ChatFile.vue';
 

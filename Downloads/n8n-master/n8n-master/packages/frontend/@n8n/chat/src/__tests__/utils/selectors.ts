@@ -1,6 +1,6 @@
 import { screen } from '@testing-library/vue';
 
-import { defaultMountingTarget } from '@workflow-automation/chat/constants';
+import { defaultMountingTarget } from '../../constants';
 
 export function getMountingTarget(target = defaultMountingTarget) {
 	return document.querySelector(target);

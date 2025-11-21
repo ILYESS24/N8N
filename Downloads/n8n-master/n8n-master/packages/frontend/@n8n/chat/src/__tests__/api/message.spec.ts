@@ -1,7 +1,7 @@
 import { beforeEach, describe, expect, it, vi } from 'vitest';
 
-import { sendMessageStreaming } from '@workflow-automation/chat/api';
-import type { ChatOptions } from '@workflow-automation/chat/types';
+import { sendMessageStreaming } from '../../api';
+import type { ChatOptions } from '../../types';
 
 describe('sendMessageStreaming', () => {
 	const mockOptions: ChatOptions = {

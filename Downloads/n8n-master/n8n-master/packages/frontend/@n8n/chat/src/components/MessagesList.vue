@@ -2,10 +2,10 @@
 import { N8nIcon, N8nText } from '@workflow-automation/design-system';
 import { ref, watch } from 'vue';
 
-import Message from '@workflow-automation/chat/components/Message.vue';
-import MessageTyping from '@workflow-automation/chat/components/MessageTyping.vue';
-import { useChat } from '@workflow-automation/chat/composables';
-import type { ChatMessage } from '@workflow-automation/chat/types';
+import Message from './Message.vue';
+import MessageTyping from './MessageTyping.vue';
+import { useChat } from '../composables';
+import type { ChatMessage } from '../types';
 
 defineProps<{
 	messages: ChatMessage[];

@@ -4,9 +4,9 @@ import hljsJavascript from 'highlight.js/lib/languages/javascript';
 import hljsXML from 'highlight.js/lib/languages/xml';
 import { computed, onMounted } from 'vue';
 
-import Chat from '@workflow-automation/chat/components/Chat.vue';
-import ChatWindow from '@workflow-automation/chat/components/ChatWindow.vue';
-import { useOptions } from '@workflow-automation/chat/composables';
+import Chat from './components/Chat.vue';
+import ChatWindow from './components/ChatWindow.vue';
+import { useOptions } from './composables';
 
 defineProps({});
 

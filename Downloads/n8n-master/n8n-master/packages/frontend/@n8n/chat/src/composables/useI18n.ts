@@ -1,6 +1,6 @@
 import { isRef } from 'vue';
 
-import { useOptions } from '@workflow-automation/chat/composables/useOptions';
+import { useOptions } from './useOptions';
 
 export function useI18n() {
 	const { options } = useOptions();

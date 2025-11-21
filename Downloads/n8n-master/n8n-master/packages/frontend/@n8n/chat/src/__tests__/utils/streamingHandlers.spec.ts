@@ -1,24 +1,20 @@
 import { describe, expect, it, vi, beforeEach } from 'vitest';
 import { ref, type Ref } from 'vue';
 
-import type { ChatMessage, ChatMessageText } from '@workflow-automation/chat';
-import { StreamingMessageManager } from '@workflow-automation/chat';
+import type { ChatMessage, ChatMessageText } from '../../types';
+import { StreamingMessageManager } from '../../utils/streaming';
 import {
 	handleStreamingChunk,
 	handleNodeStart,
 	handleNodeComplete,
-} from '@workflow-automation/chat';
+} from '../../utils/streamingHandlers';
 
 // Mock the chatEventBus
-vi.mock('@workflow-automation/chat', async () => {
-	const actual = await vi.importActual('@workflow-automation/chat');
-	return {
-		...actual,
-		chatEventBus: {
-			emit: vi.fn(),
-		},
-	};
-});
+vi.mock('../../event-buses', () => ({
+	chatEventBus: {
+		emit: vi.fn(),
+	},
+}));
 
 describe('streamingHandlers', () => {
 	let messages: Ref<ChatMessage[]>;

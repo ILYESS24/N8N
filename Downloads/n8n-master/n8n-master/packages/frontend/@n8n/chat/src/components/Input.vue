@@ -5,9 +5,9 @@ import IconPaperclip from 'virtual:icons/mdi/paperclip';
 import IconSend from 'virtual:icons/mdi/send';
 import { computed, onMounted, onUnmounted, ref, unref } from 'vue';
 
-import { useI18n, useChat, useOptions } from '@workflow-automation/chat/composables';
-import { chatEventBus } from '@workflow-automation/chat/event-buses';
-import { constructChatWebsocketUrl } from '@workflow-automation/chat/utils';
+import { useI18n, useChat, useOptions } from '../composables';
+import { chatEventBus } from '../event-buses';
+import { constructChatWebsocketUrl } from '../utils/utils';
 
 import ChatFile from './ChatFile.vue';
 import type { ChatMessage } from '../types';

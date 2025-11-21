@@ -1,4 +1,4 @@
-import type { LoadPreviousSessionResponse, SendMessageResponse } from '@workflow-automation/chat/types';
+import type { LoadPreviousSessionResponse, SendMessageResponse } from '../../types';
 
 export function createFetchResponse<T>(data: T) {
 	const jsonData = JSON.stringify(data);

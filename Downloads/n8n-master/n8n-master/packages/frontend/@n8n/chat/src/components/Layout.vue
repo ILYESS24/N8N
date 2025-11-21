@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { onBeforeUnmount, onMounted, ref } from 'vue';
 
-import { chatEventBus } from '@workflow-automation/chat/event-buses';
+import { chatEventBus } from '../event-buses';
 
 const chatBodyRef = ref<HTMLElement | null>(null);
 
