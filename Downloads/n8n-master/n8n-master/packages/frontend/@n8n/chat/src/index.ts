@@ -9,7 +9,21 @@ import { createDefaultMountingTarget } from '@workflow-automation/chat/utils';
 
 import App from './App.vue';
 
+// Export event bus
 export { chatEventBus } from './event-buses';
+
+// Export constants
+export { ChatOptionsSymbol, ChatSymbol } from './constants';
+
+// Export utils
+export { constructChatWebsocketUrl } from './utils';
+
+// Export components
+export { MessagesList, Input as ChatInput } from './components';
+
+// Export types
+export type * from './types';
+export type { ArrowKeyDownPayload } from './components/Input.vue';
 
 export function createChat(options?: Partial<ChatOptions>) {
 	const resolvedOptions: ChatOptions = {

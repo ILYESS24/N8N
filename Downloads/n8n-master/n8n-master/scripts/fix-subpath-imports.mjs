@@ -35,9 +35,14 @@ const SUBPATH_MAPPINGS = {
 	'@workflow-automation/design-system/src/components/N8nIcon/icons': '@workflow-automation/design-system',
 	'@workflow-automation/design-system/src/css/index.scss': '../../@n8n/design-system/src/css/index.scss', // Chemin relatif pour SCSS
 	
-	// Chat
+	// Chat - chemins directs
 	'@workflow-automation/chat/utils': '@workflow-automation/chat',
 	'@workflow-automation/chat/src/event-buses': '@workflow-automation/chat',
+	'@workflow-automation/chat/src/utils': '@workflow-automation/chat',
+	'@workflow-automation/chat/src/types': '@workflow-automation/chat',
+	'@workflow-automation/chat/src/constants': '@workflow-automation/chat',
+	'@workflow-automation/chat/src/components/MessagesList.vue': '@workflow-automation/chat',
+	'@workflow-automation/chat/src/components/Input.vue': '@workflow-automation/chat',
 };
 
 const FILE_EXTENSIONS = ['.ts', '.mts', '.vue'];
@@ -57,7 +62,26 @@ function fixSubpathImports(content, filePath) {
 	let replacements = 0;
 	let newContent = content;
 
-	// Remplacer tous les imports de sous-chemins connus
+	// Étape 1: Corriger les chemins relatifs vers @workflow-automation/package/src/...
+	// Pattern: ../../../../@workflow-automation/package/src/...
+	const relativePathPattern = /(['"])(\.\.\/)+@workflow-automation\/(chat|design-system)\/src\/([^'"]+)(['"])/g;
+	newContent = newContent.replace(relativePathPattern, (match, quote1, dots, pkg, subpath, quote2) => {
+		const fullPath = `@workflow-automation/${pkg}/src/${subpath}`;
+		
+		// Vérifier si c'est dans les mappings
+		if (SUBPATH_MAPPINGS[fullPath]) {
+			modified = true;
+			replacements++;
+			return `${quote1}${SUBPATH_MAPPINGS[fullPath]}${quote2}`;
+		}
+		
+		// Sinon, remplacer par le point d'entrée principal
+		modified = true;
+		replacements++;
+		return `${quote1}@workflow-automation/${pkg}${quote2}`;
+	});
+
+	// Étape 2: Remplacer tous les imports de sous-chemins connus (chemins directs)
 	for (const [subpath, replacement] of Object.entries(SUBPATH_MAPPINGS)) {
 		// Pattern pour import/from avec le sous-chemin
 		const patterns = [
@@ -78,7 +102,7 @@ function fixSubpathImports(content, filePath) {
 		}
 	}
 
-	// Remplacer les autres imports de sous-chemins génériques (sauf ceux valides)
+	// Étape 3: Remplacer les autres imports de sous-chemins génériques (sauf ceux valides)
 	for (const [pkg, config] of Object.entries(PACKAGE_EXPORTS)) {
 		// Pattern pour détecter les imports de sous-chemins
 		const subpathPattern = new RegExp(
@@ -90,6 +114,13 @@ function fixSubpathImports(content, filePath) {
 			// Si c'est un export valide, on le garde
 			if (config.validSubpaths.includes(subpath)) {
 				return match;
+			}
+
+			// Si c'est dans src/, on remplace par le point d'entrée principal
+			if (subpath.startsWith('src/')) {
+				modified = true;
+				replacements++;
+				return `${quote1}${pkg}${quote2}`;
 			}
 
 			// Sinon, on remplace par le point d'entrée principal

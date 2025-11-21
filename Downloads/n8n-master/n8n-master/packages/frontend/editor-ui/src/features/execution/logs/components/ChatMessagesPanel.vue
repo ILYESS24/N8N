@@ -1,12 +1,10 @@
 <script setup lang="ts">
-import type { ChatMessage, ChatMessageText } from '../../../../../../@workflow-automation/chat/src/types';
+import type { ChatMessage, ChatMessageText } from '@workflow-automation/chat';
 import { useI18n } from '@workflow-automation/i18n';
-import MessagesList from '../../../../../../@workflow-automation/chat/src/components/MessagesList.vue';
+import { MessagesList, ChatInput, chatEventBus } from '@workflow-automation/chat';
+import type { ArrowKeyDownPayload } from '@workflow-automation/chat';
 import MessageOptionTooltip from './MessageOptionTooltip.vue';
 import MessageOptionAction from './MessageOptionAction.vue';
-import { chatEventBus } from '../../../../../../@workflow-automation/chat/src/event-buses';
-import type { ArrowKeyDownPayload } from '../../../../../../@workflow-automation/chat/src/components/Input.vue';
-import ChatInput from '../../../../../../@workflow-automation/chat/src/components/Input.vue';
 import { computed, ref } from 'vue';
 import { useClipboard } from '@/app/composables/useClipboard';
 import { useToast } from '@/app/composables/useToast';
