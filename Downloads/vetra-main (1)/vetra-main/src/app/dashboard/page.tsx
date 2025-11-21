@@ -135,50 +135,75 @@ export default function DashboardPage() {
     },
   ];
 
-  const activity = [
-    {
-      label: "Site e-commerce généré",
-      time: "Il y a 12 min",
-      detail: "Template Luxe + 32 composants",
-    },
-    {
-      label: "Assistant IA déployé",
-      time: "Il y a 47 min",
-      detail: "Agent Support multilingue",
-    },
-    {
-      label: "Vidéo promo livrée",
-      time: "Il y a 1 h",
-      detail: "Script + voix + montage auto",
-    },
-  ];
+  const [activity, setActivity] = useState<any[]>([]);
+  const [tasks, setTasks] = useState<any[]>([]);
+  const [stats, setStats] = useState({ projects: 0, agents: 0, deliveries: 0 });
 
-  const tasks = [
-    {
-      title: "Onboarding SaaS pour Alto",
-      tag: "Site Web",
-      status: "En cours",
-    },
-    {
-      title: "Agent support Fintech",
-      tag: "IA Agent",
-      status: "Review",
-    },
-    {
-      title: "Campagne vidéo lancement",
-      tag: "Contenu",
-      status: "À produire",
-    },
-  ];
+  useEffect(() => {
+    // Charger les activités réelles depuis l'API
+    const loadActivity = async () => {
+      try {
+        const response = await fetch("/api/activity?limit=10");
+        const data = await response.json();
+        setActivity(data.activities || []);
+      } catch (error) {
+        console.error("Error loading activity:", error);
+      }
+    };
+
+    // Charger les projets réels
+    const loadProjects = async () => {
+      try {
+        const response = await fetch("/api/projects");
+        const data = await response.json();
+        const projectTasks = (data.projects || []).map((p: any) => ({
+          title: p.name || p.title,
+          tag: p.type || "Projet",
+          status: p.status || "En cours",
+        }));
+        setTasks(projectTasks);
+        
+        // Calculer les stats
+        setStats({
+          projects: data.projects?.length || 0,
+          agents: data.agents?.length || 0,
+          deliveries: data.deliveries?.length || 0,
+        });
+      } catch (error) {
+        console.error("Error loading projects:", error);
+      }
+    };
+
+    loadActivity();
+    loadProjects();
+    
+    // Rafraîchir toutes les 30 secondes
+    const interval = setInterval(() => {
+      loadActivity();
+      loadProjects();
+    }, 30000);
+
+    return () => clearInterval(interval);
+  }, []);
 
   return (
-    <div className="min-h-screen bg-[#05070F] text-white">
-      <div className="absolute inset-0 bg-gradient-to-b from-[#0C1122] via-[#05070F] to-[#05070F]" />
+    <div className="min-h-screen bg-white text-gray-900">
       <div className="relative">
         {/* Navigation Verticale */}
         <AURIONVerticalNavbar />
+        
+        {/* Bouton pour retourner à la landing page */}
+        <div className="fixed top-6 right-6 z-50">
+          <Button
+            variant="outline"
+            onClick={() => router.push("/")}
+            className="bg-white border-gray-200 text-gray-700 hover:bg-gray-50"
+          >
+            Retour à l'accueil
+          </Button>
+        </div>
         {/* Header */}
-        <header className="sticky top-0 z-40 border-b border-white/5 backdrop-blur-xl bg-[#05070F]/70">
+        <header className="sticky top-0 z-40 border-b border-gray-200 backdrop-blur-xl bg-white/70">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
             <div className="flex items-center gap-3">
               <div className="h-10 w-10 rounded-xl bg-white/5 flex items-center justify-center">
@@ -238,16 +263,16 @@ export default function DashboardPage() {
                   </div>
                   <div className="grid grid-cols-3 gap-4 text-sm">
                     <div>
-                      <p className="text-white/50">Projets actifs</p>
-                      <p className="text-2xl font-semibold mt-1">06</p>
+                      <p className="text-gray-600">Projets actifs</p>
+                      <p className="text-2xl font-semibold mt-1 text-gray-900">{stats.projects}</p>
                     </div>
                     <div>
-                      <p className="text-white/50">Agents IA</p>
-                      <p className="text-2xl font-semibold mt-1">04</p>
+                      <p className="text-gray-600">Agents IA</p>
+                      <p className="text-2xl font-semibold mt-1 text-gray-900">{stats.agents}</p>
                     </div>
                     <div>
-                      <p className="text-white/50">Livraisons 30j</p>
-                      <p className="text-2xl font-semibold mt-1">18</p>
+                      <p className="text-gray-600">Livraisons 30j</p>
+                      <p className="text-2xl font-semibold mt-1 text-gray-900">{stats.deliveries}</p>
                     </div>
                   </div>
                 </div>

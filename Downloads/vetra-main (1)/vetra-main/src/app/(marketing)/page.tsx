@@ -4,13 +4,16 @@ export const dynamic = 'force-dynamic';
 
 import { useState, useEffect } from "react";
 import { useRouter } from "next/navigation";
-import { ArrowUpRight, Star, Check, Sparkles, Lightbulb, Target, Palette, Monitor, Megaphone, PenTool, BarChart3, Code, Image, Video, FileText, Bot, Layers, Zap } from "lucide-react";
+import { ArrowUpRight, Star, Check, Sparkles, Lightbulb, Target, Palette, Monitor, Megaphone, PenTool, BarChart3, Image, Video, FileText, Bot, Layers, Zap } from "lucide-react";
 import { LogoCloud } from "@/components/logo-cloud-3";
 import { motion } from "framer-motion";
 import { Skiper19 } from "@/components/svg-follow-scroll";
 import { MagicText } from "@/components/ui/magic-text";
 import { GlowingEffect } from "@/components/ui/glowing-effect";
-import { NavigationMenu, NavigationMenuList, NavigationMenuItem, NavigationMenuLink, navigationMenuTriggerStyle } from "@/components/ui/navigation-menu";
+import { NavigationMenu, NavigationMenuList, NavigationMenuItem, NavigationMenuLink, NavigationMenuTrigger, NavigationMenuContent, navigationMenuTriggerStyle } from "@/components/ui/navigation-menu";
+import { MorphPanel } from "@/components/morph-panel";
+import { ExpandableTabs } from "@/components/ui/expandable-tabs";
+import { LayoutDashboard, Home, Code, FileText, Bot, Workflow, Sparkles, Settings, Image, Video, MessageSquare } from "lucide-react";
 import { cn } from "@/lib/cn";
 
 // Animation variants for scroll animations
@@ -87,10 +90,48 @@ const HomePage = () => {
         { label: "About us", href: "#about-us" },
         { label: "Services", href: "#services" },
         { label: "Pricing", href: "#pricing" },
+        { label: "Blog", href: "/blog" },
+    ];
+
+    const toolItems = [
+        { label: "App Builder", href: "/tools/bolt" },
+        { label: "Agent AI", href: "/tools/agent-builder" },
+        { label: "Code Editor", href: "/tools/sandpack" },
+        { label: "Text Editor", href: "/tools/aieditor" },
+        { label: "Langchain", href: "/tools/langchain" },
+    ];
+
+    // Tabs pour la barre verticale
+    const verticalTabs = [
+        { title: "Dashboard", icon: LayoutDashboard, href: "/dashboard" },
+        { title: "Home", icon: Home, href: "/" },
+        { type: "separator" as const },
+        { title: "App Builder", icon: Code, href: "/tools/bolt" },
+        { title: "Agent AI", icon: Bot, href: "/tools/agent-builder" },
+        { title: "Code Editor", icon: Code, href: "/tools/sandpack" },
+        { title: "Text Editor", icon: FileText, href: "/tools/aieditor" },
+        { title: "Langchain", icon: Bot, href: "/tools/langchain" },
+        { title: "Workflows", icon: Workflow, href: "/workflows" },
+        { type: "separator" as const },
+        { title: "AI Chat", icon: MessageSquare, href: "/tools/open-webui" },
+        { title: "Video Studio", icon: Video, href: "/tools/mochi" },
     ];
 
     return (
         <div className="min-h-screen w-full relative bg-white">
+            {/* MorphPanel - Assistant IA */}
+            <div className="fixed bottom-8 right-8 z-50">
+                <MorphPanel />
+            </div>
+
+            {/* Barre verticale ExpandableTabs */}
+            <div className="fixed left-4 top-1/2 -translate-y-1/2 z-50">
+                <ExpandableTabs 
+                    tabs={verticalTabs}
+                    className="bg-white/90 backdrop-blur-xl border border-gray-200 shadow-lg"
+                    activeColor="text-gray-900"
+                />
+            </div>
 
             {/* Logo AURION - Top Left */}
             <div className="fixed top-6 left-6 z-50">
@@ -100,7 +141,7 @@ const HomePage = () => {
             {/* Navigation */}
             <nav className="fixed top-6 left-1/2 -translate-x-1/2 z-50 flex items-center justify-center px-4">
                 <div className="inline-flex items-center bg-gradient-to-r from-[#DAEEF4] via-[#F2F7FC] to-[#FBF0DB] rounded-full p-1 shadow-lg border border-white/70">
-                    <div className="flex items-center gap-1 bg-white/70 backdrop-blur rounded-full px-2 py-1 text-sm text-gray-600">
+                    <div className="flex items-center gap-1 bg-white/70 backdrop-blur rounded-full px-2 py-1 text-sm">
                         <NavigationMenu className="flex-1">
                             <NavigationMenuList className="space-x-0">
                                 {navItems.map((item) => (
@@ -110,7 +151,7 @@ const HomePage = () => {
                                             onClick={() => setActiveNav(item.href)}
                                             className={cn(
                                                 navigationMenuTriggerStyle(),
-                                                "rounded-full px-4 py-2 text-sm transition-all bg-transparent text-gray-600 hover:text-gray-900",
+                                                "rounded-full px-4 py-2 text-sm transition-all bg-transparent text-gray-700 hover:text-gray-900 hover:bg-white/50",
                                                 activeNav === item.href && "bg-white text-gray-900 shadow-sm"
                                             )}
                                         >
@@ -118,6 +159,24 @@ const HomePage = () => {
                                         </NavigationMenuLink>
                                     </NavigationMenuItem>
                                 ))}
+                                <NavigationMenuItem>
+                                    <NavigationMenuTrigger className="rounded-full px-4 py-2 text-sm transition-all bg-transparent text-gray-700 hover:text-gray-900 hover:bg-white/50">
+                                        Tools
+                                    </NavigationMenuTrigger>
+                                    <NavigationMenuContent>
+                                        <div className="grid w-[400px] gap-3 p-4">
+                                            {toolItems.map((tool) => (
+                                                <NavigationMenuLink
+                                                    key={tool.href}
+                                                    href={tool.href}
+                                                    className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground"
+                                                >
+                                                    <div className="text-sm font-medium leading-none">{tool.label}</div>
+                                                </NavigationMenuLink>
+                                            ))}
+                                        </div>
+                                    </NavigationMenuContent>
+                                </NavigationMenuItem>
                             </NavigationMenuList>
                         </NavigationMenu>
                     </div>

@@ -3,12 +3,14 @@
 import * as React from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import { useOnClickOutside } from "usehooks-ts";
-import { cn } from "@/lib/index";
+import { cn } from "@/lib/utils";
+import { useRouter } from "next/navigation";
 import { LucideIcon } from "lucide-react";
 
 interface Tab {
   title: string;
   icon: LucideIcon;
+  href?: string;
   type?: never;
 }
 
@@ -16,6 +18,7 @@ interface Separator {
   type: "separator";
   title?: never;
   icon?: never;
+  href?: never;
 }
 
 type TabItem = Tab | Separator;
@@ -56,8 +59,9 @@ export function ExpandableTabs({
 }: ExpandableTabsProps) {
   const [selected, setSelected] = React.useState<number | null>(null);
   const outsideClickRef = React.useRef<HTMLDivElement>(null);
+  const router = useRouter();
 
-  useOnClickOutside(outsideClickRef as React.RefObject<HTMLElement>, () => {
+  useOnClickOutside(outsideClickRef, () => {
     setSelected(null);
     onChange?.(null);
   });
@@ -65,17 +69,21 @@ export function ExpandableTabs({
   const handleSelect = (index: number) => {
     setSelected(index);
     onChange?.(index);
+    const tab = tabs[index];
+    if (tab && 'href' in tab && tab.href) {
+      router.push(tab.href);
+    }
   };
 
   const Separator = () => (
-    <div className="mx-1 h-[24px] w-[1.2px] bg-border" aria-hidden="true" />
+    <div className="my-1 w-[24px] h-[1.2px] bg-border" aria-hidden="true" />
   );
 
   return (
     <div
       ref={outsideClickRef}
       className={cn(
-        "flex flex-wrap items-center gap-2 rounded-2xl border bg-background p-1 shadow-sm",
+        "flex flex-col items-center gap-2 rounded-2xl border bg-background p-2 shadow-sm",
         className
       )}
     >
@@ -95,11 +103,12 @@ export function ExpandableTabs({
             onClick={() => handleSelect(index)}
             transition={transition}
             className={cn(
-              "relative flex items-center rounded-xl px-4 py-2 text-sm font-medium transition-colors duration-300",
+              "relative flex items-center justify-center rounded-xl px-2 py-2 w-full min-w-[48px] text-sm font-medium transition-colors duration-300",
               selected === index
                 ? cn("bg-muted", activeColor)
                 : "text-muted-foreground hover:bg-muted hover:text-foreground"
             )}
+            title={tab.title}
           >
             <Icon size={20} />
             <AnimatePresence initial={false}>
@@ -110,7 +119,7 @@ export function ExpandableTabs({
                   animate="animate"
                   exit="exit"
                   transition={transition}
-                  className="overflow-hidden"
+                  className="overflow-hidden whitespace-nowrap ml-2"
                 >
                   {tab.title}
                 </motion.span>
