@@ -1,6 +1,6 @@
 import type { InjectionKey } from 'vue';
 
-import type { Chat, ChatOptions } from '@workflow-automation/chat/types';
+import type { Chat, ChatOptions } from '../types';
 
 export const ChatSymbol = 'Chat' as unknown as InjectionKey<Chat>;
 

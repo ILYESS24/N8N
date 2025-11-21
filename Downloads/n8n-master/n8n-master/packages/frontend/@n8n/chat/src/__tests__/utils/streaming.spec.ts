@@ -1,11 +1,11 @@
 import { describe, expect, it } from 'vitest';
 
-import type { ChatMessageText } from '@workflow-automation/chat/types';
+import type { ChatMessageText } from '@workflow-automation/chat';
 import {
 	StreamingMessageManager,
 	createBotMessage,
 	updateMessageInArray,
-} from '@workflow-automation/chat/utils/streaming';
+} from '@workflow-automation/chat';
 
 describe('StreamingMessageManager', () => {
 	it('should initialize runs correctly', () => {

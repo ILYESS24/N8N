@@ -20,12 +20,24 @@ export { defaultMountingTarget, defaultOptions } from './constants';
 export { ChatPlugin } from './plugins';
 
 // Export utils
-export { constructChatWebsocketUrl, createDefaultMountingTarget } from './utils';
+export { constructChatWebsocketUrl } from './utils/utils';
+export { createDefaultMountingTarget } from './utils/mount';
+
+// Export streaming utilities
+export {
+	StreamingMessageManager,
+	createBotMessage,
+	updateMessageInArray,
+} from './utils/streaming';
+export {
+	handleStreamingChunk,
+	handleNodeStart,
+	handleNodeComplete,
+} from './utils/streamingHandlers';
 
 // Export components
 export { MessagesList, Input as ChatInput } from './components';
 export { default as Chat } from './components/Chat.vue';
-export { default } from './components/Chat.vue';
 
 // Export composables
 export { useChat, useI18n, useOptions } from './composables';

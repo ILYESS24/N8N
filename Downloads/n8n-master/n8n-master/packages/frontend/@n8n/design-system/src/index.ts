@@ -15,3 +15,6 @@ export { useProvideTooltipAppendTo, useInjectTooltipAppendTo } from './composabl
 
 // Export IconPicker types and utilities
 export { isIconOrEmoji, type IconOrEmoji } from './components/N8nIconPicker/types';
+
+// Export Logo as default export alias
+export { default as Logo } from './components/N8nLogo';

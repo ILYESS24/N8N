@@ -160,7 +160,7 @@ function setupWebsocketConnection(executionId: string) {
 				true,
 			);
 			chatStore.ws = new WebSocket(wsUrl);
-			chatStore.ws.onmessage = (e) => {
+			chatStore.ws.onmessage = (e: MessageEvent) => {
 				if (e.data === 'n8n|heartbeat') {
 					chatStore.ws?.send('n8n|heartbeat-ack');
 					return;

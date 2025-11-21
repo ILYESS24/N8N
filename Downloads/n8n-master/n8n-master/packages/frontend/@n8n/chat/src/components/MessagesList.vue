@@ -17,7 +17,11 @@ defineSlots<{
 }>();
 
 const chatStore = useChat();
-const messageComponents = ref<Array<InstanceType<typeof Message>>>([]);
+interface MessageComponentInstance {
+	scrollToView: () => void;
+}
+
+const messageComponents = ref<MessageComponentInstance[]>([]);
 const { initialMessages, waitingForResponse } = chatStore;
 
 watch(
