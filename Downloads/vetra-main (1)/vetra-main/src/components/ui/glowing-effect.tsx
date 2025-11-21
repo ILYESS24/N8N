@@ -1,8 +1,8 @@
 "use client";
 
 import { memo, useCallback, useEffect, useRef } from "react";
-import { cn } from "@/lib/index";
-import { animate } from "motion/react";
+import { cn } from "@/lib/cn";
+import { animate } from "framer-motion";
 
 interface GlowingEffectProps {
   blur?: number;
